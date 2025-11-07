@@ -1,0 +1,38 @@
+.test-logos {
+  text-align: center;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 30px;
+  margin-top: -40px;
+}
+
+.test-logos h3 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.logo-row img {
+  height: 50px;
+  width: auto;
+  filter: grayscale(20%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.logo-row img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}

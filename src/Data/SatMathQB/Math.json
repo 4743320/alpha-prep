@@ -1,0 +1,228 @@
+[
+  {
+    "id": 1,
+    "passage": "",
+    "question": "x^2 \\ - \\ 7 \\ = \\ 3",
+    "options": {
+      "A": "3",
+      "B": "7",
+      "C": "19",
+      "D": "28"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 2,
+    "passage": "",
+    "question": "f(x) \\ = \\ 5x \\ - \\ 2, \\ \\text{find} \\ f(x \\ + \\ 3)",
+    "options": {
+      "A": "5x \\ + \\ 1",
+      "B": "5x \\ + \\ 13",
+      "C": "5x \\ + \\ 15",
+      "D": "5x \\ + \\ 17"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 3,
+    "passage": "",
+    "question": "\\text{Which of the following is equivalent to } \\dfrac{x^2 \\ + \\ 6x \\ + \\ 9}{x^2 \\ + \\ 7x \\ + \\ 12} \\ ?",
+    "options": {
+      "A": "\\dfrac{6x \\ + \\ 9}{7x \\ + \\ 12}",
+      "B": "x \\ + \\ 4",
+      "C": "x \\ + \\ y^3",
+      "D": "(x^2)^2 \\ y^{m}"
+    },
+    "answer": ""
+  },
+  {
+    "id": 4,
+    "passage": "",
+    "question": "\\text{What is the value of } m\\,?",
+    "options": {},
+    "answer": ""
+  },
+  {
+    "id": 5,
+    "passage": "",
+    "question": "\\text{Three tiles cover } 7.75 \\ \\text{ft}^2. \\ \\text{How many tiles cover } 186 \\ \\text{ft}^2\\ ?",
+    "options": {
+      "A": "24",
+      "B": "72",
+      "C": "186",
+      "D": "558"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 6,
+    "passage": "",
+    "question": "4b \\ - \\ 3 \\ > \\ 7, \\ \\text{find the greatest integer value of } \\ -2b \\ + \\ 4",
+    "options": {
+      "A": "-2",
+      "B": "-1",
+      "C": "0",
+      "D": "1"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 7,
+    "passage": "",
+    "question": "\\text{A square has diagonal } 12\\sqrt{2} \\ \\text{in. Find the area.}",
+    "options": {
+      "A": "144",
+      "B": "288",
+      "C": "72",
+      "D": "600"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 8,
+    "passage": "",
+    "question": "\\text{Simplify: } 2y \\ - \\ (2y \\ + \\ 1) \\ - \\ 4y \\ + \\ (3 \\ - \\ 4y)",
+    "options": {},
+    "answer": "2 \\ - \\ 8y"
+  },
+  {
+    "id": 9,
+    "passage": "",
+    "question": "\\text{How many solutions does the system have? } \\begin{cases} 2y \\ + \\ x \\ = \\ 9 \\\\ 27 \\ - \\ 3x \\ = \\ 6y \\end{cases}",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "Infinitely many"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 10,
+    "passage": "An electrician charges a service call fee plus an hourly fee. The graph shows total price vs. hours.",
+    "question": "\\text{Based on the graph, what is the total charge for } 20 \\ \\text{hours?}",
+    "options": {
+      "A": "$600",
+      "B": "$700",
+      "C": "$1{,}440",
+      "D": "$1{,}500"
+    },
+    "answer": ""
+  },
+  {
+    "id": 11,
+    "passage": "",
+    "question": "\\text{For what value of } x \\ \\text{is } h(x) \\ \\text{undefined?}",
+    "options": {},
+    "answer": ""
+  },
+  {
+    "id": 12,
+    "passage": "",
+    "question": "\\text{Score increases from } 34 \\ \\text{by } 1 \\ \\text{per day to reach } 60. \\ \\text{About how many days?}",
+    "options": {
+      "A": "40",
+      "B": "50",
+      "C": "60",
+      "D": "70"
+    },
+    "answer": ""
+  },
+  {
+    "id": 13,
+    "passage": "The graph shows stock price over two weeks with maximum at (a,b) and minimum at (c,d).",
+    "question": "\\text{What is the value of } \\dfrac{f(x)}{g(x)}\\ ?",
+    "options": {
+      "A": "-17"
+    },
+    "answer": ""
+  },
+  {
+    "id": 14,
+    "passage": "A scatterplot relates planting time to crop yield; a line of best fit is shown.",
+    "question": "\\text{Approx. difference (bushels) between the line’s prediction and the actual yield of the greatest outlier?}",
+    "options": {
+      "A": "25",
+      "B": "34",
+      "C": "68"
+    },
+    "answer": ""
+  },
+  {
+    "id": 15,
+    "passage": "Line \\ a \\parallel \\ line \\ c.",
+    "question": "\\text{Which statement is true?}",
+    "options": {
+      "A": "x^{\\circ} \\ + \\ y^{\\circ} \\ = \\ 80^{\\circ}",
+      "B": "x^{\\circ} \\ + \\ y^{\\circ} \\ = \\ 100^{\\circ}",
+      "C": "x^{\\circ} \\ = \\ y^{\\circ}",
+      "D": "x^{\\circ} \\ + \\ y^{\\circ} \\ = \\ 180^{\\circ}"
+    },
+    "answer": ""
+  },
+  {
+    "id": 16,
+    "passage": "",
+    "question": "\\text{What is the greatest possible value of } x \\ \\text{in the given system of inequalities?}",
+    "options": {
+      "A": "2",
+      "B": "1",
+      "C": "0"
+    },
+    "answer": ""
+  },
+  {
+    "id": 17,
+    "passage": "",
+    "question": "\\text{Given } 4k \\ + \\ 5s \\ + \\ 6f \\ = \\ 7.90 \\ \\text{and } 2k \\ + \\ 2s \\ + \\ 5f \\ = \\ 5.80, \\ \\text{find the cost of } 2k \\ + \\ 3s \\ + \\ f.",
+    "options": {
+      "A": "$2.10",
+      "B": "$3.30",
+      "C": "$4.70",
+      "D": "$5.80"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 18,
+    "passage": "",
+    "question": "\\text{If } x \\ = \\ 3, \\ y \\ = \\ -5, \\ xy \\ = \\ 15, \\ \\text{compute } \\dfrac{1}{x \\ - \\ 3} \\ + \\ \\dfrac{1}{y \\ + \\ 5}.",
+    "options": {
+      "A": "\\dfrac{5x \\ - \\ 3y}{(x \\ - \\ 3)(y \\ + \\ 5)}"
+    },
+    "answer": ""
+  },
+  {
+    "id": 19,
+    "passage": "",
+    "question": "\\text{The parabola } y \\ = \\ ax^2 \\ + \\ bx \\ + \\ c \\ \\text{has range } y \\ge \\ -4. \\ \\text{Find } a.",
+    "options": {},
+    "answer": ""
+  },
+  {
+    "id": 20,
+    "passage": "",
+    "question": "\\text{Item priced at } \\$100 \\ \\text{is marked down } p\\% \\ \\text{each month. Sold for } \\$64 \\ \\text{after 2 months. Find } p.",
+    "options": {},
+    "answer": "20\\%"
+  },
+  {
+    "id": 21,
+    "passage": "A circular arena is divided into 12 equal sectors; 4 contain bulls. Reinforcing all edges of the 4 bull sectors requires \\ 64\\pi \\ \\text{yd}.",
+    "question": "\\text{Find the radius of the arena (yd).}",
+    "options": {},
+    "answer": ""
+  },
+  {
+    "id": 22,
+    "passage": "A restaurant surveyed customers’ wait times on Friday vs. Saturday.",
+    "question": "\\text{On average, how many minutes longer are customers willing to wait on Saturday?}",
+    "options": {
+      "A": "13",
+      "B": "11.3",
+      "C": "34",
+      "D": "68"
+    },
+    "answer": ""
+  }
+]

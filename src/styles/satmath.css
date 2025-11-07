@@ -1,0 +1,678 @@
+/* Container */
+.sat-container {
+  font-family: Arial, sans-serif;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+
+  flex-direction: column;
+  background: #f2f2f2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 25px;
+
+}
+.question-num {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.mark-review {
+  font-size: 13px;
+}
+
+/* Header */
+.sat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 20px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: gray;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sat-btn {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+
+.next-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+/* Main Layout */
+.sat-main {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Left Column */
+.sat-left {
+  width: 50%;
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+  font-size: 14px;
+}
+
+.sat-left ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.examples-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.examples-table th,
+.examples-table td {
+  border: 1px solid #aaa;
+  padding: 6px;
+  text-align: center;
+}
+
+/* Right Column */
+.sat-right {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.question-box {
+  border: none;
+  padding: 18px;
+  border-radius: 8px;
+  /* box-shadow: 0px 2px 5px rgba(0,0,0,0.1); */
+}
+
+.question-num {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answer-label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.answer-input {
+  border: 1px solid black ;
+  padding: 6px;
+  margin-top: 4px;
+  border-radius: 6px;
+  width: 200px;
+  color: black;
+}
+
+.answer-preview {
+  font-size: 12px;
+  color: gray;
+  margin-top: 6px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+Container
+.full-width {
+  width: 100%;
+  max-width: 900px; /* keeps it from being too wide */
+  margin: 0 auto;   /* centers horizontally */
+}
+.sat-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 40px 80px; /* Adjust spacing inside */
+  box-sizing: border-box;
+  overflow: ""; /* prevent scrollbars */
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.sat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.left-info h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.directions {
+  font-size: 13px;
+  color: #555;
+}
+
+.center-timer {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.center-timer .hide-btn {
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 2px 6px;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.right-tools span {
+  margin-left: 20px;
+  cursor: pointer;
+  color: #005eb8;
+}
+
+/* Dashed Progress Bar */
+.progress-line {
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #333 0px,
+    #333 10px,
+    #ff0 10px,
+    #ff0 12px,
+    #00f 12px,
+    #00f 14px,
+    #ccc 14px,
+    #ccc 20px
+  );
+  margin: 16px 0 30px;
+}
+
+/* Question Box */
+.question-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 25px;
+  background: white;
+}
+
+/* Question Top Header */
+.question-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px 15px;
+  margin: -25px -25px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.question-num {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.mark-review {
+  font-size: 13px;
+}
+
+/* Question Text */
+.question-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Options */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Radio button option with highlight */
+.option-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  background: #fff;
+  font-size: 15px;
+}
+
+/* Hide the native radio */
+.option-button input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Highlight full option when selected */
+.option-button input[type="radio"]:checked + span {
+  background-color: #005eb8;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 10px;
+  width: 100%;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+/* Bottom Area */
+.bottom-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.question-count {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #0073e6;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.end-module-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+.submit-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: pink;
+  cursor: pointer;
+
+}
+
+.submit-btn:hover {
+  background-color: #ff4fa1; /* darker pink on hover */
+}
+
+/* Container */
+.sat-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+/* Header Section */
+.sat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.left-info h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.directions {
+  font-size: 13px;
+  color: #555;
+}
+
+.center-timer {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.center-timer .hide-btn {
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 2px 6px;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.right-tools span {
+  margin-left: 20px;
+  cursor: pointer;
+  color: #005eb8;
+}
+
+/* Dashed Progress Bar */
+
+/* Question Box */
+.question-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 25px;
+  background: white;
+}
+
+/* Question Top Header */
+.question-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px 15px;
+  margin: -25px -25px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.question-num {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.mark-review {
+  font-size: 13px;
+}
+
+/* Question Text */
+.question-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Options */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Radio button option with highlight */
+.option-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  background: #fff;
+  font-size: 15px;
+}
+
+/* Hide the native radio */
+.option-button input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Highlight full option when selected */
+.option-button input[type="radio"]:checked + span {
+  background-color: #005eb8;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 8px 10px;
+  width: 100%;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+/* Bottom Area */
+.bottom-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.question-count {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #0073e6;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.end-module-btn {
+    padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+.image-container img {
+  max-width: 60%;       /* limits image width to 80% of container */
+  max-height: 200px;    /* limits image height */
+  object-fit: contain;  /* keep aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: block;
+  margin: 0 auto 20px;  /* center horizontally and add margin below */
+}
+
+
+.explanation-container {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.explanation-btn {
+  background: #007bff;
+  color: white;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.explanation-btn:hover {
+  background: #0056b3;
+}
+
+.explanation-text {
+  margin-top: 0.75rem;
+  padding: 12px;
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+/* Wrong selected option → Red */
+.option-button.wrong-option input[type="radio"]:checked + span {
+  background-color: #f8d7da; /* light red */
+  border: 2px solid #dc3545;
+  color: #721c24;
+}
+
+/* Remove any styling for correct options so they stay neutral */
+.option-button.correct-option input[type="radio"]:checked + span {
+  background-color:  #0073e6;
+  border: 1px solid  #0073e6;
+  color: inherit;
+}
+
+/* Base radio option styling */
+.option-button {
+  display: block;
+  padding: 7px 7px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: #fff;
+}
+
+/* Highlight selected (before answer is revealed) */
+.option-button input[type="radio"]:checked + span {
+  background-color: #f0f0ff;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+/* Correct and wrong feedback styles (after answer is selected) */
+.correct-option {
+  background-color: #d4edda; /* green */
+  border-color: #28a745;
+  color: #155724;
+}
+
+.wrong-option {
+  background-color: #f8d7da; /* red */
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+/* Optional hover effect */
+.option-button:hover {
+  background-color: #f9f9f9;
+}
+/* Highlight the selected option in blue (mock style) */
+.option-button input[type="radio"]:checked + span {
+  background-color: lightblue;
+  border: 1px solid  #0073e6;
+  color: inherit;
+}
+
+/* Ensure all bold/strong text has consistent color */
+b, strong {
+  font-weight: bold;
+  color: black; /* choose the color you want */
+}
+
+/* Optional: handle dark mode explicitly */
+@media (prefers-color-scheme: dark) {
+  b, strong {
+    color: black; /* keep same color even in dark mode */
+  }
+}
+
+/* Force consistent colors even in dark mode */
+@media (prefers-color-scheme: dark) {
+  body, .sat-container, .sat-wrapper {
+    background-color: #f2f2f2 !important; /* keep light bg */
+    color: black !important; /* force text black */
+  }
+
+  .question-text,
+  .subtitle,
+  .directions,
+  .answer-preview,
+  .question-count {
+    color: black !important; /* stop text flipping to white */
+  }
+
+  .sat-btn{
+ color: white;
+  background-color: #0073e6;
+  }
+  .question-box,
+  .option-button {
+    background-color:white !important; /* keep boxes light */
+    color: black !important;
+  }
+}
+.answer-input{
+  background-color: white;
+}

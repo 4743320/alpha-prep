@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "passage": "",
+    "question": "\\text{Let } g(x) = 3x^2 - 12x + 3. \\text{ What is the minimum value of } g(x) + 3 \\text{?}",
+    "options": {
+      "A": "-9",
+      "B": "-6",
+      "C": "-2",
+      "D": "6"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 2,
+    "passage": "",
+    "question": "\\text{The expression } x^2 - x - 56 \\text{ is equivalent to which of the following?}",
+    "options": {
+      "A": "(x - 14)(x + 4)",
+      "B": "(x - 7)(x + 8)",
+      "C": "(x - 8)(x + 7)",
+      "D": "(x - 4)(x + 14)"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 3,
+    "passage": "",
+  "question": "\\text{A carpenter hammers 10 nails per minute and installs 7 screws per minute.} \\\\ \\text{If the carpenter hammers nails for } x \\text{ minutes and installs screws for } y \\text{ minutes} \\\\ \\text{for a total of 200 nails and screws, which equation represents this scenario?}"
+,
+    "options": {
+      "A": "\\dfrac{1}{10}x + \\dfrac{1}{7}y = 200",
+      "B": "\\dfrac{1}{10}x + \\dfrac{1}{7}y = 3,420",
+      "C": "10x + 7y = 200",
+      "D": "10x + 7y = 3,420"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 4,
+    "passage": "",
+   "question": "\\text{What is the measure of } \\angle F \\text{ in the triangle } \\triangle DEF, \\text{ where } \\angle D = 73^\\circ \\text{ and } \\angle E = 35^\\circ?"
+
+,
+    "options": {
+      "A": "38^\\circ",
+      "B": "72^\\circ",
+      "C": "108^\\circ",
+      "D": "126^\\circ"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 5,
+    "passage": "",
+"question": "\\text{The total amount of plastic remaining to be recycled in a facility over} \\\\ \\text{x shifts is represented by the graph above. Which of the} \\\\ \\text{following represents the y\\text{-intercept of the graph?}}"
+,
+"image": "/Images/p-m1/pm15.png",
+    "options": {
+      "A": "\\text{The total amount of plastic remaining at any given time}",
+      "B": "\\text{The number of shifts it will take to finish recycling the plastic}",
+      "C": "\\text{The amount of plastic that is recycled per shift}",
+      "D": "\\text{The initial amount of plastic to be recycled}"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 6,
+    "passage": "",
+"question": "\\text{The table below shows the condition and subject type for} \\\\ \\text{200 textbooks at a bookstore. What is the probability that a} \\\\ \\text{textbook chosen at random will be a new textbook?} \\\\ \\text{(Express your} \\\\ \\text{answer as a decimal or fraction, not as a percent.)}"
+,
+"image": "/Images/p-m1/pm16.png",
+    "options": {
+    },
+    "answer": "0.6"
+  },
+  {
+    "id": 7,
+    "passage": "",
+"question": "\\text{A random sample of 5,000 students out of 60,000 undergraduate students at} \\\\ \\text{a university were surveyed about a potential change to the registration system.} \\\\ \\text{According to the survey results, 75\\% of the respondents did not support} \\\\ \\text{the existing registration system, with a 4\\% margin of error. Which} \\\\ \\text{of the following represents a reasonable total number of students who} \\\\ \\text{did not support the existing registration system?}"
+
+,
+    "options": {
+      "A": "1,250",
+      "B": "3,750",
+      "C": "13,800",
+      "D": "43,800"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 8,
+    "passage": "",
+    "question": "\\text{What is the negative solution to the equation } \\\\ \\dfrac{32}{a} = a - 4?",
+    "options": {
+     
+    },
+    "answer": "-4"
+  },
+  {
+    "id": 9,
+    "passage": "",
+    "question": "\\text{After a hot air balloon is launched from a plateau 1,000 meters above} \\\\ \\text{sea level, it rises at a constant rate of 750 meters per minute.} \\\\ \\text{Which of the following best describes the function used to model the} \\\\ \\text{balloon's distance above sea level over time?}"
+,
+    "options": {
+      "A": "\\text{Increasing linear}",
+      "B": "\\text{Increasing exponential}",
+      "C": "\\text{Decreasing linear}",
+      "D": "\\text{Decreasing exponential}"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 10,
+    "passage": "",
+    "question": "\\text{What is the x-intercept of } f(x) = 22^x - 1\\   \\text{when it is graphed in the xy-plane, where y = f(x)? }", 
+    "options": {
+      "A": "(-1, 0)",
+      "B": "(0, 0)",
+      "C": "(21, 0)",
+      "D": "(22, 0)"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 11,
+    "passage": "\\text{In parallelogram } ABCD, AB \\text{ is one-third the length of } AD. \\text{ The perimeter of the parallelogram is 64.}",
+    "question": "\\text{In parallelogram ABCD shown above, the length of AB is one-third} \\\\ \\text{the length of AD. The perimeter of the parallelogram is 64. What} \\\\ \\text{is the length of AB?}"
+,
+"image": "/Images/p-m1/pm111.png",
+    "options": {
+      "A": "8",
+      "B": "16",
+      "C": "24",
+      "D": "32"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 12,
+    "passage": "",
+   "question": "\\text{A triangle with an area of 18 square units has a base of} \\\\ \\text{(m + 5) units and a height of m units. What is the value} \\\\ \\text{of m?}"
+,
+    "options": {
+      "A": "4",
+      "B": "9",
+      "C": "13",
+      "D": "36"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 13,
+    "passage": "\\text{Yeast colony growth is shown in a table: } t=0:5, t=1:20, t=2:80, t=3:320.",
+"question": "\\text{The table above shows the exponential growth of a type of yeast over} \\\\ \\text{time } s, \\text{ in seconds. There are } c \\text{ total yeast colonies on} \\\\ \\text{the count plate. What is the equation that represents this relationship,} \\\\ \\text{assuming that no yeast was added or removed after counting began?}"
+,
+"image": "/Images/p-m1/pm113.png",
+    "options": {
+      "A": "c = (1 + 3)^s",
+      "B": "c = (1 + 5)^s",
+      "C": "c = 3(1 + 5)^s",
+      "D": "c = 5(1 + 3)^s"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 14,
+    "passage": "",
+"question": "\\text{The equations } 12x = y \\text{ and } 24x + 7 = 2y \\text{ intersect at} \\\\ \\text{how many points when graphed in the } xy\\text{-plane?}"
+,
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "7"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 15,
+    "passage": "",
+"question": "\\text{Several tiles labeled with either an A or a B are placed} \\\\ \\text{in a bag, and tiles are worth a different point} \\\\ \\text{value depending on the label. The equation 15a + 106 =} \\\\ \\text{100 represents the situation when a of the A tiles and} \\\\ \\text{b of the B tiles are drawn from the bag for} \\\\ \\text{a total of 100 points. How many points would be} \\\\ \\text{earned by drawing one A tile and one B tile from the bag?}"
+,
+
+    "options": {
+    },
+    "answer": "25"
+  },
+  {
+    "id": 16,
+    "passage": "",
+    "question": "\\text{The amount of money remaining in a scholarship fund is reduced} \\\\ \\text{by one-fourth every year. The amount of money in the fund} \\\\ \\text{is represented by } d \\text{ and the number of years by } y. \\\\ \\text{If the fund starts with \\$10,000, which equation below represents this situation} \\\\ \\text{after } y \\text{ years?}"
+,
+
+    "options": {
+      "A": "d = \\dfrac{1}{4}(10,000)^y",
+      "B": "d = \\dfrac{3}{4}(10,000)^y",
+      "C": "d = 10,000(\\dfrac{1}{4})^y",
+      "D": "d = 10,000(\\dfrac{3}{4})^y"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 17,
+    "passage": "",
+   "question": "\\text{What is the diameter, in millimeters (mm), of a cylinder} \\\\ \\text{with a volume of 144 mm}^3 \\text{ and a height of 4 mm?}"
+,
+    "options": {
+      "A": "6",
+      "B": "9",
+      "C": "12",
+      "D": "36"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 18,
+    "passage": "",
+"question": "\\text{4x + 2y = 4} \\\\ \\text{19x + 10y = 14} \\\\ \\text{When graphed in the } xy\\text{-plane, the linear equations shown above intersect at} \\\\ \\text{(a, b). What is the value of } a?"
+,
+    "options": {
+      "A": "-20",
+      "B": "-10",
+      "C": "6",
+      "D": "14"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 19,
+    "passage": "",
+    "question": "\\text{The longest side of right triangle ABC is opposite angle B.} \\\\ \\text{If } \\sin(A) = \\text{, what is the value of } \\sin(C)?"
+,
+    "options": {
+      
+    },
+    "answer": "40/41"
+  },
+  {
+    "id": 20,
+    "passage": "",
+"question": "\\text{Function } g \\text{ reaches its maximum value when } x = a. \\\\ \\text{If } g(x) = -6x^2 - 30x - 24, \\text{ what is the value of } a?"
+,
+    "options": {
+    },
+    "answer": "-2.5"
+  },
+  {
+    "id": 21,
+    "passage": "",
+"question": "\\text{f(x) = -x - 3. The linear function } f(x), \\text{ given above,} \\\\ \\text{is perpendicular to } g(x) \\text{ when graphed in the } xy\\text{-plane.} \\\\ \\text{If } g(0) = 0, \\text{ what is the value of } g(2)?"
+,
+    "options": {
+    },
+    "answer": "10"
+  },
+  {
+    "id": 22,
+    "passage": "",
+"question": "\\text{y = } 5k x^{2} + 2x + 3 \\\\ \\text{7 = } -x + 10 \\\\ \\text{The system of equations above has exactly one solution.} \\\\ \\text{If } k \\text{ is a constant, what is the value of } k?"
+
+,
+    "options": {
+      
+    },
+    "answer": "2.4"
+  }
+]

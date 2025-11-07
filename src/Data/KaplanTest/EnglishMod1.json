@@ -1,0 +1,335 @@
+[
+  {
+    "id": "1",
+    "passage": "The following text is from Franz Kafkas 1915 novel Metamorphosis.\n Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. “How about if I sleep a little bit longer and forget all this nonsense,” he thought.",
+    "question": "As used in the text, what does the word “dull” most nearly mean?",
+    "options": {
+      "A": "Boring",
+      "B": "Smooth",
+      "C": "Pale",
+      "D": "Drab"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "2",
+    "passage": "Art is never ___ , nor is it meant to be. A poem written today looks and sounds vastly different from a poem by Shakespeare, and a modern symphony no longer resembles one by Beethoven.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "dynamic",
+      "B": "sluggish",
+      "C": "static",
+      "D": "progressive"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "3",
+    "passage": "Chemist Carolyn Bertozzi developed bioorthogonal chemistry, which entails producing chemical reactions inside living organisms through a relatively __________ procedure; the practice facilitates cutting-edge research because it allows scientists to study the impacts of modified molecules without interfering with the normal biological functioning of an organism’s cells.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "reactive",
+      "B": "benign",
+      "C": "coherent",
+      "D": "injurious"
+    },
+    "answer": "B"
+  },
+  {
+    "id": "4",
+    "passage": "Astronomers typically have difficulty detecting newly forming planets because the young planets are obscured by large amounts of dust and debris. Astronomer Feng Long, however, has recently discovered a new potential method for identifying young planets. Using extensive data from computer models, Long reports that precisely positioned clusters of material buildup—120 degrees apart—may signal the presence of a new planet.",
+    "question": "Which choice best states the function of the first sentence?",
+    "options": {
+      "A": "It provides the cause of a problem for which a possible solution is presented in the sentences that follow.",
+      "B": "It establishes a contrast with the problem that is mentioned earlier in the sentence.",
+      "C": "It suggests an alternative solution for a problem that differs from the potential solution that is presented in the sentences that follow.",
+      "D": "It elaborates on a potential solution for a problem that is mentioned earlier in the sentence."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "5",
+    "passage": "Meditation has been around for thousands of years, starting as a religious practice. Hindu scripture from around 1500 B.C.E. describes meditating on the divine, and art from this time period shows people sitting cross-legged and solitary in a garden. In China and India around the fifth century B.C.E., other forms of meditation developed. Several religions, including Taoism, Buddhism, Islam, and Christianity, have meditative rites. In 20th-century Europe and America, secular forms of meditation arrived from India. Rather than focusing on spiritual growth, secular meditation emphasizes stress reduction, relaxation, and self-improvement.",
+    "question": "Which choice best states the main purpose of the text?",
+    "options": {
+      "A": "It discusses the history of meditation as a religious practice to illustrate how it can impact spiritual growth.",
+      "B": "It argues that religious and secular meditation improve well-being, including the regulation of the impacts of stress.",
+      "C": "It presents meditation as a practice that has been historically connected to various world religions.",
+      "D": "It describes the history of meditation, from its religious origins to its developing non-religious forms over time."
+    },
+    "answer": "D"
+  },
+  {
+    "id": "6",
+   "passage": "Text 1 \n First used to replace sugar during the shortages caused by World War I, artificial sweeteners have since grown tremendously in popularity. Many nutritionists believe that artificial sweeteners can be used to replace sugar in the diet of a person suffering from diabetes, a chronic condition that prevents the body from properly regulating blood sugar levels.\n\nText 2:\n Jotham Suez and a research team conducted a study of about 400 people and found that the subjects who consumed artificial sweeteners had higher blood sugar levels and impaired abilities to tolerate glucose. They also found that the subjects who consumed artificial sweeteners had different populations of bacteria in their guts compared to the subjects who did not, and they posit that artificial sweetener use was responsible for these differences."
+,
+    "question": "Based on the texts, how would Suez and the research team \n (Text 2) \n \n most likely describe the view of the nutritionists presented in Text 1?",
+    "options": {
+      "A": "It is seriously compromised by the research team’s findings.",
+      "B": "It probably holds true only under certain conditions.",
+      "C": "It is valid because artificial sweeteners are safe replacements for sugar.",
+      "D": "It is strengthened by new evidence from their research."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "7",
+    "passage": "Text 1: \n Most geologists believe the continents formed as material bubbled up from the Earth’s core. In the presence of water, buoyant granite formed on the underside of the bubbles and became the base upon which a continent would grow. This theory remains unproven, however, because the motion of the continents and the interactions along their edges destroy the geological record, thus making it impossible to study.\n\nText 2: \nTim Johnson and colleagues argue that the original continents were seeded by meteorites. The collision of the meteorites with the hot surface of the Earth caused fragments of the crust to cool and become buoyant patches to which additional material would adhere, forming continents. To support their view, they cite the composition of crystals taken from the oldest known segment of the Earth’s crust, which shows that the crystals formed close to the surface of the Earth.",
+    "question": "Based on the texts, how would Johnson and colleagues \n (Text 2) most likely describe the view of the geologists presented in Text 1?",
+    "options": {
+      "A": "It is largely correct but requires a minor refinement in light of the results obtained by Johnson and colleagues.",
+      "B": "It is not compelling as a theory regardless of the data collected by Johnson and colleagues.",
+      "C": "It is more likely to be accepted in conjunction with the data provided by Johnson and colleagues.",
+      "D": "It may seem plausible but is not supported by the findings of Johnson and colleagues."
+    },
+    "answer": "D"
+  },
+
+  {
+    "id": "8",
+    "passage": "The programs of the New Deal constituted a collection of measures intended to curb the economic hardships U.S. citizens faced as a result of the Great Depression. For instance, the Public Works Administration provided jobs in an effort to combat high unemployment. Likewise, the Agricultural Adjustment Act sought to raise incomes for impoverished farmers by inflating prices on agricultural commodities.",
+    "question": "Which choice best states the main idea of the text?",
+    "options": {
+      "A": "The goal of the New Deal programs was to address economic difficulties.",
+      "B": "The Public Works Administration significantly increased employment.",
+      "C": "The Agricultural Adjustment Act was a controversial part of the New Deal.",
+      "D": "The Great Depression led to the New Deal."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "9",
+    "passage": "A now-famous occurrence at the roulette wheel at a casino in Monte Carlo in 1913 has become emblematic of the so-called gambler’s fallacy. A roulette wheel has an equal number of red and black spaces, and players can bet on the color on which a ball will land when the wheel is spun. On the night of the incident, the wheel landed on black a surprising 26 times in a row. Bettors lost huge sums of money, based on their mistaken assumption that the wheel was much more likely to break the streak and land on red next. This flawed conception of probability, which fails to consider each independent spin as a discrete event, is the heart of the gambler’s fallacy.",
+    "question": "Which choice best states the main idea of the text?",
+    "options": {
+      "A": "In some situations, the probability of any individual event is not influenced by the probability of the events that preceded it.",
+      "B": "A roulette wheel landing on black 26 times is just as likely as it landing on red 26 times, assuming the wheel has an equal number of red and black spaces.",
+      "C": "The gambler’s fallacy is difficult to avoid since it is human nature to assume that a random event that has occurred many times is less likely to occur the next time.",
+      "D": "An event at a Monte Carlo casino is a well-known example of the mistaken understanding of probability called the gambler’s fallacy."
+    },
+    "answer": "D"
+  },
+  {
+    "id": "10",
+    "passage": "The following text is from Sir Arthur Conan Doyles 1887 novel A Study in Scarlet. \n As the weeks went by, my interest in him and my curiosity as to his aims in life gradually deepened and increased. His very person and appearance were such as to strike the attention of the most casual observer. In height he was rather over six feet, and so excessively lean that he seemed to be considerably taller. His eyes were sharp and piercing, save during those intervals of torpor to which I have alluded; and his thin, hawk-like nose gave his whole expression an air of alertness and decision. His chin, too, had the prominence and squareness which mark the man of determination. His hands were invariably blotted with ink and stained with chemicals, yet he was possessed of extraordinary delicacy of touch, as I frequently had occasion to observe when I watched him manipulating his fragile philosophical instruments.",
+    "question": "According to the passage, as time passes, what does the narrator think about the man he describes?",
+    "options": {
+      "A": "The man is frequently irritating.",
+      "B": "The man is somewhat snobby.",
+      "C": "The man is increasingly intriguing.",
+      "D": "The man is occasionally generous."
+    },
+    "answer": "C"
+  },
+  {
+  "id": "11",
+  "passage": "“A March in the Ranks Hard-Pressed, and the Road Unknown” is an 1865 poem by Walt Whitman. In the poem, the speaker describes the determination of soldiers to continue despite their heavy losses_______________",
+  "question": "Which quotation from “A March in the Ranks Hard-Pressed, and the Road Unknown” most effectively illustrates the claim?",
+  "options": {
+    "A": "“A march in the ranks hard-pressed, and the road unknown, I A route through a heavy wood with muffled steps in the darkness, I Our army foil’d with loss severe, and the sullen remnant retreating, / Till after midnight glimmer upon us the lights of a dimlighted building,”",
+    "B": "“We come to an open space in the woods, and halt by the dim-lighted building, I’Tis a large old church at the crossing roads, now an impromptu hospital, / Entering but for a minute I see a sight beyond all the pictures and poems ever made, I Shadows of deepest, deepest black, just lit by moving candles and lamps.”",
+    "C": "“But first I bend to the dying lad, his eyes open, a half-smile gives he me, / Then the eyes close, calmly close, and I speed forth to the darkness, I Resuming, marching, ever in darkness marching, on in the ranks, I The unknown road still marching”",
+    "D": "“Then before I depart I sweep my eyes o’er the scene fain to absorb it all, / Faces, varieties, postures beyond description, most in obscurity, some of them dead, / Surgeons operating, attendants holding lights, the smell of ether, the odor of blood, / The crowd, O the crowd of the bloody forms, the yard outside also fill’d,”"
+  },
+  "answer": "C"
+},
+
+  {
+    "id": "12",
+    "passage": "World War I ran from 1914 to 1918. It saw the Central Powers, led by Germany, battle the Allies, principally the British Empire, France, Russia, and, starting in 1917, the United States. In 1909, however, British economist Norman Angell published The Great Illusion, which became a best-seller published in over 11 languages. Angell argued that, in the modern world, the “great illusion” was that international peace was guaranteed through strong militaries. Angell asserted that international trade and economic interconnectedness meant modern war was unlikely due to it potentially costing nations so much money.\n\nGraph given in passage: German imports/exports with British Empire, France, Russia, USA, etc.",
+    "question": "Which choice most effectively uses data from the graph to illustrate Angell’s claim?",
+    "image": "/Images/ke1/e1q12.png",
+    "options": {
+      "A": "Germany imported more goods from the British Empire than it did from everywhere else combined.",
+      "B": "Only the United States of America exceeded the British Empire as a destination for German exports.",
+      "C": "Over 70% of German imports came from the British Empire, France, and Russia, which were the main military rivals of Germany.",
+      "D": "Around 18% of German exports and imports involved the British Empire, more than those of any other state."
+    },
+    "answer": "D"
+  },
+  {
+  "id": "13",
+  "passage": "Economic models have been hurshly criticized for not accurately predicting major economic crises such as the (heat Depression and the 2008 recession. However, these models are only able to incorporate known, historical trends. Both the Great Depression and (he 2008 economic recession were triggered by bank failures: sudden, unusual, and traumatic events impossible to predict. Once the failures occurred, and thus became known, they were incorporated into the economic models of the time that then accurately predicted the future direction of the economy. Since the models can be updated, this implies that economic models ______",
+  "question": "Which choice most logically completes the text?",
+  "options": {
+    "A": " deserve the criticism they have received and\nshould be replaced with a more accurate\nmethodology.",
+    "B": " remain useful but cannot be expected to\nforesee every potentially disruptive influence on the economy.",
+    "C": " could have been updated more quickly and\nthus possibly been used to prevent some of\nthe damage of these events.",
+    "D": " have proven their reliability and should be\nable to predict future crises, since two crisis\nevents are now included."
+  },
+  "answer": "B"
+},
+
+  {
+    "id": "14",
+    "passage": "In his most famous project, French philosopher René Descartes sought certainty by mentally stripping away every layer of knowledge that was remotely possible to doubt. Ultimately, Descartes arrived at his memorable conclusion, “I think, therefore I ________ .” He could only be certain of the fact that he was thinking. Building from there, he could work toward rational certainty in other areas of knowledge.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "am” he",
+      "B": "am.” He",
+      "C": "am,” he",
+      "D": "am”; He"
+    },
+    "answer": "B"
+  },
+  {
+    "id": "15",
+    "passage": "In early 1878, Constantin Fahlberg began working as a research chemist in a laboratory at Johns Hopkins University, making chemical compounds derived from coal tar. Coal tar was a by-product of steel manufacturing, and compounds derived from it had been used as medicines and in dye formulations. Fahlberg was studying ways to add different chemicals to molecules found in coal tar to see if the new compounds formed had other useful properties, and in one of the more famous accidents of modern chemistry, created saccharine, the first artificial sweetener.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "these",
+      "B": "them",
+      "C": "him",
+      "D": "it"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "16",
+    "passage": "Earth has been struck by asteroids in the past, so scientists have launched a probe that will crash into a small asteroid in an effort to measure the effect the impact has on the path of the asteroid. Although the asteroid is small, it is much larger than the one that struck Siberia in _______________ leveled 2,000 square kilometers of forest), so scientists hope to learn enough to be able to protect Earth from future asteroid impacts.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "1908 which",
+      "B": "1908, which",
+      "C": "1908 (which",
+      "D": "1908: which"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "17",
+    "passage": "Although some consumers consider home delivery more efficient than driving to several stores to obtain needed supplies, the cardboard needed to produce shipping packages __________________ to the household garbage that communities must process.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "contributes",
+      "B": "contribute",
+      "C": "are contributing",
+      "D": "have contributed"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "18",
+    "passage": "Spring has traditionally been the time to plant trees; however, in areas with hot summers and mild winters, fall is the best season to plant. Planting in the _______________ gives the new trees the longest possible time to establish good growth and build strength before the stresses of the hot and dry summer months begin.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "fall gives",
+      "B": "fall, for example, gives",
+      "C": "fall, in other words, gives",
+      "D": "fall, the season before winter, gives"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "19",
+    "passage": "Weight-bearing exercise has been shown to benefit participants of all ages and abilities. Although the most obvious example is that of athletes who build the muscle mass and strength that help them excel in their sports, weight-bearing exercise is _______________ to enable them to continue with the activities of daily life.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "important for, the injured and the elderly",
+      "B": "important for the injured, and the elderly",
+      "C": "important for the injured and the elderly",
+      "D": "important, for the injured and the elderly"
+    },
+    "answer": "C"
+  },
+ {
+  "id": "20",
+  "passage": "The Tripitaka Koreana is a collection of over\n80,000 woodblocks. Created in the 13th\ncentury, it is the oldest and most comprehensive version of the Buddhist canon, with no\nknown errors or typos in its volumes. Each\nwoodblock was made through an elaborate\nwas soaked in sea water for three years,\nthen boiled in salt water, then exposed to wind\nfor three years, then covered in a poisonous\nlacquer to keep insects from damaging the\nwood, and finally framed with metal to prevent\nthe wood from warping. This elaborate process\ncreated woodblocks that are in pristine condition despite being over 750 years old.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "process: birch wood",
+    "B": "process. Birch wood,",
+    "C": "process—birch wood:",
+    "D": "process birch wood"
+  },
+  "answer": "A"
+},
+
+  {
+    "id": "21",
+    "passage": "The Hohokam people of the Phoenix Basin in the desert of today’s southern Arizona constructed villages that encompassed several hundred acres with the largest and most extensive irrigation canals in North America. Remarkably permanent in an area known for settlements that relocated after only a few decades, ____________ during which the Hohokam successfully grew crops in the same locations and prospered.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "Hohokam villages were home to their people for 1,500 years or more,",
+      "B": "1,500 years was the time",
+      "C": "the Hohokam people lived in these villages for 1,500 years or more,",
+      "D": "the Hohokam people lived in these villages for 1500 years or more,"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "22",
+    "passage": "Mary Anning was an English fossil collector in the early 19th century. Despite her many achievements, Anning existed on the outskirts of paleontology. Women were not allowed to join the Geological Society of London. Class politics further stifled Anning, who came from a working-class background. She supported herself by collecting fossils along the shoreline of Lyme Regis, as each winter caused landslides that exposed previously buried fossils. This work was dangerous; Anning herself ___________ had one near-miss with a landslide that took the life of her dog.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "options": {
+      "A": "but,",
+      "B": "though,",
+      "C": "on the other hand,",
+      "D": "indeed,"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "23",
+    "passage": "SONAR (Sound Navigation And Ranging) is a system that uses sound waves to measure the depth of water under a boat. SONAR technology was developed during World War I; ________ in 1490, Leonardo da Vinci experimented with the principle by listening to a tube inserted into water in order to detect marine vessels.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "options": {
+      "A": "since,",
+      "B": "despite,",
+      "C": "however,",
+      "D": "for example,"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "24",
+    "passage": "A recent survey found that the share of teens between the ages of 13 and 17 who claim to be “almost constantly” on social media has nearly doubled from 24% in 2015 to 46% today. ________ most of the survey responders believe they spend an appropriate amount of time online; only 36% reported that they believe they spend too much time on the internet.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "options": {
+      "A": "Despite this increase,",
+      "B": "Illustrating this point,",
+      "C": "Subsequently,",
+      "D": "Indeed, because of this increase,"
+    },
+    "answer": "A"
+  },
+ {
+  "id": "25",
+  "passage": "While researching a topic, a student has taken\nthe following notes:\n• Parshvanatha, one of the 23 propagators of\nthe Jain religion, lived in the 9th century\nB.C.E. and is considered the first documented person to prohibit consuming meat\nas part of a religious practice.\n• Around the 5th century B.C.E., Siddhartha Gautama (the founder of Buddhism)\nand Pythagoras (the Greek philosopher and\nmathematician) refrained from eating meat.\n• Seitan, a wheat-based meat substitute, was\ninvented in China in the 6th century C.E.,\nand almond milk was first manufactured in\n13th century C.E. Europe.\n• In the 18th century C.E., Benjamin Franklin sent soybeans to the United States after\nencountering tofu, a soy-based meat substitute, in London.\n• Today, companies manufacturing plant-\nbased meat substitutes make even more\noptions available for consumers who are\nreducing their consumption of meat.",
+  "question": "The student wants to emphasize a difference\nbetween past humans who did not eat meat and\nthose who are reducing their meat consumption\ntoday. Which choice most effectively uses relevant\ninformation from the notes to accomplish this goal?",
+  "options": {
+    "A": " The practice of refusing to eat meat is not\nnew; this custom has a long and varied history, starting for religious reasons in the\n9th century B.C.E.and continuing until the\npresent day.",
+    "B": " Unlike people who removed meat from\ntheir diets in the past, those who do so\ntoday have a wider variety of meat substitutes available.",
+    "C": "Soybeans came to the United States through\nBenjamin Franklin, who came upon tofu, a\nsoy-based meat substitute, while in London.",
+    "D": "I  Those who choose to reduce or eliminate\nmeat from their diets today may choose\namong seitan, tofu, almond milk, and plant-\nbased manufactured meat when planning\ntheir diets."
+  },
+  "answer": "B"
+},
+{
+  "id": "26",
+  "passage": "While researching a topic, a student has taken\nthe following notes:\n• Umi Kai crafts traditional na mea Hawaii\n(things of Hawai’i), everyday objects used\nby his people for generations.\n• Committed to preserving his culture, he\nexclusively uses the same native materials\nsuch as sharks teeth, ohia lehua, and other\nnative woods as were used by his forebears.\n• Using power tools, he crafts items more\nquickly than his ancestors could, but even\nwith modern methods, his hand-crafted\nitems are time-consuming to produce.\n• Looking for quick, inexpensive souvenirs,\nmany tourists purchase items that look as\nif they are authentically Hawaiian but are\nactually mass-produced overseas.\n• Umi Kai and other traditional Hawaiian\nartisans continue to seek customers who\nrecognize the value of craftmanship and\nwant to participate in the continuity of\ntraditional Hawaiian culture.",
+  "question": "The student wants to emphasize a similarity\nbetween Umi Kai and his ancestral craftsmen.\nWhich choice most effectively uses relevant\ninformation from the notes to accomplish this goal?",
+  "options": {
+    "A": " Umi Kai uses power tools to craft na mea\nHawaii, or things of Hawai’i, in less time\nthan would have been possible for his\nancestors.",
+    "B": " Umi Kai uses local materials, such as sharks\nteeth and native woods, to hand-craft na\nmea Hawaii, or things of Hawai’i, the tools\nneeded for daily life, as did his forebears.",
+    "C": " Although Umi Kai painstakingly handcrafts\ntraditional Hawaiian items, consumers frequently prefer purchasing less expensive\nimported souvenirs.",
+    "D": " Despite the careful process of collecting natural materials and crafting na mea\nHawaii, or things of Hawai’i, by hand, Umi\nKai must seek out customers who value preserving traditional Hawaiian culture."
+  },
+  "answer": "B"
+},
+{
+  "id": "q27",
+  "passage": "While researching a topic, a student has taken\nthe following notes:\n• The ancient Bedouin, a nomadic people of\nthe Arabian desert, preserved their cultural\nhistory in oral poetry from at least the 3rd\ncentury B.C.E.\n• Their dominant poetic form was the Qasida,\nepic odes with three parts—the prelude, the\ndesert journey, and the goal of the ode—\nthat were transmitted orally by storytellers\nwho memorized Qasida hundreds of lines\nlong and performed public recitations.\n• Portions of Qasida were found inscribed on\nrock tablets, and experts identified consistent elements of style, such as repeated word\npatterns and specific themes.\n• By the 6th century B.C.E., the Qasida form\nwas adopted in Arabic courts, and the poet\nImru’ al-Qais, ruler of the Kindah tribal\nkingdom, became known as the “father of\nArabic poetry” for his Qasida.\n• Some of Imru’ al-Qais’s Qasida were\npreserved in writing and include themes\ncommon to those of the earliest Arabic\npoetry.",
+  "question": "The student wants to emphasize a similarity\nbetween the Qasida composed in the 3rd century\nB.C.E. and the Qasida composed in the 6th century\nB.C.E. Which choice most effectively uses relevant\ninformation from the notes to accomplish this goal?",
+  "options": {
+    "A": " Traditional Qasida are poetic odes with\nthree parts: the prelude, the desert journey,\nand the goal of the ode.",
+    "B": "@ Although Qasida were known among the\nBedouin of the 3rd century B.C.E., they\nwere primarily an oral tradition and not\nrecorded in writing until the 6th century\nB.C.E.",
+    "C": " The Qasida of the poet Imru’ al-Qais, called\nthe “father of Arabic poetry,” include traditional themes of Arabic poetry as used in\nthe earliest Qasida.",
+    "D": " The poet Imru’ al-Qais was the ruler of the\nKindah tribal kingdom but is famous as the\n“father of Arabic poetry” for his Qasida."
+  },
+  "answer": "C"
+}
+
+
+
+]

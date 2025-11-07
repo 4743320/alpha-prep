@@ -1,0 +1,331 @@
+[
+  {
+    "id": "1",
+    "passage": "Dutch philosopher Baruch Spinoza argued as part of his rejection of dualism that all things, living or not, have the inclination to continue to exist and enhance themselves, a property he named 'conatus.' All things, he believed, had the tendency to ______ and would only cease to be if acted upon by outside forces.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "deteriorate",
+      "B": "perish",
+      "C": "persevere",
+      "D": "disappear"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "2",
+    "passage": "Many species demonstrate rescue behavior, a behavior in which an individual will help another in distress without any obvious benefit to the helper. In fact, this behavior ______ a recent study of Australian magpies when some birds in the study helped other birds remove the trackers that researchers had placed upon them, making it more difficult for the researchers to obtain data.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "aided",
+      "B": "impeded",
+      "C": "clarified",
+      "D": "exposed"
+    },
+    "answer": "B"
+  },
+  {
+    "id": "3",
+    "passage": "Dutch artist M.C. Escher's work uses ______ to engage viewers by employing mathematical and intuitive processes to create images of objects that at first appear normal but on closer inspection are, in fact, impossible.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "geometry",
+      "B": "beauty",
+      "C": "paradox",
+      "D": "color"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "4",
+    "passage": "Typically, pure water is not considered particularly ______, but a team of scientists led by Richard Zare has discovered how microdroplets of water can turn into caustic hydrogen peroxide. When microdroplets of water hit a solid surface, an electric charge jumps between the water and the solid, producing hydroxyl radicals that, in turn, combine with remaining oxygen to form hydrogen peroxide.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "viable",
+      "B": "contaminated",
+      "C": "common",
+      "D": "reactive"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "5",
+    "passage": "The Beat Generation, a literary subculture movement featured in works such as Allen Ginsberg’s Howl (1956) and William S. Burroughs’s Naked Lunch (1959), was characterized by its ______ the traditional values of the 1950s. The movement’s central message of nonconformity would be criticized by American literary critic Manuel Luis Martinez, who believed that the Beat Generation’s lack of attention to the politics of individualism undermined the movement’s goals.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "dissension from",
+      "B": "gratitude towards",
+      "C": "adherence to",
+      "D": "deference to"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "6",
+    "passage": "The possibility of recycling used car tires as building materials is ______ indeed: the disposal of used tires is a major environmental problem, so potentially reusing them would be beneficial. Furthermore, initial studies have shown that walls made of used tires and dirt are more structurally robust than those made of concrete.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "derivative",
+      "B": "ludicrous",
+      "C": "auspicious",
+      "D": "innovative"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "7",
+    "passage": "The Voynich manuscript was written on vellum dating from the fifteenth century in a script that is not found in any other source. Since cryptographers have yet to demonstrably decipher any portion of the text, the meaning and purpose of the Voynich manuscript remain ______.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "enigmatic",
+      "B": "venerable",
+      "C": "multifarious",
+      "D": "coherent"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "8",
+    "passage": "Astronautics owes much to the ______ contributions of Charles E. Whitsett. His ground-breaking development of the manned maneuvering unit enabled the first spacewalks in which astronauts were not tethered to a spacecraft.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "dubious",
+      "B": "futile",
+      "C": "galvanizing",
+      "D": "avant-garde"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "9",
+    "passage": "The following text is adapted from Charles Dickens’s 1859 novel A Tale of Two Cities. Mr. Lorry, traveling to France on business, is delivering some news to Miss Manette, the daughter of one of his friends.\n\n“Miss Manette, I am a man of business. I have a business charge to acquit myself of. In your reception of it, don’t heed me any more than if I was a speaking machine—truly, I am not much else. I will, with your leave, relate to you, miss, the story of one of our customers.”\n\n“Story!”\n\nHe seemed wilfully to mistake the word she had repeated, when he added, in a hurry, “Yes, customers; in the banking business we usually call our connection our customers. He was a French gentleman; a scientific gentleman; a man of great acquirements—a Doctor.”",
+    "question": "Based on the text, how does Mr. Lorry interact with Miss Manette?",
+    "options": {
+      "A": "Although he claims to be uninterested in the news, he makes purposeful decisions during his conversation with Miss Manette.",
+      "B": "Although he is a professional, he misunderstands Miss Manette’s interjection.",
+      "C": "Although he acts as if the news has no importance to him, he cannot keep the details of the story accurate.",
+      "D": "Although he is unthinkingly following directions, he is flustered by Miss Manette’s rudeness."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "10",
+    "passage": "Nisga’a poet Jordan Abel addresses the experiences of Indigenous people as European settlers and their descendants took over North America. Abel’s first book of poetry, The Place of Scraps (2014), uses Totem Poles, a 1929 book by anthropologist Marius Barbeau, as source material. Abel claims that his use of Barbeau’s text shows how anthropological texts can be used to portray Indigenous people differently based on the author.",
+    "question": "Which finding, if true, would most directly support Abel’s claim?",
+    "options": {
+      "A": "Abel intersperses Barbeau’s text with images of Indigenous people and personal anecdotes written in the third person.",
+      "B": "Abel explains that Barbeau presented two chiefs feuding over constructing the largest pole as unreasonable, yet other anthropologists claim that such arguments between chiefs of Indigenous tribes were important political exchanges.",
+      "C": "The Place of Scraps won the Dorothy Livesay Poetry Prize and was a finalist for the Gerald Lampert Award.",
+      "D": "Before Abel wrote The Place of Scraps, other Indigenous writers had used texts from anthropologists in their works."
+    },
+    "answer": "B"
+  },
+  
+  {
+    "id": "11",
+    "passage": "In Japan, adults may be legally adopted into a family. The practice may have started as early as the 13th century CE, but widespread adult adoption dates from the Tokugawa shogunate, a military government which began around 1600 CE. During this time, members of the ruling class would adopt competent adult males, who would then ensure that the family’s political and business interests would be sustained. While adult adoption remains a way for individuals to improve their economic and social status, the practice has its detractors as well, with some researchers arguing that it can lead to issues with the adoptee developing a firm sense of identity in his or her new environment.",
+    "question": "Which of the following best illustrates the researcher’s claim?",
+    "options": {
+      "A": "Adult adoptees are entitled to an inheritance from their adoptive families, strengthening the ties between them, which further encourages the adult adoptee to work to enhance the new family’s prosperity.",
+      "B": "While most adult adoptees typically report improved financial status after adoption, many of those same adoptees also experience higher-than-normal rates of depression and anxiety.",
+      "C": "Elsewhere in East Asia, such as in China and Korea, families have a traditional obligation to adopt blood relatives who lack more closely-related living kin, but adoptions in Japan are almost exclusively between those with no blood relations.",
+      "D": "Families with ancestors who were adult adoptees do not distinguish between those ancestors who were members of the family by birth and those who were adopted into the family."
+    },
+    "answer": "B"
+  },
+  {
+    "id": "12",
+    "passage": "Neurologists have hypothesized that tau protein, the mutation of which is known to cause Alzheimer’s disease, is key to controlling glutamate receptors, which are involved in the production of memories. Tau protein does not directly affect glutamate receptors but does inhibit NSF, an enzyme found in the brain.",
+    "question": "Which finding, if true, would most directly support the neurologists’ hypothesis?",
+    "options": {
+      "A": "Other studies have shown that an excess of NSF has been shown to lead to abnormal glutamate receptor behavior.",
+      "B": "Patients with Alzheimer’s disease have been found to have an excess of NSF in their brains during autopsies.",
+      "C": "Neurologists do not yet know what causes mutations of tau protein; one hypothesis is that disease leads to these mutations.",
+      "D": "Other types of dementia are not caused by mutations in tau protein but rather physical damage to the brain."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "13",
+    "passage": "From 1634 to 1637 CE, tulips in the Dutch Republic sold for extraordinarily high prices, sometimes as much as 10 times the annual wage of a skilled worker, in a phenomenon known as tulip mania. Some economists, such as Charles Kindleberger, argue that tulip mania was the first speculative bubble in history, during which the prices of a commodity (in this case tulip bulbs) do not follow the typical rules of economics. Others, such as Peter Garber, believe that tulip mania is explainable by fundamental economic concepts such as supply and demand.",
+    "question": "Which finding, if true, would most directly support Garber’s argument?",
+    "options": {
+      "A": "Tulips during this period were very rare, and demand for tulips was fueled in part by the ability to reproduce and sell bulbs, enabling some purchasers to make profits.",
+      "B": "Some common bulbs, such as the Witte Cronen bulb, saw price increases as dramatic as those of rare bulbs.",
+      "C": "The prices of tulip bulbs were much higher than could be supported by the banking system in place in 17th century Europe.",
+      "D": "The tulip mania led to an increase of the supply of gold coins in the Dutch Republic."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "14",
+    "passage": "The use of pesticides in agriculture poses risks to both humans and the environment, so finding alternative methods of pest control is an important area of research. The use of ants to control pests in China goes back to at least the 4th century CE, and farmers in places such as Kenya, Ghana, and Canada have also used ants to control various organisms. Entomologist Diego Anjos and others have identified several positive effects (services) of ants, such as reducing both the abundance of non-honeydew-producing species and plant damage. However, ants also have negative effects, such as increasing the abundance of honeydev-producing species and spreading pathogens, suggesting that ______.",
+    "question": "Which choice most logically completes the text?",
+    "options": {
+      "A": "ants may have unintended environmental consequences when used to control pests in certain circumstances.",
+      "B": "other species may also be effective in providing services to farmers.",
+      "C": "ants as pest control provide numerous services without serious ramifications.",
+      "D": "scientists do not yet know whether using ants to control organisms is a net positive in any situation."
+    },
+    "answer": "C"
+  },
+  {
+    "id": "15",
+    "passage": "Among many animals, such as mice, fruit flies, and humans, each odor that an animal can smell is detected by a particular kind of sensory neuron that has a particular kind of receptor; eliminating that receptor through illness or genetic manipulation results in the inability to smell that odor. A team led by neurobiologist Margo Herre tested whether mosquitoes modified to lack the receptor for smelling blood would be unable to find humans. These mosquitoes were still able to find humans, suggesting that ______.",
+    "question": "Which choice most logically completes the text?",
+    "options": {
+      "A": "mosquitoes without damage to their odor receptors are more capable of finding humans than those with damage.",
+      "B": "like mice, fruit flies, and humans, individual mosquitoes with damage to particular receptors will be unable to detect certain odors.",
+      "C": "researchers cannot assume that mosquitoes have the same correlation between receptors and the ability to sense certain odors that mice, fruit flies, and humans have.",
+      "D": "researchers can assume that interfering with mosquitoes’ odor receptors is a potential way to prevent mosquitoes from feeding on humans."
+    },
+    "answer": "C"
+  },
+  {
+    "id": "16",
+    "passage": "The North American Free Trade Agreement (NAFTA) was an agreement among the United States, Canada, and Mexico that was in effect between 1994 and 2020. During this time, the number of manufacturing jobs in the United States and Canada declined, but the total number of manufacturing jobs in the countries covered by NAFTA increased.This suggests that, between 1994 and 2020, ______.",
+    "question": "Which choice most logically completes the text?",
+    "options": {
+      "A": "the number of manufacturing jobs in Mexico increased by a greater amount than the combined decreases in the United States and Canada.",
+      "B": "NAFTA made it more difficult for manufacturers to establish factories in the United States and Canada.",
+      "C": "the cost of manufacturing goods in the area covered by NAFTA decreased.",
+      "D": "complex goods, such as automobiles and electronics, were increasingly manufactured in the United States, Canada, and Mexico."
+    },
+    "answer": "A"
+  },
+  {
+    "id": "17",
+    "passage": "Researchers studying the recent eruption of Hunga Tonga-Hunga Ha’apai, a submarine volcano located near the islands of Tonga in the South Pacific, found that the volcanic cloud, compared to those of other eruptions, ______ the highest ever recorded.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "have been",
+      "B": "are",
+      "C": "was",
+      "D": "were"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "18",
+    "passage": "Connectomes, extensive maps of neural connections in the brain, reveal that each person has a distinct pattern of connections known as a functional fingerprint. In a 2017 study, behavioral ______ found that about one-third of the functional fingerprint is unique to an individual and that other parts are inherited.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "neuroscientist, Damien Fair,",
+      "B": "neuroscientist Damien Fair",
+      "C": "neuroscientist Damien Fair,",
+      "D": "neuroscientist, Damien Fair"
+    },
+    "answer": "B"
+  },
+  {
+    "id": "19",
+    "passage": "Throughout her career, Muscogee Nation member and poet Joy Harjo has edited multiple anthologies that have highlighted Native voices in the US. For example, a map showcasing 47 Native Nations poets ______ her signature project during her time as the U.S. Poet Laureate.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "was",
+      "B": "are",
+      "C": "have been",
+      "D": "were"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "20",
+    "passage": "When bees pollinate flowers, they may be exposed to insecticides, potentially affecting their nervous systems. Recently, Dr. Rachel Parkinson of the University of Oxford added the common ______ to a sucralose solution to examine the insecticide’s impact on honeybees’ ability to walk in a straight line.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "insecticide sulfoxaflor",
+      "B": "insecticide, sulfoxaflor,",
+      "C": "insecticide sulfoxaflor,",
+      "D": "insecticide, sulfoxaflor"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "21",
+    "passage": "In 1946, Juliet Rice Wichman acquired 1,000 acres on Kaua’i, one of the Hawaiian islands, to transform the land into a garden by removing grazing cattle and restoring terraces to grow taro. Wichman’s work to preserve the culture of Kaua’i wasn’t ______ as the first director of the Kaua’i Museum, she oversaw exhibits celebrating the history, culture, and art of Native Hawaiians.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "finished though",
+      "B": "finished. Though,",
+      "C": "finished, though,",
+      "D": "finished, though:"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "22",
+    "passage": "Researchers studying bacteria have solved a 50-year mystery of how bacteria are able to move using appendages that are made of a single ______ the subunits of the protein can exist in 11 different shapes, allowing the appendages to “supercoil” into corkscrews that the bacteria use to propel themselves.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+      "A": "protein",
+      "B": "protein while",
+      "C": "protein,",
+      "D": "protein:"
+    },
+    "answer": "D"
+  },
+ {
+  "id": "23",
+  "passage": "Fault tree analysis was originally used in engineering to enhance safety practices in high-risk fields, such as nuclear power and pharmaceuticals, but other fields are experimenting with ways to utilize this process to benefit their work. _____ fault tree analysis is also being used in low-risk fields, such as social services and software engineering.",
+  "question": "Which choice completes the text with the most logical transition?",
+  "options": {
+    "A": "Increasingly,",
+    "B": "Nevertheless,",
+    "C": "Therefore,",
+    "D": "In addition,"
+  },
+  "answer": "A"
+}
+
+,
+  {
+    "id": "24",
+    "passage": "Fish sometimes appear in otherwise uninhabited bodies of water, seemingly emerging out of nowhere. Some scientists believe that the fish are carried to these locations in the beaks or talons of birds. ______ new research suggests that the fish eggs enter a state of hibernation and are actually eaten by birds and excreted out into the bodies of water.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "options": {
+      "A": "For instance,",
+      "B": "Next,",
+      "C": "Likewise,",
+      "D": "Alternatively,"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "25",
+    "passage": "When Monika Sosnowska began her career in Amsterdam as a painter, she never expected to branch out into other media. ______ she had primarily worked on canvas, but she quickly found her works evolving to include the three-dimensional space around her.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "options": {
+      "A": "Instead,",
+      "B": "Consequently,",
+      "C": "Previously,",
+      "D": "Similarly,"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "26",
+    "passage": "While researching a topic, a student has taken the following notes:\n• To restore oyster reefs in Australia, limestone boulders are submerged to provide habitats, but baby oysters need help finding the boulders.\n• A team from University of Adelaide looked into using sound as a way to encourage the baby oysters to attach to the boulders.\n• The research team recorded sounds at the healthy Port Noarlunga Reef to play near the submerged boulders.\n• Boulders in the area with the soundscape attracted around 17,000 more oysters per square meter compared to boulders without the soundscape.\n• Soundscapes can indicate a healthy place for baby oysters to grow and can be a cost-effective way to restore oyster reefs.",
+    "question": "The student wants to emphasize the aim of the research study. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "options": {
+      "A": "Researchers obtained a soundscape at Port Noarlunga Reef to help in the restoration of oyster reefs in Australia.",
+      "B": "Researchers now know that the soundscape of a healthy marine ecosystem can attract baby oysters to attach to submerged limestone boulders.",
+      "C": "After they measured the number of oysters attracted to boulders in the soundscape area compared to no soundscape, researchers determined that the soundscape attracted more baby oysters.",
+      "D": "Researchers wanted to know whether a soundscape of a healthy marine ecosystem could encourage baby oysters to attach to submerged limestone boulders."
+    },
+    "answer": "D"
+  },
+  {
+    "id": "27",
+    "passage": "While researching a topic, a student has taken the following notes:\n• Neanderthals are an extinct species of humans who died out about 40,000 years ago and are the closest evolutionary relatives of present-day humans.\n• Studying the genomes of Neanderthals provides insight into human evolution.\n• Professor Svante Pääbo is a Swedish geneticist and the director of the Department of Genetics at the Max Planck Institute for Evolutionary Anthropology.\n• His landmark study presented the first draft sequence of the Neanderthal genome.\n• Laurits Skov of the Max Planck Institute for Evolutionary Anthropology has a doctorate in bioinformatics and studied evolutionary anthropology.\n• One of his recent studies revealed the genomes of a family of Neanderthals.",
+    "question": "The student wants to emphasize the affiliation and purpose of Pääbo’s and Skov’s work. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "options": {
+      "A": "The closest evolutionary relatives of present-day humans, Neanderthals went extinct about 40,000 years ago.",
+      "B": "By studying the genomes of Neanderthals, Svante Pääbo and Laurits Skov of the Max Planck Institute for Evolutionary Anthropology provide insight into human evolution.",
+      "C": "Svante Pääbo and Laurits Skov study the genome of Neanderthals, an extinct species of humans.",
+      "D": "Studies by Svante Pääbo and Laurits Skov reveal information about Neanderthals, who died out about 40,000 years ago."
+    },
+    "answer": "B"
+  }
+]
+
+

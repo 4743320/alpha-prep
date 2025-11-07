@@ -1,0 +1,140 @@
+/* Missing Stuff(Neat Out Later)*/
+.question-blockx {
+  margin-bottom: 20px;
+}
+
+.radio-groupx {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.dropdown-blockx{
+    margin-top: 15px;
+}
+.dropdown-blockx p {
+  margin-bottom: 15px;  /* adds space below each question */
+  line-height: 1.8;     /* makes each line breathe more */
+}
+.mcq-optionx {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 12px;
+
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, border-color 0.2s;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+.mcq-optionx input[type="radio"] {
+  margin-top: 3px;
+}
+
+.mcq-optionx span {
+  flex: 1;
+  display: inline-block;
+  word-break: break-word;
+}
+
+.inline-blank {
+  width: 100px;
+  border: 1px solid #999;
+  margin: 0 5px;
+  padding: 3px;
+}
+
+.tf {
+  line-height: 2.0;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.question-block p {
+  margin-bottom: 12px;
+}
+
+.mf {
+  line-height: 1.8;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-block1 {
+  border: 1px solid black;
+  padding: 5px;
+  width: 200px;
+  background-color: white;
+  text-align: center;
+}
+
+.dropdown {
+  width: 120px;
+  padding: 4px;
+  font-size: 16px;
+}
+
+/* Add spacing between Q31–35 blocks */
+.question-block2 {
+  border: 1px solid black;
+  padding: 8px;
+  background-color: white;
+  margin-bottom: 14px; /* ✅ adds space between each question */
+  border-radius: 6px;  /* soft rounded edges */
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+     /* Full screen height */
+   /* optional light background */
+}
+
+.question-blockx {
+  border: 1px solid black;
+  padding: 5px;
+  width: 500px;          /* Fixed small width */
+  background-color: white;
+  text-align: left;
+  line-height: 24px;
+  justify-content: center;
+   margin: 0 auto; /* centers horizontally */
+   /* optional: makes it look cleaner */
+}
+.question-blockx p {
+  margin: 6px 0; /* adds space between options */
+}
+
+.ielts-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: calc(100vh - 100px); /* ✅ fills screen but leaves space for top/bottom bars */
+  overflow: hidden;            /* ✅ prevents double scrolls */
+ overflow-x: hidden; /* removes horizontal scroll */
+  overflow-y: hidden; /* removes vertical scroll */
+}
+
+.left-column {
+  flex: 1.8;
+  padding-right: 5px;
+  overflow-y: auto;           /* ✅ now scrolls */
+  height: 100%;               /* ✅ matches parent height */
+  scroll-behavior: smooth;
+  border-right: 1px solid #ddd; /* optional visual separator */
+}
+
+.right-column {
+  flex: 2;
+  padding-left: 10px;
+  overflow-y: auto;           /* independent scroll */
+  height: 100%;
+  scroll-behavior: smooth;
+}

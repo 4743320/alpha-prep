@@ -1,0 +1,305 @@
+
+
+/* ===== Global Wrapper ===== */
+.ielts-wrapper {
+  max-width: 1200px;
+   margin: 0 auto; /* centers it evenly, no weird extra space */
+  height: 100vh; /* full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  padding:  20px;
+
+}
+
+/* ===== Scrollable Content Area ===== */
+.part-content {
+  flex: 1.5;
+
+  padding: 10px;
+  margin-bottom: 100px; /* space for bottom bar */
+}
+
+/* ===== IELTS Container ===== */
+.ielts-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow: hidden;
+   overflow-x: hidden; /* removes horizontal scroll */
+  overflow-y: hidden; /* removes vertical scroll */
+    
+  
+  gap: 20px;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+.left-column {
+  flex: 1.6;
+    padding-right: 5px;
+     /* overflow-y: auto;     🔥 enables scrolling */
+  max-height: 100vh;     /* 🔥 limits height so scrollbar appears */
+/* height: 100%; */
+  scroll-behavior: smooth;
+
+}
+
+.right-column {
+  flex: 2;
+  padding-left: 5px;
+  overflow-x: auto;
+  overflow-y: auto;    /* also scrollable independently */
+  scroll-behavior: smooth;
+}
+
+/* ===== Table Styling ===== */
+.listening-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.listening-table th,
+.listening-table td {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+.blank {
+  width: 80px;
+  padding: 4px;
+  margin: 0 2px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+input,
+textarea,
+select {
+  background-color: #ffffff !important;  /* pure white background */
+  color: #000000 !important;             /* black text */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 8px;
+  outline: none;
+  width: auto;
+  box-sizing: border-box;
+  -webkit-text-fill-color: #000000 !important; /* Fix for iOS Safari dark mode */
+}
+
+/* ===== Bottom Navigation Bar ===== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+   padding: 5px 0;  /* thinner bar */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 100;
+    margin-top: 50px;   /* ↓ was 20px */
+
+}
+
+/* ===== Navigation Buttons ===== */
+.part-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px; /* optional */
+}
+
+.part-buttons button {
+  background: #e0e0e0;
+  border: none;
+  color: black;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.part-buttons button.active {
+  background: #007bff;
+  color: white;
+}
+.tf{
+    line-height: 2.0;
+  margin-bottom: 5px;
+  font-style: italic;
+
+}
+
+.para {
+  margin-top: 15px; /* space between h3 and paragraph */
+  line-height: 1.6; /* optional, makes text more readable */
+}
+
+/* ===== End Test Button ===== */
+.end-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.end-btn:hover {
+  background: #b52d3a;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+
+@media (max-width: 768px) {
+  .ielts-wrapper {
+    width: 100%;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .ielts-container {
+    display: flex;
+    flex-direction: column !important;
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+  }
+
+  .left-column {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+    max-height: 120px !important;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    order: 1;
+  }
+
+  .right-column {
+    width: 100%;
+    padding: 16px;
+    overflow-y: auto;
+    order: 2;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+  .bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+/* ===== Question Blocks (Radios & Checkboxes) ===== */
+.question-block {
+  margin-bottom: 20px;
+}
+
+.question-block p {
+  margin: 0 0 8px 0;
+  font-size: 16px; /* slightly bigger text */
+}
+
+.question-block label {
+  display: block;
+  margin: 6px 0;
+  font-size: 16px; /* slightly bigger text */
+  cursor: pointer;
+  
+}
+
+/* Radios */
+.question-block input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 50%; /* keeps it circular */
+  background-color: #fff;
+  margin-right: 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+.question-block input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;  /* centers the dot */
+  left: 4px; /* centers the dot */
+}
+
+.question-block input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 3px; /* slightly rounded corners, still a box */
+  background-color: #fff;
+  margin-right: 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+.question-block input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: black;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  line-height: 16px;
+}
+
+
+/* ===== Notes Box Border & Padding ===== */
+.notes-box {
+  margin-top: 8px;
+  border: 2px solid black;  /* draws the border */
+  padding: 13px;
+  margin-left: -10px;
+  margin-right: 3px;            /* inner spacing */
+  border-radius: 3px;       /* optional rounded corners */
+  min-height: min-content;  /* ensures it doesn't collapse */
+}
+
+/* ===== Spacing for lists and inputs inside the notes ===== */
+.notes-box ul {
+  padding-left: 15px;       /* spacing for nested lists */
+}
+.notes-box li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.notes-box input[type="text"] {
+  width: 100px;
+  padding: 5px;
+  margin: 0 2px;            /* spacing between inline inputs */
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}

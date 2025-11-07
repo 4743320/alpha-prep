@@ -1,0 +1,56 @@
+.break-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #fffde7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.break-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+}
+
+.break-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.break-message {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.break-timer {
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.break-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.break-button:hover {
+  background-color: #004a99;
+  transform: scale(1.03);
+}

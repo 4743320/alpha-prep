@@ -1,0 +1,280 @@
+[
+{
+  "id": 1,
+  "passage": "",
+  "question": "\\text{A \"pick your own\" strawberry farm charges each customer a \\$10 entry fee,} \\\\ \\text{plus \\$3 per pound of strawberries picked.} \\\\ \\text{Which of the following functions describes a customer\\'s total cost in dollars, } c, \\\\ \\text{as a function of the number of pounds of strawberries picked, } p?",
+  "options": {
+    "A": "c(p) = 3p",
+    "B": "c(p) = 3p + 10",
+    "C": "c(p) = 10p + 3",
+    "D": "c(p) = 10p"
+  },
+  "answer": "B"
+},
+  {
+    "id": 2,
+    "passage": "",
+    "question":  "\\text{If } 11x - 22 = 4(x - 2), \\text{ what is } 2x?"
+,
+    "options": {
+      "A": "2",
+      "B": "\\dfrac{20}{7}",
+      "C": "4",
+      "D": "\\dfrac{40}{7}"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 3,
+    "passage": "",
+   "question": "\\text{An Internet service charges an initial membership fee plus a fixed monthly cost (graph shown).} \\\\ \\text{What is the fixed cost per month?}",
+    "image": "/Images/km2/km23.png",
+    "options": {
+      "A": "10",
+      "B": "20",
+      "C": "30",
+      "D": "50"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 4,
+    "passage": "",
+    "question": "\\text{If } x - y = 6, \\text{ what is } x^2 - 2xy + y^2?",
+    "options": {
+      "A": "0",
+      "B": "6",
+      "C": "24",
+      "D": "36"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 5,
+    "passage": "",
+    "question": "\\text{Which of the following is the equation of the line shown? }",
+    "image": "/Images/km2/kkm25.png",
+    "options": {
+       "A": "y = x + 2",
+       "B": "y = \\frac{1}{2} x",
+       "C": "y = \\frac{1}{2} x + 2",
+      "D": "y = 2x + 2"
+    },
+
+
+    "answer": "C"
+  },
+  {
+    "id": 6,
+    "passage": "",
+  "question": "\\text{A delivery van travels at an average} \\\\ \\text{speed of 30 miles per hour. If} \\\\ \\text{it travels 8 hours per day, how} \\\\ \\text{many miles will it travel in 6 days?}"
+,
+
+    "options": {},
+    "answer": "1440"
+  },
+  {
+    "id": 7,
+    "passage": "",
+    
+  "question": "\\text{The graph of the function } y = x^2 - x - 2 \\\\ \\text{is shown. What is the sum of} \\\\ \\text{the roots of this function?}",
+    "image": "/Images/km2/km27.png",
+
+    "options": {},
+    "answer": "1"
+  },
+  {
+    "id": 8,
+    "passage": "",
+"question": "\\text{A rectangle has a width of 2a. If the length of the rectangle is 3.5 times its width,} \\\\ \\text{what is the perimeter of the rectangle, in terms of a?}"
+,
+    "options": {
+      "A": "5.5a",
+      "B": "9a",
+      "C": "11a",
+      "D": "18a"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 9,
+    "passage": "",
+"question": "\\text{A puppy’s weight increases 35 percent each month. If the puppy's initial weight is 10} \\\\ \\text{pounds, approximately how many pounds will the puppy weigh after 4 months?}"
+,
+    "options": {
+      "A": "13.5",
+      "B": "24",
+      "C": "33",
+      "D": "150"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 10,
+    "passage": "",
+"question": "\\text{In the figure, point C is the center of the circle,} \\\\ \\text{and the measure of angle B is 37°. Which of the following expresses the length of the radius?}"
+,
+"image": "/Images/km2/km210.png",
+    "options": {
+      "A": "15 \\sin 37^{\\circ}",
+      "B": "15 \\tan 37^{\\circ}",
+      "C": "15 \\cos 37^{\\circ}",
+      "D": "15 \\tan 53^{\\circ}"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 11,
+    "passage": "",
+"question": "\\text{If } \\sqrt{xy} = 3, y - z \\text{ and } z = 6, \\text{ what is the value of } x?"
+,
+    "options": {
+      "A": "\\dfrac{1}{4} ",
+      "B": "\\dfrac{1}{2}",
+      "C": "4",
+      "D": "2"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 12,
+    "passage": "",
+    "question": "\\text{If } -4x + 46 < x - 4, \\text{ what is the minimum value of } x?",
+    "options": {},
+    "answer": "10"
+  },
+  {
+    "id": 13,
+    "passage": "",
+"question": "\\text{Suppose the larva of a certain insect species has an initial mass of 10 grams} \\\\ \\text{and grows linearly from t = 0 to t = 48 hours. If the mass of the larva} \\\\ \\text{is 14 grams after 48 hours, what was its mass, in grams, at t = 6 hours?}"
+,
+    "options": {
+      "A": "10.5",
+      "B": "12.5",
+      "C": "13",
+      "D": "14"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 14,
+    "passage": "",
+"question": "\\text{\\\\| 3a - 6 \\\\| = 2x} \\\\ \\text{What is the product of the solutions to the equation shown?}"
+,
+    "options": {
+      "A": "6",
+      "B": "\\dfrac{36}{5}",
+      "C": "\\dfrac{42}{5}",
+      "D": "36"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 15,
+    "passage": "",
+    "question": "2x^2 + 16x + 2 = 0. \\text{ What is the value of x}",
+    "options": {
+  "A": "5\\sqrt{3} - 15",
+  "B": "\\sqrt{15} - 8",
+  "C": "\\sqrt{5} - 8",
+  "D": "\\sqrt{15} - 4"
+}
+,
+    "answer": "D"
+  },
+  {
+    "id": 16,
+    "passage": "",
+    "question": "2x^2 - x - 15 = 0. \\text{ Which is a possible value of } x?",
+    "options": {
+      "A": "3",
+      "B": "\\dfrac{5}{2}",
+      "C": "\\dfrac{-2}{5}",
+      "D": "-3"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 17,
+    "passage": "",
+"question": "\\text{The figure shows the route that Max} \\\\ \\text{currently takes to work and back} \\\\ \\text{home every day. The city is} \\\\ \\text{planning to build an expressway that} \\\\ \\text{would cross through the city. Assuming} \\\\ \\text{an average gas consumption of 20} \\\\ \\text{miles per gallon, how many gallons} \\\\ \\text{of gas will Max save each} \\\\ \\text{day by taking the expressway to} \\\\ \\text{and from work?}"
+,
+"image": "/Images/km2/km217.png",
+    "options": {},
+    "answer": "0.8"
+  },
+  {
+    "id": 18,
+    "passage": "",
+    "question": "\\text{Which of the following functions correctly models} \\\\ \\text{the data in the table?}"
+,
+"image": "/Images/km2/km218.png",
+    "options": {
+      "A": "f(x) = 2x^{3} - 1",
+      "B": "f(x) =2x^{2} - 1",
+      "C": "f(x) = 2^{2x - 1}",
+      "D": "f(x) = 2^{x - 1}"
+    },
+    "answer": "A"
+  },
+  
+
+  {
+    "id": 19,
+    "passage": "",
+"question": "\\text{Which of the following is equivalent to} \\\\ \\dfrac{3x^2 + 5x - 7}{2x^3 - 1} ?"
+,
+
+    "options": {
+      "A": "3x + 5",
+      "B": "3x + 7",
+      "C": "3x + 7 + \\dfrac{2}{x+1}",
+      "D": "3x + 2 - \\dfrac{9}{x+1}"
+    },
+    "answer": "D"
+  },
+    {
+    "id": 20,
+    "passage": "",
+"question": "\\text{The ratio of the perimeters of the two} \\\\ \\text{triangles in the figure is 7:4. What is the} \\\\ \\text{perimeter of the smaller triangle?}"
+,
+"image": "/Images/km2/km220.png",
+    "options": {},
+    "answer": "20"
+  },
+ {"id": 21,
+    "passage": "",
+"question": "\\text{The scatterplot shows the relationship between body mass index,} \\\\ \\text{low-density lipoprotein (LDL), and the line of best fit for the data.} \\\\ \\text{How many of the 12 people have an actual LDL} \\\\ \\text{that differs by 10 or more milligrams per deciliter from the LDL predicted by the line of best fit?}"
+,
+"image": "/Images/km2/km221.png",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "C"
+  },
+  {"id": 22,
+    "passage": "",
+"question": "\\text{If } \\sqrt{xy} = 3,\\ y = z^2,\\ \\text{and } z = 6,\\ \\text{what is the value of } x?"
+
+,
+    "options": {
+      "A": "\\dfrac{1}{4}",
+      "B": "\\dfrac{1}{2}",
+      "C": "2",
+      "D": "4"
+    },
+    "answer": "A"
+  }
+ 
+
+
+  
+]
+
+
+
+
+

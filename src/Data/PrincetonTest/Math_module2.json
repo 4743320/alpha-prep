@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "passage": "",
+  "question": "\\text{33, 34, 38, 41, 43, 44, 47.} \\\\ \\text{Which of the following is the median of the data listed above?}"
+
+,
+    "options": {
+      "A": "38",
+      "B": "40",
+      "C": "41",
+      "D": "42"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 2,
+    "passage": "",
+"question": "\\text{What is the value of the solution to the equation} \\\\ \\text{22 = y - 10?}"
+,
+    "options": {},
+    "answer": "32"
+  },
+  {
+    "id": 3,
+    "passage": "",
+    "question": "\\text{A rectangle has a height of 23 inches and a width of 9 inches. What is its perimeter, in inches?}",
+    "options": {
+      "A": "32",
+      "B": "64",
+      "C": "207",
+      "D": "1,024"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 4,
+    "passage": "",
+"question": "\\text{15a - (6a - 2a)} \\\\ \\text{Which of the following expressions is equivalent to the one above?}"
+,
+    "options": {
+      "A": "5a",
+      "B": "7a",
+      "C": "11a",
+      "D": "23a"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 5,
+    "passage": "",
+    "question": "\\text{Which equation represents the relationship between the numbers } a \\text{ and } b \\text{ if } a \\text{ is half of } b?",
+    "options": {
+      "A": "a = \\dfrac{1}{2}b",
+      "B": "a = b - 2",
+      "C": "a = b + 2",
+      "D": "b = \\dsfrac{1}{2}a"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 6,
+    "passage": "",
+"question": "\\text{For all positive values of } y, \\frac{3}{y + c} \\text{ is equivalent to } \\frac{15}{5y + 30}. \\\\ \\text{What is the value of constant } c?"
+,
+    "options": {
+      "A": "3",
+      "B": "6",
+      "C": "8",
+      "D": "150"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 7,
+    "passage": "",
+"question": "\\text{A total of 200 pets were adopted at an event.} \\\\ \\text{If 70\\% of the adopted pets were dogs,} \\\\ \\text{how many of the pets were dogs?}"
+
+,
+    "options": {},
+    "answer": "140"
+  },
+  {
+    "id": 8,
+    "passage": "",
+"question": "\\text{James must drive 100 miles before he can take his driver's license test.} \\\\ \\text{He knows that when he drives around town running errands, he drives at 20 miles per hour.} \\\\ \\text{If James maintains this average speed, how many hours must he drive to meet the requirement?}"
+
+,
+    "options": {
+      "A": "5",
+      "B": "20",
+      "C": "80",
+      "D": "100"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 9,
+    "passage": "",
+    "question": "\\text{What is the value of } 4y - 16 \\text{ if } y - 4 = 11?",
+    "options": {},
+    "answer": "44"
+  },
+  {
+    "id": 10,
+    "passage": "",
+"question": "\\text{The function g is defined as } g(x) = x^2 - 1. \\text{ What is the value of } g(x) \\text{ when } x = 3?"
+,
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "7",
+      "D": "8"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 11,
+    "passage": "",
+"question": "\\text{The production cost } p(x), \\text{ in dollars, to produce } x \\text{ units of an item when materials cost } \\$2 \\text{ per item} \\\\ \\text{is given by } p(x) = 2x + 150. \\\\ \\text{What is the total cost to produce 2,000 units of this item?}"
+
+,
+    "options": {
+      "A": "\\$1,850",
+      "B": "\\$2,300",
+      "C": "\\$3,850",
+      "D": "\\$4,150"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 12,
+    "passage": "",
+"question": "\\text{The function } f(x) = 2x. \\\\ \\text{When } x = 6, \\text{ what is the value of } f(x)?"
+,
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "6",
+      "D": "9"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 13,
+    "passage": "",
+"question": "\\text{In the figure above, what is the value of } d \\\\ \\text{if line } a \\text{ is parallel to line } b?"
+,
+"image": "/Images/p-m2/pm213.png",
+    "options": {},
+    "answer": "118"
+  },
+  {
+    "id": 14,
+    "passage": "",
+"question": "\\text{3x - 4y = 17. In the } xy\\text{-plane, the graph of a line with an x-intercept of } (c, 0) \\\\ \\text{and a y-intercept of } (0, k), \\text{ where } c \\text{ and } k \\text{ are constants,} \\\\ \\text{can be represented by the equation above. What is the value of } c?"
+
+,
+    "options": {
+      "A": "\\dfrac{4}{3}",
+      "B": "\\dfrac{3}{4}",
+      "C": "\\dfrac{3}{4}",
+      "D": "\\dfrac{4}{3}"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 15,
+    "passage": "",
+    "question": "\\text{A postal machine processes mail at a constant rate of 21} \\\\ \\text{pieces of mail per minute. At this rate, how many pieces}"
+,
+    "options": {
+      "A": "3",
+      "B": "14",
+      "C": "28",
+      "D": "147"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 16,
+    "passage": "",
+"question": "\\text{Stella had 211 invitations to send for an event. She has already sent 43} \\\\ \\text{invitations and will send them all if she sends 24 each day for the next} \\\\ \\text{d days. Which of the following equations represents this situation?}"
+,
+    "options": {
+      "A": "24d - 43 = 211",
+      "B": "24d + 43 = 211",
+      "C": "43d - 24 = 211",
+      "D": "43d + 24 = 211"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 17,
+    "passage": "",
+"question": "\\text{When the linear function } y = f(x) \\text{ is graphed in the } xy\\text{-plane, the graph} \\\\ \\text{contains the corresponding values of } x \\text{ and } f(x) \\text{ shown in the table above.} \\\\ \\text{Which of the following could represent the function?}"
+,
+"image": "/Images/p-m2/pm217.png",
+    "options": {
+      "A": "f(x) = 3x + 12",
+      "B": "f(x) = 3x + 15",
+      "C": "f(x) = 15x + 12",
+      "D": "f(x) = 15x + 15"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 18,
+    "passage": "",
+"question": "\\text{The height of a rocket launched from a rooftop can be modeled by} \\\\ \\text{the equation } h = -16s^{2} + 64s + 21. \\\\ \\text{Here, } h \\text{ represents the rocket’s height above the ground in feet.} \\\\ \\text{The variable } s \\text{ is the number of seconds since launch time.} \\\\ \\text{Which of the following represents the rooftop height in feet?}"
+
+,
+    "options": {
+      "A": "0",
+      "B": "16",
+      "C": "21",
+      "D": "64"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 19,
+    "passage": "",
+    "question": "\\text{Function } f(x) = x^3 + 1. \\text{ Which table is correct?}",
+    "options": {
+      "A": "x: 2,3,4; y: 3,4,5",
+      "B": "x: 2,3,4; y: 3,28,64",
+      "C": "x: 2,3,4; y: 9,10,65",
+      "D": "x: 2,3,4; y: 9,28,65"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 20,
+    "passage": "",
+"question": "\\text{If } h(-1) = 3 \\text{ and } h(0) = 5 \\text{ in the linear function } h, \\\\ \\text{which of the following is the equation of function } h?"
+,
+    "options": {
+      "A": "h(x) = 2x + 5",
+      "B": "h(x) = 2x + 3",
+      "C": "h(x) = 2x",
+      "D": "h(x) = 3x + 5"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 21,
+    "passage": "",
+"question": "\\text{Which of the following equations correctly expresses } r \\text{ in terms of } p \\text{ and } s? \\\\ \\text{The relationship between the numbers } p, r, \\text{ and } s \\text{ can be expressed as } p = 13r - 6s."
+,
+    "options": {
+      "A": "r = \\dfrac{-6s - p}{13}",
+      "B": "r = 13p + 6s",
+      "C": "r = \\dfrac{1}{13}p + 6s",
+      "D": "r = \\dfrac{p + 6s}{13}"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 22,
+    "passage": "",
+    "question": "\\text{Right triangle } ABC \\text{ has sides } AB = 165, BC = 280, \\text{ and } AC = 325. \\\\ \\text{Another triangle, } LMN, \\text{ is similar to } ABC \\text{ such that } A \\text{ corresponds to } L \\text{ and } B \\text{ corresponds to } M. \\\\ \\text{What is the value of } \\cos(L)?"
+,
+    "options": {
+      "A": "\\dfrac{33}{65}",
+      "B": "\\dfrac{33}{56}",
+      "C": "\\dfrac{56}{65}",
+      "D": "\\dfrac{65}{33}"
+    },
+    "answer": "A"
+  }
+]

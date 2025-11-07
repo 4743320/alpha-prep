@@ -1,0 +1,410 @@
+/* Container */
+.test-container {
+  font-family: Arial, sans-serif;
+  /* background: white; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* background: #f2f2f2; */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5px;
+   box-sizing: border-box; /* ensure padding is included inside height */
+  background: white;    /* give consistent background */
+}
+
+.question-number {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.mark-review {
+  font-size: 13px;
+}
+
+/* Header */
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* keep above the scrolling content */
+  background: #f5f5f5;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Main Layout */
+.test-main {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Left Column */
+.passage {
+  width: 50%;
+  /* border-right: 1px solid #ddd; */
+  padding-right: 20px;
+  font-size: bold 15px;
+  font-weight: bold;
+   color: black; /* make default text black */
+   letter-spacing: 0.5px;
+}
+
+.passage-image img {
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Right Column */
+.question-panel {
+  width: 50%;
+  padding-left: 20px;
+}
+
+/* Question Text */
+.question-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+   color: black; /* make default text black */
+
+  line-height: 1.5;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #fff;
+  font-size: 15px;
+}
+
+/* Wrong → Red */
+.option.wrong {
+  background-color: #f8d7da;
+  border: 2px solid #dc3545;
+  color: #721c24;
+}
+
+/* Correct → Green */
+.option.correct {
+  background-color: lightblue;
+  border: 2px solid blue;
+  color: blue;
+}
+
+/* Hide native radio */
+.option input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Explanation */
+.explanation-container {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.explanation-btn {
+  background: #007bff;
+  color: white;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.explanation-btn:hover {
+  background: #0056b3;
+}
+
+.explanation-text {
+  margin-top: 0.75rem;
+  padding: 12px;
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Nav buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #0073e6;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+/* Hide the native radio buttons */
+.option input[type="radio"] {
+  display: none;   /* completely invisible */
+}
+
+/* for Kaplan Test*/
+
+.options1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.option1 input[type="radio"] {
+  display: none;
+}
+
+.option1 span {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s, font-weight 0.3s, color 0.3s;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+   color: black; /* make default text black */
+}
+
+.option1 input[type="radio"]:checked + span {
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid #2498bf;
+  background-color: #65a0e0;
+}
+
+.option1 span:hover {
+  background-color: #e0e0e0;
+}
+
+.nav-buttons1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn1 {
+  padding: 10px 25px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.back1 {
+  background-color: pink;
+}
+
+.btn-next1 {
+  background-color: #007bff;
+  color: white;
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+.image-container img {
+  width: 100%;            /* make it fill container */
+  width: 100%;
+  min-width: 500px;    /* won’t shrink below this */
+  max-width: 850px;    /* won’t exceed this */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out; /* smooth hover */
+}
+
+/* Optional: make image pop on hover */
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+
+.passage-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.mark-review1 {
+  background-color: #ddd;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mark-review1:hover {
+  background-color: #ccc;
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+}
+
+.section-info h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.section-info p {
+  margin: 0;
+  font-size: 14px;
+  color: black;
+  /* font-weight: bold; */
+  
+}
+.scrollable-test-main {
+  display: flex;
+  gap: 20px;            /* space between left and right */
+  height: calc(100vh - 100px); /* adjust based on header */
+  overflow-y: auto;      /* scrolls vertically */
+  padding: 10px;
+}
+
+
+.timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.end-module-bottom {
+      position: sticky; /* or fixed */
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.end-module-btn {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.end-module-btn:hover {
+  background: linear-gradient(135deg, #e63e25, #e63a60);
+  transform: scale(1.05);
+}
+/* Ensure all bold/strong text has consistent color */
+b, strong {
+  font-weight: bold;
+  color: black; /* choose the color you want */
+}
+
+/* Optional: handle dark mode explicitly */
+@media (prefers-color-scheme: dark) {
+  b, strong {
+    color: black; /* keep same color even in dark mode */
+  }
+
+}
+/* ===== Media Queries: Mobile ===== */
+@media (max-width: 900px) {
+  .scrollable-test-main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .passage, .question-panel {
+    width: 100%;
+    padding: 0;
+  }
+
+  .passage-image img {
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .nav-buttons1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn.back1, .btn-next1 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .question-text {
+    font-size: 14px;
+  }
+
+  .option1 span {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .end-module-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .timer {
+    font-size: 18px;
+  }
+}

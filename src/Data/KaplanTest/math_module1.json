@@ -1,0 +1,257 @@
+[
+  {
+    "id": 1,
+    "passage": "",
+    "question": "\\dfrac{1}{4}(x - 7) = 3",
+    "options": {
+      "A": "3",
+      "B": "7",
+      "C": "19",
+      "D": "28"
+    },
+    "answer": "c"
+  },
+  {
+    "id": 2,
+    "passage": "",
+    "question": "f(x) \\ = \\ 5x \\ - \\ 2, \\ \\text{what is} \\ f(x \\ + \\ 3)",
+    "options": {
+      "A": "5x \\ + \\ 1",
+      "B": "5x \\ + \\ 13",
+      "C": "5x \\ + \\ 15",
+      "D": "5x \\ + \\ 17"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 3,
+    "passage": "",
+    "question": "\\text{Which of the following is equivalent to } \\dfrac{x^2 \\ + \\ 6x \\ + \\ 9}{x^2 \\ + \\ 7x \\ + \\ 12} \\ ?",
+    "options": {
+      "A": "\\dfrac{6x \\ + \\ 9}{7x \\ + \\ 12}",
+      "B": "\\dfrac{x \\ + \\ 4}{x \\ + \\ 3}",
+      "C":"\\dfrac{x \\ + \\ 3}{x \\ + \\ 4}",
+      "D": "x \\ + \\ 3"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 4,
+    "passage": "",
+    "question": "\\dfrac{x^4 y^3}{(x^2)^2 y^m} \\text{ What is the value of } m?",
+    "options": {},
+    "answer": "3"
+  },
+  {
+    "id": 5,
+    "passage": "",
+"question": "\\text{A certain type of floor tile covers an area of 7.75 square feet for every three tiles.} \\\\ \\text{How many tiles of this type are needed to cover an area of 186 square feet?}"
+,
+    "options": {
+      "A": "24",
+      "B": "72",
+      "C": "186",
+      "D": "558"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 6,
+    "passage": "",
+    "question": "4b \\ - \\ 3 \\ > \\ 7, \\ \\text{find the greatest integer value of } \\ -2b \\ + \\ 4",
+    "options": {
+      "A": "-2",
+      "B": "-1",
+      "C": "0",
+      "D": "1"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 7,
+    "passage": "",
+    "question": "\\text{A square has diagonal } 12\\sqrt{2} \\ \\text{in. What is the Area of the square in inches ?.}",
+    "options": {
+      "A": "12",
+      "B": "24",
+      "C": "72",
+      "D": "144"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 8,
+    "passage": "",
+ "question": "\\dfrac{2y - (2y + 1)}{3} = \\dfrac{4y + (3 - 4y)}{y} \\text{\\ What is the value of y?.}",
+    "options": {},
+    "answer": "-1.5, -3/2"
+  },
+  {
+    "id": 9,
+    "passage": "",
+    "question": "\\text{How many solutions does the system have? } \\begin{cases} 2y \\ + \\ x \\ = \\ 9 \\\\ 27 \\ - \\ 3x \\ = \\ 6y \\end{cases}",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "Infinitely \\ many"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 10,
+    "passage": "",
+   "question": "\\text{An electrician charges a service call fee plus an hourly fee. \\ The graph shows total price vs. hours.} \\\\ \\text{Based on the graph, what is the total charge for } 20\\,\\text{hours?}",
+    "image": "/Images/km1/k-m1-10.png",
+   "options": {
+      "A": "\\$600",
+      "B": "\\$700",
+      "C": "\\$1200",
+      "D": "\\$1500"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 11,
+    "passage": "",
+    "image": "/Images/km1/k-m1-11.png",
+    "question": "\\text{For what value of } x \\ \\text{is } h(x) = \\dfrac{f(x)}{g(x)} \\ \\text{undefined?}",
+    "options": {},
+    "answer": "-1"
+  },
+  {
+    "id": 12,
+    "passage": "",
+"question": "\\text{The graph represents the change in price per share (in dollars) of a certain stock during two} \\\\ \\text{business weeks. If the coordinates of the maximum are } (a, b) \\text{ and the coordinates of the minimum} \\\\ \\text{are } (c, d), \\\\ \\text{what is the value of } \\frac{d - b}{c - a}?"
+,
+    "image": "/Images/km1/k-m1-666.png",
+    "options": {
+      "A": "-17",
+      "B": "\\frac{19}{3}",
+      "C": "\\frac{17}{3}",
+      "D": "3"
+    },
+    "answer": "C"
+     
+  },
+  {
+    "id": 13,
+    "passage": "",
+"question": "\\text{Kush currently scores 400 on the SAT math section.} \\\\ \\text{He sets a goal to improve this score by 1\\% each day.} \\\\ \\text{At this rate, approximately how many days} \\\\ \\text{will it take him to score an 800?}",
+      "options": {
+      "A": "40",
+      "B": "50",
+      "C": "60",
+      "D": "70"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 14,
+    "passage": "",
+"question": "\\text{The scatterplot relates the time when a farmer planted a crop to the yield of that crop.} \\\\ \\text{Which of the following is the approximate difference, in bushels, between the yield predicted} \\\\ \\text{by the line of best fit and the actual yield of the greatest outlier from the predicted value?}"
+,
+    "image":"/Images/km1/k-m1-14.png",
+    "options": {
+      "A": "10",
+      "B": "15",
+      "C": "20",
+      "D": "25"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 15,
+    "passage": "",
+    "question": "\\text{Line a is parallel to line c. Which of the following statements is true?}",
+    "image": "/Images/km1/km115.png",
+    "options": {
+      "A": "x^{\\circ} \\ + \\ y^{\\circ} \\ = \\ 80^{\\circ}",
+      "B": "x^{\\circ} \\ + \\ y^{\\circ} \\ = \\ 100^{\\circ}",
+      "C": "x^{\\circ} \\ = \\ y^{\\circ}",
+      "D": "x^{\\circ} \\ + \\ y^{\\circ} \\ = \\ 180^{\\circ}"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 16,
+    "passage": "",
+   "question": "\\text{Given the system of inequalities:} \\\\ 8x \\leq 24y + 40, \\\\ 3x \\leq 6y + 12, \\\\ \\text{what is the greatest possible value of } x?",
+    "options": {
+      "A": "2",
+      "B": "1",
+      "C": "0",
+      "D": "-1"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 17,
+    "passage": "",
+   "question": "\\text{At a certain store, 4 knives, 5 spoons, and 6 forks cost } \\$7.90. \\\\ \\text{To purchase 2 knives, 2 spoons, and 5 forks would cost } \\$5.80. \\\\ \\text{How much do 2 knives, 3 spoons, and 1 fork cost?}",
+    "options": {
+      "A": "\\$2.10",
+      "B": "\\$3.30",
+      "C": "\\$4.70",
+      "D": "\\$5.80"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 18,
+    "passage": "",
+ "question": "\\text{If } x \\neq 3, \\ y \\neq -5, \\ \\text{and } xy = 15, \\ \\text{which of the following is equivalent to } \\frac{1}{x - 3} + \\frac{5}{y}?",
+    "options": {
+      "A": "\\dfrac{5x \\ - \\ 3y}{x \\ + y + \\ 2}",
+      "B": "\\dfrac{x \\ + y + \\ 2}{(x \\ - \\ 3)(y \\ + \\ 5)}",
+      "C": "\\dfrac{(x \\ - \\ 3)(y \\ + \\ 5)}{x \\ + y + \\ 2}",
+      "D": "\\dfrac{5 \\ - \\ 3}{2}"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 19,
+    "passage": "",
+"question": "\\text{The range of the parabola shown in the graph above is } \\\\ y > -4. \\\\ \\text{If the equation } y = ax^2 + bx + c \\\\ \\text{is used to represent the graph, what is the value of } a?"
+,
+"image": "/Images/km1/km119.png",    
+"options": {
+   "A": "\\dfrac{1}{3}",
+      "B": "\\dfrac{2}{3}",
+      "C": "\\dfrac{3}{2}",
+      "D": "3"
+},
+    "answer": "A"
+  },
+  {
+    "id": 20,
+    "passage": "",
+"question": "\\text{A thrift store prices a piece of used furniture at } \\$100. \\\\ \\text{The price is marked down an additional } p \\text{ percent every month} \\\\ \\text{until it is sold.} \\\\ \\text{If the piece of furniture is sold for } \\$64 \\\\ \\text{after two months, what is } p\\text{?}"
+
+,
+    "options": {},
+    "answer": "20"
+  },
+  {
+    "id": 21,
+    "passage": "",
+"question": "\\text{The figure shows a rodeo arena} \\\\ \\text{divided into 12 equal sections, 4} \\\\ \\text{of which contain bulls. If 64} \\\\ \\text{4- yards are needed to reinforce} \\\\ \\text{all the edges of the 4} \\\\ \\text{bull sections, what is the radius,} \\\\ \\text{in yards, of the arena?}",
+"image": "/Images/km1/km121.png",   
+"options": {},
+    "answer": "8"
+  },
+  {
+    "id": 22,
+    "passage": "",
+"question": "\\text{A restaurant randomly surveyed customers to determine how long} \\\\ \\text{customers are willing to wait for a table on a Friday} \\\\ \\text{night versus a Saturday night. On average, approximately how many} \\\\ \\text{minutes longer are customers willing to wait for a table on} \\\\ \\text{a Saturday night than on a Friday night?}"
+,
+"image": "/Images/km1/km122.png",
+"options": {
+      "A": "1.3",
+      "B": "11.3",
+      "C": "34",
+      "D": "68"
+    },
+    "answer": "A"
+  }
+]

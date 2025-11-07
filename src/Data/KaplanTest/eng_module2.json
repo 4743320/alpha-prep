@@ -1,0 +1,342 @@
+[
+  {
+    "id": "1",
+    "passage": "Damage from tropical storms is more often caused by flood water than by high winds. The storms push a wall of water, called a storm surge, ahead of them that washes over coastal land. Flooding can be ______ when the storm surge arrives at high tide, when water levels on the coasts are already at their highest for that day.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "aggravated",
+      "B": "irritated",
+      "C": "improved",
+      "D": "assisted"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "2",
+    "passage": "Poems written in iambic pentameter consist of lines of 10 syllables, each following a strict unstressed–stressed syllable pattern. Despite the ______ of such a structure, poet Alice Oswald chose to employ iambic pentameter in her free-flowing lyrical expression A Short Story of Falling.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "autonomy",
+      "B": "liberty",
+      "C": "authority",
+      "D": "restrictions"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "3",
+    "passage": "Jim Metzner is a sound engineer who has collected sounds of nature from all over the world and shared them with his audiences for over 40 years. He hesitates to describe his work as “capturing” sound because he perceives every recording as a gift ______ the creatures on the planet.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+      "A": "taken by him from",
+      "B": "sought by him from",
+      "C": "ascribed to him by",
+      "D": "bestowed upon him by"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "4",
+    "passage": "Scientists have known for over 50 years that bacteria propel themselves by coiling and uncoiling filaments attached to the cell wall, called flagella, that push the bacteria along like tiny propellers.<u> But flagella are composed of identical protein segments, and strands of identical proteins should simply form a straight structure that can’t create motion </u>. Edward Egelman and an international team have determined that the protein in the flagella has 11 different states and that the precise arrangement of these states is what causes the flagella to coil.",
+    "question": "Which choice best states the function of the underlined portion in the text as a whole?",
+    "options": {
+      "A": "It states the hypothesis Egelman and team investigated.",
+      "B": "It presents the paradox Egelman and team researched and resolved.",
+      "C": "It offers an alternative explanation for the findings of Egelman and team.",
+      "D": "It provides additional context to explain how bacteria move."
+    },
+    "answer": "B"
+  },
+  {
+  "id": "5",
+  "passage": "The following text is from Louisa May Alcott’s 1877 novel Eight Cousins.\n\nRose sat all alone in the big best parlor, with her little handkerchief laid ready to catch the first tear, for she was thinking of her troubles, and a shower was expected. She had retired to this room as a good place in which to be miserable; for it was dark and still, full of ancient furniture, somber curtains, and hunts all round with portraits of solemn old gentlemen in wigs, severe-nosed ladies in top-heavy caps, and staring children in little bob-tailed coats or short-waisted frocks. It was an excellent place for woe; and the fitful spring rain that pattered on the window-pane seemed to sob, “Cry away: I’m with you.”",
+  "question": "Which choice best states the function of the underlined portion in the text as a whole?",
+  "options": {
+    "A": "It establishes a contrast with the description of the setting mentioned earlier in the sentence.",
+    "B": "It provides an example that supports the description of the setting mentioned earlier in the sentence.",
+    "C": "It sets up the character description presented in the rest of the sentence.",
+    "D": "It introduces a character trait that contrasts with the description in the previous sentence."
+  },
+  "answer": "B"
+},
+ {
+  "id": "6",
+  "passage": "Text 1\nCancers start with a mutation in a single cell, so larger animals with many more cells should have more cancers than smaller ones. Richard Peto noticed that this is not the case. Whales have 1,000 times more cells than humans do but have much lower rates of cancer. Marc Tollis determined that whales have at least 13 different tumor-suppressing genes, suggesting that, as whales evolved to become so large, they also evolved genes to combat cancer.\n\nText 2\nElephants have 100 times more cells than humans do but have cancer rates that are less than half of human cancer rates. Joshua Schiffman found that elephants have 40 copies of a gene that suppresses cancer, while humans have two copies of this gene.",
+  "question": "Which choice best states the relationship between the two texts?",
+  "options": {
+    "A": "Text 2 provides a supporting point to the main idea of Text 1.",
+    "B": "Text 2 proxides a supporting point to the main idea of Text 1.",
+    "C": "Text 2 implies a future modification to the main point of Text 1.",
+    "D": "Text 2 illustrates a practical difficulty with the main point of Text 1."
+  },
+  "answer": "A"
+},
+{
+  "id": "7",
+  "passage": "Text 1\nKudzu, an invasive vine, can grow a foot a day, and masses of these plants cover structures, forests, and landscapes in the southern United States. Kudzu grows so thickly that it completely cuts off sunlight to the plants beneath it, killing them and destroying native ecosystems. Fortunately, a new weapon has emerged in the battle against kudzu: goats. Goats not only quickly consume vast amounts of the plants, but their digestive systems also destroy the seeds, so the plants are not transplanted through the goats manure.\n\nText 2\nUsing goats to control invasive plants is an important innovation in curbing many problematic species, but it is not a panacea. After the goats eat the tender foliage, the roots and woody portions of invasive plants must still be removed. In addition, the land needs to be monitored for erosion because the goats’ hooves may disrupt structures that stabilize the soil.",
+  "question": "Which choice best states the relationship between the two texts?",
+  "options": {
+    "A": "Text 2 provides a supporting example for the main point of Text 1.",
+    "B": "Text 2 illustrates practical difficulties with the main point of Text 1.",
+    "C": "Text 2 takes a dismissive stance regarding the main point of Text 1.",
+    "D": "Text 2 uses concrete examples to illustrate concepts presented in Text 1."
+  },
+  "answer": "B"
+},
+  {
+  "id": "8",
+  "passage": "The eminence of the U.S. public university network stretches beyond the United States. Students travel from across the globe to study at top programs. Cutting-edge schools like the University of Virginia (UVA) and the University of California at Los Angeles (UCLA) receive continual international attention for their accomplishments in scholarship and research. Programs, faculty, and students from these schools participate in the global conversation in significant ways, working toward a better future for the planet.",
+  "question": "Which choice best states the main idea of the text?",
+  "options": {
+    "A": "Universities such as UVA and UCLA produce world-class scholars.",
+    "B": "Faculty from foreign universities participate in global conversations.",
+    "C": "U.S. public universities are respected throughout the world.",
+    "D": "Most international students consider UCLA their top school choice."
+  },
+  "answer": "C"
+},
+  {
+  "id": "9",
+  "passage": "A new theory may shed light on several phenomena of the planet Saturn that astronomers could not previously explain. Scientists now theorize that an additional moon called Chrysalis orbited Saturn until approximately 160 million years ago, when its orbit destabilized and the moon scraped the planet. The remnants of the crashed moon could be the source of Saturn’s rings, icy debris that orbits the planet. The rings are thought to have formed about 100 million years ago, long after the formation of Saturn itself but after Chrysalis’s theoretical destruction. Further, Chrysalis’s gravitational pull on Saturn before the collision and the lack of that pull after the collision—in conjunction with the gravitational influence of Saturn’s large planetary neighbor, Neptune—may help explain Saturn’s pronounced tilt on its axis.",
+  "question": "Which choice best states the main idea of the text?",
+  "options": {
+    "A": "A new astronomical theory exists that concerns the existence of a former moon of Saturn named Chrysalis that crashed into the planet.",
+    "B": "The exact date of Saturn’s formation is undetermined, but astronomers estimate that the debris in its rings collected 100 million years ago.",
+    "C": "Scientists have a possible understanding of Saturn’s rings and its tilt based on a new theory about one of its moons.",
+    "D": "Saturn’s former moon Chrysalis is believed to have had an influence on Saturn’s particular tilt on its axis."
+  },
+  "answer": "C"
+},
+  {
+  "id": "10",
+  "passage": "One theory about the cause of honeybee colony collapse disorder points to the use of pesticides. Pesticides, which are chemicals used to prevent pest infestation of crops on a large scale around the world, are often picked up by honeybees during their foraging and pollination flights. Scientists have found that more than one pesticide can be found in the honey of one hive. While the presence of one pesticide in a hive would certainly limit the life spans of bees and impair their navigational skills, some researchers theorize that the interaction of two or more pesticides could cause an entire colony to collapse. There are many ingredients in pesticides that are not regulated by world governments, and this leaves a lot of ground for bee scientists to cover when doing their research.",
+  "question": "According to the passage, how do some researchers theorize pesticides impact colony collapse disorder?",
+  "options": {
+    "A": "A single pesticide in a hive could damage bees’ navigation skills and lead to colony collapse disorder.",
+    "B": "Unregulated pesticides destroy bees’ honey and cause colonies to collapse.",
+    "C": "The impact of the ingredients in multiple pesticides in a hive could cause colony collapse disorder.",
+    "D": "Two specific types of pesticides adhere to bees as they pollinate plants."
+  },
+  "answer": "C"
+},
+
+  {
+  "id": "11",
+  "passage": "The following text is from Khalil Gibran's 1923 collection of poetry fables The Prophet.\nWork is love made visible.\n\nAnd if you cannot work with love but only with distaste, it is better that you should leave your work and sit at the gate of the temple and take alms of those who work with joy.\nFor if you bake bread with indifference, you bake a bitter bread that feeds but half man’s hunger.\nAnd if you grudge the crushing of the grapes, your grudge distills a poison in the wine. And if you sing though as angels, and love not the singing, you muffle man’s ears to the voices of the day and the voices of the night.",
+  "question": "The speaker indicates that which of the following is the result if the reader works with lack of concern with baking bread?",
+  "options": {
+    "A": "The product of the labor will be unsatisfying.",
+    "B": "The loaves will be indifferent about who consumes them.",
+    "C": "Only half of those who eat the bread will become full.",
+    "D": "Those who eat the bread will be inspired to sing with love."
+  },
+  "answer": "A"
+},
+ {
+  "id": "12",
+  "passage": "Professional line standers are paid to wait in a queue in someone else’s place. Some situations that draw line standers are relatively frivolous, such as camping out days in advance for the release of the latest cell phone or video game system. Line-standing also occurs in the U.S. capitol, where political lobbyists have engaged in paying others to queue for them to gain entry to political processes such as Supreme Court hearings; one notorious example saw people waiting for four days outside the hearings on the Affordable Care Act in 2012. Based on a recent series of interviews with several politicians in Washington, D.C., a journalist claims that lobbyist line-standing draws criticism due to concerns that it undermines the fairness of political processes.",
+  "question": "Which quotation in the interview best illustrates the journalist's claim?",
+  "options": {
+    "A": "Line-standing strikes some as inherently unfair, but it is just a paid service like anything else. Most of us pay for services to help free up our own time, such as paying a cook to prepare a meal for us. Lobbyist line-standing is essentially based on the same principle.",
+    "B": "Lobbyists should be made to wait in line themselves like everyone else. Otherwise, lobbying in support for political issues will become increasingly elitist, as those with more money can essentially pay their way into hearings while they continue lobbying for their cause elsewhere.",
+    "C": "Line-standing really isn’t a matter of concern to serious politicians. If the payoffs merely entail securing early ownership of cutting-edge electronics, the larger societal impact of such a practice is likely insignificant.",
+    "D": "Whether or not lobbyist line-standing is fair is ultimately less important than the fact that the practice creates more paid work in our city. As either someone’s primary occupation or as a side job, the more service positions that are available, the better off everyone will be financially."
+  },
+  "answer": "B"
+},
+  {
+  "id": "13",
+  "passage": "The concept of embodied cognition states that our physical interactions with an object are an essential component of how our brains understand the meaning of the word for that object. For example, our brains do not fully comprehend the meaning of the word “pencil” apart from our familiarity with the physical actions of holding and writing with a pencil. Thus, a team at Osaka Metropolitan University hypothesized that the brain’s processing of the words for physical objects would be impacted if subjects’ body movements were limited. To evaluate this hypothesis, the researchers showed subjects pairs of words on a computer screen. When words for physical objects, such as “cup” and “broom” were displayed, researchers asked the subjects to compare the objects’ relative sizes. Some subjects’ hands were restrained, while others could move their hands freely.",
+  "question": "Which finding from the experiment, if true, would most strongly support the research team’s hypothesis?",
+  "options": {
+    "A": "Subjects whose hands were restrained showed low levels of brain activity in brain scans when shown the words “because” and “although.”",
+    "B": "Subjects whose hands were restrained showed high levels of brain activity in brain scans when shown the words “because” and “although.”",
+    "C": "When shown the words “fork” and “chair,” subjects whose hands were restrained showed significantly less brain activity in brain scans than did subjects whose hands were not restrained.",
+    "D": "When shown the words “fork” and “chair,” subjects whose hands were restrained showed the same level of brain activity in brain scans as did subjects whose hands were not restrained."
+  },  "answer": "C"
+
+},{
+  "id": "14",
+  "passage": "Some scientists have argued that humanity must become a multi-planet species to minimize our risk of extinction. However, establishing off-world colonies poses severe technological and, indeed, biological challenges. Orthopedist Gaurav Sahota of Grand Lakes University conducted a study of astronauts who had spent several months in zero-gravity conditions, noting a decline in their bone density. Sahota theorized that children born in off-world colonies may suffer from musculoskeletal developmental issues due to being born and raised in conditions with gravity lower than that found on Earth. Sahota argues that this issue would eliminate most of our closest celestial neighbors as viable candidates for settlement. For example, although Mars is often the subject of interest when it comes to colonization, the ______.",
+  "question": "Which choice most effectively uses data from the table to complete the example",
+  "image": "/Images/ke2/k e2 14.png",
+  "options": {
+    "A": "gravity on Venus is comparitively higher at 8.9 kg/m³",
+    "B": "gravity on Mars is a mere 3.7 kg/m³",
+    "C": "gravity on the Moon is slightly higher at 4 kg/m³",
+    "D": "gravity on Mars is a negligible 0.01 kg/m³"
+  },
+  "answer": "B"
+}
+,
+{
+  "id": "15",
+  "passage": "Researchers are racing to find ways for people to maintain brain health while aging. A recent study examined the effects of non-action video-game training on small sample sizes of aging adults experiencing cognitive decline. Test subjects who completed as few as twenty training sessions with these video games showed an increase in attention span, alertness, and visual memory. They also showed a decrease in distraction. Since these results suggest that there may be ways to stave off mental decline and thus help the elderly maintain functions needed for safe driving and other activities of daily living, the researchers therefore imply that ______.",
+  "question": "Which choice most logically completes the text?",
+  "options": {
+    "A": "elderly people who are able to reduce or reverse cognitive decline may be able to live longer independently.",
+    "B": "regular playing of video games could completely cure age-related cognitive problems.",
+    "C": "playing board games for extended periods of time could have the same effect on cognition as playing video games.",
+    "D": "too much time spent playing video games would likely have a negative effect on cognition in aging populations."
+  },
+  "answer": "A"
+}
+,
+{
+  "id": "q16",
+  "passage": "Françoise Gilot often appeared as the subject of the renowned Pablo Picasso’s paintings. However, Annie Maillis, Gilot’s biographer, claims that Gilot created her own abstract self-portraits because it was important to her to have a voice in the projection of her own self-image.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "self-portraits because",
+    "B": "self-portraits; because",
+    "C": "self-portraits. Because",
+    "D": "self-portraits, and because"
+  },
+  "answer": "A"
+}
+,
+{
+  "id": "17",
+  "passage": "Among the earliest internet hoaxes was the case of John Titor, a self-proclaimed time traveler. Over the course of 2000 and 2001, Titor posted on a variety of message boards, sharing information about the future during a ‘layover’ on his mission to retrieve a particular model of computer from the 1970s. Titor revealed an obscure secret feature of that computer model, one its manufacturer had successfully hidden for decades, ______.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "which served as proof of his apparent claims.",
+    "B": "which served as apparent proof of his claims.",
+    "C": "which served as apparent proof of his claims?",
+    "D": "which served as proof of his apparent claims?"
+  },
+  "answer": "B"
+}
+,
+ {
+  "id": "18",
+  "passage": "Iranian mathematician Maryam Mirzakhani, born in 1977, was renowned for her contributions to the field of theoretical mathematics, such as in Ergodic theory, hyperbolic geometry, moduli spaces, and symplectic geometry, she won the prestigious Fields Medal, the first woman to do so.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "geometry she",
+    "B": "geometry, she",
+    "C": "geometry: She",
+    "D": "geometry and she"
+  },
+  "answer": "C"
+}
+,
+{
+  "id": "19",
+  "passage": "The cherimoya is a fruit native to South America with a custard-like texture, a taste often compared to ice cream, and, says nutritionist Johan Liebert of Heinrich Heine University Düsseldorf, a host of important vitamins and minerals; for example, adults eating just a single cherimoya will find it contains 60% of the daily recommended amount of Vitamin C.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "it’s",
+    "B": "its",
+    "C": "your",
+    "D": "their"
+  },
+  "answer": "D"
+}
+,
+{
+  "id": "20",
+  "passage": "Ibn Khaldun, writing in his book *The Muqaddimah*, describes asabiyyah, a feeling of social cohesion binding people together in a civilization, as possessing a life cycle that, like the life cycle of birds and beasts, ______ an end.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "having",
+    "B": "have",
+    "C": "has",
+    "D": "had"
+  },
+  "answer": "C"
+}
+,
+{
+  "id": "21",
+  "passage": "In recent decades, popular novels and their film adaptations have driven the novel market in a new direction. Novels are considered just another entertainment medium, one that ought to enthrall passive readers and relieve them of their daily stresses. The difficulties, challenges, and triumphs of real life are becoming less common as the subjects of popular novels, instead, escapist tales of fantastical lands and escapades prevail.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "novels;",
+    "B": "novels",
+    "C": "novels,",
+    "D": "novels and"
+  },
+  "answer": "A"
+}
+,
+  {
+  "id": "22",
+  "passage": "Although little-remembered today, the Jubalaires, a Christian gospel group active in the 1940s and 1950s, were among several formative influences on the creation of hip-hop and rap music. This four-man group, by incorporating rhythmic rhyming verses into their ______ together to create a new type of music that would eventually become rap.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": {
+    "A": "music harmonized",
+    "B": "music harmonized,",
+    "C": "music, harmonized,",
+    "D": "music, harmonized"
+  },
+  "answer": "D"
+}
+,
+  {
+  "id": "23",
+  "passage": "In the first days of space exploration, one concern was the possibility that astronauts or spacecraft might be hit by meteoroids. Scientists calculated that this possibility was extremely small because meteoroids are rare. Astronauts and spacecraft, ______ almost certainly collide with micrometeorites, which are about the size of grains of dust and much more common.",
+  "question": "Which choice completes the text with the most logical transition?",
+  "options": {
+    "A": "therefore,",
+    "B": "on the other hand,",
+    "C": "moreover,",
+    "D": "in fact,"
+  },
+  "answer": "B"
+}
+,
+{
+  "id": "24",
+  "passage": "Researchers in the RIPE (Realizing Increased Photosynthetic Efficiency) project have developed a bioengineering technique that allows plants to conduct photosynthesis more efficiently. The technique, which reduces the time plants spend in a non-productive state while switching between the photosynthetic processes they use when exposed to sun versus shade, has increased yields in both tobacco and soybean plants in field studies. ______ these results, the researchers hope that further applications of their research will help mitigate world hunger in the future.",
+  "question": "Which choice completes the text with the most logical transition?",
+  "options": {
+    "A": "Despite",
+    "B": "In addition to",
+    "C": "Exemplifying",
+    "D": "In light of"
+  },
+  "answer": "D"
+}
+,
+  {
+  "id": "25",
+  "passage": "Commissioned by emperors of the early Ming Dynasty, Admiral Zheng He led naval expeditions from China to locations as far away as the Arabian Peninsula and the East African coast in the early 1400s. Eventually, after increased threats from the Yuan Mongols, the Ming government diverted funds to terrestrial defensive measures instead, including an expansion of the Great Wall of China. ____________ major state-sponsored sea voyages did not continue after the 1430s.",
+  "question": "Which choice completes the text with the most logical transition?",
+  "options": {
+    "A": "Therefore,",
+    "B": "Nevertheless,",
+    "C": "Similarly,",
+    "D": "Initially"
+  },
+  "answer": "A"
+}
+,
+  {
+  "id": "26",
+  "passage": "While researching a topic, a student has taken the following notes:\n• Romero Britto is a Brazilian-born painter and printmaker who lives in Miami, Florida.\n• His art style encompasses principles of pop art and cubism, including the use of strong geometric lines.\n• His art incorporates bright colors and cheerful subject matter; it reflects the 'Happy Art Movement,' which he founded to promote art with an optimistic message.\n• His work Mona Cat (2010), a stylized reworking of Da Vinci’s classic Mona Lisa, features a smirking, cartoonish blue cat wearing a Renaissance gown of many colors.\n• His 2009 poster for the 2010 soccer World Cup in South Africa features a soccer ball, covered in rainbow-colored country outlines, hurtling as a comet through a sky of colorful stars with a background of blue streamers.",
+  "question": "The student wants to emphasize a difference between Britto’s two works. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+  "options": {
+    "A": "Both Mona Cat and Britto’s World Cup poster make use of bright colors: Mona Cat shows a blue cat in a colorful gown, and the World Cup poster displays a background of multicolored stars and blue streamers.",
+    "B": "Britto considers his work, which reflects both pop art and cubism, as part of the optimistic 'Happy Art Movement.'",
+    "C": "Although Britto was born in Brazil, he currently paints his optimistic art in Miami, Florida.",
+    "D": "Britto's art reflects positively through diverse subject matter; while Mona Cat portrays a cartoon cat dressed in a gown, his World Cup poster depicts a soccer ball as a comet."
+  },
+  "answer": "D"
+}
+,
+{
+  "id": "27",
+  "passage": "• Archaeologists have discovered ancient Egyptian personal letters, which are written on papyrus.\n• Letters in ancient Egypt were typically written by elites, such as government officials and landowners, as the common populace was illiterate.\n• Several discovered letters contain the written instructions of elites who were traveling and attempting to manage their households while away.\n• Two letters written by General Nehesu address an issue about sacks of grain that he had sent to his household but had gone missing, possibly due to in-fighting within the household.\n• In several letters, the priest Heqanakht responds to his household’s complaints about their low food rations during a season of inadequate river flooding and admonishes his son Merisu to carefully manage his property.",
+  "question": "The student wants to emphasize a similarity between the two groups of letters. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+  "options": {
+    "A": "The Nehesu letters were written by a general, while the Heqanakht letters were written by a priest.",
+    "B": "Ancient Egyptian personal letters, which were written on papyrus, were composed by the few in society who were literate, such as government officials and landowners.",
+    "C": "The content of both the Nehesu letters and the Heqanakht letters address household concerns: the Nehesu letters discusses missing grain, and the Heqanakht letters discuss low food rations.",
+    "D": "The Nehesu letters address concerns such as missing grain sacks and household infighting; the Heqanakht letters, however, address concerns such as low food rations and property management."
+  },
+  "answer": "C"
+}
+
+]
+
