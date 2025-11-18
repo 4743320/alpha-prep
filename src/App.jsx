@@ -1,3 +1,4 @@
+import "katex/dist/katex.min.css";
 import React from 'react'
 import LandingPage from './pages/LandingPage'
 import AppRoutes from './AppRoutes'

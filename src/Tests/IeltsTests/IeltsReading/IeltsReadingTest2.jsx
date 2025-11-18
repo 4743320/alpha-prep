@@ -2,6 +2,73 @@ import React, { useState } from 'react'
 import '../../../styles/ielts.css'
 import '../../../styles/misc.css'
 
+// 38 to 40 MCQ
+const questions38to40 = [
+  {
+    id: 38,
+    text: "What does the writer suggest about ABS in the fifth paragraph?",
+    options: {
+      A: "It is bound to make key decisions that are wrong.",
+      B: "It may reduce some of the appeal of the game.",
+      C: "It will lead to the disappearance of human umpires.",
+      D: "It may increase calls for the rules of baseball to be changed.",
+    },
+  },
+  {
+    id: 39,
+    text: "Morgan Sword says that the introduction of ABS",
+    options: {
+      A: "was regarded as an experiment without a guaranteed outcome.",
+      B: "was intended to keep up with developments in other sports.",
+      C: "was a response to changing attitudes about the role of sport.",
+      D: "was an attempt to ensure baseball retained a young audience.",
+    },
+  },
+  {
+    id: 40,
+    text: "Why does the writer include the views of Noë and Russo?",
+    options: {
+      A: "to show that attitudes to technology vary widely",
+      B: "to argue that people have unrealistic expectations of sport",
+      C: "to indicate that accuracy is not the same thing as enjoyment",
+      D: "to suggest that the number of baseball fans needs to increase",
+    },
+  },
+];
+
+
+// part 2 multiselected
+
+const multiSelectQuestions23t024 = [
+    {
+      id: "23_24",
+      text: "Which TWO comparisons between employees who often procrastinate and those who do not are mentioned in the text?",
+      options: {
+        A: "Their salaries are lower.",
+        B: "The quality of their work is inferior.",
+        C: "They don't keep their jobs for as long.",
+        D: "They don't enjoy their working lives as much.",
+        E: "They have poorer relationships with colleagues.",
+      },
+    },
+    
+  ];
+
+  const multiSelectQuestions25t026 = [
+    {
+      id: "25_26",
+      text: "Which TWO recommendations for getting out of a cycle of procrastination does the writer give?",
+      options: {
+        A: "not judging ourselves harshly",
+        B: "setting ourselves manageable aims",
+        C: "rewarding ourselves for tasks achieved",
+        D: "prioritising tasks according to their importance",
+        E: "avoiding things that stop us concentrating on our tasks",
+      },
+    },
+  ];
+
+
 
 /// part 3 dropdown for 31-35
 
@@ -29,6 +96,14 @@ const DropdownPt3=({part, id, allAnswers, handleAnswerChange})=>{
 
 }
 
+const questions27to32 = [
+  { id: 27, text: "When DeJesus first used ABS, he shared decision-making about strikes with it." },
+  { id: 28, text: "MLB considered it necessary to amend the size of the strike zone when criticisms were received from players." },
+  { id: 29, text: "MLB is keen to justify the money spent on improving the accuracy of ABS's calculations." },
+  { id: 30, text: "The hundred-mile-an-hour fastball led to a more exciting style of play." },
+  { id: 31, text: "The differing proposals for alterations to the baseball bat led to fierce debate on Sword's team." },
+  { id: 32, text: "ABS makes changes to the shape of the strike zone feasible." },
+];
 
 
 // Drop Down A- G for 14-16
@@ -123,48 +198,6 @@ const questions7to13 = [
   },
 ];
 
-const questions27to30 = [
-  {
-    id: 27,
-    text: 'In the first paragraph, the writer introduces the topic of the text by',
-    options: [
-      'defining some commonly used terms.',
-      'questioning a widely held assumption.',
-      'mentioning a challenge faced by everyone.',
-      'specifying a situation which makes us most anxious.',
-    ],
-  },
-  {
-    id: 28,
-    text: 'What point does the writer make about firefighters in the second paragraph?',
-    options: [
-      'The regular changes of stress levels in their working lives make them ideal study subjects.',
-      'The strategies they use to handle stress are of particular interest to researchers.',
-      'The stressful nature of their job is typical of many public service professions.',
-      'Their personalities make them especially well-suited to working under stress.',
-    ],
-  },
-  {
-    id: 29,
-    text: 'What is the writer doing in the fourth paragraph?',
-    options: [
-      'explaining their findings',
-      'justifying their approach',
-      'setting out their objectives',
-      'describing their methodology',
-    ],
-  },
-  {
-    id: 30,
-    text: 'In the seventh paragraph, the writer describes a mechanism in the brain which',
-    options: [
-      'enables people to respond more quickly to stressful situations.',
-      'results in increased ability to control our levels of anxiety.',
-      'produces heightened sensitivity to indications of external threats.',
-      'is activated when there is a need to communicate a sense of danger.',
-    ],
-  },
-];
 
 const IeltsReadingTest2 = () => {
     const [currentPart, setCurrentPart] =useState(0)
@@ -475,10 +508,10 @@ const IeltsReadingTest2 = () => {
           <div className="ielts-container">
       {/* LEFT COLUMN */}
       <div className="left-column">
-        <h2>Passage 1.</h2> <br />
+        <h2>Passage 2.</h2> <br />
         <h3>
           You should spend about 20 minutes on <strong>Questions 14-26</strong>, 
-          which are based on Reading Passage 1 below.
+          which are based on Reading Passage 2 below.
         </h3>
 
          <p className='para'>
@@ -636,66 +669,248 @@ or those with low self-esteem.</p>
  
 </div>
 </div>
-   <h2><strong>Questions 1-6</strong></h2><br />
-        <p>
-          Do the following statements agree with the information given in Reading Passage 1?
-          <br />
-          Write your answers in boxes 1-6 .
-        </p>
-         <div className="tf">
-          <h3>TRUE: if the statement agrees with the information</h3>
-          <h3>FALSE: if the statement contradicts the information</h3>
-          <h3>NOT GIVEN: <i>if there is no information on this</i></h3>
-        </div><br /> 
 
-        {/* T/F/NG questions7-13 */}
+<h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 23 and 24 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+      {multiSelectQuestions23t024.map((q) => (
+        <div key={q.id} className="question-block">
+          <p>
+            <strong>{q.id.replace("_", " & ")}</strong>. {q.text}
+          </p>
 
-{questions7to13.map((q)=>(
-  <div  key ={q.id}className="question-block">
+          {Object.entries(q.options).map(([letter, text]) => {
+            const selected = allAnswers.part2[q.id] || [];
 
-    <p>{q.id}.<strong>{q.text}</strong></p>
-    <div className="radio-group">
-      <label>
+            return (
+              <label key={letter}>
+                <input
+                  type="checkbox"
+                  name={q.id} // key in allAnswers.part2
+                  value={letter}
+                  checked={selected.includes(letter)}
+                  onChange={(e) => {
+                    const prev = allAnswers.part2[q.id] || [];
+                    if (e.target.checked) {
+                      handleAnswerChange("part2", q.id, [...prev, e.target.value]);
+                    } else {
+                      handleAnswerChange(
+                        "part2",
+                        q.id,
+                        prev.filter((v) => v !== e.target.value)
+                      );
+                    }
+                  }}
+                />{" "}
+                {letter}. {text}
+              </label>
+            );
+          })}
+        </div>
+      ))}
 
-        <input
-        type='radio'
-        name={`q${q.id}`}
-        value="True"
-        checked={allAnswers.part1[`q${q.id}`] === 'True'}
-        onChange={(e)=>handleAnswerChange('part1', e.target.name, e.target.value)}
-        
-        /> TRUE
-      </label>
-      <label>
-        <input
-        
-        name={`q${q.id}`}
-        value='False'
-        type='radio'
-        checked = {allAnswers.part1[`q${q.id}`] === 'False'}
-        onChange={(e)=>handleAnswerChange('part1', e.target.name, e.target.value)}
+<h3>Questions 25 and 26 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+      {multiSelectQuestions25t026.map((q) => (
+        <div key={q.id} className="question-block">
+          <p>
+            <strong>{q.id.replace("_", " & ")}</strong>. {q.text}
+          </p>
 
-        />
-      </label>
-      <label>
-        <input
-        
-        name={`q${q.id}`}
-        type='radio'
-        value='Not Given'
-        checked = {allAnswers.part1[`q${q.id}`] === 'Not Given'}
-        onChange={(e)=>handleAnswerChange('part1', e.target.name, e.target.value)}
+          {Object.entries(q.options).map(([letter, text]) => {
+            const selected = allAnswers.part2[q.id] || [];
 
-        />
-      </label>
-    </div>
-  </div>
-))}
+            return (
+              <label key={letter}>
+                <input
+                  type="checkbox"
+                  name={q.id} // key in allAnswers.part2
+                  value={letter}
+                  checked={selected.includes(letter)}
+                  onChange={(e) => {
+                    const prev = allAnswers.part2[q.id] || [];
+                    if (e.target.checked) {
+                      handleAnswerChange("part2", q.id, [...prev, e.target.value]);
+                    } else {
+                      handleAnswerChange(
+                        "part2",
+                        q.id,
+                        prev.filter((v) => v !== e.target.value)
+                      );
+                    }
+                  }}
+                />{" "}
+                {letter}. {text}
+              </label>
+            );
+          })}
+        </div>
+      ))}
+
+
 
     </div>
     </div>
         </div>,
         <div key='part3'>
+            <div className="ielts-container">
+      {/* LEFT COLUMN */}
+      <div className="left-column">
+        <h2>Passage 3.</h2> <br />
+        <h3>
+          You should spend about 20 minutes on <strong>Questions 27-40</strong>, 
+          which are based on Reading Passage 3 below.
+        </h3>
+
+         <p className='para'>
+<h2 style={{ textAlign: "center" , marginBottom: "20px"  }}> Invasion of the Robot Umpires </h2>          
+    <p>
+      A few years ago, Fred DeJesus from Brooklyn, New York became the first umpire in a minor league baseball game to use something called the Automated Ball-Strike System (ABS), often referred to as the 'robo-umpire'. Instead of making any judgments himself about a strike*, DeJesus had decisions fed to him through an earpiece, connected to a modified missile-tracking system. The contraption looked like a large black pizza box with one glowing green eye; it was mounted above the press stand.
+    </p>
+
+    <p>
+      Major League Baseball (MLB), who had commissioned the system, wanted human umpires to announce the calls, just as they would have done in the past. When the first pitch came in, a recorded voice told DeJesus it was a strike. Previously, calling a strike was a judgment call on the part of the umpire. Even if the batter does not hit the ball, a pitch that passes through the 'strike zone' (an imaginary zone about seventeen inches wide, stretching from the batter's knees to the middle of his chest) is considered a strike. During that first game, when DeJesus announced calls, there was no heckling and no shouted disagreement. Nobody said a word.
+    </p>
+
+    <p>
+      For a hundred and fifty years or so, the strike zone has been the game's animating force - countless arguments between a team's manager and the umpire have taken place over its boundaries and whether a ball had crossed through it. The rules of play have evolved in various stages. Today, everyone knows that you may scream your disagreement in an umpire's face, but you must never shout personal abuse at them or touch them. That's a no-no. When the robo-umpires came, however, the arguments stopped.
+    </p>
+
+    <p>
+      During the first robo-umpire season, players complained about some strange calls. In response, MLB decided to tweak the dimensions of the zone, and the following year the consensus was that ABS is profoundly consistent. MLB says the device is near-perfect, precise to within fractions of an inch. "It'll reduce controversy in the game, and be good for the game," says Rob Manfred, who is Commissioner for MLB. But the question is whether controversy is worth reducing, or whether it is the sign of a human hand.
+    </p>
+
+    <p>
+      A human, at least, yells back. When I spoke with Frank Viola, a coach for a North Carolina team, he said that ABS works as designed, but that it was also unforgiving and pedantic, almost legalistic. "Manfred is a lawyer," Viola noted. Some pitchers have complained that, compared with a human's, the robot's strike zone seems too precise. Viola was once a major-league player himself. When he was pitching, he explained, umpires rewarded skill. "Throw it where you aimed, and it would be a strike, even if it was an inch or two outside. There was a dialogue between pitcher and umpire."
+    </p>
+
+    <p>
+      The executive tasked with running the experiment for MLB is Morgan Sword, who's in charge of baseball operations. According to Sword, ABS was part of a larger project to make baseball more exciting since executives are terrified of losing younger fans, as has been the case with horse racing and boxing. He explains how they began the process by asking fans what version of baseball they found most exciting. The results showed that everyone wanted more action: more hits, more defense, more baserunning. This type of baseball essentially hasn't existed since the 1960s, when the hundred-mile-an-hour fastball, which is difficult to hit and control, entered the game. It flattened the game into strikeouts, walks, and home runs - a type of play lacking much action.
+    </p>
+
+    <p>
+      Sword's team brainstormed potential fixes. Any rule that existed, they talked about changing - from changing the bats to changing the geometry of the field. But while all of these were ruled out as potential fixes, ABS was seen as a perfect vehicle for change. According to Sword, once you get the technology right, you can load any strike zone you want into the system. "It might be a triangle, or a blob, or something shaped like Texas. Over time, as baseball evolves, ABS can allow the zone to change with it."
+    </p>
+
+    <p>
+      "In the past twenty years, sports have moved away from judgment calls. Soccer has Video Assistant Referees (for offside decisions, for example). Tennis has Hawk-Eye (for line calls, for example). For almost a decade, baseball has used instant replay on the base paths. This is widely liked, even if the precision can sometimes cause problems. But these applications deal with something physical: bases, lines, goals. The boundaries of action are precise, delineated like the keys of a piano. This is not the case with ABS and the strike zone. Historically, a certain discretion has been appreciated."
+    </p>
+
+    <p>
+      I decided to email Alva Noë, a professor at Berkeley University and a baseball fan, for his opinion. "Hardly a day goes by that I don't wake up and run through the reasons that this [robo-umpires] is such a terrible idea," he replied. He later told me, "This is part of a movement to use algorithms to take the hard choices of living out of life." Perhaps he's right. We watch baseball to kill time, not to maximize it. Some players I have met take a dissenting stance toward the robots too, believing that accuracy is not the answer. According to Joe Russo, who plays for a New Jersey team, "With technology, people just want everything to be perfect. That's not reality. I think perfect would be weird. Your teams are always winning, work is always just great, there's always money in your pocket, your car never breaks down. What is there to talk about?"
+    </p>
+
+    <p><em>* strike: a strike is when the batter swings at a ball and misses or when the batter does not swing at a ball that passes through the strike zone.</em></p>
+</p>
+
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className="right-column">
+<h2><strong>Questions 27-32</strong></h2><br />
+        <p>
+          Do the following statements agree with the information given in Reading Passage 1?
+          <br />
+          In boxes 27-32 on your answer sheet, choose:
+        </p>
+        <div className="tf">
+          <h3>TRUE: if the statement agrees with the information</h3>
+          <h3>FALSE: if the statement contradicts the information</h3>
+          <h3>NOT GIVEN: <i>if there is no information on this</i></h3>
+        </div><br />
+{/* TRUE/FALSE/NOT GIVEN Questions */}
+
+{questions27to32.map((q) => (
+            <div className="question-block" key={q.id}>
+              <p><strong>{q.id}:</strong> {q.text}</p>
+              <div className="radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name={`q${q.id}`}
+                    value="Yes"
+                    checked={allAnswers.part3[`q${q.id}`] === "Yes"}
+                    onChange={(e) => handleAnswerChange('part3', e.target.name, e.target.value)}
+                  /> YES
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name={`q${q.id}`}
+                    value="No"
+                    checked={allAnswers.part3[`q${q.id}`] === "No"}
+                    onChange={(e) => handleAnswerChange('part3', e.target.name, e.target.value)}
+                  /> NO
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name={`q${q.id}`}
+                    value="Not Given"
+                    checked={allAnswers.part3[`q${q.id}`] === "Not Given"}
+                    onChange={(e) => handleAnswerChange('part3', e.target.name, e.target.value)}
+                  /> NOT GIVEN
+                </label>
+              </div>
+            </div>
+          ))}
+             <div className="meow2">
+          <h3><strong>Questions 31–35</strong></h3>
+          <p>
+            Complete the summary using the list of words or phrases below. <br/> Choose the correct letter, <strong> A-H</strong>, below.
+          </p>
+        </div>
+
+        <div className="center-container">
+          <div className="question-block2">
+            <h4>List of options</h4>
+            <p><strong>A.</strong> pitch boundary.</p>
+            <p><strong>B.</strong> numerous disputes.</p>
+            <p><strong>C.</strong> team tactics.</p>
+            <p><strong>D.</strong> subjective assessment.</p>
+            <p><strong>E.</strong> widespread approval.</p>
+            <p><strong>F.</strong> former roles.</p>
+            <p><strong>G.</strong> total silence.</p>
+            <p><strong>H.</strong> perceived area.</p>
+          </div>
+         
+         
+        </div>
+       <div className="notes-box">
+          <h4>Calls by the umpire</h4>
+
+          Even after ABS was developed, MLB still wanted human umpires to shout out decisions as they had in their<DropdownPt3 part='part3' id={33} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange} />
+. The umpire's job had, at one time, required a <DropdownPt3 part='part3' id={34} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/>
+about whether a ball was a strike. A ball is considered a strike when the batter does not hit it and it crosses through a<DropdownPt3 part='part3' id={35} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/>
+extending approximately from the batter's knee to his chest.In the past,<DropdownPt3 part='part3' id={36} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/>
+over strike calls were not uncommon, but today everyone accepts the complete ban on pushing or shoving the umpire. One difference, however, is that during the first game DeJesus used ABS, strike calls were met with37
+.
+        </div>
+      <h3>Questions 38–40</h3>
+          <p style={{marginBottom:'10px'}}>Choose the correct letter, <strong>A</strong>, <strong>B</strong> or <strong>C</strong>.</p>
+          {questions38to40.map((q) => (
+            <div key={q.id} className="question-block">
+              <p><strong>{q.id}.</strong> {q.text}</p>
+              {Object.entries(q.options).map(([letter, optionText]) => (
+                <label key={letter}>
+                  <input
+                    type="radio"
+                    name={`q${q.id}`}
+                    value={letter}
+                    checked={allAnswers.part2[`q${q.id}`] === letter}
+                    onChange={(e) => handleAnswerChange('part3', e.target.name, e.target.value)}
+                  />
+                  {letter}. {optionText}
+                </label>
+              ))}
+            </div>
+          ))}
+
+     </div>
+    </div>
+
+
 
         </div>,
 
@@ -713,7 +928,7 @@ or those with low self-esteem.</p>
       {/* Part navigation buttons */}
      <div className="bottom-bar">
   <div className="part-buttons">
-    {[0, 1, 2, 3].map((i) => (
+    {[0, 1, 2].map((i) => (
       <button
         key={i}
         className={currentPart === i ? "active" : ""}

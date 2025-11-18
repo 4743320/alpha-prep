@@ -108,6 +108,17 @@
    margin: 0 auto; /* centers horizontally */
    /* optional: makes it look cleaner */
 }
+.question-blockx {
+  border: 1px solid black;
+  padding: 5px;
+  width: 500px;          /* Fixed small width */
+  background-color: white;
+  text-align: left;
+  line-height: 24px;
+  justify-content: center;
+   margin: 0 auto; /* centers horizontally */
+   /* optional: makes it look cleaner */
+}
 .question-blockx p {
   margin: 6px 0; /* adds space between options */
 }

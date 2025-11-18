@@ -32,42 +32,77 @@
 /* ========================== */
 /* 🧍 PROFILE CARD (Updated) */
 /* ========================== */
-.profile-card {
+/* .profile-card {
   text-align: center;
+  width: 180px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   background: #f9fafb;
   border-radius: 12px;
-  padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .profile-avatar {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 5px;
-  border: 3px solid #e5e7eb;
 }
 
 .profile-name {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0;
+   margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
 }
 
 .profile-role {
   color: #6b7280;
   font-size: 0.9rem;
   margin: 0;
+} */
+.profile-card-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;                 /* bigger gap */
+  padding: 10px 14px;        /* bigger padding */
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  width: fit-content;
 }
 
+.avatar-mini {
+  width: 42px;               /* bigger avatar */
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-text-mini {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;          /* smoother spacing */
+}
+
+.name-mini {
+  font-size: 15px;           /* larger name text */
+  font-weight: 600;
+  color: #111;
+}
+
+.role-mini {
+  font-size: 12px;           /* slightly bigger role */
+  color: #666;
+  margin-top: 2px;
+}
+
+
 /* Small details section (optional stats) */
-.profile-stats {
+/* .profile-stats {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -89,7 +124,7 @@
   margin: 0;
   font-size: 0.8rem;
   color: #6b7280;
-}
+} */
 
 /* Progress card */
 .progress-card {
@@ -242,6 +277,14 @@
   z-index: 10;
   flex-wrap: wrap;
 }
+.compact-nav2 .nav-tab2.active {
+  background-color: rgb(242, 78, 78) !important;
+  color: white !important;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(242, 78, 78, 0.35);
+  transform: translateY(-2px);
+}
+
 
 
 .nav-tab {
@@ -341,7 +384,7 @@
 }
 
   /* 🧍 Compact Profile Layout */
-  .profile-card {
+  /* .profile-card {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -373,7 +416,7 @@
 
   .profile-stats {
     display: none;
-  }
+  } */
 
 
 /* Small phones */

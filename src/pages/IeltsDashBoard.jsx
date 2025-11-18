@@ -5,7 +5,7 @@ import "../styles/satdashboard.css";
 import { useNavigate } from "react-router-dom";
 import IELTSLogo from "../assets/ieltslogo2.png";
 
-const SatDashboard = () => {
+const IeltsDashBoard = () => {
   const { user } = userUser();
   const [activeTab, setActiveTab] = useState("Official Mock Tests");
   const navigate = useNavigate()
@@ -14,10 +14,12 @@ const SatDashboard = () => {
   // }
 
   const categories = [
-    { name: "IELTS-AC LISTENING PRACTICE", desc: "IELTS Academic- 4 LISTENING SECTIOINS", color: "#d33434ff" , onClick: ()=>navigate('/ieltstest')},
-    { name: "IELTS -AC READING PRACTICE", desc:"IELTS Academic - 3 READING SECTIONS", color: "#d33434ff"   , onClick:()=>navigate('/ielts')               },
-    { name: "Reading", desc: "52 Questions", color: "#d33434ff" },
-    { name: "Writing & Language", desc: "44 Questions", color: "#d33434ff" },
+    { name: "IELTS-AC LISTENING PRACTICE-1", desc: "IELTS Academic- 4 LISTENING SECTIOINS", color: "#d33434ff" , onClick: ()=>navigate('/ieltstest')},
+    { name: "IELTS -AC READING PRACTICE-1", desc:"IELTS Academic - 3 READING SECTIONS", color: "#d33434ff"   , onClick:()=>navigate('/ielts')               },
+    { name: "IELTS -AC WRITING PRACTICE-1", desc: "IELTS Academic - 2 WRITING SECTIONS", color: "#d33434ff" },
+    { name: "IELTS-AC LISTENING PRACTICE-2", desc: "IELTS Academic- 4 LISTENING SECTIOINS", color: "#d33434ff" , onClick: ()=>navigate('/ieltslist2')},
+    { name: "IELTS -AC READING PRACTICE-2", desc:"IELTS Academic - 3 READING SECTIONS", color: "#d33434ff"   , onClick:()=>navigate('/ieltsread2')               },
+    { name: "IELTS -AC WRITING PRACTICE-2", desc: "IELTS Academic - 2 WRITING SECTIONS", color: "#d33434ff" },
   ];
 
   const tabs = ["IELTS Practice", "IELTS Tests", "Resources"];
@@ -27,18 +29,20 @@ const SatDashboard = () => {
       <div className="dashboard-container">
         {/* Sidebar */}
         <aside className="dashboard-sidebar">
-          <div className="profile-card">
-            <img
-              src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
-                user?.name || "User"
-              )}`}
-              alt="User Avatar"
-              className="user-avatar"
-            />
-            <h3>Welcome, {user?.name || "SAT User"}</h3>
-            <p className="profile-role">IELTS Aspirant</p>
-          </div>
+    <div className="profile-card-mini">
+  <img
+    src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
+      user?.name || "User"
+    )}`}
+    className="avatar-mini"
+    alt="avatar"
+  />
 
+  <div className="profile-text-mini">
+    <span className="name-mini">Welcome, {user?.name || "User"}</span>
+    <span className="role-mini">IELTS Aspirant</span>
+  </div>
+</div>
           <div className="progress-card">
             <h4>Your Progress</h4>
             <div className="progress-bar">
@@ -53,7 +57,7 @@ const SatDashboard = () => {
         {/* Main Dashboard */}
         <main className="dashboard-main">
           {/* Compact Top Nav */}
-          <div className="compact-nav2">
+          {/* <div className="compact-nav2">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -63,7 +67,19 @@ const SatDashboard = () => {
                 {tab}
               </button>
             ))}
-          </div>
+          </div> */}
+          <div className="compact-nav2">
+  {tabs.map((tab) => (
+    <button
+      key={tab}
+      className={`nav-tab2 ${activeTab === tab ? "active" : ""}`}
+      onClick={() => setActiveTab(tab)}
+    >
+      {tab}
+    </button>
+  ))}
+</div>
+
 <div className="dashboard-header">
   <img src={IELTSLogo} alt="Logo" className="dashboard-logo" />
   <h2 className="dashboard-title">IELTS DashBoard</h2>
@@ -91,7 +107,7 @@ const SatDashboard = () => {
   );
 };
 
-export default SatDashboard;
+export default IeltsDashBoard;
 
 
 

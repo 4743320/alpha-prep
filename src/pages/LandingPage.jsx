@@ -62,9 +62,9 @@ export default function LandingPage() {
       <header className="hero" id="home">
         <div className="hero-content">
       <TestLogos/>
-          <h1>Master IELTS & SAT With Confidence</h1>
+          <h1>Master Tests With Confidence</h1>
           <p>
-            Unlock your full potential with AI-powered practice tests, real-time feedback,
+            Unlock your full potential with a vast collection practice tests, real-time feedback,
             and personalized learning paths designed to help you succeed.
           </p>
           <div className="hero-buttons">
@@ -88,13 +88,13 @@ export default function LandingPage() {
           <div className="feature-card">
             <h3>Smart Practice</h3>
             <p>
-              Get expertly curated IELTS & SAT practice questions that adapt to your skill level.
+              Get expertly curated practice tests and Official Resourc Material that adapt to your skill level.
             </p>
           </div>
           <div className="feature-card">
             <h3>Instant Feedback</h3>
             <p>
-              Our AI system gives you detailed analysis and tips after every test attempt.
+              Our efficient practice tests give you detailed analysis and tips after every test attempt.
             </p>
           </div>
           <div className="feature-card">
@@ -112,7 +112,7 @@ export default function LandingPage() {
           <h2>Built for Serious Learners</h2>
           <p>
             PrepMaster is a one-stop solution for students aiming to achieve their dream scores.
-            Whether you're preparing for IELTS or SAT, our platform provides structured
+            Whether you're preparing for IELTS, SAT, PTE, DUOLingo, TOEFL & ECAT, our platform provides structured
             practice, insights, and motivation to keep you moving forward.
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>© {new Date().getFullYear()} PrepMaster — All rights reserved.</p>
+        <p>© {new Date().getFullYear()} PrepMaster — All rights reserved. Contact : 0313-4743320</p>
       </footer>
     </div>
   );

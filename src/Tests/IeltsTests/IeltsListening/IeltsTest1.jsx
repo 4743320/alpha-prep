@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../styles/ieltsListening.css";
-import '../../../styles/ieltswrapper.css'
+
 import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
 import ResultModal from "./ResultModal";
 

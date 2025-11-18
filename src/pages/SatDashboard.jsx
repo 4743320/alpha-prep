@@ -27,17 +27,21 @@ const SatDashboard = () => {
       <div className="dashboard-container">
         {/* Sidebar */}
         <aside className="dashboard-sidebar">
-          <div className="profile-card">
-            <img
-              src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
-                user?.name || "User"
-              )}`}
-              alt="User Avatar"
-              className="user-avatar"
-            />
-            <h3>Welcome, {user?.name || "SAT User"}</h3>
-            <p className="profile-role">SAT Aspirant</p>
-          </div>
+      <div className="profile-card-mini">
+  <img
+    src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
+      user?.name || "User"
+    )}`}
+    className="avatar-mini"
+    alt="avatar"
+  />
+
+  <div className="profile-text-mini">
+    <span className="name-mini">Welcome, {user?.name || "User"}</span>
+    <span className="role-mini">SAT Aspirant</span>
+  </div>
+</div>
+
 
           <div className="progress-card">
             <h4>Your Progress</h4>
