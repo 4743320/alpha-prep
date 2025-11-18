@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useSatScore } from "../../hooks/UseSatScore"; 
 import "../../styles/satmath.css";
 
+
 const KaplanMathsModule2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
