@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../styles/ielts.css";
 
 import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
+import { useNavigate } from "react-router-dom";
 
 const IeltsListeningTest2 = () => {
   const [currentPart, setCurrentPart] = useState(0);
@@ -11,6 +12,12 @@ const IeltsListeningTest2 = () => {
     part3: {},
     part4: {},
   });
+const navigate = useNavigate()
+const handleNavigateBack = () => {
+  if (window.confirm("All progress will be lost if you leave this page. Are you sure?")) {
+    navigate("/ielts-dash");
+  }
+};
 
 const Dropdown=({part, id ,allAnswers, handleAnswerChange})=>{
 
@@ -686,6 +693,26 @@ name="q8"
       {/* Part navigation buttons */}
      <div className="bottom-bar">
   <div className="part-buttons">
+    {/* Back button */}
+  <button
+    className="back-btn"
+    onClick={handleNavigateBack} // your dashboard route
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
+      padding: "8px 16px",
+      fontSize: "14px",
+      borderRadius: "6px",
+      background: "#6c757d",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      transition: "0.2s",
+    }}
+  >
+    &#8592; Back
+  </button>
     {[0, 1, 2, 3].map((i) => (
       <button
         key={i}

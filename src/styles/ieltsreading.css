@@ -159,9 +159,9 @@ select {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-/* 
+
   .ielts-wrapper{
-     width: 100%;       
+     width: 100%;       /* each section takes full width */
       margin: 0 !important;
     padding: 0 !important;
   }
@@ -169,30 +169,23 @@ select {
 
   .ielts-container {
     flex-direction: column;
-     width: 100%;       
+     width: 100%;       /* each section takes full width */
   }
 
   .left-column {
-    height: 60vh; 
+    height: 60vh;  /* 60% of viewport height */
     border-right: none;
     border-bottom: 2px solid #ddd;
     padding-bottom: 20px;
-    overflow-y: auto; 
-    scroll-behavior: smooth; 
+    overflow-y: auto;  /* 🔥 enables scroll only on left */
+    scroll-behavior: smooth; /* nice smooth scroll */
 
   }
 
   .right-column {
-    height: 40vh;  
+    height: 40vh;  /* 40% of viewport height */
     padding-left: 0;
-    overflow-y: auto;  
-  } */
-
-   textarea {
-    width: 100%;
-           /* smaller height for mobile */
-    font-size: 0.9rem;      /* smaller text */
-          /* less padding */
+    overflow-y: auto;  /* optional, for independent scroll */
   }
 
   .bottom-bar {
@@ -200,26 +193,6 @@ select {
     align-items: center;
     gap: 10px;
 
-  }
-   .bottom-bar {
-    flex-direction: row;
-    align-items: center;
-    gap: 8px; /* smaller gap */
-    flex-wrap: nowrap;               
-    justify-content: center;  
-    padding: 4px 8px;               /* smaller padding */
-  }
-
-  /* Part number buttons */
-  .part-buttons button {
-    padding: 5px 10px;        /* smaller size */
-    font-size: 0.8rem;        /* smaller text */
-  }
-
-  /* End Test button */
-  .end-btn {
-    padding: 5px 10px;        /* smaller button */
-    font-size: 0.8rem;        /* smaller text */
   }
 }
 /* ===== Question Blocks (Radios & Checkboxes) ===== */

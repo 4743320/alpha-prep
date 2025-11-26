@@ -161,7 +161,7 @@ select {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
+
 
 @media (max-width: 768px) {
   .ielts-wrapper {
@@ -209,7 +209,7 @@ select {
     align-items: center;
     gap: 10px;
   }
-}
+
 /* ===== Question Blocks (Radios & Checkboxes) ===== */
 .question-block {
   margin-bottom: 20px;

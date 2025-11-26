@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../../styles/ielts.css'
 import '../../../styles/misc.css'
+import { useNavigate } from 'react-router-dom'
 
 
 /// part 3 dropdown for 31-35
@@ -158,7 +159,12 @@ const IeltsReadingTest1 = () => {
         "part2":{ },
         "part3":{        }
     })
-
+const navigate = useNavigate()
+const handleNavigateBack = () => {
+  if (window.confirm("All progress will be lost if you leave this page. Are you sure?")) {
+    navigate("/ielts-dash");
+  }
+};
     const handleAnswerChange = (part, name, value)=>{
         setAllAnswers((prev)=>({...prev, [part]:{...prev[part],[name]:value}}))
     }
@@ -639,7 +645,28 @@ All of this raises questions of social acceptance, acknowledges Russell."If we'r
 
       {/* Part navigation buttons */}
      <div className="bottom-bar">
+
   <div className="part-buttons">
+    {/* Back button */}
+  <button
+    className="back-btn"
+    onClick={handleNavigateBack} // your dashboard route
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
+      padding: "8px 16px",
+      fontSize: "14px",
+      borderRadius: "6px",
+      background: "#6c757d",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      transition: "0.2s",
+    }}
+  >
+    &#8592; Back
+  </button>
     {[0, 1, 2].map((i) => (
       <button
         key={i}
@@ -654,6 +681,7 @@ All of this raises questions of social acceptance, acknowledges Russell."If we'r
   <button className="end-btn" onClick={handleEndTest}>
     End Test
   </button>
+  
 </div>
     </div>
   );

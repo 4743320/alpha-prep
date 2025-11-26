@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../../styles/ielts.css'
 import '../../../styles/misc.css'
+import { useNavigate } from 'react-router-dom';
 
 // 38 to 40 MCQ
 const questions38to40 = [
@@ -206,7 +207,12 @@ const IeltsReadingTest2 = () => {
         "part2":{ },
         "part3":{        }
     })
-
+    const navigate = useNavigate()
+const handleNavigateBack = () => {
+  if (window.confirm("All progress will be lost if you leave this page. Are you sure?")) {
+    navigate("/ielts-dash");
+  }
+};
     const handleAnswerChange = (part, name, value)=>{
         setAllAnswers((prev)=>({...prev, [part]:{...prev[part],[name]:value}}))
     }
@@ -927,6 +933,26 @@ over strike calls were not uncommon, but today everyone accepts the complete ban
 
       {/* Part navigation buttons */}
      <div className="bottom-bar">
+      {/* Back button */}
+  <button
+    className="back-btn"
+    onClick={handleNavigateBack} // your dashboard route
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
+      padding: "8px 16px",
+      fontSize: "14px",
+      borderRadius: "6px",
+      background: "#6c757d",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      transition: "0.2s",
+    }}
+  >
+    &#8592; Back
+  </button>
   <div className="part-buttons">
     {[0, 1, 2].map((i) => (
       <button

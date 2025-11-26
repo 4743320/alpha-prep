@@ -263,27 +263,6 @@
   z-index: 10;
   flex-wrap: wrap;
 }
-.compact-nav2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px; /* more space between buttons */
-  background: white;
-  padding: 12px 24px; /* more height + width */
-  border-radius: 14px; /* slightly rounder */
-  margin: -40px auto 20px auto;
-  width: fit-content;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-  z-index: 10;
-  flex-wrap: wrap;
-}
-.compact-nav2 .nav-tab2.active {
-  background-color: rgb(242, 78, 78) !important;
-  color: white !important;
-  font-weight: 700;
-  box-shadow: 0 3px 8px rgba(242, 78, 78, 0.35);
-  transform: translateY(-2px);
-}
 
 
 
@@ -298,27 +277,9 @@
   transition: all 0.2s ease;
   font-weight: 600; /* slightly thicker */
 }
-.nav-tab2 {
-  background: none;
-  border: none;
-  padding: 10px 20px; /* bigger buttons */
-  border-radius: 8px;
-  font-size: 1rem; /* increased from 0.9rem */
-  color: black;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 600; /* slightly thicker */
-}
 
 .nav-tab.active {
   background: rgb(141, 211, 234);
-  color: black;
-  font-weight: 700;
-  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
-  transform: translateY(-2px); /* nice lift effect */
-}
-.nav-tab2.active {
-  background: rgb(242, 78, 78);
   color: black;
   font-weight: 700;
   box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
@@ -420,7 +381,7 @@
 
 
 /* Small phones */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .dashboard {
     padding: 20px 10px;
   }
@@ -451,4 +412,4 @@
     font-size: 0.8rem;
     padding: 15px 15px;
   }
-}
+} */

@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../styles/ieltsListening.css";
 
 import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
 import ResultModal from "./ResultModal";
+import { useNavigate } from "react-router-dom";
 
 const IeltsListening = () => {
-
-
+  const handleNavigateBack = () => {
+  if (window.confirm("All progress will be lost if you leave this page. Are you sure?")) {
+    navigate("/ielts-dash");
+  }
+};
+//Redundant to alert going back
+// useEffect(()=>{
+//   const handleBeforeunload = (e)=>{
+//     e.preventDefault()
+//     e.returnValue = "All progress would be lost if you leave this page"
+//     return e.returnValue
+//   }
+//   window.addEventListener("beforeunload", handleBeforeunload)
+//   return ()=>{
+//     window.removeEventListener('beforeunload', handleBeforeunload)
+//   }
+// },[])
 
   const [showModal, setShowModal] = useState(false)
   const[partScore, setPartScore] = useState({})
@@ -19,6 +35,7 @@ const IeltsListening = () => {
     part3: {},
     part4: {},
   });
+  const navigate = useNavigate()
 // Questions 11–16 (single choice)
   const questions11to16 = [
     {
@@ -764,6 +781,26 @@ const IeltsListening = () => {
 
       {/* Part navigation buttons */}
      <div className="bottom-bar">
+      {/* Back button */}
+  <button
+    className="back-btn"
+    onClick={handleNavigateBack} // your dashboard route
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
+      padding: "8px 16px",
+      fontSize: "14px",
+      borderRadius: "6px",
+      background: "#6c757d",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      transition: "0.2s",
+    }}
+  >
+    &#8592; Back
+  </button>
   <div className="part-buttons">
     {[0, 1, 2, 3].map((i) => (
       <button

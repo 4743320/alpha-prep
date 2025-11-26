@@ -1,0 +1,93 @@
+/* ========================= */
+/* Compact Tabs (Dashboard) */
+/* ========================= */
+
+.compact-nav2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* space between tabs */
+  background: white;
+  padding: 12px 24px; /* bigger height and horizontal padding */
+  border-radius: 14px;
+  margin: -40px auto 20px auto;
+  width: fit-content;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap; /* wrap for mobile */
+  z-index: 10;
+}
+
+.nav-tab2 {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-tab2.active {
+  background-color: rgb(242, 78, 78); /* default active background */
+  color: white;                       /* active text */
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(242, 78, 78, 0.35);
+  transform: translateY(-2px);
+}
+
+.nav-tab2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================= */
+/* MOBILE / RESPONSIVE STYLES */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .compact-nav2 {
+    padding: 10px 20px;
+    gap: 12px;
+  }
+
+  .nav-tab2 {
+    padding: 9px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile / tablets */
+@media (max-width: 768px) {
+  .compact-nav2 {
+    flex-wrap: nowrap;      /* force single row */
+    overflow-x: auto;       /* scroll if needed */
+    justify-content: space-between; /* spread tabs evenly */
+    padding: 8px 12px;
+    gap: 8px;
+    width: 100%;            /* use full screen width */
+    box-sizing: border-box; /* include padding in width */
+  }
+
+  .nav-tab2 {
+    flex: 1;                /* make each tab take equal space */
+    padding: 6px 0;         /* smaller vertical padding */
+    font-size: 0.85rem;
+    text-align: center;     /* center text */
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .compact-nav2 {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  .nav-tab2 {
+    font-size: 0.8rem;
+    padding: 5px 0;
+  }
+}

@@ -24,6 +24,8 @@ import IeltsReadingTest2 from './Tests/IeltsTests/IeltsReading/IeltsReadingTest2
 import PrincetonMathsModule1 from './MockTests/PrincetonTest/PrincetonMathModule1'
 import PrincetonMathsModule2 from './MockTests/PrincetonTest/PrincetonMathModule2'
 import ProfilePage from './pages/ProfilePage'
+import IeltsWritingTest1 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest1'
+import IeltsWritingTest2 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest2'
 
 
 const AppRoutes = () => {
@@ -56,6 +58,8 @@ const AppRoutes = () => {
     <Route path='/ieltslist2' element={<IeltsListeningTest2/>}/>
     <Route path='/ieltsread2' element={<IeltsReadingTest2/>}/>
     <Route path='/profile' element={<ProfilePage/>}/>
+    <Route path='/ieltswrit' element={<IeltsWritingTest1/>}/>
+    <Route path='/ieltswrit2' element={<IeltsWritingTest2/>}/>
 
         </Routes>
     </Router>
