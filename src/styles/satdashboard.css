@@ -249,14 +249,14 @@
   box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
 } */
 /* Compact Nav (Bigger + Bolder) */
-.compact-nav {
+/* .compact-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px; /* more space between buttons */
+  gap: 16px;
   background: white;
-  padding: 12px 24px; /* more height + width */
-  border-radius: 14px; /* slightly rounder */
+  padding: 12px 24px; 
+  border-radius: 14px; 
   margin: -40px auto 20px auto;
   width: fit-content;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
@@ -269,13 +269,13 @@
 .nav-tab {
   background: none;
   border: none;
-  padding: 10px 20px; /* bigger buttons */
+  padding: 10px 20px; 
   border-radius: 8px;
-  font-size: 1rem; /* increased from 0.9rem */
+  font-size: 1rem; 
   color: black;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-weight: 600; /* slightly thicker */
+  font-weight: 600; 
 }
 
 .nav-tab.active {
@@ -283,8 +283,8 @@
   color: black;
   font-weight: 700;
   box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
-  transform: translateY(-2px); /* nice lift effect */
-}
+  transform: translateY(-2px); 
+} */
 
 /* ============================= */
 /* 📱 MOBILE RESPONSIVENESS HERE */

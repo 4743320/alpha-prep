@@ -54,10 +54,40 @@
 
 // Tabs.jsx
 // Tabs.jsx
+// import React, { useEffect } from "react";
+// import '../styles/tabs.css'
+
+// export default function Tabs({ tabs = [], activeTab, setActiveTab, activeColor }) {
+//   // Set the first tab as active by default
+//   useEffect(() => {
+//     if (!activeTab && tabs.length > 0) setActiveTab(tabs[0]);
+//   }, [activeTab, setActiveTab, tabs]);
+
+//   return (
+//     <div className="compact-nav2">
+//       {tabs.map((tab) => (
+//         <button
+//           key={tab}
+//           className={`nav-tab2 ${activeTab === tab ? "active" : ""}`}
+//           onClick={() => setActiveTab(tab)}
+//         >
+//           {tab}
+//         </button>
+//       ))}
+//     </div>
+//   );
+// }
 import React, { useEffect } from "react";
 import '../styles/tabs.css'
 
-export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
+export default function Tabs({
+  tabs = [],
+  activeTab,
+  setActiveTab,
+  activeColor = "rgb(242, 78, 78)",   // default active bg
+  activeTextColor = "#fff",            // default active text
+  inactiveTextColor = "#444"           // default inactive text
+}) {
   // Set the first tab as active by default
   useEffect(() => {
     if (!activeTab && tabs.length > 0) setActiveTab(tabs[0]);
@@ -70,6 +100,13 @@ export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
           key={tab}
           className={`nav-tab2 ${activeTab === tab ? "active" : ""}`}
           onClick={() => setActiveTab(tab)}
+          style={{
+            backgroundColor: activeTab === tab ? activeColor : "transparent",
+            color: activeTab === tab ? activeTextColor : inactiveTextColor,
+            boxShadow: activeTab === tab
+              ? `0 3px 8px ${activeColor}60`
+              : "none",
+          }}
         >
           {tab}
         </button>

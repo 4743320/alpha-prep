@@ -4,6 +4,7 @@ import CategoryCard from "../components/CategoryCard";
 import "../styles/satdashboard.css";
 import { useNavigate } from "react-router-dom";
 import SATLogo from "../assets/sat.png";
+import Tabs from "../components/Tabs";
 
 const SatDashboard = () => {
   const { user } = userUser();
@@ -20,7 +21,7 @@ const SatDashboard = () => {
     { name: "Writing & Language", desc: "44 Questions", color: "#60a5fa" },
   ];
 
-  const tabs = ["Official Mock Tests", "SAT Practice", "Resources"];
+  const tabsList = ["Official Mock Tests", "SAT Practice", "Resources"];
 
   return (
     <div className="dashboard">
@@ -57,7 +58,7 @@ const SatDashboard = () => {
         {/* Main Dashboard */}
         <main className="dashboard-main">
           {/* Compact Top Nav */}
-          <div className="compact-nav">
+          {/* <div className="compact-nav">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -67,7 +68,16 @@ const SatDashboard = () => {
                 {tab}
               </button>
             ))}
-          </div>
+          </div> */}
+          <Tabs
+            tabs={tabsList}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            activeColor="rgb(141, 211, 234)"     // dynamic active background
+            activeTextColor="#fff"      // text on active tab
+            inactiveTextColor="#444"    // text on inactive tabs
+          />
+          
 <div className="dashboard-header">
   <img src={SATLogo} alt="Logo" className="dashboard-logo" />
   <h2 className="dashboard-title">DIGITAL SAT Dashboard</h2>
