@@ -4,6 +4,9 @@ import TestLogos from "../components/TestLogos";
 import AuthModal from "../components/AuthModal";
 import { UserContext } from "../Context/UserContext";
 import { userUser } from "../hooks/UseUser";
+import CourseCard from '../components/CourseCard'
+import IELTSLogo from "../assets/ieltslogo2.png"
+import SATLogo from "../assets/sat.png";
 
 
 export default function LandingPage() {
@@ -14,50 +17,7 @@ export default function LandingPage() {
 
   return (
     <div className="landing-page">
-      {/* Navbar */}
-      {/* <nav className="navbar">
-        <div className="logo" src='/assets/'>Alpha Prep</div>
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#features">Features</a>
-          <a href="#about">About</a>
-        <div className="auth-btn">
-  {user ? (
-    <div className="user-info">
-      <img
-        src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(user.name)}`}
-        alt="User Avatar"
-        className="user-avatar"
-      />
-      <span className="user-name">{user.name}</span>
-      <button className="nav-btn" onClick={logOut}>Log Out</button>
-    </div>
-  ) : (
-    <>
-      <button className="nav-btn" onClick={() => {
-        setModalMode('signin');
-        setShowModal(true);
-      }}>Sign In</button>
-
-      <button className="nav-btn" onClick={() => {
-        setModalMode('signup');
-        setShowModal(true);
-      }}>Sign Up</button>
-    </>
-  )}
-</div>
-
-         
-        </div>
-      </nav> */}
-        {/* Show Auth Modal */}
-      {/* {showModal && (
-        <AuthModal
-          mode={modalMode}
-          onClose={() => setShowModal(false)} // 👈 closes modal
-        />
-      )} */}
-
+    
       {/* Hero Section */}
       <header className="hero" id="home">
         <div className="hero-content">

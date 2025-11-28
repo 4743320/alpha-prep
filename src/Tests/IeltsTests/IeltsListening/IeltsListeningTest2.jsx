@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../styles/ielts.css";
+import axios from "axios";
+import { useNavigate, useBeforeUnload } from "react-router-dom";
 
 import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
-import { useNavigate } from "react-router-dom";
+
 
 const IeltsListeningTest2 = () => {
   const [currentPart, setCurrentPart] = useState(0);
@@ -19,6 +21,52 @@ const handleNavigateBack = () => {
   }
 };
 
+// const handleNavigateBack =()=> safeNavigate('/ielts-dash')
+
+// useEffect(() => {
+//   const handleBeforeUnload = (e) => {
+//     e.preventDefault();
+//     e.returnValue = "";
+//   };
+
+//   window.addEventListener("beforeunload", handleBeforeUnload);
+
+//   return () => {
+//     window.removeEventListener("beforeunload", handleBeforeUnload);
+//   };
+// }, []);
+
+
+
+// // 2️⃣ Browser BACK button
+// useEffect(() => {
+//   const handleBrowserBack = (event) => {
+//     event.preventDefault();
+//     const confirmLeave = window.confirm(
+//       "If you leave this page, your progress will be lost. Continue?"
+//     );
+//     if (!confirmLeave) {
+//       window.history.pushState(null, "", window.location.pathname);
+//     }
+//   };
+
+//   window.history.pushState(null, "", window.location.pathname);
+
+//   window.addEventListener("popstate", handleBrowserBack);
+//   return () => window.removeEventListener("popstate", handleBrowserBack);
+// }, []);
+
+
+
+
+// const safeNavigate = (to)=>{
+//   const confirmLeave = window.confirm( "If you leave this page, your progress will be lost. Continue?")
+
+//   if(confirmLeave){
+//     navigate(to)
+//   }
+
+// }
 const Dropdown=({part, id ,allAnswers, handleAnswerChange})=>{
 
     const handleChange=(e)=> handleAnswerChange(part, e.target.name, e.target.value)
@@ -168,6 +216,146 @@ const questions26to30 = [
       [part]: { ...prev[part], [name]: value },
     }));
   };
+
+  // const handleEndtest=async()=>{
+
+  //   try {
+      
+  //     const payload ={
+  //       user_id : 'user123',
+  //       answers: []
+  //     }
+
+  //     for(let part in allAnswers){
+  //       for (let qid in allAnswers[part]){
+  //         payload.answers.push({
+  //           "question_id":String(qid),
+  //           "answer": String(allAnswers[part][qid])
+  //         })
+  //       }
+  //     }
+
+  //     const response = await axios.post(
+  //       "http://127.0.0.1:8000/submit",
+  //       payload,
+  //       {
+  //         headers:{
+  //           "Content-Type": 'application/json',
+
+  //         },
+  //         withCredentials: true,
+  //       }
+  //     )
+  //     console.log("Response:", response.data);
+  //   alert("Answers submitted successfully!");
+
+  //   } catch (error) {
+
+  //     console.log("Error sending request", error)
+  //     alert("Failed to submit answers, check consloe")
+      
+  //   }
+  // }
+
+  const endTest = async()=>{
+  try {
+    const payload = {
+      user_id: 'user123',
+      answers: []
+    };
+
+    for (let part in allAnswers) {
+      for (let qid in allAnswers[part]) {
+        payload.answers.push({
+          question_id: qid.replace('q',''), // remove the 'q' prefix
+          answer: String(allAnswers[part][qid])
+        });
+      }
+    }
+
+    const response = await fetch("http://127.0.0.1:8000/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      // credentials: 'include' // only if you need cookies
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Response:", data);
+    alert("Answers submitted successfully!");
+    
+  } catch (error) {
+    console.error("Error sending request", error);
+    alert("Failed to submit answers, check console");
+  }
+};
+
+
+// const endTest= async()=>{
+
+//   try {
+//     const payload ={
+//       "user_id": "user1234",
+//       "answers": [] // fill dynamically
+//     }
+
+//      // -----------------------------
+//     // 2️⃣ Convert frontend allAnswers state to array of Answer objects
+//     // -----------------------------
+//     // Suppose your frontend state looks like this:
+//     // allAnswers = {
+//     //   part1: { q1: "cat", q2: "dog" },
+//     //   part2: { q3: "photos", q4: "shower" }
+//     // }
+//     // We need to convert it into:
+//     // payload.answers = [
+//     //   { question_id: "1", answer: "cat" },
+//     //   { question_id: "2", answer: "dog" },
+//     //   { question_id: "3", answer: "photos" },
+//     //   { question_id: "4", answer: "shower" }
+//     // ]
+
+//     for (let part in allAnswers){
+//       for(let qid in allAnswers[part] ){
+//         payload.answers.push({
+//           question_id : qid.replace("q",''),
+//           answer: String(allAnswers[part][qid])
+
+//         })   
+//       }
+//     }
+
+//     const response = await fetch("http://127.0.0.1:8000/submit",{
+//       method: 'POST',
+//       headers:{
+//         "Content-Type":"application/json",
+
+//       },
+//       body: JSON.stringify(payload)
+
+//     })
+
+//     if(!response.ok){
+//       throw new Error("`HTTP error! status: ${response.status}`")
+//     }
+//     const data = await response.json()
+//     console.log("Response from backend:", data)
+
+//     alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`)
+
+
+
+//   } catch (error) {
+//      console.error("Error submitting answers:", error);
+//     alert("Failed to submit answers, check console for details.");
+//   }
+// }
 
   // Skeleton parts array (replace these divs with your actual test content)
   const parts = [
@@ -724,7 +912,7 @@ name="q8"
     ))}
   </div>
 
-  <button className="end-btn" onClick={handleEndTest}>
+  <button className="end-btn" onClick={endTest}>
     End Test
   </button>
 </div>

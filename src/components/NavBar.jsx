@@ -83,7 +83,7 @@
 // export default NavBar
 
 import React, { useState } from 'react';
-import '../styles/landingpage.css';
+import '../styles/navbar.css';
 import AuthModal from './AuthModal';
 import { userUser } from '../hooks/UseUser';
 import { Link } from 'react-router-dom';
@@ -99,8 +99,8 @@ const NavBar = () => {
     <>
       <nav className="navbar">
         <div className="logo">Alpha Prep</div>
-
-        {/* Hamburger */}
+<div className="nav-center">
+   {/* Hamburger */}
         <div
           className={`hamburger ${menuOpen ? 'active' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -110,34 +110,14 @@ const NavBar = () => {
           <span></span>
         </div>
 
-        {/* Nav Links */}
-        {/* <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/sat-dash" onClick={() => setMenuOpen(false)}>SAT</Link>
-          <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a> */}
+        
  <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
     <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
     <Link to="/sat-dash" onClick={() => setMenuOpen(false)}>SAT</Link>
     <Link to="/ielts-dash" onClick={() => setMenuOpen(false)}>IELTS</Link>
     <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
     <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          {/* {user ? (
-            <div className="user-info">
-              <img
-                src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(user.name)}||U`}
-                alt="User Avatar"
-                className="user-avatar"
-              />
-              <span className="user-name">{user.name}</span>
-              <button className="nav-btn" onClick={logOut}>Log Out</button>
-            </div>
-          ) : (
-            <div className="auth-btn">
-              <button className="nav-btn" onClick={() => { setModalMode('signin'); setShowModal(true); }}>Sign In</button>
-              <button className="nav-btn" onClick={() => { setModalMode('signup'); setShowModal(true); }}>Sign Up</button>
-            </div>
-          )} */}
+          
            <div className="auth-wrapper">
     {user ? (
       <div className="user-info">
@@ -157,6 +137,8 @@ const NavBar = () => {
     )}
   </div>
         </div>
+</div>
+       
       </nav>
 
       {/* Auth Modal */}

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { userUser } from "../hooks/UseUser";
 import CategoryCard from "../components/CategoryCard";
-import "../styles/satdashboard.css";
+import "../styles/newdash.css";
 import { useNavigate } from "react-router-dom";
 import SATLogo from "../assets/sat.png";
 import Tabs from "../components/Tabs";
+import ProfileCard from '../components/ProfileCard'
+
 
 const SatDashboard = () => {
   const { user } = userUser();
@@ -27,7 +29,7 @@ const SatDashboard = () => {
     <div className="dashboard">
       <div className="dashboard-container">
         {/* Sidebar */}
-        <aside className="dashboard-sidebar">
+        {/* <aside className="dashboard-sidebar">
       <div className="profile-card-mini">
   <img
     src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
@@ -53,8 +55,9 @@ const SatDashboard = () => {
           </div>
 
           <button className="primary-btn full-width">View Profile</button>
-        </aside>
+        </aside> */}
 
+<ProfileCard/>
         {/* Main Dashboard */}
         <main className="dashboard-main">
           {/* Compact Top Nav */}

@@ -1,0 +1,174 @@
+.diploma-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px;
+  max-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+.card-image {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.level-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.level-badge.advanced {
+  background-color: #007bff;
+  color: white;
+}
+
+.level-badge.beginners {
+  background-color: #28a745;
+  color: white;
+}
+
+.also-available {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.available-item .category {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.available-item .title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-content .category {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.card-content .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.info-grid {
+  margin-bottom: 16px;
+}
+
+.info-item {
+  margin-bottom: 12px;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #0056b3;
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background-color: #545b62;
+}
+
+.beginners-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed #ccc;
+}
+
+.diploma-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.diploma-tag {
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+  border: 1px solid #dee2e6;
+}
+
+/* Also Available Card Styles */
+.also-available-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  max-width: 280px;
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+.also-available-card .available-content .category {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.also-available-card .available-content .title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+}

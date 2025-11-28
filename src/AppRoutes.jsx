@@ -26,7 +26,8 @@ import PrincetonMathsModule2 from './MockTests/PrincetonTest/PrincetonMathModule
 import ProfilePage from './pages/ProfilePage'
 import IeltsWritingTest1 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest1'
 import IeltsWritingTest2 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest2'
-
+import NewDash from './pages/New Dash'
+import CourseCard from './components/CourseCard'
 
 const AppRoutes = () => {
   return (
@@ -37,6 +38,8 @@ const AppRoutes = () => {
             <Route path='/sat-dash' element={<SatDashboard/>}/>
             <Route path='/ielts-dash' element={<IeltsDashBoard/>}/>
             <Route path='/k-start-screen' element={<StartScreen/>}/>
+             <Route path='/new-dash' element={<NewDash/>}/>
+            <Route path='/course-card' element={<CourseCard/>}/>
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}
     {/* SAT ROUTES */}

@@ -3,7 +3,7 @@
   padding: 30px 20px;
   background: #ffffff;
   border-radius: 30px;
-  margin-top: -40px;
+   margin-top: 20px;   /* FIX: was -40px */
 }
 
 .test-logos h3 {
@@ -16,14 +16,14 @@
 
 .logo-row {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 50px;
   flex-wrap: wrap;
 }
 
 .logo-row img {
-  height: 50px;
+  height: 70px;
   width: auto;
   filter: grayscale(20%);
   opacity: 0.9;
@@ -35,4 +35,25 @@
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
+}
+/* ---------------- MOBILE OPTIMIZATION ---------------- */
+
+@media (max-width: 768px) {
+  .logo-row {
+    gap: 30px;         /* reduce spacing */
+  }
+
+  .logo-row img {
+    height: 55px;      /* slightly smaller logos */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-row {
+    gap: 20px;         /* tighter spacing on very small screens */
+  }
+
+  .logo-row img {
+    height: 40px;      /* perfect size for mobile */
+  }
 }

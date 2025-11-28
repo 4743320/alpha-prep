@@ -51,6 +51,7 @@
   .compact-nav2 {
     padding: 10px 20px;
     gap: 12px;
+        padding: 12px 8px 6px 8px; /* more top padding for small phones */
   }
 
   .nav-tab2 {
@@ -69,6 +70,8 @@
     gap: 8px;
     width: 100%;            /* use full screen width */
     box-sizing: border-box; /* include padding in width */
+        padding: 12px 8px 6px 8px; /* more top padding for small phones */
+        margin-top:-20px;
   }
 
   .nav-tab2 {

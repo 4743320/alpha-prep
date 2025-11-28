@@ -1,6 +1,6 @@
 // src/components/TestLogos.jsx
 import React from "react";
-import IELTSLogo from "../assets/ielts.png";
+import IELTSLogo from "../assets/ieltslogo2.png"
 import SATLogo from "../assets/sat.png";
 // import TOEFLLogo from "../assets/toefl.png";
 import '../styles/testlogos.css'

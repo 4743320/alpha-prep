@@ -1,0 +1,139 @@
+/* ---------------- DESKTOP SIDEBAR ---------------- */
+.dashboard-sidebar {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: fit-content;
+  transition: all 0.3s ease;
+}
+
+/* Profile Mini Card */
+.profile-card-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  width: fit-content;
+}
+
+.avatar-mini {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-text-mini {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.name-mini {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+.role-mini {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Progress Card */
+.progress-card {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.progress-bar {
+  background: #e5e7eb;
+  border-radius: 8px;
+  height: 10px;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  height: 10px;
+  border-radius: 8px;
+}
+
+/* Full width button */
+.primary-btn.full-width {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 16px; /* vertical | horizontal */
+}
+
+/* ---------------- MOBILE TOP ROW ---------------- */
+.dashboard-topbar {
+  display: none; /* hidden on desktop by default */
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 16px; /* added padding for mobile */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+    
+}
+
+.dashboard-topbar .topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-topbar .avatar-mini {
+  width: 32px;
+  height: 32px;
+}
+
+.dashboard-topbar .name-mini {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+.dashboard-topbar .topbar-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 12px 16px;       /* button internal padding */
+  font-size: 0.85rem;
+  font-weight: 600;
+ margin-left: 8px;         /* space from the avatar/name */
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    display: none; /* hide desktop sidebar */
+  }
+
+  .dashboard-topbar {
+    display: flex; /* show mobile top bar */
+     margin-bottom: 10px;         /* space from the avatar/name */
+  }
+}
