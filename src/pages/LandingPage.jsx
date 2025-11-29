@@ -7,7 +7,7 @@ import { userUser } from "../hooks/UseUser";
 import CourseCard from '../components/CourseCard'
 import IELTSLogo from "../assets/ieltslogo2.png"
 import SATLogo from "../assets/sat.png";
-
+import HeroImg from '../assets/Pics/hero.png'
 
 export default function LandingPage() {
   const [showModal, setShowModal] = useState(false)
@@ -22,19 +22,20 @@ export default function LandingPage() {
       <header className="hero" id="home">
         <div className="hero-content">
       <TestLogos/>
-          <h1>Master Tests With Confidence</h1>
+          <h1>Study Smarter, Score Higher</h1>
           <p>
-            Unlock your full potential with a vast collection practice tests, real-time feedback,
-            and personalized learning paths designed to help you succeed.
+Get exam-ready with <b><i>Free Official Practice Tests and Expert Study Resources</i></b> .
+We offer Proficiency Tests, Aptitude Tests, and accredited Professional Diplomas & Certifications — all designed to help you learn smarter and score higher.
+Study at your own pace with trusted material, helpful guidance, and a learning path built just for you.
           </p>
           <div className="hero-buttons">
             <button className="primary-btn">Get Started</button>
-            <button className="secondary-btn">Learn More</button>
+            <button className="primary-btn">Learn More</button>
           </div>
         </div>
         <div className="hero-image">
           <img
-            src="https://cdn.pixabay.com/photo/2017/08/30/07/51/school-2692527_1280.png"
+            src={HeroImg}
             alt="Students preparing for exams"
           />
         </div>
