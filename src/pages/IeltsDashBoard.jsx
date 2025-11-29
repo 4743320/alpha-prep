@@ -56,7 +56,7 @@ const tabsList = ["IELTS Practice", "IELTS Tests", "Resources"];
 
           <button className="primary-btn full-width">View Score History</button>
         </aside> */}
-<ProfileCard/>
+<ProfileCard user={user}/>
 
         {/* Main Dashboard */}
         <main className="dashboard-main">

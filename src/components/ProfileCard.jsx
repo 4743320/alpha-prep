@@ -26,7 +26,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const SidebarWithTopBar = ({ user }) => {
+const ProfileCard = ({ user }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -85,4 +85,4 @@ const SidebarWithTopBar = ({ user }) => {
   );
 };
 
-export default SidebarWithTopBar;
+export default ProfileCard;

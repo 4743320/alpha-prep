@@ -57,7 +57,7 @@ const SatDashboard = () => {
           <button className="primary-btn full-width">View Profile</button>
         </aside> */}
 
-<ProfileCard/>
+<ProfileCard user={user}/>
         {/* Main Dashboard */}
         <main className="dashboard-main">
           {/* Compact Top Nav */}

@@ -26,7 +26,7 @@ const tabsList = ["IELTS Practice", "IELTS Tests", "Resources"];
     <div className="dashboard">
       <div className="dashboard-container">
         {/* Sidebar */}
-        <ProfileCard/>
+        <ProfileCard user={user}/>
     
         {/* Main Dashboard */}
         <main className="dashboard-main">

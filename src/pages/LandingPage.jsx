@@ -39,7 +39,6 @@ export default function LandingPage() {
           />
         </div>
       </header>
-     
 
       {/* Features Section */}
       <section className="features" id="features">

@@ -1,9 +1,13 @@
+/* ============================= */
+/* DASHBOARD BASE STYLES         */
+/* ============================= */
 .dashboard {
   min-height: 100vh;
   background: linear-gradient(135deg, #f7faff, #ffffff);
   display: flex;
   justify-content: center;
   padding: 60px;
+  box-sizing: border-box;
 }
 
 /* Wrapper container */
@@ -12,7 +16,7 @@
   gap: 40px;
   width: 100%;
   max-width: 1300px;
-  flex-wrap: wrap; /* allows stacking on smaller screens */
+  flex-wrap: wrap; /* allows category cards to wrap */
 }
 
 /* Sidebar */
@@ -29,11 +33,12 @@
   transition: all 0.3s ease;
 }
 
+/* Profile Card Mini */
 .profile-card-mini {
   display: flex;
   align-items: center;
-  gap: 10px;                 /* bigger gap */
-  padding: 10px 14px;        /* bigger padding */
+  gap: 10px;
+  padding: 10px 14px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
@@ -41,7 +46,7 @@
 }
 
 .avatar-mini {
-  width: 42px;               /* bigger avatar */
+  width: 42px;
   height: 42px;
   border-radius: 50%;
   object-fit: cover;
@@ -50,43 +55,63 @@
 .profile-text-mini {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;          /* smoother spacing */
+  line-height: 1.2;
 }
 
 .name-mini {
-  font-size: 15px;           /* larger name text */
+  font-size: 15px;
   font-weight: 600;
   color: #111;
 }
 
 .role-mini {
-  font-size: 12px;           /* slightly bigger role */
+  font-size: 12px;
   color: #666;
   margin-top: 2px;
 }
 
+/* Progress Card */
+.progress-card {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 15px;
+}
 
+.progress-bar {
+  background: #e5e7eb;
+  border-radius: 8px;
+  height: 10px;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  height: 10px;
+  border-radius: 8px;
+}
 
 /* Main Content */
 .dashboard-main {
   flex: 1;
 }
+
+/* Dashboard Header */
 .dashboard-header {
   display: flex;
   align-items: center;
-  gap: 12px; /* space between logo and text */
+  gap: 12px;
   margin-bottom: 5px;
 }
 
 .dashboard-logo {
-   height: 50px;
+  height: 50px;
   width: auto;
   filter: grayscale(20%);
   opacity: 0.9;
   transition: all 0.3s ease;
   border-radius: 10px;
 }
-
 
 .dashboard-title {
   font-size: 2rem;
@@ -99,137 +124,124 @@
   margin-bottom: 20px;
 }
 
-/* Category grid adapts dynamically */
+/* Category Grid */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
 
+/* Category Card */
 .category-card {
-  background: white;
+  background: #fff;
   border-radius: 12px;
-  padding: 25px;
+  padding: 24px 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  transition: all 0.25s ease;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid transparent;
 }
 
 .category-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
 }
 
 .category-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 8px;
-  color: #111;
+  color: #111827;
+  font-weight: 600;
 }
 
 .category-card p {
-  color: #555;
-  margin-bottom: 15px;
+  color: #6b7280;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
 }
 
+.secondary-btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.secondary-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+/* Full-width buttons */
 .full-width {
   width: 100%;
 }
 
+/* ============================= */
+/* DESKTOP TO LARGE TABLET (≥1025px) */
+/* ============================= */
+/* Desktop keeps default flex layout, sidebar on left, main on right */
 
 /* ============================= */
-/* 📱 MOBILE RESPONSIVENESS HERE */
+/* TABLETS (≤1024px) */
 /* ============================= */
-
 @media (max-width: 1024px) {
   .dashboard {
-    padding: 40px 30px;
+    padding: 50px 40px;
   }
 
+  /* Keep sidebar on left, main on right */
   .dashboard-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* desktop-style */
+    align-items: flex-start;
   }
 
   .dashboard-sidebar {
-    width: 100%;
-    max-width: 500px;
+    width: 280px; /* keep fixed */
   }
 
-  .dashboard-title {
-    font-size: 1.7rem;
-    text-align: center;
-  }
-
-  .dashboard-subtitle {
-    text-align: center;
-  }
-}
-
-/* Tablet and smaller devices */
-@media (max-width: 768px) {
-  .dashboard {
-    padding: 30px 20px;
+  .dashboard-main {
+    flex: 1;
   }
 
   .category-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-sidebar {
-    padding: 20px;
-  }
-
-  .category-card {
-    padding: 15px;
-  }
-
-  
-}
-
-  /* Tablets (≤1024px) */
-@media (max-width: 1024px) {
-  .dashboard {
-    padding: 40px 30px;
-  }
-
-  .dashboard-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dashboard-sidebar {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .dashboard-title {
-    font-size: 1.7rem;
-    text-align: center;
-  }
-
-  .dashboard-subtitle {
-    text-align: center;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
   }
+
+  .dashboard-title {
+    font-size: 1.9rem;
+  }
 }
 
-/* Mobile (≤768px) */
+/* ============================= */
+/* MOBILE (≤768px) */
+/* ============================= */
 @media (max-width: 768px) {
   .dashboard {
     padding: 30px 20px;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
   }
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row on mobile */
     gap: 16px;
-  }
-
-  .dashboard-sidebar {
-    width: 100%;
-    padding: 20px;
   }
 
   .category-card {
@@ -242,5 +254,40 @@
 
   .dashboard-subtitle {
     font-size: 1rem;
+  }
+}
+
+/* ============================= */
+/* EXTRA SMALL PHONES (≤480px) */
+/* ============================= */
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: 1fr; /* stack single card */
+    gap: 12px;
+  }
+
+  .category-card {
+    padding: 12px 10px;
+  }
+
+  .category-card h3 {
+    font-size: 1rem;
+  }
+
+  .category-card p {
+    font-size: 0.8rem;
+  }
+
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dashboard-title {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.9rem;
   }
 }
