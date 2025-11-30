@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "../styles/landingpage.css";
+import "../styles/newlanding.css";
 import TestLogos from "../components/TestLogos";
 import AuthModal from "../components/AuthModal";
 import { UserContext } from "../Context/UserContext";
