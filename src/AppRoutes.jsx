@@ -28,6 +28,8 @@ import IeltsWritingTest1 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest1
 import IeltsWritingTest2 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest2'
 import NewDash from './pages/New Dash'
 import CourseCard from './components/CourseCard'
+import New from './pages/New' 
+
 
 const AppRoutes = () => {
   return (
@@ -40,6 +42,7 @@ const AppRoutes = () => {
             <Route path='/k-start-screen' element={<StartScreen/>}/>
              <Route path='/new-dash' element={<NewDash/>}/>
             <Route path='/course-card' element={<CourseCard/>}/>
+            <Route path='new' element={<New/>}/>
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}
     {/* SAT ROUTES */}

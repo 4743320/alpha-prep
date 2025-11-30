@@ -169,6 +169,38 @@ const handleNavigateBack = () => {
         setAllAnswers((prev)=>({...prev, [part]:{...prev[part],[name]:value}}))
     }
 
+const endTest = async (testId, section) => {
+  try {
+    const payload = { answers: [] };
+
+    for (let part in allAnswers) {
+      for (let qid in allAnswers[part]) {
+        payload.answers.push({
+          question_id: qid.replace('q',''),
+          answer: String(allAnswers[part][qid])
+        });
+      }
+    }
+
+    const url = `http://127.0.0.1:8000/submit/${testId}/${section}`;
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+    console.log("Response:", data);
+    alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`);
+
+  } catch (error) {
+    console.error("Error sending request", error);
+    alert("Failed to submit answers, check console");
+  }
+};
 
     const parts = [
         <div key='part1'>
@@ -239,8 +271,8 @@ const handleNavigateBack = () => {
                   <input
                     type="radio"
                     name={`q${q.id}`}
-                    value="True"
-                    checked={allAnswers.part1[`q${q.id}`] === "True"}
+                    value="T"
+                    checked={allAnswers.part1[`q${q.id}`] === "T"}
                     onChange={(e) => handleAnswerChange('part1', e.target.name, e.target.value)}
                   /> TRUE
                 </label>
@@ -249,8 +281,8 @@ const handleNavigateBack = () => {
                   <input
                     type="radio"
                     name={`q${q.id}`}
-                    value="False"
-                    checked={allAnswers.part1[`q${q.id}`] === "False"}
+                    value="F"
+                    checked={allAnswers.part1[`q${q.id}`] === "F"}
                     onChange={(e) => handleAnswerChange('part1', e.target.name, e.target.value)}
                   /> FALSE
                 </label>
@@ -259,8 +291,8 @@ const handleNavigateBack = () => {
                   <input
                     type="radio"
                     name={`q${q.id}`}
-                    value="Not Given"
-                    checked={allAnswers.part1[`q${q.id}`] === "Not Given"}
+                    value="NOT GIVEN"
+                    checked={allAnswers.part1[`q${q.id}`] === "NOT GIVEN"}
                     onChange={(e) => handleAnswerChange('part1', e.target.name, e.target.value)}
                   /> NOT GIVEN
                 </label>
@@ -271,12 +303,13 @@ const handleNavigateBack = () => {
         <div className="question-block">
           <p>
             7. Kakapo diet consists of fern fronds, various parts of a tree and 
-                  <input
-                  type='text'
-                  placeholder='7'
-                  value={allAnswers.part1.q7 || ''}
-                  onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
-                  />
+            <input
+              className="inline-blank"
+              type="text"
+              name="q7"
+              value={allAnswers.part1.q7 || ""}
+              onChange={(e)=>handleAnswerChange('part1', e.target.name,e.target.value)}
+            />
                   </p>
           <p>
             9. Kakapo nests are created in 
@@ -678,7 +711,7 @@ All of this raises questions of social acceptance, acknowledges Russell."If we'r
     ))}
   </div>
 
-  <button className="end-btn" onClick={handleEndTest}>
+  <button className="end-btn" onClick={()=>{endTest("IELTS_AC_20_2025_TEST1", "Reading")}}>
     End Test
   </button>
   

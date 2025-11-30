@@ -24,6 +24,39 @@ const IeltsListening = () => {
 //   }
 // },[])
 
+const endTest = async(testId, section) => {
+  try {
+    const payload = { answers: [] };
+
+    for (let part in allAnswers) {
+      for (let qid in allAnswers[part]) {
+        payload.answers.push({
+          question_id: qid.replace('q',''),
+          answer: String(allAnswers[part][qid])
+        });
+      }
+    }
+
+    const url = `http://127.0.0.1:8000/submit/${testId}/${section}`;
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+    console.log("Response:", data);
+    alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`);
+
+  } catch (error) {
+    console.error("Error sending request", error);
+    alert("Failed to submit answers, check console");
+  }
+};
+
   const [showModal, setShowModal] = useState(false)
   const[partScore, setPartScore] = useState({})
   const[totalScore, setTotalScore] = useState()
@@ -813,7 +846,7 @@ const IeltsListening = () => {
     ))}
   </div>
 
-  <button className="end-btn" onClick={handleEndTest}>
+  <button className="end-btn" onClick={()=>{endTest("IELTS_AC_20_2025_TEST1", "Listening")}}>
     End Test
   </button>
 </div>
