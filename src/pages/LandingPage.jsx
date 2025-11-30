@@ -68,6 +68,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
 
       {/* About Section */}
       <section className="about" id="about">
+        <CourseCard/>
         <div className="about-content">
           <h2>Built for Serious Learners</h2>
           <p>

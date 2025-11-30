@@ -119,3 +119,49 @@ export const AlsoAvailableCard = ({
 };
 
 export default DiplomaCard;
+
+// give me the css for this component
+// import React from "react";
+// import '../styles/coursecard.css'
+
+// const CourseCard = ({
+//   level,
+//   levelColor = "#6c63ff",
+//   badgeText = "DIPLOMA",
+//   image,
+//   category,
+//   title,
+//   hours,
+//   learners,
+// }) => {
+//   return (
+//     <div className="course-card">
+//       <div className="card-header">
+//         <div className="level-tag" style={{ backgroundColor: levelColor }}>
+//           <span className="level-icon">📊</span>
+//           {level}
+//         </div>
+//         <div className="badge">{badgeText}</div>
+//       </div>
+
+//       <img src={image} alt={title} className="card-image" />
+
+//       <div className="card-content">
+//         <p className="category">{category}</p>
+//         <h3 className="title">{title}</h3>
+
+//         <div className="stats">
+//           <span className="hours">🕒 {hours}</span>
+//           <span className="learners">👥 {learners} learners</span>
+//         </div>
+
+//         <div className="buttons">
+//           <button className="info-btn">More Info</button>
+//           <button className="start-btn">Start Learning</button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CourseCard;
