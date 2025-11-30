@@ -167,11 +167,34 @@ html, body, #root, .landing-page {
 
 /* Large Desktop: min 1200px */
 @media (min-width: 1200px) {
-  .hero {
-    gap: 50px;
-    padding: 120px 100px 60px 100px;
+   .hero {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    gap: 1rem;
+    padding: 80px 40px 40px 40px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 480px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    max-width: 500px;
+    transform: scale(1);
+  }
+
+  .features, .about {
+    padding: 80px 40px;
   }
 }
+
+
 
 /* Tablet / Small Desktop: 769px to 1024px */
 @media (max-width: 1024px) and (min-width: 769px) {
