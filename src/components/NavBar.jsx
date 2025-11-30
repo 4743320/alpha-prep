@@ -115,6 +115,7 @@ const NavBar = () => {
     <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
     <Link to="/sat-dash" onClick={() => setMenuOpen(false)}>SAT</Link>
     <Link to="/ielts-dash" onClick={() => setMenuOpen(false)}>IELTS</Link>
+    <Link to="/new" onClick={() => setMenuOpen(false)}>New</Link>
     <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
     <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           
