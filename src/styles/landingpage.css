@@ -26,10 +26,32 @@ html, body, #root, .landing-page {
   position: relative;
 }
 
-.hero-content {
+/* .hero-content {
   flex: 1;
   max-width: 550px;
+} */
+
+/* ALTERNATE STYLING OK HERO IMAGE AS WELL  */
+ /* .hero-content { */
+ /* text takes LESS space */
+  /* flex: 0.9;   
+} */
+
+/* .hero-image { */
+  /* image takes MORE space */
+  /* flex: 1.3;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.hero-image img {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  transform: scale(1.1);
+  margin :1px;
+} */
 
 .hero-content h1 {
   font-size: 3rem;
@@ -75,7 +97,7 @@ html, body, #root, .landing-page {
 }
 
 .secondary-btn:hover {
-  background-color: #d6e4ff;
+  background-color:  rgb(238, 161, 200);
 }
 
 .hero-image img {
@@ -160,7 +182,7 @@ width: 100%;
 
 /* Tablet: max 992px */
 @media (max-width: 992px) {
-  .hero {
+  /* .hero {
     flex-direction: column;
     text-align: center;
     padding: 80px 40px 40px 40px;
@@ -168,6 +190,15 @@ width: 100%;
   .hero-image img {
     width: 400px;
     margin-top: 30px;
+  } */
+    .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 40px;
+  }
+
+  .hero-image img {
+    max-width: 450px;
   }
   .features, .about {
     padding: 80px 30px;
