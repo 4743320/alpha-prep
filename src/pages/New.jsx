@@ -18,14 +18,14 @@ const New = () => {
     
   return (
 <div>
-  <section class="hero-section">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-text">
+  <section className="hero-section">
+  <div className="container">
+    <div className="hero-grid">
+      <div className="hero-text">
         {/* <p class="subtitle">A social media for learners</p> */}
         <TestLogos/>
-        <h2 class="title">Study Smarter, Score Higher</h2>
-        <p class="description">Get exam-ready with <b><i>Free Official Practice Tests and Expert Study Resources</i></b> .
+        <h2 className="title">Study Smarter, Score Higher</h2>
+        <p className="description">Get exam-ready with <b><i>Free Official Practice Tests and Expert Study Resources</i></b> .
 We offer Proficiency Tests, Aptitude Tests, and accredited Professional Diplomas & Certifications — all designed to help you learn smarter and score higher.
 Study at your own pace with trusted material, helpful guidance, and a learning path built just for you.
 .</p>
@@ -35,7 +35,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
             <button className="primary-btn">Learn More</button>
           </div>
       </div>
-      <div class="hero-image">
+      <div className="hero-image">
         <img src={HeroImg} alt="Hero" />
       </div>
     </div>
