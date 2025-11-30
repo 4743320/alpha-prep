@@ -8,28 +8,26 @@
 html, body, #root, .landing-page {
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   color: #222;
+  overflow-x: hidden;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO SECTION ================= */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* allows shrinking on narrow screens */
+  gap: 20px;
   padding: 120px 80px 60px 80px;
   background: linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);
   min-height: 100vh;
-  gap: 30px;
-  position: relative;
-  flex-wrap: nowrap;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 550px;
-  min-width: 250px;
+  flex: 0.55; /* takes about 55% width */
+  min-width: 0; /* critical for flex shrink */
 }
 
 .hero-content h1 {
@@ -80,7 +78,8 @@ html, body, #root, .landing-page {
 }
 
 .hero-image {
-  flex: 1;
+  flex: 0.45; /* takes about 45% width */
+  min-width: 0; /* critical for flex shrink */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,12 +87,12 @@ html, body, #root, .landing-page {
 
 .hero-image img {
   width: 100%;
-  max-width: 750px;
+  max-width: 100%;
   height: auto;
   transform: scale(1.1);
 }
 
-/* ================= FEATURES ================= */
+/* ================= FEATURES SECTION ================= */
 .features {
   text-align: center;
   padding: 100px 60px;
@@ -130,7 +129,7 @@ html, body, #root, .landing-page {
   margin-bottom: 10px;
 }
 
-/* ================= ABOUT ================= */
+/* ================= ABOUT SECTION ================= */
 .about {
   padding: 100px 60px;
   background: white;
@@ -165,7 +164,7 @@ html, body, #root, .landing-page {
 
 /* ================= RESPONSIVE ================= */
 
-/* Large Desktop: min 1200px - better spacing for very large screens */
+/* Large Desktop */
 @media (min-width: 1200px) {
   .hero {
     gap: 50px;
@@ -176,24 +175,31 @@ html, body, #root, .landing-page {
 /* Tablet: 769px to 1024px */
 @media (max-width: 1024px) and (min-width: 769px) {
   .hero {
-    padding: 80px 40px 40px 40px;
+    flex-wrap: wrap;
     gap: 20px;
+    padding: 80px 40px 40px 40px;
     min-height: auto;
+    align-items: flex-start;
   }
-  
+
   .hero-content {
+    flex: 0.55;
     max-width: 480px;
   }
-  
+
   .hero-content h1 {
     font-size: 2.5rem;
   }
-  
+
+  .hero-image {
+    flex: 0.45;
+  }
+
   .hero-image img {
     max-width: 500px;
     transform: scale(1);
   }
-  
+
   .features, .about {
     padding: 80px 40px;
   }
@@ -202,100 +208,99 @@ html, body, #root, .landing-page {
 /* Mobile Landscape / Small Tablet: 481px to 768px */
 @media (max-width: 768px) and (min-width: 481px) {
   .hero {
-    flex-direction: row;
-    padding: 40px 20px;
-    gap: 20px;
-    align-items: center; /* vertically center the content */
-  }
-  
-  .hero-content {
-    flex: 1; /* grow to fill available space */
-    max-width: none; /* remove max-width */
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 60px 30px 30px 30px;
+    align-items: flex-start;
   }
 
-  
+  .hero-content {
+    flex: 0.55;
+    max-width: 400px;
+  }
+
   .hero-content h1 {
     font-size: 2rem;
     margin-bottom: 15px;
   }
-  
+
   .hero-content p {
     font-size: 1rem;
     margin-bottom: 20px;
   }
-  
-.hero-image {
-    flex: 1; /* let image take the other half */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .hero-image {
+    flex: 0.45;
   }
 
   .hero-image img {
-    width: 100%;
-    max-width: 100%; /* allow image to expand */
+    max-width: 350px;
     transform: scale(1);
-    margin-top: 0;
   }
 
   .hero-buttons {
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
-  }  
+  }
+
   .primary-btn {
     padding: 12px 24px;
     font-size: 0.9rem;
   }
 }
 
-/* Mobile: max 480px */
+/* Mobile Portrait: max 480px */
 @media (max-width: 480px) {
   .hero {
-    flex-direction: column;
-    padding: 20px;
+    flex-direction: column; /* stack text above image */
     gap: 10px;
+    padding: 20px;
     text-align: center;
   }
-  
+
   .hero-content h1 {
     font-size: 2rem;
   }
-  
+
   .hero-content p {
     font-size: 1rem;
   }
-  
+
   .hero-buttons {
     justify-content: center;
     flex-direction: column;
     gap: 10px;
   }
-  
+
+  .hero-image {
+    width: 100%;
+  }
+
   .hero-image img {
     width: 100%;
     max-width: 350px;
     margin-top: 10px;
     transform: scale(1);
   }
-  
+
   .feature-grid {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .feature-card {
     width: 100%;
     max-width: 330px;
   }
-  
+
   .about {
     padding: 60px 20px;
   }
-  
+
   .about-content h2 {
     font-size: 1.8rem;
   }
-  
+
   .about-content p {
     font-size: 1rem;
   }
