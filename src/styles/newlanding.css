@@ -27,8 +27,9 @@ html, body, #root, .landing-page {
 }
 
 .hero-content {
-  flex: 0.9;
+  flex: 1;
   max-width: 550px;
+  min-width: 250px;  /* prevent it from getting too narrow */
 }
 
 .hero-content h1 {
@@ -79,7 +80,7 @@ html, body, #root, .landing-page {
 }
 
 .hero-image {
-  flex: 1.3;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,6 +171,7 @@ html, body, #root, .landing-page {
     flex-direction: column !important; /* keep side-by-side on tablet/mobile desktop mode */
     text-align: left;
     padding: 80px 40px;
+     gap: 10px; /* less space between text and image */
   }
 
   .hero-image img {
@@ -183,8 +185,8 @@ html, body, #root, .landing-page {
   }
 }
 
-/* Mobile: max 600px */
-@media (max-width: 600px) {
+/* Mobile: max 768px */
+@media (max-width: 768px) {
   .hero {
     flex-direction: column; /* stack text above image only on real mobile */
     padding: 20px 20px 20px 20px; /* reduced padding to remove excess space */
