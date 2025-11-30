@@ -101,7 +101,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
         </div>
         <div className="hero-image">
           <img
-            src={HeroImg}
+            src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/1/hero-img.png"
             alt="Students preparing for exams"
           />
         </div>
