@@ -24,12 +24,13 @@ html, body, #root, .landing-page {
   min-height: 100vh;
   gap: 30px;
   position: relative;
+   flex-wrap: nowrap !important;
 }
 
-/* .hero-content {
+.hero-content {
   flex: 1;
   max-width: 550px;
-} */
+}
 
 /* ALTERNATE STYLING OK HERO IMAGE AS WELL  */
  /* .hero-content { */
@@ -182,7 +183,7 @@ width: 100%;
 
 /* Tablet: max 992px */
 @media (max-width: 992px) {
-  /* .hero {
+  .hero {
     flex-direction: column;
     text-align: center;
     padding: 80px 40px 40px 40px;
@@ -190,7 +191,7 @@ width: 100%;
   .hero-image img {
     width: 400px;
     margin-top: 30px;
-  } */
+  }
     .hero {
     flex-direction: column;
     text-align: center;
