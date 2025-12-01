@@ -36,13 +36,14 @@ const AppRoutes = () => {
     <Router>
         <NavBar/>
         <Routes>
-            <Route path='/' element={<LandingPage/>}/>
+            {/* <Route path='/' element={<LandingPage/>}/> */}
+            <Route path='/' element={<New/>}/>
             <Route path='/sat-dash' element={<SatDashboard/>}/>
             <Route path='/ielts-dash' element={<IeltsDashBoard/>}/>
             <Route path='/k-start-screen' element={<StartScreen/>}/>
              <Route path='/new-dash' element={<NewDash/>}/>
             <Route path='/course-card' element={<CourseCard/>}/>
-            <Route path='new' element={<New/>}/>
+            
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}
     {/* SAT ROUTES */}

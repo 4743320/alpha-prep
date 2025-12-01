@@ -8,6 +8,7 @@ import CourseCard from '../components/CourseCard'
 import IELTSLogo from "../assets/ieltslogo2.png"
 import SATLogo from "../assets/sat.png";
 import HeroImg from '../assets/Pics/hero.png'
+import TOEFLIImg from '../assets/Pics/toefl.gif'
 
 
 const New = () => {
@@ -17,7 +18,8 @@ const New = () => {
       const{user, logOut} = userUser()
     
   return (
-<div>
+    <div>
+      <div>
   <section className="hero-section">
   <div className="container">
     <div className="hero-grid">
@@ -43,6 +45,63 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
 </section>
 
 </div>
+ <section className="features" id="features">
+  <div className="container-course">
+      <div className="course-row">
+   <CourseCard imageUrl={IELTSLogo} title={"IELTS ACADEMIC / GENERAL"} category={"IELTS TESTS FOR ENGLISH LANGUAGE PROFICIENCY"}
+   level="START LEARNING" level2={"PROFICIENCY TEST"}/>
+      <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
+   level="START LEARNING" level2={"APTITUTE TEST"}/>
+         <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
+   level="START LEARNING" level2={"PROFICIENCY TEST"}/>
+
+</div>
+
+  </div>
+
+
+        <h2>Why Choose Alpha Prep ?</h2>
+        <div className="feature-grid">
+          <div className="feature-card">
+            <h3>Smart Practice</h3>
+            <p>
+              Get expertly curated practice tests and Official Resourc Material that adapt to your skill level.
+            </p>
+          </div>
+          <div className="feature-card">
+            <h3>Instant Feedback</h3>
+            <p>
+              Our efficient practice tests give you detailed analysis and tips after every test attempt.
+            </p>
+          </div>
+          <div className="feature-card">
+            <h3>Track Progress</h3>
+            <p>
+              Visualize your score improvements and focus on the areas that matter most.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="about" id="about">
+       
+        <div className="about-content">
+          <h2>Built for Serious Learners</h2>
+          <p>
+            PrepMaster is a one-stop solution for students aiming to achieve their dream scores.
+            Whether you're preparing for IELTS, SAT, PTE, DUOLingo, TOEFL & ECAT, our platform provides structured
+            practice, insights, and motivation to keep you moving forward.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} PrepMaster — All rights reserved. Contact : 0313-4743320</p>
+      </footer>
+    </div>
+
 
   )
 }

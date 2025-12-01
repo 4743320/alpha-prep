@@ -86,7 +86,7 @@ import React, { useState } from 'react';
 import '../styles/navbar.css';
 import AuthModal from './AuthModal';
 import { userUser } from '../hooks/UseUser';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -95,6 +95,7 @@ const NavBar = () => {
 
   const { user, logOut } = userUser();
 
+  const navigate = useNavigate()
   return (
     <>
       <nav className="navbar">
@@ -115,7 +116,7 @@ const NavBar = () => {
     <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
     <Link to="/sat-dash" onClick={() => setMenuOpen(false)}>SAT</Link>
     <Link to="/ielts-dash" onClick={() => setMenuOpen(false)}>IELTS</Link>
-    <Link to="/new" onClick={() => setMenuOpen(false)}>New</Link>
+    {/* <Link to="/new" onClick={() => setMenuOpen(false)}>New</Link> */}
     <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
     <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           
@@ -129,6 +130,7 @@ const NavBar = () => {
         />
         <span className="user-name">{user.name}</span>
         <button className="nav-btn" onClick={logOut}>Log Out</button>
+        <button className="profile-btn" onClick={()=>{navigate('/profile')}} >Profile</button>
       </div>
     ) : (
       <div className="auth-btn">
