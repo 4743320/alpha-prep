@@ -3,7 +3,7 @@
 /* ============================= */
 .dashboard {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f7faff, #ffffff);
+  background: white;
   display: flex;
   justify-content: center;
   padding: 60px;
@@ -100,9 +100,44 @@
 .dashboard-header {
   display: flex;
   align-items: center;
+    justify-content: center; /* ← ADD THIS */
   gap: 12px;
   margin-bottom: 5px;
 }
+.dashboard-title {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+
+  /* smooth animation */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* default underline (hidden initially) */
+.dashboard-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #fbbf24;; /* change underline color */
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* HOVER EFFECTS */
+.dashboard-title:hover {
+  color:black;       /* change text color */
+  transform: scale(1.1); /* make text slightly bigger */
+}
+
+.dashboard-title:hover::after {
+  width: 80%; /* underline grows */
+}
+
 
 .dashboard-logo {
   height: 50px;
@@ -111,13 +146,13 @@
   opacity: 0.9;
   transition: all 0.3s ease;
   border-radius: 10px;
-  margin-right: 8px;
 }
 
 .dashboard-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
+  justify-content: center;
 }
 
 .dashboard-subtitle {

@@ -25,6 +25,7 @@
 //         </aside>
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProfileCard = ({ user }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -55,6 +56,8 @@ const ProfileCard = ({ user }) => {
     );
   }
 
+  const navigate= useNavigate()
+
   // Desktop sidebar
   return (
     <aside className="dashboard-sidebar">
@@ -80,7 +83,7 @@ const ProfileCard = ({ user }) => {
         <p>65% Overall Mastery</p>
       </div>
 
-      <button className="primary-btn full-width">View Score History</button>
+      <button className="primary-btn full-width" onClick={()=>{navigate('/profile')}}>View Profile</button>
     </aside>
   );
 };

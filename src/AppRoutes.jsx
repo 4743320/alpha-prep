@@ -29,6 +29,7 @@ import IeltsWritingTest2 from './Tests/IeltsTests/IeltsWriting/IeltsWritingTest2
 import NewDash from './pages/New Dash'
 import CourseCard from './components/CourseCard'
 import New from './pages/New' 
+import MainDashBoard from './pages/MainDash'
 
 
 const AppRoutes = () => {
@@ -43,7 +44,8 @@ const AppRoutes = () => {
             <Route path='/k-start-screen' element={<StartScreen/>}/>
              <Route path='/new-dash' element={<NewDash/>}/>
             <Route path='/course-card' element={<CourseCard/>}/>
-            
+            <Route path='/main-dash' element={<MainDashBoard/>}/>
+             <Route path='/profile' element={<ProfilePage/>}/>         
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}
     {/* SAT ROUTES */}
@@ -64,7 +66,7 @@ const AppRoutes = () => {
     <Route path='/ieltstest' element={<IeltsTest1/>}/>
     <Route path='/ieltslist2' element={<IeltsListeningTest2/>}/>
     <Route path='/ieltsread2' element={<IeltsReadingTest2/>}/>
-    <Route path='/profile' element={<ProfilePage/>}/>
+   
     <Route path='/ieltswrit' element={<IeltsWritingTest1/>}/>
     <Route path='/ieltswrit2' element={<IeltsWritingTest2/>}/>
 

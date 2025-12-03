@@ -11,6 +11,7 @@ const IeltsListening = () => {
     navigate("/ielts-dash");
   }
 };
+
 //Redundant to alert going back
 // useEffect(()=>{
 //   const handleBeforeunload = (e)=>{

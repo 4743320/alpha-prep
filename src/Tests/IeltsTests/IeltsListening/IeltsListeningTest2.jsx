@@ -257,46 +257,76 @@ const questions26to30 = [
   //   }
   // }
 
-  const endTest = async()=>{
-  try {
-    const payload = {
-      user_id: 'user123',
-      answers: []
-    };
+//   const endTest = async()=>{
+//   try {
+//     const payload = {
+//       user_id: 'user123',
+//       answers: []
+//     };
 
-    for (let part in allAnswers) {
-      for (let qid in allAnswers[part]) {
-        payload.answers.push({
-          question_id: qid.replace('q',''), // remove the 'q' prefix
-          answer: String(allAnswers[part][qid])
-        });
-      }
-    }
+//     for (let part in allAnswers) {
+//       for (let qid in allAnswers[part]) {
+//         payload.answers.push({
+//           question_id: qid.replace('q',''), // remove the 'q' prefix
+//           answer: String(allAnswers[part][qid])
+//         });
+//       }
+//     }
 
-    const response = await fetch("http://127.0.0.1:8000/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload),
-      // credentials: 'include' // only if you need cookies
-    });
+//     const response = await fetch("http://127.0.0.1:8000/submit", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(payload),
+//       // credentials: 'include' // only if you need cookies
+//     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
 
-    const data = await response.json();
-    console.log("Response:", data);
-    alert("Answers submitted successfully!");
+//     const data = await response.json();
+//     console.log("Response:", data);
+//     alert("Answers submitted successfully!");
     
-  } catch (error) {
+//   } catch (error) {
+//     console.error("Error sending request", error);
+//     alert("Failed to submit answers, check console");
+//   }
+// };
+
+const endTest=async(testId, section)=>{
+
+  try {
+    const payload={
+      answers:[]
+    }
+    for (let part in allAnswers) {
+  for (let qid in allAnswers[part]) {
+    payload.answers.push({
+      question_id: qid.replace("q",""),
+      answer: String(allAnswers[part][qid])
+    })
+  }
+}
+    const url = `http://127.0.0.1:8000/submit/${testId}/${section}`;
+    const response = await fetch(url,{
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+     const data = await response.json()
+     console.log("Response:", data);
+     alert(`"Answers Submitted successfully" ${data.score}/${data.total_questions}`)
+  }
+   catch (error) {
     console.error("Error sending request", error);
     alert("Failed to submit answers, check console");
   }
-};
-
-
+}
 // const endTest= async()=>{
 
 //   try {
@@ -912,7 +942,7 @@ name="q8"
     ))}
   </div>
 
-  <button className="end-btn" onClick={endTest}>
+  <button className="end-btn" onClick={()=>{endTest("IELTS_AC_20_2025_TEST2","Listening")}}>
     End Test
   </button>
 </div>

@@ -12,7 +12,20 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
 }
+.diploma-card:hover {
+  transform: translateY(-8px) scale(1.02);  /* slight lift and zoom */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);  /* stronger shadow */
+  border-color: #6c63ff;                    /* subtle accent color */
+}
+/* Optional: smooth image scaling */
+.card-image img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
 
+.diploma-card:hover .card-image img {
+  transform: scale(1.05);   /* zoom image slightly on hover */
+}
 
 /* =========================
    IMAGE
@@ -282,9 +295,9 @@
 }
 @media (max-width: 768px) {
   .diploma-card {
-    max-width: 450%;
-    width: 350%;
-    padding: 12px;
-    margin: 10px 0;
+    max-width: 400%;
+    width: 300%;
+    padding: 10px;
+    margin: 8px 0;
   }
 }

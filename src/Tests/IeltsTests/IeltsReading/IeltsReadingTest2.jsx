@@ -217,6 +217,41 @@ const handleNavigateBack = () => {
         setAllAnswers((prev)=>({...prev, [part]:{...prev[part],[name]:value}}))
     }
 
+const endTest=async(testId, section)=>{
+  
+  try {
+   const payload={
+    answers:[]
+  }
+
+  for(let part in allAnswers){
+   for(let qid in allAnswers[part]){
+    payload.answers.push({
+      question_id: qid.replace("q",""),
+      answer: String(allAnswers[part][qid])
+    })
+    const url = `http://127.0.0.1:8000/submit/${testId}/${section}`;
+
+    const response= await fetch(url,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(payload)
+    })
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+     const data = await response.json()
+     console.log("Response:", data);
+     alert(`"Answers Submitted successfully" ${data.score}/${data.total_questions}`)
+   } 
+  } 
+  } catch (error) {
+    console.error("Error sending request", error);
+    alert("Failed to submit answers, check console");
+  }
+  
+
+}
+
+
     const handleEndTest=()=>{
         console.log(JSON.stringify(allAnswers,null,2))
         alert("Module Over")
@@ -233,7 +268,7 @@ const handleNavigateBack = () => {
           which are based on Reading Passage 1 below.
         </h3>
 
-         <p className='para'>
+         <div className='para'>
 <h2 style={{ textAlign: "center" , marginBottom: "20px"  }}> Manatees </h2>          
   <p>
     Manatees, also known as sea cows, are aquatic mammals that belong to a group
@@ -332,7 +367,7 @@ const handleNavigateBack = () => {
     Florida manatees is boat strikes. However, laws in certain parts of Florida
     now limit boat speeds during winter, allowing slow-moving manatees more time
     to respond.
-  </p>      </p>
+  </p>      </div>
 
       </div>
 
@@ -965,7 +1000,7 @@ over strike calls were not uncommon, but today everyone accepts the complete ban
     ))}
   </div>
 
-  <button className="end-btn" onClick={handleEndTest}>
+  <button className="end-btn" onClick={()=>{endTest("IELTS_AC_20_2025_TEST2", "Reading")}}>
     End Test
   </button>
 </div>

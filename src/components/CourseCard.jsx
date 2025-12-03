@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/coursecard.css";
-
+import { useNavigate } from "react-router-dom";
 const CourseCard = ({
   imageUrl,
   altText = "Diploma image",
@@ -8,6 +8,7 @@ const CourseCard = ({
   category,
   level = "BEGINNERS LEVEL",
   duration,
+  path,
   learners,
   alsoAvailable = false,
   availableCategory,
@@ -16,8 +17,14 @@ const CourseCard = ({
   level2,
   onShareInfo,
 }) => {
+  const navigate = useNavigate();
+
+  const handleStartLearning = () => {
+    navigate(path); // dynamically navigate to the path
+  };
+
   return (
-    <div className="diploma-card">
+    <div className="diploma-card" onClick={handleStartLearning}>
 
       {/* Image */}
       {imageUrl && (
@@ -63,7 +70,7 @@ const CourseCard = ({
             {learners && (
               <InfoItem
                 label={learners}
-                onStartLearning={onStartLearning}
+                onStartLearning={handleStartLearning}
                 onShareInfo={onShareInfo}
               />
             )}
@@ -72,13 +79,14 @@ const CourseCard = ({
 
         {/* Beginners Section */}
         <div className="beginners-section">
-          <div className="level-badge beginners">{level}</div>
+          
+          <div className="level-badge beginners" onClick={handleStartLearning}>{level}</div>
 
-          {/* <div className="diploma-tags">
-            <span className="diploma-tag">DIPLOMA</span>
-            <span className="diploma-tag">DIPLOMA</span>
-            <span className="diploma-tag">DIPLOMA</span>
-          </div> */}
+          <div className="diploma-tags">
+            <span className="diploma-tag">Official Tests</span>
+            <span className="diploma-tag">Practice</span>
+            <span className="diploma-tag">Resources</span>
+          </div>
         </div>
       </div>
     </div>
@@ -87,15 +95,15 @@ const CourseCard = ({
 
 const InfoItem = ({ label, onStartLearning, onShareInfo }) => (
   <div className="info-item">
-    <span className="info-value">{label}</span>
+    {/* <span className="info-value">{label}</span> */}
 
     <div className="action-buttons">
       <button className="btn primary" onClick={onStartLearning}>
         Start Learning
       </button>
-      <button className="btn secondary" onClick={onShareInfo}>
+      {/* <button className="btn secondary" onClick={onShareInfo}>
         Share Info
-      </button>
+      </button> */}
     </div>
   </div>
 );

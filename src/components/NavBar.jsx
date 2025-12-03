@@ -87,7 +87,7 @@ import '../styles/navbar.css';
 import AuthModal from './AuthModal';
 import { userUser } from '../hooks/UseUser';
 import { Link, useNavigate } from 'react-router-dom';
-
+import AlphaPrepLogo from '../assets/Pics/ALPHAPREPNEW.png'
 const NavBar = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalMode, setModalMode] = useState('signin');
@@ -99,7 +99,12 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar">
-        <div className="logo">Alpha Prep</div>
+        {/* <div className="logo">Alpha Prep</div> */}
+    <Link to="/" onClick={()=>{navigate("/")}}>        <div className="logo">
+  <img src={AlphaPrepLogo} alt="Logo" className="nav-logo" />
+</div></Link>          
+
+
 <div className="nav-center">
    {/* Hamburger */}
         <div
@@ -114,11 +119,12 @@ const NavBar = () => {
         
  <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
     <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-    <Link to="/sat-dash" onClick={() => setMenuOpen(false)}>SAT</Link>
-    <Link to="/ielts-dash" onClick={() => setMenuOpen(false)}>IELTS</Link>
-    {/* <Link to="/new" onClick={() => setMenuOpen(false)}>New</Link> */}
+    <Link to="/main-dash" onClick={() => setMenuOpen(false)}>Courses</Link>
     <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
     <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+    {/* <Link to="/ielts-dash" onClick={() => setMenuOpen(false)}>Features</Link> */}
+    {/* <Link to="/new" onClick={() => setMenuOpen(false)}>New</Link> */}
+    
           
            <div className="auth-wrapper">
     {user ? (

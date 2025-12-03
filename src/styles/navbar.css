@@ -34,11 +34,41 @@ body,
 }
 
 
-.logo {
+/* .logo {
   font-size: 1.6rem;
   font-weight: 700;
   color: red;
+} */
+/* Logo inside navbar */
+/* .nav-logo {
+  height: 80px;         
+  width: auto;           
+  object-fit: contain;
+  display: block;
+} */
+.nav-logo {
+  height: 80px;         /* max height of logo */
+  width: auto;           /* maintain aspect ratio */
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease; /* smooth hover */
+  cursor: pointer;       /* shows it's interactive */
 }
+
+/* Sexy hover effect */
+.nav-logo:hover {
+  transform: scale(1.1) ;   /* subtle zoom + tilt */
+  filter: brightness(1.2);              /* slightly brighter */
+}
+
+/* Optional: make sure navbar height doesn't expand */
+.navbar {
+  height: 70px;          /* fixed navbar height */
+  display: flex;
+  align-items: center;   /* vertically center everything */
+  padding: 0 60px;       /* remove top/bottom padding to prevent extra height */
+}
+
 .auth-wrapper {
   margin-left: auto; /* pushes auth to the far right */
   display: flex;
