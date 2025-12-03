@@ -14,8 +14,8 @@ import FeatureCard from "../components/FeatureCard";
 import TrackProgress from "../assets/Pics/TrackProgress.jpg"
 import SmartPractice from"../assets/Pics/SamrtPractice.jpg"
 import FreeResources from "../assets/Pics/FreeResources.jpg"
-
-
+import AlphaPrepLogo from '../assets/Pics/ALPHAPREPNEW.png'
+import "../styles/navbar.css"
 
 const New = () => {
       const [showModal, setShowModal] = useState(false)
@@ -50,9 +50,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
     </div>
   </div>
 </section>
-
-</div>
- <div className="container-course">
+<div className="container-course">
       <div className="course-row">
    <CourseCard imageUrl={IELTSLogo} title={"IELTS ACADEMIC / GENERAL"} category={"IELTS TESTS FOR ENGLISH LANGUAGE PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/ielts-dash"}/>
@@ -64,10 +62,12 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
 </div>
 
   </div>
+</div>
 
  <section className="features" id="features">
  
-
+ 
+{/* <img src={AlphaPrepLogo} className=""/> */}
         <h2>Why Choose Alpha Prep ?</h2>
          <div className="container-course" >
            <div className="feature-grid">

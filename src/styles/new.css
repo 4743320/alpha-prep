@@ -1,3 +1,11 @@
+html, body, #root, .landing-page {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+
 /* Container setup */
 .hero-section {
   /* background: linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);  */
@@ -6,6 +14,12 @@
   margin-top: -30px;
   padding-left: 30px;
 }
+.features {
+  background: white;
+  padding: 60px 20px;
+  justify-content: center;
+}
+
 
 @media (min-width: 640px) {
   .hero-section {
@@ -53,7 +67,7 @@
 
 .title {
   /* margin-top: 1rem;  */
-  font-weight: 700;
+  font-weight: 600;
   color: #000;
   /* font-size: 2.25rem; */
   line-height: 1.2;
@@ -73,7 +87,7 @@
   }
    .hero-image img {
     max-width: 500px;
-    transform: scale(1);
+    transform: scale(1.2);
   }
 .about {
     padding: 80px 40px;
@@ -133,16 +147,17 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
+  background-color: white;
+  background: white;
 }
 .course-row {
   display: flex;
-  background: white;
+  background-color: white;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: -20px;
+  margin-top:px;
   justify-content: center;
 }
-
 
 
 /* ================= ABOUT ================= */

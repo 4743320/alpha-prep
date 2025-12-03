@@ -1,4 +1,3 @@
-import React, { useState, useContext } from "react";
 import "../styles/newlanding.css";
 import TestLogos from "../components/TestLogos";
 import AuthModal from "../components/AuthModal";
@@ -86,3 +85,4 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
     </div>
   );
 }
+

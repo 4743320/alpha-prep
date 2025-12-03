@@ -1,7 +1,7 @@
 /* Container for feature cards */
 .container-course {
   display: flex;
-  flex-direction: column; /* keep sections stacked */
+  flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -10,16 +10,27 @@
   background: white;
 }
 
-.feature-grid {
-  display: flex;
-  flex-wrap: wrap; /* important! */
-  gap: 70px;
-  justify-content: center;
-  width: 100%; /* full width so children can shrink */
-
+/* The full features section background (NEW FIX) */
+.features {
+  background: white;
+  padding: 60px 20px;
+  text-align: center;
 }
 
+.features h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: black;
+  font-weight: 600;
+}
 
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
 
 /* Individual feature card */
 .feature-card {
@@ -29,7 +40,7 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  flex: 1 1 280px; /* allow shrinking and growing */
+  flex: 1 1 280px;
   max-width: 280px;
   display: flex;
   flex-direction: column;
@@ -66,14 +77,14 @@
   transform: scale(1.05);
 }
 
-/* Title with underline animation */
+/* Title */
 .feature-card-content h3 {
   font-size: 1.4rem;
   font-weight: 600;
   color: black;
   margin-bottom: 12px;
   position: relative;
-  display: inline-block; /* required for ::after */
+  display: inline-block;
 }
 
 .feature-card-content h3::after {
@@ -100,11 +111,11 @@
   margin: 0;
 }
 
-/* Responsive: two cards per row on small screens */
+/* Mobile: 2 per row */
 @media (max-width: 640px) {
   .feature-card {
-    flex: 1 1 45%;
-    max-width: 45%;
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
     padding: 15px;
   }
 
@@ -117,28 +128,15 @@
   }
 }
 
-/* Ultra-small screens: single card per row */
+/* Small phones: 1 per row */
 @media (max-width: 400px) {
   .feature-card {
-    flex: 1 1 90%;
-    max-width: 90%;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
-.feature-card {
-  flex: 1 1 280px; /* shrink/grow */
-  max-width: 280px;
-}
-
-@media (max-width: 640px) {
-  .feature-card {
-    flex: 1 1 45%; /* two cards per row */
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 400px) {
-  .feature-card {
-    flex: 1 1 90%; /* stack single card */
-    max-width: 90%;
-  }
+.features {
+  background: white;
+  padding: 60px 20px;
+  text-align: center;
 }
