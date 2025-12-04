@@ -62,6 +62,23 @@ html, body, #root, .landing-page {
     padding: 80px 40px;
   }
 }
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr; /* two columns on medium screens */
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    transform: scale(1.1); /* slightly smaller scaling than large screens */
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-section {
+    padding: 3rem 2rem; /* less padding than large desktop */
+  }
+}
+
 
 /* Text content */
 
