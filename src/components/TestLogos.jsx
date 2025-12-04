@@ -2,7 +2,7 @@
 import React from "react";
 import IELTSLogo from "../assets/ieltslogo2.png"
 import SATLogo from "../assets/sat.png";
-// import TOEFLLogo from "../assets/toefl.png";
+import TOEFLLogo from '../assets/Pics/toefl.gif'
 import '../styles/testlogos.css'
 
 const TestLogos = () => {
@@ -12,6 +12,7 @@ const TestLogos = () => {
       <div className="logo-row">
         <img src={IELTSLogo} alt="IELTS" />
         <img src={SATLogo} alt="SAT" />
+        <img src={TOEFLLogo} alt="TOEFL" />
         {/* <img src={TOEFLLogo} alt="TOEFL" /> */}
       </div>
     </div>

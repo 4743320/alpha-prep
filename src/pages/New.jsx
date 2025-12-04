@@ -7,7 +7,7 @@ import { userUser } from "../hooks/UseUser";
 import CourseCard from '../components/CourseCard'
 import IELTSLogo from "../assets/ieltslogo2.png"
 import SATLogo from "../assets/sat.png";
-import HeroImg from '../assets/Pics/hero.png'
+import HeroImg from '../assets/Pics/HeroLogo.png'
 import TOEFLIImg from '../assets/Pics/toefl.gif'
 import { useNavigate } from "react-router-dom";
 import FeatureCard from "../components/FeatureCard";
@@ -50,14 +50,18 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
     </div>
   </div>
 </section>
+
 <div className="container-course">
+   <button className="primary-btn" onClick={()=>navigate("/main-dash")} style={{  marginBottom:"10px"}}>Choose Your Course</button>
       <div className="course-row">
+
    <CourseCard imageUrl={IELTSLogo} title={"IELTS ACADEMIC / GENERAL"} category={"IELTS TESTS FOR ENGLISH LANGUAGE PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/ielts-dash"}/>
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={"/sat-dash"}/>
          {/* <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"}/> */}
+   
 
 </div>
 
