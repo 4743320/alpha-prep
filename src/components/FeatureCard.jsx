@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/featureCard.css';
+import '../styles/featurecard.css';
 
 const FeatureCard = ({ title, description, imageUrl }) => {
   return (
