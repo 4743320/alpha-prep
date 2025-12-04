@@ -56,8 +56,8 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/ielts-dash"}/>
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={"/sat-dash"}/>
-         <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
-   level="START LEARNING" level2={"PROFICIENCY TEST"}/>
+         {/* <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
+   level="START LEARNING" level2={"PROFICIENCY TEST"}/> */}
 
 </div>
 
