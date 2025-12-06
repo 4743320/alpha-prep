@@ -27,8 +27,10 @@ const New = () => {
   return (
     <div>
       <div >
-  <section className="hero-section" style={{backgroundColor:"white"}}>
-  <div className="container">
+        {/* <div style={{justifyContent:"center"}}> <TestLogos/></div> */}
+             
+  <section className="hero-section" style={{backgroundColor:"white"}}>       
+  <div className="container">   
     <div className="hero-grid">
       <div className="hero-text">
         {/* <p class="subtitle">A social media for learners</p> */}
@@ -41,7 +43,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
         {/* <a href="#" class="cta-button">Join for free</a> */}
           <div className="hero-buttons">
             <button className="primary-btn" onClick={()=>{navigate("/main-dash")}}>Get Started</button>
-            <button className="primary-btn">Learn More</button>
+            <button className="primary-btn"><a href="#about" style={{color:"white", fontWeight:"600"}}>Learn More</a></button>
           </div>
       </div>
       <div className="hero-image">
@@ -52,15 +54,15 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
 </section>
 
 <div className="container-course">
-   <button className="primary-btn" onClick={()=>navigate("/main-dash")} style={{  marginBottom:"10px"}}>Choose Your Course</button>
+   <button className="primary-btn" onClick={()=>navigate("/main-dash")} style={{ marginTop:"-30px"  ,marginBottom:"10px"}}>Choose Your Course</button>
       <div className="course-row">
 
    <CourseCard imageUrl={IELTSLogo} title={"IELTS ACADEMIC / GENERAL"} category={"IELTS TESTS FOR ENGLISH LANGUAGE PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/ielts-dash"}/>
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={"/sat-dash"}/>
-         {/* <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
-   level="START LEARNING" level2={"PROFICIENCY TEST"}/> */}
+         <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
+   level="START LEARNING" level2={"PROFICIENCY TEST"}/>
    
 
 </div>

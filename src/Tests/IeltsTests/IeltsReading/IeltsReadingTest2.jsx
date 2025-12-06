@@ -230,7 +230,7 @@ const endTest=async(testId, section)=>{
       question_id: qid.replace("q",""),
       answer: String(allAnswers[part][qid])
     })
-    const url = `http://127.0.0.1:8000/submit/${testId}/${section}`;
+    const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`;
 
     const response= await fetch(url,{
       method:"POST",

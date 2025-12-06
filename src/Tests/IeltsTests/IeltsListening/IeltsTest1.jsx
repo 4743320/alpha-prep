@@ -38,8 +38,7 @@ const endTest = async(testId, section) => {
       }
     }
 
-    const url = `http://127.0.0.1:8000/submit/${testId}/${section}`;
-
+const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`;
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
