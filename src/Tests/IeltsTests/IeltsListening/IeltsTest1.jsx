@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../../styles/ieltsListening.css";
 
 import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
-import ResultModal from "./ResultModal";
+import IELTSResultModal from "../../../components/IELTSResultModal";
 import { useNavigate } from "react-router-dom";
 
 const IeltsListening = () => {
@@ -24,6 +24,9 @@ const IeltsListening = () => {
 //     window.removeEventListener('beforeunload', handleBeforeunload)
 //   }
 // },[])
+
+const [showModal, setShowModal] = useState(false);
+const [scoreData, setScoreData] = useState({ score: 0, total: 0 });
 
 const endTest = async(testId, section) => {
   try {
@@ -49,17 +52,18 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
 
     const data = await response.json();
     console.log("Response:", data);
-    alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`);
+        setScoreData({ score: data.score, total: data.total_questions });
+    setShowModal(true);
+    // alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`);
+
 
   } catch (error) {
     console.error("Error sending request", error);
     alert("Failed to submit answers, check console");
   }
+  
 };
 
-  const [showModal, setShowModal] = useState(false)
-  const[partScore, setPartScore] = useState({})
-  const[totalScore, setTotalScore] = useState()
 
   const [currentPart, setCurrentPart] = useState(0);
   const [allAnswers, setAllAnswers] = useState({
@@ -286,6 +290,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                 <input
                   type="text"
                   className="blank"
+                  autoComplete="off" 
                   name="q1"
                   placeholder="1"
                   value={allAnswers.part1.q1 || ""}
@@ -299,6 +304,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q2"
+                  autoComplete="off" 
                   placeholder="2"
                   value={allAnswers.part1.q2 || ""}
                   onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
@@ -314,6 +320,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                 <input
                   type="text"
                   className="blank"
+                  autoComplete="off" 
                   name="q3"
                   placeholder="3"
                   value={allAnswers.part1.q3 || ""}
@@ -329,6 +336,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q4"
+                  autoComplete="off"
                   placeholder="4"
                   value={allAnswers.part1.q4 || ""}
                   onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
@@ -344,6 +352,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q5"
+                  autoComplete="off"
                   placeholder="5"
                   value={allAnswers.part1.q5 || ""}
                   onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
@@ -355,6 +364,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q6"
+                  autoComplete="off"
                   placeholder="6"
                   value={allAnswers.part1.q6 || ""}
                   onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
@@ -366,6 +376,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q7"
+                  autoComplete="off"
                   placeholder="7"
                   value={allAnswers.part1.q7 || ""}
                   onChange={(e)=>handleAnswerChange('part1', e.target.name, e.target.value)}
@@ -375,6 +386,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q8"
+                  autoComplete="off"
                   placeholder="8"
                   value={allAnswers.part1.q8 || ""}
                   onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
@@ -387,6 +399,7 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
                   type="text"
                   className="blank"
                   name="q9"
+                  autoComplete="off"
                   placeholder="9"
                   value={allAnswers.part1.q9 || ""}
                   onChange={(e)=>handleAnswerChange('part1',e.target.name,e.target.value)}
@@ -772,39 +785,39 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
 //   };
 
 
-  const handleEndTest= ()=>{
+  // const handleEndTest= ()=>{
 
-    let total = 0
-    let parts = {}
+  //   let total = 0
+  //   let parts = {}
 
-    for (let part in correctAnswers){
-      let partCorrect =0
-      for( let qid in correctAnswers[part]){
+  //   for (let part in correctAnswers){
+  //     let partCorrect =0
+  //     for( let qid in correctAnswers[part]){
 
-        if(Array.isArray(correctAnswers[part][qid])){
+  //       if(Array.isArray(correctAnswers[part][qid])){
 
-          const userAns = correctAnswers[part]?.[qid] || []
+  //         const userAns = correctAnswers[part]?.[qid] || []
 
-          if( userAns.length === correctAnswers[part][qid].length &&
-            userAns.every((val)=> correctAnswers[part][qid].includes(val))
-          ){
-            partCorrect ++
-          }
-          else{
-            if(allAnswers[part]?.[qid]=== correctAnswers[part][qid]){
-              partCorrect ++
-            }
-          }
-        }
-      }
-    parts[part] = partCorrect
-    total += partCorrect
-    }
+  //         if( userAns.length === correctAnswers[part][qid].length &&
+  //           userAns.every((val)=> correctAnswers[part][qid].includes(val))
+  //         ){
+  //           partCorrect ++
+  //         }
+  //         else{
+  //           if(allAnswers[part]?.[qid]=== correctAnswers[part][qid]){
+  //             partCorrect ++
+  //           }
+  //         }
+  //       }
+  //     }
+  //   parts[part] = partCorrect
+  //   total += partCorrect
+  //   }
   
-    setShowModal(true)
-    setPartScore(parts)
-    setTotalScore(total)
-  }
+  //   setShowModal(true)
+  //   setPartScore(parts)
+  //   setTotalScore(total)
+  // }
 
 
   return (
@@ -850,11 +863,13 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
     End Test
   </button>
 </div>
-{ showModal && <ResultModal
-  totalScore={totalScore}
-  onClose={()=>setShowModal(false)}
-  partScores={partScore}
-/>}
+<IELTSResultModal
+  isOpen={showModal}
+  testname="🎧 IELTS LISTENING TEST 1"
+  score={scoreData.score}
+  total={scoreData.total}
+  onClose={()=>{setShowModal(false)}}
+/>
     </div>
   );
 };

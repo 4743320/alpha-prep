@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import '../../../styles/ielts.css'
 import '../../../styles/misc.css'
 import { useNavigate } from 'react-router-dom'
+// import ResultModal from '../../IeltsTests/IeltsListening/ResultModal'
+import IELTSResultModal from '../../../components/IELTSResultModal'
+import { account } from '../../../lib/appwrite'
+import { saveIeltsResult } from '../../../lib/helpers/ieltsScoreHelper'
 
 
 /// part 3 dropdown for 31-35
@@ -169,6 +173,9 @@ const handleNavigateBack = () => {
         setAllAnswers((prev)=>({...prev, [part]:{...prev[part],[name]:value}}))
     }
 
+const [showModal, setShowModal] = useState(false);
+const [scoreData, setScoreData] = useState({ score: 0, total: 0 });
+
 const endTest = async (testId, section) => {
   try {
     const payload = { answers: [] };
@@ -193,7 +200,21 @@ const url = `https://alpha-prep-fast-api.vercel.app/submit/${testId}/${section}`
 
     const data = await response.json();
     console.log("Response:", data);
-    alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`);
+    setScoreData({ score: data.score, total: data.total_questions });
+    setShowModal(true);
+    // alert(`Answers submitted successfully! Score: ${data.score}/${data.total_questions}`);
+
+    // get surrent user
+ const currentUser = await account.get();
+    // APPWRITE POSTING O DBB FUNCTION CALLLED
+
+    await saveIeltsResult({
+      userId:currentUser.$id,
+      score:data.score,
+      totalScore:data.total_questions,
+      testType:`IELTS${testId}-${section}`
+    })
+ console.log("✅ Score saved to Appwrite!");
 
   } catch (error) {
     console.error("Error sending request", error);
@@ -647,31 +668,32 @@ All of this raises questions of social acceptance, acknowledges Russell."If we'r
     ]
 
 
-        const handleEndTest=()=>{
-          let totalScore = 0
-          let partScores = {}
-          for(let part in correctAnswers){
-            let partCorrect = 0
-            for (let qid in correctAnswers[part]){
-              if(allAnswers[part]?.[qid] === correctAnswers[part][qid]){
-                partScores ++
-              }
-            }
-            partScore[part] = partCorrect
+//         const handleEndTest=()=>{
+//           let totalScore = 0
+//           let partScores = {}
+//           for(let part in correctAnswers){
+//             let partCorrect = 0
+//             for (let qid in correctAnswers[part]){
+//               if(allAnswers[part]?.[qid] === correctAnswers[part][qid]){
+//                 partScores ++
+//               }
+//             }
+//             partScore[part] = partCorrect
 
-            totalScore += partCorrect
-          }
+//             totalScore += partCorrect
+//           }
  
- console.log("Total Score:", totalScore);
-  console.log("Part-wise Scores:", partScores);
-        console.log(JSON.stringify(allAnswers,null,2))
-        alert("Module Over")
+//  console.log("Total Score:", totalScore);
+//   console.log("Part-wise Scores:", partScores);
+//         console.log(JSON.stringify(allAnswers,null,2))
+//         alert("Module Over")
         
-    }
+//     }
 
 
  return (
-    <div className="ielts-wrapper">
+  
+     <div className="ielts-wrapper">
       {/* Scrollable content */}
       <div className="part-content">{parts[currentPart]}</div>
 
@@ -714,8 +736,29 @@ All of this raises questions of social acceptance, acknowledges Russell."If we'r
     End Test
   </button>
   
+  
 </div>
+{/* {showModal && (
+  <ResultModal
+    partScores={scoreData.score}
+    totalScore={scoreData.total}
+    onClose={() => setShowModal(false)}
+  />
+)} */}
+<IELTSResultModal
+  isOpen={showModal}
+  testname=" 📖 IELTS READING Test 1"
+  score={scoreData.score}
+  total={scoreData.total}
+  onClose={() => setShowModal(false)}
+/>
+
+
     </div>
+  
+   
+  
+    
   );
 };
 export default IeltsReadingTest1

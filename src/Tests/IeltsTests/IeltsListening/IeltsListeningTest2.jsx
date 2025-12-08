@@ -3,7 +3,8 @@ import "../../../styles/ielts.css";
 import axios from "axios";
 import { useNavigate, useBeforeUnload } from "react-router-dom";
 
-import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
+// import correctAnswers from '../../../Data/Ielts/IeltsListening/IeltsListeningTest1.json'
+import IELTSResultModal from "../../../components/IELTSResultModal"
 
 
 const IeltsListeningTest2 = () => {
@@ -296,6 +297,13 @@ const questions26to30 = [
 //   }
 // };
 
+const [modalOpen, setModalOpen]= useState(false)
+const[score, setScore]= useState(0)
+const[total, setTotal]= useState(0)
+
+const [showModal, setShowModal] = useState(false);
+const [scoreData, setScoreData] = useState({ score: 0, total: 0 });
+
 const endTest=async(testId, section)=>{
 
   try {
@@ -320,7 +328,13 @@ const endTest=async(testId, section)=>{
 
      const data = await response.json()
      console.log("Response:", data);
-     alert(`"Answers Submitted successfully" ${data.score}/${data.total_questions}`)
+             setScoreData({ score: data.score, total: data.total_questions });
+    setShowModal(true);
+    //  alert(`"Answers Submitted successfully" ${data.score}/${data.total_questions}`)
+
+     setModalOpen(true)
+     setScore(data.score)
+     setTotal(data.total_questions)
   }
    catch (error) {
     console.error("Error sending request", error);
@@ -877,30 +891,30 @@ name="q8"
     </div>,
   ];
 
-  const handleEndTest = () => {
+//   const handleEndTest = () => {
 
-    let totalScore = 0
-    let partScores = {}
-    for (let part in correctAnswers){
-      let partCorrect =0
+//     let totalScore = 0
+//     let partScores = {}
+//     for (let part in correctAnswers){
+//       let partCorrect =0
 
-      for (let qid in correctAnswers[part]){
-        if (allAnswers[part]?.[qid] === correctAnswers[part][qid]){
-          partCorrect ++ 
-        }
-      }
-      partScores[part] = partCorrect
-      totalScore += partCorrect    
-    }
+//       for (let qid in correctAnswers[part]){
+//         if (allAnswers[part]?.[qid] === correctAnswers[part][qid]){
+//           partCorrect ++ 
+//         }
+//       }
+//       partScores[part] = partCorrect
+//       totalScore += partCorrect    
+//     }
 
- console.log("Total Score:", totalScore);
-  console.log("Part-wise Scores:", partScores);
+//  console.log("Total Score:", totalScore);
+//   console.log("Part-wise Scores:", partScores);
 
-    console.log(JSON.stringify(allAnswers,null,2));
-    console.log(JSON.stringify(totalScore,null,2))
-    alert("Test ended! Check console for all collected answers.");
+//     console.log(JSON.stringify(allAnswers,null,2));
+//     console.log(JSON.stringify(totalScore,null,2))
+//     alert("Test ended! Check console for all collected answers.");
     
-  };
+//   };
 
   return (
     <div className="ielts-wrapper">
@@ -946,8 +960,27 @@ name="q8"
     End Test
   </button>
 </div>
+
+<IELTSResultModal
+  isOpen={showModal}
+  testname="🎧 IELTS LISTENING TEST 2"
+  score={scoreData.score}
+  total={scoreData.total}
+  onClose={()=>{setShowModal(false)}}
+/>
+
+{/* {modalOpen && <IELTSResultModal
+isOpen={modalOpen}
+testname={"IELTS LISTENING TEST 2"}
+score={score}
+total={total}
+onClose={()=>setModalOpen(false)}/>} */}
     </div>
+
+    
   );
+  
 };
 
+  
 export default IeltsListeningTest2;
