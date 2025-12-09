@@ -182,3 +182,47 @@
   margin-bottom: 10px;
   color: #ffebcd;
 }
+/* 🔥 Wrapper to align dropdown nicely */
+.profile-select-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* 🔥 Beautiful Select Box */
+.profile-select {
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.2s ease-in-out;
+}
+
+/* Hover */
+.profile-select:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Focus */
+.profile-select:focus {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+}
+
+/* Dropdown options */
+.profile-select option {
+  background: #222;     /* dark dropdown */
+  color: #fff;
+  padding: 10px;
+}

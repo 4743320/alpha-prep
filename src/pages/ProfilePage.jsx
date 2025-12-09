@@ -192,25 +192,156 @@
 // export default ProfilePage
 
 
+// import React, { useEffect, useState } from "react";
+// import { account } from "../lib/appwrite";
+// import { getIeltsScore } from "../lib/helpers/ieltsScoreHelper";
+// import "../styles/profilepage.css"
+// const ProfilePage = () => {
+//   const [user, setUser] = useState(null);
+//   // const [ieltsScore, setIeltsScore] = useState([]);
+//   const [scores, setScores] = useState({})
+
+//   useEffect(() => {
+//     const fetchUserAndScores = async () => {
+//       try {
+//         // Get the logged-in user
+//         const currentUser = await account.get();
+//         setUser(currentUser);
+
+//         const ielts = account.get(currentUser.$id)
+//         const sat=account.get(currentUser.$id)
+
+//         // Get IELTS scores for this user
+//         // const scores = await getIeltsScore(currentUser.$id);
+//         // setIeltsScore(scores);
+//         setScores({
+//           SAT:sat || [],
+//           IELTS: ielts || []
+//         })
+//         console.log(scores)
+//       } catch (error) {
+//         console.error("❌ Error loading profile:", error);
+//       }
+//     };
+
+//     fetchUserAndScores();
+//   }, []);
+
+//   if (!user) return <p>Loading profile... OR PLEASE LOGIN TO VIEW YOUR PROFILE</p>;
+
+//   return (
+//     <div className="profile-wrapper">
+//       <div className="profile-card">
+//         <div className="profile-header">
+//           <img
+//             src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
+//               user?.name || "User"
+//             )}`}
+//             alt="Profile"
+//             className="profile-avatar"
+//           />
+//           <div>
+//             <h1 className="profile-name">{user.name || "USER"}</h1>
+//             <p className="profile-email">{user.email}</p>
+//           </div>
+//         </div>
+
+//         <h2>IELTS RESULTS</h2>
+// <div className="results-grid">
+//   {Object.entries(scores).map(([testType, testArray]) => (
+//     <div key={testType}>
+//       <h2>
+//         {testType === "SAT" ? "🎯 SAT Results" : testType === "IELTS" ? "🎧 IELTS Results" : testType}
+//       </h2>
+
+//       {testArray.length === 0 ? (
+//         <p className="no-result">No {testType} results yet.</p>
+//       ) : (
+//         <div className="results-grid">
+//           {testArray.map((item) => (
+//             <div key={item.$id} className="result-card">
+//               <h3 className="test-name">{item.testName}</h3>
+
+//               {/* SAT */}
+//               {testType === "SAT" && (
+//                 <>
+//                   <p><strong>Total Score:</strong> {item.totalScore}</p>
+//                   <p><strong>Reading:</strong> {item.readingScaled} ({item.readingPercent}%)</p>
+//                   <p><strong>Math:</strong> {item.mathScaled} ({item.mathPercent}%)</p>
+//                 </>
+//               )}
+
+//               {/* IELTS */}
+//               {testType === "IELTS" && (
+//                 <>
+//                   <p><strong>Total Correct:</strong> {item.totalScore}</p>
+//                   <p><strong>Band:</strong> {item.score}</p>
+//                 </>
+//               )}
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   ))}
+// </div>
+
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProfilePage;
+
+
+{/* <div className="results-grid">
+  {ieltsScore.length === 0 ? (
+    <p className="no-result">No IELTS results yet. Please attempt a test.</p>
+  ) : (
+    ieltsScore.map((score) => (
+      <div key={score.$id} className="result-card">
+        <h3 className="test-name">{score.testType}</h3>
+        <p><strong>Total Correct:</strong> {score.totalScore}</p>
+        <p><strong>Band:</strong> {score.score}</p>
+      </div>
+    ))
+  )}
+</div> */}
+
 import React, { useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { getIeltsScore } from "../lib/helpers/ieltsScoreHelper";
+import { getSatScore } from "../lib/helpers/saveSatScore";
 import "../styles/profilepage.css"
+
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
-  const [ieltsScore, setIeltsScore] = useState([]);
+  const [scores, setScores] = useState({  });
+  const [selectedTest, setSelectedTest]= useState("")
 
+// SAT: [], IELTS: []
   useEffect(() => {
     const fetchUserAndScores = async () => {
       try {
-        // Get the logged-in user
+        // Logged-in user
         const currentUser = await account.get();
         setUser(currentUser);
 
-        // Get IELTS scores for this user
-        const scores = await getIeltsScore(currentUser.$id);
-        setIeltsScore(scores);
-        console.log(scores)
+        // Fetch BOTH IELTS + SAT results from DB
+        const ielts = await getIeltsScore(currentUser.$id);
+        const sat = await getSatScore(currentUser.$id);
+
+        // Save in state
+        setScores({
+          SAT: sat || [],
+          IELTS: ielts || []
+        });
+
+        console.log("🔥 Loaded Scores:", {
+          SAT: sat,
+          IELTS: ielts,
+        });
+
       } catch (error) {
         console.error("❌ Error loading profile:", error);
       }
@@ -223,7 +354,22 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-wrapper">
+
       <div className="profile-card">
+     {/* <select
+  value={selectedTest}
+  onChange={(e) => setSelectedTest(e.target.value)}
+>
+  <option value="">Show all</option>
+
+  {Object.entries(scores).map(([testType, testArray]) =>
+    testArray.map((item) => (
+      <option key={item.$id} value={item.testType}>
+        {item.testType}
+      </option>
+    ))
+  )}
+</select> */}
         <div className="profile-header">
           <img
             src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
@@ -236,23 +382,57 @@ const ProfilePage = () => {
             <h1 className="profile-name">{user.name || "USER"}</h1>
             <p className="profile-email">{user.email}</p>
           </div>
+          <div className="profile-select-wrapper"><select
+  value={selectedTest}
+  onChange={(e) => setSelectedTest(e.target.value)}
+>
+  <option value="">SELECT TO SHOW SCORE</option>
+  <option value="SAT">SAT</option>
+  <option value="IELTS">IELTS</option>
+</select>
+</div>
+
         </div>
 
-        <h2>IELTS RESULTS</h2>
-<div className="results-grid">
-  {ieltsScore.length === 0 ? (
-    <p className="no-result">No IELTS results yet. Please attempt a test.</p>
-  ) : (
-    ieltsScore.map((score) => (
-      <div key={score.$id} className="result-card">
-        <h3 className="test-name">{score.testType}</h3>
-        <p><strong>Total Correct:</strong> {score.totalScore}</p>
-        <p><strong>Band:</strong> {score.score}</p>
-      </div>
-    ))
-  )}
-</div>
-        
+        {/* RESULTS */}
+       {Object.entries(scores)
+  .filter(([testType]) =>
+    selectedTest === "" ? true : testType === selectedTest
+  )
+  .map(([testType, testArray]) => (
+    <div key={testType}>
+      <h2>
+        {testType === "SAT" ? "🎯 SAT Results" : "🎧 IELTS Results"}
+      </h2>
+
+      {testArray.length === 0 ? (
+        <p className="no-result">No {testType} results yet.</p>
+      ) : (
+        <div className="results-grid">
+          {testArray.map((item) => (
+            <div key={item.$id} className="result-card">
+              <h3 className="test-name">{item.testType}</h3>
+
+              {testType === "SAT" && (
+                <>
+                  <p><strong>Total Score:</strong> {item.totalScore}</p>
+                  <p><strong>Reading:</strong> {item.readingScaled} ({item.readingPercent}%)</p>
+                  <p><strong>Math:</strong> {item.mathScaled} ({item.mathPercent}%)</p>
+                </>
+              )}
+
+              {testType === "IELTS" && (
+                <>
+                  <p><strong>Total :</strong> {item.totalScore}</p>
+                  <p><strong>Total Correct:</strong> {item.score}</p>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+))}
       </div>
     </div>
   );

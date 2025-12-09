@@ -3,7 +3,7 @@ import { databases, ID } from "../appwrite";
 
 const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
 const COLLECTION_ID = import.meta.env.VITE_APPWRITE_IELTS_COLLECTION_ID
-
+const WRITING_COLLECTION_ID= import.meta.env.VITE_APPWRITE_IELTS_WRITING__COLLECTION_ID
 export const saveIeltsResult = async ({ userId, score, totalScore, partScore, testType }) => {
   try {
     const payload = {
@@ -47,3 +47,36 @@ export const getIeltsScore = async (userId) => {
     throw error;
   }
 };
+
+export const saveIeltsWriting=async(userId, task1,task2,testName)=>{
+
+  try {
+    
+    const response = await databases.createDocument(DATABASE_ID,WRITING_COLLECTION_ID,
+      ID.unique(),
+      {
+        userId,task1,task2,testName
+    })
+    console.log("Test Saved Successfully")
+    return response
+    
+  } catch (error) {
+    console.error("Error saving IELTS Writing:", error);
+    throw error;
+  }
+
+}
+
+export const getIeltsWriting=async (userId) => {
+try {
+ const response = await databases.listDocuments(
+  DATABASE_ID,WRITING_COLLECTION_ID,
+  [`userId=${userId}`]
+ ) 
+ console.log("result sucess")
+ return response
+} catch (error) {
+   console.error("Error fetching IELTS Writing:", error);
+    throw error;
+}  
+}
