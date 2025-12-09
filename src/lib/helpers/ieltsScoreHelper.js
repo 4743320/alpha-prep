@@ -71,10 +71,11 @@ export const getIeltsWriting=async (userId) => {
 try {
  const response = await databases.listDocuments(
   DATABASE_ID,WRITING_COLLECTION_ID,
-  [`userId=${userId}`]
+  // [`userId=${userId}`]
+  [Query.equal("userId",userId)]
  ) 
  console.log("result sucess")
- return response
+ return response.documents
 } catch (error) {
    console.error("Error fetching IELTS Writing:", error);
     throw error;

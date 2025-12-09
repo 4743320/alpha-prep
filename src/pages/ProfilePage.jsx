@@ -310,7 +310,7 @@
 
 import React, { useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
-import { getIeltsScore } from "../lib/helpers/ieltsScoreHelper";
+import { getIeltsScore, getIeltsWriting } from "../lib/helpers/ieltsScoreHelper";
 import { getSatScore } from "../lib/helpers/saveSatScore";
 import "../styles/profilepage.css"
 
@@ -318,6 +318,7 @@ const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const [scores, setScores] = useState({  });
   const [selectedTest, setSelectedTest]= useState("")
+  const[writing, setWriting]= useState([])
 
 // SAT: [], IELTS: []
   useEffect(() => {
@@ -349,6 +350,22 @@ const ProfilePage = () => {
 
     fetchUserAndScores();
   }, []);
+
+  useEffect(() => {
+  if (!user) {
+    return
+  }
+  const fetchWriting = async () => {
+    try {
+      const writingDocs = await getIeltsWriting(user.$id)
+      setWriting(writingDocs)
+      console.log("done")
+    } catch (error) {
+      console.error("Error fetching writing submissions:", error);
+    }
+  }
+  fetchWriting()
+}, [user])
 
   if (!user) return <p>Loading profile... OR PLEASE LOGIN TO VIEW YOUR PROFILE</p>;
 
@@ -425,8 +442,26 @@ const ProfilePage = () => {
                 <>
                   <p><strong>Total :</strong> {item.totalScore}</p>
                   <p><strong>Total Correct:</strong> {item.score}</p>
+                              {testType === "IELTS" && writing.length > 0 && (
+  <div className="writing-results" style={{marginTop:"10px"}}>
+    <h3>📝 IELTS Writing </h3>
+    {writing
+      .filter(item => selectedTest === "IELTS" || selectedTest === "" ) // optional filter
+      .map(item => (
+        <div key={item.$id} className="result-card" style={{marginTop:"10px"}}>
+          <h4>{item.testName}</h4>
+          <p><strong>Task 1:</strong> {item.task1}</p>
+          <p><strong>Task 2:</strong> {item.task2}</p>
+          {/* <p><em>Submitted: {new Date(item.$createdAt).toLocaleString()}</em></p> */}
+        </div>
+      ))
+    }
+  </div>
+)}
                 </>
               )}
+
+  
             </div>
           ))}
         </div>

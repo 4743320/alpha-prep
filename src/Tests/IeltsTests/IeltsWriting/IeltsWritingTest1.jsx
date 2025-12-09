@@ -5,6 +5,9 @@ import myImage2 from '../../../assets/Pics/Prompt2.png'
 import "../../../styles/ielts.css";
 import '../../../styles/misc.css'
 import { useNavigate } from "react-router-dom";
+import { saveIeltsWriting } from "../../../lib/helpers/ieltsScoreHelper";
+import { account } from "../../../lib/appwrite";
+import { all } from "axios";
 
 const IeltsWritingTest1 = () => {
   const [currentPart, setCurrentPart] = useState(0);
@@ -110,7 +113,7 @@ const navigate = useNavigate()
     </div>,
   ];
 
-  const handleEndTest = () => {
+  const handleEndTest = async() => {
 
     // let totalScore = 0
     // let partScores = {}
@@ -129,11 +132,31 @@ const navigate = useNavigate()
 //  console.log("Total Score:", totalScore);
 //   console.log("Part-wise Scores:", partScores);
 
-    console.log(JSON.stringify(allAnswers,null,2));
+    // console.log(JSON.stringify(allAnswers,null,2));
     // console.log(JSON.stringify(totalScore,null,2))
-    alert("Test ended! Check console for all collected answers.");
-    
-  };
+    alert("Test ended! Check profile for all Scored response.");
+    try {
+      const user = await account.get()
+
+      const task1= allAnswers.part1?.writing1 || ""
+      const task2 = allAnswers.part2?.writing2 || ""
+
+      const testName = "IELTS WRITING TEST 1"
+
+      await saveIeltsWriting(user.$id,task1,task2,testName)
+
+ alert("✅ Writing submitted successfully!");
+    console.log("Submitted Answers:", allAnswers);
+
+    // Optionally, navigate back or reset state
+    navigate("/ielts-dash");
+
+  } catch (err) {
+    console.error("Error submitting writing:", err);
+    alert("❌ Failed to submit writing. Try again.");
+  }
+};
+  
 
   return (
     <div className="ielts-wrapper">
