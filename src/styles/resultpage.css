@@ -1,5 +1,6 @@
 .results-container {
   max-width: 800px;
+  max-height: 100%;
   margin: 40px auto;
   padding: 30px;
   background: #ffffff;
@@ -72,9 +73,6 @@
   background: #1d4ed8;
   transform: translateY(-2px);
 }
-.progress-container {
-  margin-top: 25px;
-}
 
 .progress-item {
   margin-bottom: 15px;
@@ -85,12 +83,20 @@
   margin-bottom: 5px;
   display: block;
 }
+.progress-container {
+  margin-top: 25px;
+  width: 100%;       /* use full container width */
+  max-width: 90%;    /* nearly full page width */
+  margin-left: auto;
+  margin-right: auto; 
+}
 
 .progress-bar {
   background: #eee;
-  border-radius: 20px;
+  border-radius: 25px;
   overflow: hidden;
-  height: 25px;
+  height: 50px;       /* taller bar */
+  width: 100%;        /* fill container width */
 }
 
 .progress-fill {
@@ -99,9 +105,11 @@
   color: white;
   font-weight: bold;
   text-align: center;
-  line-height: 25px;
-  border-radius: 20px 0 0 20px;
+  line-height: 50px;  /* center text vertically */
+  border-radius: 25px 0 0 25px;
+  font-size: 1.2rem;  /* bigger text inside bar */
 }
 .progress-item.total .progress-fill {
   background: linear-gradient(90deg, #ff9800, #f44336);
 }
+

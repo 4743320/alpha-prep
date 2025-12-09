@@ -140,7 +140,7 @@ const ResultsPage = () => {
           <div className="progress-bar">
             <div
               className="progress-fill"
-              style={{ width: `${(readingScaled / 800) * 100}%` }}
+              style={{ width: `${(readingScaled / 800) * 100}%` , flexGrow: readingScaled} }
             >
               {readingScaled}/800
             </div>

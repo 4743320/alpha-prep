@@ -98,6 +98,7 @@ const SatDashboard = () => {
                 desc={cat.desc}
                 color={cat.color}
                 onClick={cat.onClick}
+                user={user}
 
               />
             ))}

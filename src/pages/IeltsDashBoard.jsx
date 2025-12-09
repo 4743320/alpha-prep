@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import IELTSLogo from "../assets/ieltslogo2.png";
 import Tabs from "../components/Tabs";
 import ProfileCard from '../components/ProfileCard'
-
+import { account } from "../lib/appwrite";
 
 const IeltsDashBoard = () => {
   const { user } = userUser();
@@ -112,6 +112,7 @@ const tabsList = ["IELTS Practice", "IELTS Tests", "Resources"];
           </p>
 
           <div className="category-grid">
+            
             {categories.map((cat, i) => (
               <CategoryCard
                 key={i}
@@ -119,6 +120,7 @@ const tabsList = ["IELTS Practice", "IELTS Tests", "Resources"];
                 desc={cat.desc}
                 color={cat.color}
                 onClick={cat.onClick}
+                user={user}
 
               />
             ))}
