@@ -16,6 +16,10 @@ const IeltsDashBoard = () => {
   //   navigate('/k-start-screen')
   // }
 // const [activeTab, setActiveTab] =;
+
+// if(loading){
+//   return <div>Loading...</div>;
+// }
   const categories = [
     { name: "IELTS-AC LISTENING PRACTICE-1", desc: "IELTS Academic- 4 LISTENING SECTIOINS", color: "#d33434ff" , onClick: ()=>navigate('/ieltstest')},
     { name: "IELTS -AC READING PRACTICE-1", desc:"IELTS Academic - 3 READING SECTIONS", color: "#d33434ff"   , onClick:()=>navigate('/ielts')               },

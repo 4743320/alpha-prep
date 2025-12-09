@@ -7,7 +7,7 @@ import { userUser } from "../hooks/UseUser";
 import CourseCard from '../components/CourseCard'
 import IELTSLogo from "../assets/ieltslogo2.png"
 import SATLogo from "../assets/sat.png";
-import HeroImg from '../assets/Pics/HeroLogo.png'
+import HeroImg from '../assets/HeroLogo.png'
 import HeroImg1 from '../assets/Pics/herobg.png'
 import TOEFLIImg from '../assets/Pics/toefl.gif'
 import { useNavigate } from "react-router-dom";
