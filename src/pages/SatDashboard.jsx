@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import { userUser } from "../hooks/UseUser";
 import CategoryCard from "../components/CategoryCard";
 import "../styles/newdash.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import SATLogo from "../assets/sat.png";
 import Tabs from "../components/Tabs";
 import ProfileCard from '../components/ProfileCard'
 
 
 const SatDashboard = () => {
-  const { user } = userUser();
+  // const { user } = userUser();
+    const userData= userUser()
+  const user= userData?.user ||null
+  const location = useLocation()
+
   const [activeTab, setActiveTab] = useState("Official Mock Tests");
   const navigate = useNavigate()
   // const handleNavigate=()=>{
@@ -24,6 +28,17 @@ const SatDashboard = () => {
   ];
 
   const tabsList = ["Official Mock Tests", "SAT Practice", "Resources"];
+const tabRoutes={
+  "Official Mock Tests":"/sat-dash",
+  "SAT Practice": "/sat-practice",
+  "Resources": "/sat-resources",
+}
+
+useEffect(()=>{
+const currentTab = Object.keys(tabRoutes).find(tab=> location.pathname===tabRoutes[tab])
+|| "Official Mock Tests"
+setActiveTab(currentTab)
+},[location.pathname])
 
   return (
     <div className="dashboard">
@@ -75,15 +90,20 @@ const SatDashboard = () => {
           <Tabs
             tabs={tabsList}
             activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            activeColor="rgb(141, 211, 234)"     // dynamic active background
+            // setActiveTab={setActiveTab}
+              setActiveTab={(tab)=>{
+              setActiveTab(tab)
+           navigate(tabRoutes[tab]) }}
+           activeColor="#60a5fa" 
+           // activeColor="rgb(141, 211, 234)"  
+               // dynamic active background
             activeTextColor="#fff"      // text on active tab
             inactiveTextColor="#444"    // text on inactive tabs
           />
           
 <div className="dashboard-header">
   <img src={SATLogo} alt="Logo" className="dashboard-logo" />
-  <h2 className="dashboard-title">DIGITAL SAT Dashboard</h2>
+  <h2 className="dashboard-title">DIGITAL SAT OFFICIAL TESTS</h2>
 </div>
 
           <p className="dashboard-subtitle">

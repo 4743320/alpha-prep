@@ -31,6 +31,7 @@ import CourseCard from './components/CourseCard'
 import New from './pages/New' 
 import MainDashBoard from './pages/MainDash'
 import IeltsMockTests from './pages/IeltsMockTests'
+import SatPractice from './pages/SatPractice'
 
 
 const AppRoutes = () => {
@@ -43,6 +44,7 @@ const AppRoutes = () => {
             {/* <Route path='/' element={<LandingPage/>}/> */}
             <Route path='/' element={<New/>}/>
             <Route path='/sat-dash' element={<SatDashboard/>}/>
+            <Route path="/sat-practice" element={<SatPractice/>}/>
             <Route path='/ielts-dash' element={<IeltsDashBoard/>}/>
             <Route path='/k-start-screen' element={<StartScreen/>}/>
              <Route path='/new-dash' element={<NewDash/>}/>
