@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { userUser } from "../hooks/UseUser";
 import CategoryCard from "../components/CategoryCard";
 import "../styles/newdash.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import IELTSLogo from "../assets/ieltslogo2.png";
 import Tabs from "../components/Tabs";
 import ProfileCard from '../components/ProfileCard'
 import { account } from "../lib/appwrite";
 
 const IeltsDashBoard = () => {
-  const { user } = userUser();
+  // const { user } = userUser();
   const [activeTab, setActiveTab] = useState("IELTS Practice");
   const navigate = useNavigate()
+  const userData= userUser()
+  const user= userData?.user ||null
+  const location = useLocation()
   // const handleNavigate=()=>{
   //   navigate('/k-start-screen')
   // }
@@ -20,6 +23,17 @@ const IeltsDashBoard = () => {
 // if(loading){
 //   return <div>Loading...</div>;
 // }
+const tabRoutes={
+  "IELTS Practice": "/ielts-dash",
+  "IELTS Tests": "/ielts-mock",
+  "Resources": "/ielts-resources",
+}
+
+useEffect(()=>{
+const currentTab = Object.keys(tabRoutes).find(tab=> location.pathname===tabRoutes[tab])
+|| "IELTS Practice"
+setActiveTab(currentTab)
+},[location.pathname])
   const categories = [
     { name: "IELTS-AC LISTENING PRACTICE-1", desc: "IELTS Academic- 4 LISTENING SECTIOINS", color: "#d33434ff" , onClick: ()=>navigate('/ieltstest')},
     { name: "IELTS -AC READING PRACTICE-1", desc:"IELTS Academic - 3 READING SECTIONS", color: "#d33434ff"   , onClick:()=>navigate('/ielts')               },
@@ -100,7 +114,10 @@ const tabsList = ["IELTS Practice", "IELTS Tests", "Resources"];
 <Tabs
   tabs={tabsList}
   activeTab={activeTab}
-  setActiveTab={setActiveTab}
+  setActiveTab={(tab)=>{
+    setActiveTab(tab)
+    navigate(tabRoutes[tab])
+  }}
   activeColor="#f24e4e"      // dynamic active background
   activeTextColor="#fff"      // text on active tab
   inactiveTextColor="#444"    // text on inactive tabs
@@ -108,7 +125,7 @@ const tabsList = ["IELTS Practice", "IELTS Tests", "Resources"];
 
 <div className="dashboard-header">
   <img src={IELTSLogo} alt="Logo" className="dashboard-logo" />
-  <h2 className="dashboard-title">IELTS DashBoard</h2>
+  <h2 className="dashboard-title">IELTS PRACTICE TESTS</h2>
 </div>
 
           <p className="dashboard-subtitle">

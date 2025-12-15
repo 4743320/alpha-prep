@@ -29,6 +29,7 @@ import { useNavigate } from "react-router-dom";
 
 const ProfileCard = ({ user }) => {
   const [isMobile, setIsMobile] = useState(false);
+const navigate= useNavigate()
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -51,13 +52,13 @@ const ProfileCard = ({ user }) => {
           />
           <span className="name-mini">{user?.name || "User"}</span>
         </div>
-        <button className="primary-btn topbar-btn">View Score History</button>
+
+      <button className="primary-btn full-width" onClick={()=>{navigate('/profile')}}>View Profile</button>
       </div>
     );
   }
 
-  const navigate= useNavigate()
-
+  
   // Desktop sidebar
   return (
     <aside className="dashboard-sidebar">
