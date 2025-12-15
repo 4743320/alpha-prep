@@ -18,7 +18,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
@@ -37,20 +37,30 @@
   transform: scale(1.05);
 }
 /* ---------------- MOBILE OPTIMIZATION ---------------- */
-
-@media (max-width: 768px) {
+@media (max-width: 992px) and (min-width: 600px) {
   .logo-row {
-    gap: 30px;         /* reduce spacing */
+    gap: 20px;         /* reduce spacing */
   }
 
   .logo-row img {
-    height: 55px;      /* slightly smaller logos */
+    height: 50px;      /* slightly smaller logos */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .logo-row {
+    gap: 20px;         /* reduce spacing */
+  }
+
+  .logo-row img {
+    height: 50px;      /* slightly smaller logos */
   }
 }
 
 @media (max-width: 480px) {
   .logo-row {
-    gap: 20px;         /* tighter spacing on very small screens */
+    gap: 10px;         /* tighter spacing on very small screens */
   }
 
   .logo-row img {

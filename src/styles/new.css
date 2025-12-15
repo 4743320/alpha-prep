@@ -11,7 +11,7 @@ html, body, #root, .landing-page {
   /* background: linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);  */
   background: white;
   padding: 1.5rem 1rem;
-  margin-top: -30px;
+  margin-top: -50px;
   padding-left: 30px;
 }
 .features {
