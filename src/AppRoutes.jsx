@@ -32,7 +32,8 @@ import New from './pages/New'
 import MainDashBoard from './pages/MainDash'
 import IeltsMockTests from './pages/IeltsMockTests'
 import SatPractice from './pages/SatPractice'
-
+import IELTSTest3 from './Tests/Ielts Full Tests/IELTSTest3'
+import IELTSTest4 from './Tests/Ielts Full Tests/IELTSTest4'
 
 const AppRoutes = () => {
   return (
@@ -74,6 +75,9 @@ const AppRoutes = () => {
    
     <Route path='/ieltswrit' element={<IeltsWritingTest1/>}/>
     <Route path='/ieltswrit2' element={<IeltsWritingTest2/>}/>
+    {/* IELTS FULL TEST ROUTES */}
+    <Route path='/ielts-full' element={<IELTSTest3/>}/>
+    <Route path='ielts-full2' element={<IELTSTest4/>}/>
 
         </Routes>
     </Router>

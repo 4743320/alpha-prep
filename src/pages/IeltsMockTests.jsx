@@ -38,8 +38,8 @@ const user= userData?.user || null
     // { name: "IELTS-AC LISTENING PRACTICE-2", desc: "IELTS Academic- 4 LISTENING SECTIOINS", color: "#d33434ff" , onClick: ()=>navigate('/ieltslist2')},
     // { name: "IELTS -AC READING PRACTICE-2", desc:"IELTS Academic - 3 READING SECTIONS", color: "#d33434ff"   , onClick:()=>navigate('/ieltsread2')               },
     // { name: "IELTS -AC WRITING PRACTICE-2", desc: "IELTS Academic - 2 WRITING SECTIONS", color: "#d33434ff",onClick:()=>navigate('/ieltswrit2') },
-    { name: "IELTS -AC-I 2025", desc: "IELTS Academic TEST LISTENING, READING, WRITING", color: "#d33434ff",onClick:()=>navigate('/ieltswrit2') },
-     { name: "IELTS -AC-II 2025", desc: "IELTS Academic TEST LISTENING, READING, WRITING", color: "#d33434ff",onClick:()=>navigate('/ieltswrit2') }
+    { name: "IELTS -AC-TEST 3 2025", desc: "IELTS Academic TEST LISTENING, READING, WRITING", color: "#d33434ff",onClick:()=>navigate('/ielts-full') },
+     { name: "IELTS -AC-II 2025", desc: "IELTS Academic TEST LISTENING, READING, WRITING", color: "#d33434ff",onClick:()=>navigate('/ielts-full2') }
   ];
 
 
