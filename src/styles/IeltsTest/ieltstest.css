@@ -37,9 +37,16 @@
 .listening-table td {
   border: 1px solid #ccc;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   vertical-align: top;
-  font-size: 15px;
+  font-size: 20px;
+}
+.listening-table input{
+width: 100px;
+  padding: 5px;
+  margin: 0 2px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
 }
 .center-container {
   display: flex;
@@ -64,7 +71,7 @@
 
 .right-column {
   flex: 2.3;
-  padding-left: 1px;
+  padding-left: 10px;
   padding-right: 5px;
   overflow-y: auto;
   scroll-behavior: smooth;

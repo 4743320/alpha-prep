@@ -7,6 +7,7 @@ import IELTSLogo from "../../assets/ieltslogo2.png";
 import '../../styles/ielts.css'
 import '../../styles/misc.css'
 import DropDown from "../../components/IeltsFullTestComponents/DropDown";
+import DropDown2 from "../../components/IeltsFullTestComponents/DropDown"
 
 
 // ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩
@@ -103,6 +104,63 @@ const questions11to16 = [
     ],
   },
 ];
+const questions21to26 = [
+  {
+    id: 21,
+    text: 'Finn was pleased to discover that their topic',
+    options: [
+      'was not familiar to their module leader.',
+      'had not been chosen by other students.',
+      'did not prove to be difficult to research.',
+    ],
+  },
+  {
+    id: 22,
+    text: 'Maya says a mistaken belief about theatre programmes is that',
+    options: [
+      'theatres pay companies to produce them.',
+      'few theatre-goers buy them nowadays.',
+      'they contain far more adverts than previously.',
+    ],
+  },
+  {
+    id: 23,
+    text: 'Finn was surprised that, in early British theatre, programmes',
+    options: [
+      'were difficult for audiences to obtain.',
+      'were given out free of charge.',
+      'were seen as a kind of contract.',
+    ],
+  },
+  {
+    id: 24,
+    text: 'Maya feels their project should include an explanation of why companies of actors',
+    options: [
+      'promoted their own plays.',
+      'performed plays outdoors.',
+      'had to tour with their plays.',
+    ],
+  },
+  {
+    id: 25,
+    text: 'Finn and Maya both think that, compared to nineteenth-century programmes, those from the eighteenth century',
+    options: [
+      'were more original.',
+      'were more colourful.',
+      'were more informative.',
+    ],
+  },
+  {
+    id: 26,
+    text: 'Maya doesn\'t fully understand why, in the twentieth century,',
+    options: [
+      'very few theatre programmes were printed in the USA.',
+      'British theatre programmes failed to develop for so long.',
+      'theatre programmes in Britain copied fashions from the USA.',
+    ],
+  },
+];
+
 
   // Skeleton parts content
   const partsContent = {
@@ -273,7 +331,7 @@ const questions11to16 = [
 
       {/* Right column */}
       <div className="right-column">
-     <h3><strong>Questions 27–30</strong></h3>
+     <h3><strong>Questions 11-16</strong></h3>
         <p>Choose the correct letter <strong>A, B, C, or D</strong>.</p>
       <h3><strong>Bidcaster Community Archaeology Project</strong></h3>
       {questions11to16.map((q)=>(
@@ -327,25 +385,61 @@ const questions11to16 = [
         </audio>
         <p style={{ marginTop: "20px" }}>Audioscript</p>
       </div>
-
+ <div className="right-column">
       {/* Right column */}
-      <div className="right-column">
-          <div className="question-block">
-  <p>Fill in the blank:</p>
-  <input
-    type="text"
-    name="q1" // this will be passed as 'name' to handleAnswerChange
-    placeholder="Type your answer..."
-    value={allAnswers.listening.part1["q1"] || ""}
-    onChange={(e) =>
-      handleAnswerChange("listening", "part1", e.target.name, e.target.value)
-    }
-  />
-</div>
+     
+        <h3><strong>Questions 21-26</strong></h3>
+        <p>Choose the correct letter <strong>A, B, or D</strong>.</p>
+         {questions21to26.map((q)=>(
+        <div key={q} className="question-block">
+          <p className="mcq-question"><strong>{q.id}.</strong> {q.text}</p>
+          {q.options.map((text,index)=>(
+            <label key={index}>
+              <input type="radio"
+              name={`q${q.id}`}
+              value={text}
+              checked={allAnswers.listening.part3[`q${q.id}`]=== text}
+              onChange={(e)=>{handleAnswerChange('listening', 'part3' ,e.target.name, e.target.value)}}
+               />
+               {text}
+            </label>
+          ))}
+        </div>
+      ))}
+             
+        <div className="meowx">
+          <h3><strong>Questions 27–30</strong></h3>
+          <p>
+            What comment is made about the programme for each of the following shows?
+            Choose the correct letter, <strong>A–F</strong>, next to Questions 27-30.
+          </p>
+        </div>
+        <div className="center-containerx">
+          <div className="question-blockx">
+            <h4>List of options</h4>
+            <p><strong>A.</strong> Its origin is somewhat controversial.</p>
+            <p><strong>B.</strong> It is historically significant for a country.</p>
+            <p><strong>C.</strong> It was effective at attracting audiences.</p>
+            <p><strong>D.</strong> It is included in a recent project.</p>
+            <p><strong>E.</strong> It contains insights into the show.</p>
+            <p><strong>F.</strong> It resembles an artwork.</p>
+          </div>
+        </div>
 
-    </div>
+        <div className="dropdown-blockx">
+          <p>27. Ruy Blas <DropDown2 section='listening' part='part3' id={27} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>28. Man of La Mancha <DropDown2 section='listening' part='part3' id={28} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>29. The Tragedy of Jane Shore <DropDown2 section='listening' part='part3' id={29} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>30. The Sailors' Festival<DropDown2 section='listening' part='part3' id={30} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          
+        </div>
+ </div>
+  
+           
+</div>
    </div>
-   </div></div>,
+   
+   </div>,
       <div key="listening-part4">        {/* Listening Part 1 */}
              <div>
                 <div className="ielts-container">
@@ -361,17 +455,114 @@ const questions11to16 = [
 
       {/* Right column */}
       <div className="right-column">
-          <div className="question-block">
-  <p>Fill in the blank:</p>
-  <input
-    type="text"
-    name="q1" // this will be passed as 'name' to handleAnswerChange
-    placeholder="Type your answer..."
-    value={allAnswers.listening.part1["q1"] || ""}
-    onChange={(e) =>
-      handleAnswerChange("listening", "part1", e.target.name, e.target.value)
-    }
-  />
+
+<h3>Questions 31-40</h3>
+<p>
+  Complete the notes below. Write <strong>ONE WORD ONLY</strong> for each answer.
+</p>
+
+<div className="notes-box">
+  <h4>Inclusive Design</h4>
+
+  <strong>Definition</strong>
+  <ul>
+    <li>
+      Designing products that can be accessed by a diverse range of people without the need for any{" "}
+    <BlankInput
+        section='listening'
+         part='part4'
+        id={31}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>.
+    </li>
+    <li>
+      Not the same as universal design: that is design for everyone, including catering for people with{" "}
+      <BlankInput
+        section='listening'
+         part='part4'
+        id={32}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> problems.
+    </li>
+  </ul>
+
+  <strong>Examples of inclusive design</strong>
+  <ul>
+    <li>
+     <BlankInput
+        section='listening'
+         part='part4'
+        id={33}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> which are adjustable, avoiding back or neck problems
+    </li>
+    <li>
+     <BlankInput
+        section='listening'
+         part='part4'
+        id={34}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> in public toilets which are easier to use
+    </li>
+    <li>
+      To assist the elderly: designers avoid using{" "}
+      <BlankInput
+        section='listening'
+         part='part4'
+        id={35}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> in interfaces
+    </li>
+    <li>
+      People can make commands using a mouse, keyboard or their{" "}
+     <BlankInput
+        section='listening'
+         part='part4'
+        id={36}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>.
+    </li>
+  </ul>
+
+  <strong>Impact of non-inclusive designs</strong>
+  <ul>
+    <li>
+      Seatbelts are especially problematic for{" "}
+    <BlankInput
+        section='listening'
+         part='part4'
+        id={37}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>.
+    </li>
+    <li>
+      PPE jackets are often unsuitable because of the size of women's{" "}
+      <BlankInput
+        section='listening'
+         part='part4'
+        id={38}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>.
+    </li>
+    <li>
+      PPE for female{" "}
+      <BlankInput
+        section='listening'
+        part='part4'
+        id={39}
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> officers dealing with emergencies is the worst.
+    </li>
+    <li>
+      The{" "}
+      <BlankInput
+        section='listening'
+        part='part4'
+        id={40} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> in offices is often too low for women.
+    </li>
+  </ul>
 </div>
 
     </div>
@@ -514,8 +705,8 @@ const questions11to16 = [
    <div className="right-column">
             <textarea
     className="textarea"
-  //  value={}
-  //  onChange={}
+   value={allAnswers.writing.part1?.response || ""}
+   onChange={(e)=> handleAnswerChange( "writing","part1",'response', e.target.value)}
    placeholder="Write your Response here"
 style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadius: "6px",border: "1px solid #ccc",
                   resize: "none",
@@ -541,8 +732,8 @@ style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadi
    <div className="right-column">
             <textarea
     className="textarea"
-  //  value={allAnswers.part1?.writing1 || ''}
-  //  onChange={(e)=>handleAnswerChange('section', 'part1', 'writing1', e.target.value)}
+ value={allAnswers.writing.part2?.response || ""}
+   onChange={(e)=> handleAnswerChange( "writing","part2",'response', e.target.value)}
    placeholder="Write your Response here"
 style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadius: "6px",border: "1px solid #ccc",
                   resize: "none",
