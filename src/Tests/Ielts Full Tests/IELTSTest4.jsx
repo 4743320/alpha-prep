@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import '../../styles/IeltsTest/ieltstest.css'
 import { useNavigate } from "react-router-dom";
 import BlankInput from "../../components/IeltsFullTestComponents/BlankInput";
+import DropDown3 from "../../components/IeltsFullTestComponents/DropDown3";
+import DropDown4 from "../../components/IeltsFullTestComponents/DropDown4";
+import DropDown from "../../components/IeltsFullTestComponents/DropDown";
 
 const IELTSTest = () => {
   const navigate = useNavigate();
@@ -30,6 +33,10 @@ const IELTSTest = () => {
       },
     }));
   };
+  const handleSubmit = () => {
+  console.log(JSON.stringify(allAnswers, null, 2));
+};
+
 
   
   // Test structure for bottom bar
@@ -92,6 +99,88 @@ const questions25to30 = [
       "embarrassed by comments made about it",
       "regretful that they have lost the habit",
     ],
+  },
+];
+
+const multiSelectQuestions11t012 = [
+  {
+    id: "11_12",
+    text: "Which TWO things does the speaker say about visiting the football stadium with children?",
+    options: {
+      A: "Children can get their photo taken with a football player.",
+      B: "There is a competition for children today.",
+      C: "Parents must stay with their children at all times.",
+      D: "Children will need sunhats and drinks.",
+      E: "The café has a special offer on meals for children.",
+    },
+  },
+];
+
+const multiSelectQuestions13t014 = [
+  {
+    id: "13_14",
+    text: "Which TWO features of the stadium tour are new this year?",
+    options: {
+      A: "VIP tour",
+      B: "360 cinema experience",
+      C: "audio guide",
+      D: "dressing room tour",
+      E: "tours in other languages",
+    },
+  },
+];
+const multiSelectQuestions21t022 = [
+  {
+    id: "21_22",
+    text: "Which TWO benefits for children of learning to write did both students find surprising?",
+    options: {
+      A: "improved fine motor skills",
+      B: "improved memory",
+      C: "improved concentration",
+      D: "improved imagination",
+      E: "improved spatial awareness",
+    },
+  },
+];
+
+const multiSelectQuestions23t024 = [
+  {
+    id: "23_24",
+    text: "For children with dyspraxia, which TWO problems with handwriting do the students think are easiest to correct?",
+    options: {
+      A: "not spacing letters correctly",
+      B: "not writing in a straight line",
+      C: "applying too much pressure when writing",
+      D: "confusing letter shapes",
+      E: "writing very slowly",
+    },
+  },
+];
+
+const questions8to13 = [
+  {
+    id: 8,
+    text: "Georgia O'Keeffe's style was greatly influenced by the changing fashions in art over the seven decades of her career.",
+  },
+  {
+    id: 9,
+    text: "When O'Keeffe finished high school, she had already made her mind up about the career that she wanted.",
+  },
+  {
+    id: 10,
+    text: "Alfred Stieglitz first discovered O'Keeffe's work when she sent some abstract drawings to his gallery in New York City.",
+  },
+  {
+    id: 11,
+    text: "O'Keeffe was the subject of Stieglitz's photographic work for many years.",
+  },
+  {
+    id: 12,
+    text: "O'Keeffe's paintings of the patio of her house in Abiquiú were among the artist's favourite works.",
+  },
+  {
+    id: 13,
+    text: "O'Keeffe produced a greater quantity of work during the 1950s to 1970s than at any other time in her life.",
   },
 ];
 
@@ -253,7 +342,7 @@ const questions25to30 = [
                         <div className="ielts-container">
               {/* Left column */}
               <div className="left-column">
-                <h2>PART 3</h2>
+                <h2>PART 2</h2>
                 <audio controls>
                   <source src="/Audio/L_1.mp3" type="audio/mpeg" />
                   Your browser does not support the audio element.
@@ -262,50 +351,127 @@ const questions25to30 = [
               </div>
          <div className="right-column">
               {/* Right column */}
-             
-                <h3><strong>Questions 21-26</strong></h3>
-                <p>Choose the correct letter <strong>A, B, or D</strong>.</p>
-                 {questions21to26.map((q)=>(
-                <div key={q} className="question-block">
-                  <p className="mcq-question"><strong>{q.id}.</strong> {q.text}</p>
-                  {q.options.map((text,index)=>(
-                    <label key={index}>
-                      <input type="radio"
-                      name={`q${q.id}`}
-                      value={text}
-                      checked={allAnswers.listening.part3[`q${q.id}`]=== text}
-                      onChange={(e)=>{handleAnswerChange('listening', 'part3' ,e.target.name, e.target.value)}}
-                       />
-                       {text}
-                    </label>
-                  ))}
-                </div>
-              ))}
-                     
-                <div className="meowx">
-                  <h3><strong>Questions 27–30</strong></h3>
+              <h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 11 and 12 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+ {multiSelectQuestions11t012.map((q) => (
+  <div key={q.id} className="question-block">
+    <p>
+      <strong>{q.id.replace("_", " & ")}</strong>. {q.text}
+    </p>
+
+    {Object.entries(q.options).map(([letter, text]) => {
+      const selected = allAnswers.listening.part2[q.id] || [];
+
+      return (
+        <label key={letter}>
+          <input
+            type="checkbox"
+            name={q.id}
+            value={letter}
+            checked={selected.includes(letter)}
+            onChange={(e) => {
+              const prev = allAnswers.listening.part2[q.id] || [];
+
+              if (e.target.checked) {
+                handleAnswerChange(
+                  "listening",
+                  "part2",
+                  q.id,
+                  [...prev, e.target.value]
+                );
+              } else {
+                handleAnswerChange(
+                  "listening",
+                  "part2",
+                  q.id,
+                  prev.filter((v) => v !== e.target.value)
+                );
+              }
+            }}
+          />
+          {" "}
+          {letter}. {text}
+        </label>
+      );
+    })}
+  </div>
+))}
+              <h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 13 and 14 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+{multiSelectQuestions13t014.map((q) => (
+  <div key={q.id} className="question-block">
+    <p>
+      <strong>{q.id.replace("_", " & ")}</strong>. {q.text}
+    </p>
+
+    {Object.entries(q.options).map(([letter, text]) => {
+      const selected = allAnswers.listening.part2[q.id] || [];
+
+      return (
+        <label key={letter}>
+          <input
+            type="checkbox"
+            name={q.id}
+            value={letter}
+            checked={selected.includes(letter)}
+            onChange={(e) => {
+              const prev = allAnswers.listening.part2[q.id] || [];
+
+              if (e.target.checked) {
+                handleAnswerChange(
+                  "listening",
+                  "part2",
+                  q.id,
+                  [...prev, e.target.value]
+                );
+              } else {
+                handleAnswerChange(
+                  "listening",
+                  "part2",
+                  q.id,
+                  prev.filter((v) => v !== e.target.value)
+                );
+              }
+            }}
+          />
+          {" "}
+          {letter}. {text}
+        </label>
+      );
+    })}
+  </div>
+))}
+
+                              <div className="meowx">
+                  <h3><strong>Questions 15-20</strong></h3>
                   <p>
-                    What comment is made about the programme for each of the following shows?
-                    Choose the correct letter, <strong>A–F</strong>, next to Questions 27-30.
+                    Which event in the history of football in the UK took place in each of the following years?
+                    Choose the correct letter, <strong>A–F</strong>, next to Questions 15-20.
                   </p>
                 </div>
+                <div style={{ marginBottom: "20px" }}></div>
+              
                 <div className="center-containerx">
                   <div className="question-blockx">
-                    <h4>List of options</h4>
-                    <p><strong>A.</strong> Its origin is somewhat controversial.</p>
-                    <p><strong>B.</strong> It is historically significant for a country.</p>
-                    <p><strong>C.</strong> It was effective at attracting audiences.</p>
-                    <p><strong>D.</strong> It is included in a recent project.</p>
-                    <p><strong>E.</strong> It contains insights into the show.</p>
-                    <p><strong>F.</strong> It resembles an artwork.</p>
+                    <h4>Events in the history of football</h4>
+                    <p><strong>A.</strong> the introduction of pay for the players.</p>
+                    <p><strong>B.</strong> a change to the design of the goal.</p>
+                    <p><strong>C.</strong> the first use of lights for matches.</p>
+                    <p><strong>D.</strong> the introduction of goalkeepers.</p>
+                    <p><strong>E.</strong> the first international match.</p>
+                    <p><strong>F.</strong> two changes to the rules of the game.</p>
+                    <p><strong>G.</strong> the introduction of a fee for spectators.</p>
+                    <p><strong>H.</strong> an agreement on the length of a game</p>
                   </div>
                 </div>
-        
+
                 <div className="dropdown-blockx">
-                  <p>27. Ruy Blas <DropDown2 section='listening' part='part3' id={27} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  <p>28. Man of La Mancha <DropDown2 section='listening' part='part3' id={28} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  <p>29. The Tragedy of Jane Shore <DropDown2 section='listening' part='part3' id={29} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  <p>30. The Sailors' Festival<DropDown2 section='listening' part='part3' id={30} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                  <p>15.1870<DropDown3 section='listening' part='part2' id={15} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                  <p>16. 1874 <DropDown3 section='listening' part='part2' id={16} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/> </p>
+                  <p>17. 1875 <DropDown3 section='listening' part='part2' id={17} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                  <p>18. 1877<DropDown3 section='listening' part='part2' id={18} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                  <p>19. 1878<DropDown3 section='listening' part='part2' id={19} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                  <p>18. 1880<DropDown3 section='listening' part='part2' id={20} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
                   
                 </div>
          </div>
@@ -329,11 +495,102 @@ const questions25to30 = [
               </div>
          <div className="right-column">
               {/* Right column */}
-             
-                <h3><strong>Questions 21-26</strong></h3>
+              <h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 21 and 22 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+ {multiSelectQuestions21t022.map((q) => (
+  <div key={q.id} className="question-block">
+    <p>
+      <strong>{q.id.replace("_", " & ")}</strong>. {q.text}
+    </p>
+
+    {Object.entries(q.options).map(([letter, text]) => {
+      const selected = allAnswers.listening.part3[q.id] || [];
+
+      return (
+        <label key={letter}>
+          <input
+            type="checkbox"
+            name={q.id}
+            value={letter}
+            checked={selected.includes(letter)}
+            onChange={(e) => {
+              const prev = allAnswers.listening.part3[q.id] || [];
+
+              if (e.target.checked) {
+                handleAnswerChange(
+                  "listening",
+                  "part3",
+                  q.id,
+                  [...prev, e.target.value]
+                );
+              } else {
+                handleAnswerChange(
+                  "listening",
+                  "part3",
+                  q.id,
+                  prev.filter((v) => v !== e.target.value)
+                );
+              }
+            }}
+          />
+          {" "}
+          {letter}. {text}
+        </label>
+      );
+    })}
+  </div>
+))}
+              <h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 23 and 24 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+{multiSelectQuestions23t024.map((q) => (
+  <div key={q.id} className="question-block">
+    <p>
+      <strong>{q.id.replace("_", " & ")}</strong>. {q.text}
+    </p>
+
+    {Object.entries(q.options).map(([letter, text]) => {
+      const selected = allAnswers.listening.part3[q.id] || [];
+
+      return (
+        <label key={letter}>
+          <input
+            type="checkbox"
+            name={q.id}
+            value={letter}
+            checked={selected.includes(letter)}
+            onChange={(e) => {
+              const prev = allAnswers.listening.part3[q.id] || [];
+
+              if (e.target.checked) {
+                handleAnswerChange(
+                  "listening",
+                  "part3",
+                  q.id,
+                  [...prev, e.target.value]
+                );
+              } else {
+                handleAnswerChange(
+                  "listening",
+                  "part3",
+                  q.id,
+                  prev.filter((v) => v !== e.target.value)
+                );
+              }
+            }}
+          />
+          {" "}
+          {letter}. {text}
+        </label>
+      );
+    })}
+  </div>
+))}
+            
+                <h3><strong>Questions 25-30</strong></h3>
                 <p>Choose the correct letter <strong>A, B, or D</strong>.</p>
-                 {questions21to26.map((q)=>(
-                <div key={q} className="question-block">
+                <h3>Teaching handwriting</h3>
+                 {questions25to30.map((q)=>(
+                <div key={q.id} className="question-block">
                   <p className="mcq-question"><strong>{q.id}.</strong> {q.text}</p>
                   {q.options.map((text,index)=>(
                     <label key={index}>
@@ -349,32 +606,7 @@ const questions25to30 = [
                 </div>
               ))}
                      
-                <div className="meowx">
-                  <h3><strong>Questions 27–30</strong></h3>
-                  <p>
-                    What comment is made about the programme for each of the following shows?
-                    Choose the correct letter, <strong>A–F</strong>, next to Questions 27-30.
-                  </p>
-                </div>
-                <div className="center-containerx">
-                  <div className="question-blockx">
-                    <h4>List of options</h4>
-                    <p><strong>A.</strong> Its origin is somewhat controversial.</p>
-                    <p><strong>B.</strong> It is historically significant for a country.</p>
-                    <p><strong>C.</strong> It was effective at attracting audiences.</p>
-                    <p><strong>D.</strong> It is included in a recent project.</p>
-                    <p><strong>E.</strong> It contains insights into the show.</p>
-                    <p><strong>F.</strong> It resembles an artwork.</p>
-                  </div>
-                </div>
-        
-                <div className="dropdown-blockx">
-                  <p>27. Ruy Blas <DropDown2 section='listening' part='part3' id={27} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  <p>28. Man of La Mancha <DropDown2 section='listening' part='part3' id={28} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  <p>29. The Tragedy of Jane Shore <DropDown2 section='listening' part='part3' id={29} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  <p>30. The Sailors' Festival<DropDown2 section='listening' part='part3' id={30} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
-                  
-                </div>
+               
          </div>
           
                    
@@ -527,9 +759,431 @@ const questions25to30 = [
       </div>,
     ],
     reading: [
-      <div key="reading-part1">Reading Part 1</div>,
-      <div key="reading-part2">Reading Part 2</div>,
-      <div key="reading-part3">Reading Part 3</div>,
+      <div key="reading-part1">
+          <div className="ielts-container">
+      {/* LEFT COLUMN */}
+      <div className="left-column">
+        <h2>Passage 1.</h2> <br />
+        <h3>
+          You should spend about 20 minutes on <strong>Questions 1-13</strong>, 
+          which are based on Reading Passage 1 below.
+        </h3>
+
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className="right-column">
+
+        <h3>Questions 1-7</h3>
+        <p>
+          Complete the notes below.<br/> Write <strong>ONE WORD AND/OR A NUMBER</strong>from the passage for each answer.
+        </p>
+        <p>Write your answers in boxes 1-7 on your answer sheet.</p>
+ 
+                      {/* Notes Questions 1-6 */}
+      <div className="notes-box">
+  <h2 style={{ textAlign: "center" , marginBottom: "20px"  }}>The life and work of Georgia O'Keeffe</h2>  
+  <div className="reading-passage">
+
+  <ul>
+    <li>
+      studied art, then worked as a{" "}
+      <BlankInput
+      section='reading'
+        part='part1'
+        id={1} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+      in various places in the USA
+    </li>
+
+    <li>
+      created drawings using{" "}
+      <BlankInput
+      section='reading'
+        part='part1'
+        id={2} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+      which were exhibited in New York City
+    </li>
+
+    <li>
+      moved to New York and became famous for her paintings of the city's{" "}
+     <BlankInput
+      section='reading'
+        part='part1'
+        id={3} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>
+    </li>
+
+    <li>
+      produced a series of innovative close-up paintings of{" "}
+     <BlankInput
+      section='reading'
+        part='part1'
+        id={4} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>
+    </li>
+
+    <li>
+      went to New Mexico and was initially inspired to paint the many{" "}
+      <BlankInput
+      section='reading'
+        part='part1'
+        id={5} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+      that could be found there
+    </li>
+
+    <li>
+      continued to paint various features that together formed the dramatic{" "}
+      <BlankInput
+      section='reading'
+        part='part1'
+        id={6} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+      of New Mexico for over forty years
+    </li>
+
+    <li>
+      travelled widely by plane in later years, and painted pictures of clouds
+      and{" "}
+      <BlankInput
+      section='reading'
+        part='part1'
+        id={7} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+      seen from above
+    </li>
+  </ul>
+</div>  
+  </div>
+<br/>
+   <h3><strong>Questions 1-6</strong></h3><br />
+        <p>
+          Do the following statements agree with the information given in Reading Passage 1?
+          <br />
+          Write your answers in boxes 1-6 .
+        </p>
+         <div className="tf">
+          <h3>TRUE: if the statement agrees with the information</h3>
+          <h3>FALSE: if the statement contradicts the information</h3>
+          <h3>NOT GIVEN: <i>if there is no information on this</i></h3>
+        </div><br /> 
+
+      {questions8to13.map((q) => (
+  <div key={q.id} className="question-block">
+    <p>
+      {q.id}. <strong>{q.text}</strong>
+    </p>
+
+    <div className="radio-block">
+      <label>
+        <input
+          type="radio"
+          name={`q${q.id}`}
+          value="True"
+          checked={allAnswers.reading.part1[`q${q.id}`] === "True"}
+          onChange={(e) =>
+            handleAnswerChange("reading", "part1", e.target.name, e.target.value)
+          }
+        />
+        TRUE
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name={`q${q.id}`}
+          value="False"
+          checked={allAnswers.reading.part1[`q${q.id}`] === "False"}
+          onChange={(e) =>
+            handleAnswerChange("reading", "part1", e.target.name, e.target.value)
+          }
+        />
+        FALSE
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name={`q${q.id}`}
+          value="Not Given"
+          checked={allAnswers.reading.part1[`q${q.id}`] === "Not Given"}
+          onChange={(e) =>
+            handleAnswerChange("reading", "part1", e.target.name, e.target.value)
+          }
+        />
+        NOT GIVEN
+      </label>
+    </div>
+  </div>
+))}
+
+    </div>
+    </div>
+      </div>,
+      <div key="reading-part2">
+        <div className="ielts-container">
+      {/* LEFT COLUMN */}
+      <div className="left-column">
+        <h2>Passage 2.</h2> <br />
+        <h3>
+          You should spend about 20 minutes on <strong>Questions 14-26</strong>, 
+          which are based on Reading Passage 2 below.
+        </h3>
+
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className="right-column">
+<h2 style={{ textAlign: "center", marginBottom: "20px" }}>Procrastination</h2>
+          <h2><strong>Questions 14–17</strong></h2><br />
+        <p>
+          Reading Passage 2 has six paragraphs, A–F </p>.  
+          <p>Which paragraph contains the following information? 
+          Choose the correct letter, A–F, in boxes 14–17 on your answer sheet.</p>  
+        {/* <p> <br /><strong>NB:</strong> You may use any letter more than once.<br/></p> 
+         */}
+            <div className="question-block">
+
+              <p>14. how a type of plant functions as a natural protection for coastlines<DropDown4 section='reading' part='part2' id={14} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+              <p>15. a prediction about how long it could take to stop noticing the effects of climate change <DropDown4 section='reading' part='part2' id={15} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>16. a reference to the fact that a solution is particularly cost-effective<DropDown4 section='reading' part='part2' id={16} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>17. a mention of a technology used to locate areas most in need of intervention<DropDown4 section='reading' part='part2' id={17} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+
+            </div>
+        <h3>Questions 18-22</h3>
+        <p>
+          Complete the sentences below</p><br/><p>Choose <strong>ONE WORD ONLY</strong>from the passage for each answer.</p> 
+        
+        <p>Write your answers in boxes 18-22 on your answer sheet.</p>
+ 
+                      {/* Notes Questions 17-22 */}
+      <div >
+  <h2 style={{ textAlign: "center" , marginBottom: "20px"  }}></h2>
+        
+  <div className="reading-passage">
+            <div className="question-block">
+
+              <p>18.The stormwater-management programme in Miami Beach has involved the installation of efficient
+                {" "}
+<BlankInput
+        section='reading'
+        part='part2'
+        id={18} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}</p>
+              <p>19. The construction of{" "}
+     <BlankInput
+        section='reading'
+        part='part2'
+        id={19} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}was the first stage of a project to ensure the success of mangroves in Indonesia.
+{" "}</p>
+              <p>20. As a response to rising floodwaters in the Mekong Delta, a not-for-profit organisation has been building houses that can
+                {" "}<BlankInput
+        section='reading'
+        part='part2'
+        id={20} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+ </p>
+          <p>21.Rising sea levels in Bangladesh have made it necessary to introduce various
+{" "}
+      <BlankInput
+        section='reading'
+        part='part2'
+        id={21} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}</p>
+
+that are suitable for areas of high salt content.
+{" "}
+<p>22.A project in LA has increased the number of
+      <BlankInput
+        section='reading'
+        part='part2'
+        id={22} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+on the city's streets.</p>
+         
+            </div>
+</div>
+                              <div>
+          <p>
+            <h3><strong>Questions 23-26</strong></h3>
+    
+            Look at the following statements (Questions 23-26) and the list of people below. 
+            <br/>Match each statement with the correct person, A-E. 
+           Choose the correct letter , <strong> A-E</strong>,next to <strong> Questions 23-26.</strong>
+          </p>
+
+                <div className="center-containerx">
+                  <div className="question-blockx">
+                   <h4>List of People</h4>
+            <p><strong>A.</strong>  Yanira Pineda.</p>
+            <p><strong>B.</strong> Susanna Tol.</p>
+            <p><strong>C.</strong> Elizabeth English.</p>
+            <p><strong>D.</strong> Raisa Chowdhury.</p>
+            <p><strong>E.</strong> Greg Spotts.</p>
+
+                  </div>
+                </div>
+
+                <div className="dropdown-blockx">
+                      <p>23. It is essential to adopt strategies which involve and help residents of the region.<DropDown3 section='reading' part='part2' id={23} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+              <p>24.Interventions which reduce heat are absolutely vital for our survival in this location. <DropDown3 section='reading' part='part2' id={24} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>25. More work will need to be done in future decades to deal with the impact of rising water levels.<DropDown3 section='reading' part='part2' id={25} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>26. The number of locations requiring action to adapt to flooding has grown in recent years.<DropDown3 section='reading' part='part2' id={26} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+
+                  
+                </div>
+         </div>
+
+    
+    </div>
+    </div>
+    </div>
+      </div>,
+      <div key="reading-part3">
+<div className="ielts-container">
+      {/* LEFT COLUMN */}
+      <div className="left-column">
+        <h2>Passage 3.</h2> <br />
+        <h3>
+          You should spend about 20 minutes on <strong>Questions 27-40</strong>, 
+          which are based on Reading Passage 3 below.
+        </h3>
+
+      </div>
+
+      {/* RIGHT COLUMN */}
+      <div className="right-column">
+<h2 style={{ textAlign: "center", marginBottom: "20px" }}>Procrastination</h2>
+          <h2><strong>Questions 27–31</strong></h2>
+        <p>
+          Reading Passage 3 has seven paragraphs, A–F </p>.  
+          <p>Which paragraph contains the following information? 
+          Choose the correct letter, A–G, in boxes 27–31 on your answer sheet.</p>  
+        <p> <strong>NB:</strong> You may use any letter more than once.</p> 
+        <br/>
+        
+            <div className="question-block">
+
+              <p>27. an example of how one predator has been protected by the introduction of livestock guard dogs<DropDown section='reading' part='part3' id={27} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+              <p>28. an optimistic suggestion about the possible positive developments in the use of livestock guard dogs
+ <DropDown section='reading' part='part3' id={28} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>29. a description of how the methods used by livestock guard dogs help to keep predators away<DropDown section='reading' part='part3' id={29} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>30.claims by different academics that the use of livestock guard dogs is a successful way of protecting farmers' herds<DropDown section='reading' part='part3' id={30} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+           <p>31.a reference to how livestock guard dogs gain their skills<DropDown section='reading' part='part3' id={30} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+
+  
+ 
+                              <div>
+          <p>
+            <h3><strong>Questions 32-36</strong></h3>
+    
+            Look at the following statements (Questions 32-36) and the list of people below. 
+            <br/>Match each statement with the correct person, A-E. 
+           Choose the correct letter , <strong> A-E</strong>,next to <strong> Questions 32-36.</strong>
+          </p>
+
+                <div className="center-containerx">
+                  <div className="question-blockx">
+                   <h4>List of People</h4>
+            <p><strong>A.</strong>  Dan Macon.</p>
+            <p><strong>B.</strong> Silvia Ribeiro.</p>
+            <p><strong>C.</strong> Linda van Bommel.</p>
+            <p><strong>D.</strong> Julie Young.</p>
+            <p><strong>E.</strong> Bethany Smith.</p>
+
+                  </div>
+                </div>
+
+                <div className="dropdown-blockx">
+                      <p>32.The use of guard dogs may save the lives of both livestock and wild animals.<DropDown3 section='reading' part='part3' id={32} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+              <p>33.Claims of a change in behaviour from those using livestock guard dogs may not be totally accurate. <DropDown3 section='reading' part='part3' id={33} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>34. There may be negative results if the use of livestock guard dogs is not sufficiently widespread.<DropDown3 section='reading' part='part3' id={34} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>35.Livestock guard dogs are the best way of protecting farm animals, as long as the dogs are appropriately handled.<DropDown3 section='reading' part='part3' id={35} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>36.Teaching a livestock guard dog how to do its work needs a different focus from teaching a house guard dog..<DropDown3 section='reading' part='part3' id={36} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                           
+                </div>
+                    <h2><strong>Questions 37-40</strong></h2><br />
+    
+        <p>
+          Complete the Summary<br/><p>Write <strong>ONE WORD AND/OR A NUMBER</strong>from the passage for each answer.</p> 
+        </p>
+        <p>Write your answers in boxes 37-40 on your answer sheet.</p>
+ 
+                      {/* Notes Questions 17-22 */}
+      <div className="notes-box">
+  <h2 style={{ textAlign: "center" , marginBottom: "20px"  }}></h2>
+      
+  
+  <div className="reading-passage">
+  <h2 style={{ textAlign: "center" , marginBottom:'20px' }}>Unintended ecological effects of using guard dogs</h2>
+
+            <div className="question-block">
+
+              <p  >In Namibia, livestock guard dogs have been used to protect domestic animals from attacks by cheetahs. 
+                This has led to a rise in the deaths of other predators, particularly
+                {" "}
+      <BlankInput
+        section='reading'
+        part='part3'
+        id={37} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+.</p>
+              <p> n addition, it has been suggested that the dogs could have
+     {" "}
+      <BlankInput
+        section='reading'
+        part='part3'
+        id={38} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}which may affect other species, and that they may reduce the amount of
+
+{" "}
+      <BlankInput
+        section='reading'
+        part='part3'
+        id={39} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+. </p>
+          <p>available to certain wild animals.On the other hand, these dogs may help birds by protecting their nests.
+             These might otherwise be threatened by predators such as
+{" "}
+      <BlankInput
+        section='reading'
+        part='part3'
+        id={40} 
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>{" "}
+
+</p>
+         
+            </div>
+            </div>
+            </div>   
+                
+         </div>
+    </div>
+    </div>
+    </div>
+
+
+      </div>,
     ],
    writing: [
       <div key="writing-part1">
@@ -611,40 +1265,47 @@ style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadi
         {/* Back to dashboard */}
         <button
           className="back-btn"
-          onClick={handleNavigateBack} >
-           Back
+          onClick={handleNavigateBack}
+          > Back
         </button>
-{/* section = listening by defaiult and part is 1 by default */}
-        {/* Sections & Parts  ['listening', 4] */} 
-        {Object.entries(testStructure).map(([sec, totalParts])=>(
-          <div key={sec} className="bottom-section">
-            <button 
-            className={`section-btn${section=== sec ? "active ":"" }`}
-            onClick={()=>{
-              setSection(sec)
-              setPart(1)
-            }}
 
-            >{sec.charAt(0).toUpperCase()+ sec.slice(1)}</button>
+        {/* Sections & Parts */}
+        {Object.entries(testStructure).map(([sec, totalParts]) => (
+          <div key={sec} className="bottom-section">
+            {/* Section button */}
+            <button
+              className={`section-btn ${section === sec ? "active" : ""}`}
+              onClick={() => {
+                setSection(sec);
+                setPart(1);
+              }}
+            >
+              {sec.charAt(0).toUpperCase() + sec.slice(1)}
+            </button>
+
             {/* Part buttons */}
-            {[...Array(totalParts)].map((_,i)=>{
-              const p = i+1
-              return(
-                <button key={i}
-                className={`part-btn${section===sec & part===p ? "active":""}`}
-                onClick={()=>{
-                  setSection(sec)
-                  setPart(p)
-                }}>
+            {[...Array(totalParts)].map((_, i) => {
+              const p = i + 1;
+              return (
+                <button
+                  key={p}
+                  className={`part-btn ${
+                    section === sec && part === p ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    setSection(sec);
+                    setPart(p);
+                  }}
+                >
                   {p}
                 </button>
-              )
+              );
             })}
           </div>
-          
         ))}
+
         {/* End test button */}
-        <button className="end-btn" onClick={() => alert("End Test!")}>
+        <button className="end-btn" onClick={()=>handleSubmit()}>
           End Test
         </button>
       </div>

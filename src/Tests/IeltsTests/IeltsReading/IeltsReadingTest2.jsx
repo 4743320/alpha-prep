@@ -486,11 +486,11 @@ const endTest=async(testId, section)=>{
   </ul>
 </div>
 </div>
-   <h2><strong>Questions 1-6</strong></h2><br />
+   <h2><strong>Questions 7-13</strong></h2><br />
         <p>
           Do the following statements agree with the information given in Reading Passage 1?
           <br />
-          Write your answers in boxes 1-6 .
+          Write your answers in boxes 7-13 .
         </p>
          <div className="tf">
           <h3>TRUE: if the statement agrees with the information</h3>
@@ -525,7 +525,7 @@ const endTest=async(testId, section)=>{
         checked = {allAnswers.part1[`q${q.id}`] === 'False'}
         onChange={(e)=>handleAnswerChange('part1', e.target.name, e.target.value)}
 
-        />
+        /> FALSE
       </label>
       <label>
         <input
@@ -536,7 +536,7 @@ const endTest=async(testId, section)=>{
         checked = {allAnswers.part1[`q${q.id}`] === 'Not Given'}
         onChange={(e)=>handleAnswerChange('part1', e.target.name, e.target.value)}
 
-        />
+        /> NOT GIVEN
       </label>
     </div>
   </div>
