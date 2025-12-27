@@ -37,8 +37,144 @@ const IELTSTest = () => {
   console.log(JSON.stringify(allAnswers, null, 2));
 };
 
+// const endFullTest = async (testId) => {
+//   try {
+//     const payload = { answers: [] };
 
-  
+//     for (let section in allAnswers) {
+//       for (let qid in allAnswers[section]) {
+//         payload.answers.push({
+//           question_id: qid.replace("q", ""),
+//           answer: String(allAnswers[section][qid]).trim().toLowerCase()
+//         });
+//       }
+//     }
+
+//     console.log("PAYLOAD SENT:", JSON.stringify(payload, null, 2));
+
+//     const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+//     const response = await fetch(url, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(payload)
+//     });
+
+//     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+//     const data = await response.json();
+//     console.log("RESPONSE:", data);
+
+//     // Correct display
+//     let message = `Full Test Submitted!\n`;
+//     message += `Total Score: ${data.total_score}/${data.total_questions}\n\n`;
+
+//     for (let section in data.scores_by_section) {
+//       message += `${section}: ${data.scores_by_section[section].score}/${data.scores_by_section[section].total}\n`;
+//     }
+
+//     alert(message);
+
+//   } catch (error) {
+//     console.error("Error sending request", error);
+//     alert("Failed to submit full test. Check console for details.");
+//   }
+// };
+//   const endFullTest = async (testId) => {
+//   try {
+//     const payload = { answers: [] };
+
+//     for (let section in allAnswers) {
+//       for (let qid in allAnswers[section]) {
+//         payload.answers.push({
+//           question_id: qid.replace("q", ""), // remove 'q' prefix
+//           answer: String(allAnswers[section][qid]).trim().toLowerCase()
+//         });
+//       }
+//     }
+
+//     console.log("PAYLOAD SENT:", JSON.stringify(payload, null, 2));
+
+//     const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+//     const response = await fetch(url, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(payload)
+//     });
+
+//     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+//     const data = await response.json();
+//     console.log("RESPONSE:", data);
+
+//     // Display result correctly
+//     let message = `Full Test Submitted!\n`;
+//     message += `Total Score: ${data.total_score}/${data.total_questions}\n\n`;
+
+//     for (let section in data.scores_by_section) {
+//       const score = data.scores_by_section[section];
+//       let total = section === "Listening" ? 40 : section === "Reading" ? 40 : 0; // Adjust totals
+//       message += `${section}: ${score}/${total}\n`;
+//     }
+
+//     alert(message);
+
+//   } catch (error) {
+//     console.error("Error sending request", error);
+//     alert("Failed to submit full test. Check console for details.");
+//   }
+// };
+const endFullTest = async (testId) => {
+  try {
+    const payload = { answers: [] };
+
+    // Convert allAnswers to payload
+    for (let section in allAnswers) {
+      for (let part in allAnswers[section]) {
+        const partAnswers = allAnswers[section][part];
+        for (let qid in partAnswers) {
+          payload.answers.push({
+            question_id: qid.replace("q", ""),
+            answer: String(partAnswers[qid]).trim().toLowerCase()
+          });
+        }
+      }
+    }
+
+    console.log("PAYLOAD SENT:", JSON.stringify(payload, null, 2));
+
+    const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+    console.log("RESPONSE:", data);
+
+    // Display result
+    let message = `Full Test Submitted!\n`;
+    message += `Total Score: ${data.total_score}/${data.total_questions}\n\n`;
+
+    for (let section in data.scores_by_section) {
+      const score = data.scores_by_section[section];
+      const total = section.toLowerCase() === "listening" ? 40 : section.toLowerCase() === "reading" ? 40 : 0;
+      message += `${section.charAt(0).toUpperCase() + section.slice(1)}: ${score}/${total}\n`;
+    }
+
+    alert(message);
+
+  } catch (error) {
+    console.error("Error sending request", error);
+    alert("Failed to submit full test. Check console for details.");
+  }
+};
+
   // Test structure for bottom bar
   const testStructure = {
     listening: 4,
@@ -1305,7 +1441,7 @@ style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadi
         ))}
 
         {/* End test button */}
-        <button className="end-btn" onClick={()=>handleSubmit()}>
+        <button className="end-btn" onClick={()=>endFullTest("IELTS_AC_20_2025_TEST4")}>
           End Test
         </button>
       </div>
