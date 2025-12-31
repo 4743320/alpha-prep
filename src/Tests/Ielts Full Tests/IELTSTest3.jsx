@@ -7,7 +7,10 @@ import IELTSLogo from "../../assets/ieltslogo2.png";
 import '../../styles/ielts.css'
 import '../../styles/misc.css'
 import DropDown from "../../components/IeltsFullTestComponents/DropDown";
-import DropDown2 from "../../components/IeltsFullTestComponents/DropDown"
+import DropDown2 from "../../components/IeltsFullTestComponents/DropDown2"
+import DropDown5 from '../../components/IeltsFullTestComponents/DropDown5'
+import DropDown6 from '../../components/IeltsFullTestComponents/DropDown6'
+import DropDown7 from '../../components/IeltsFullTestComponents/DropDown7'
 
 
 // ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩
@@ -41,6 +44,57 @@ const IELTSTest3 = () => {
 const handleSubmit = () => {
   console.log(JSON.stringify(allAnswers, null, 2));
 };
+
+const endFullTest = async (testId) => {
+  try {
+    const payload = { answers: [] };
+
+    // Convert allAnswers to payload
+    for (let section in allAnswers) {
+      for (let part in allAnswers[section]) {
+        const partAnswers = allAnswers[section][part];
+        for (let qid in partAnswers) {
+          payload.answers.push({
+            question_id: qid.replace("q", ""),
+            answer: String(partAnswers[qid]).trim().toLowerCase()
+          });
+        }
+      }
+    }
+
+    console.log("PAYLOAD SENT:", JSON.stringify(payload, null, 2));
+
+    const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+    const data = await response.json();
+    console.log("RESPONSE:", data);
+
+    // Display result
+    let message = `Full Test Submitted!\n`;
+    message += `Total Score: ${data.total_score}/${data.total_questions}\n\n`;
+
+    for (let section in data.scores_by_section) {
+      const score = data.scores_by_section[section];
+      const total = section.toLowerCase() === "listening" ? 40 : section.toLowerCase() === "reading" ? 40 : 0;
+      message += `${section.charAt(0).toUpperCase() + section.slice(1)}: ${score}/${total}\n`;
+    }
+
+    alert(message);
+
+  } catch (error) {
+    console.error("Error sending request", error);
+    alert("Failed to submit full test. Check console for details.");
+  }
+};
+
 
   // Test structure for bottom bar
   const testStructure = {
@@ -160,6 +214,99 @@ const questions21to26 = [
     ],
   },
 ];
+
+const questions8to13 = [
+  {
+    id: 8,
+    text: "The ice transportation business made some Boston ship owners very wealthy in the early 1800s.",
+  },
+  {
+    id: 9,
+    text: "A disadvantage of the freezing process invented in Australia was that it affected the taste of food.",
+  },
+  {
+    id: 10,
+    text: "Clarence Birdseye travelled to Labrador in order to learn how the Inuit people froze fish.",
+  },
+  {
+    id: 11,
+    text: "Swanson Foods invested a great deal of money in the promotion of the TV Dinner.",
+  },
+  {
+    id: 12,
+    text: "Swanson Foods developed a new style of container for the launch of the TV Dinner.",
+  },
+  {
+    id: 13,
+    text: "The US frozen food industry is currently the largest in the world.",
+  },
+];
+const questions37to40 = [
+  {
+    id: 37,
+    text: "What point does Richardson make about fear of machines?",
+    options: [
+      "It has grown alongside the development of ever more advanced robots.",
+      "It is the result of our inclination to attribute human characteristics to non-human entities.",
+      "It has its origins in basic misunderstandings about how inanimate objects function.",
+      "It demonstrates a key difference between human intelligence and machine intelligence."
+    ]
+  },
+  {
+    id: 38,
+    text: "What potential advance does Rees see as a cause for concern?",
+    options: [
+      "robots outnumbering people",
+      "robots having abilities which humans do not",
+      "artificial intelligence developing independent thought",
+      "artificial intelligence taking over every aspect of our lives"
+    ]
+  },
+  {
+    id: 39,
+    text: "What does Wolpert emphasise in his response to the question about science fiction?",
+    options: [
+      "how science fiction influences our attitudes to robots",
+      "how fundamental robots are to the science fiction genre",
+      "how the image of robots in science fiction has changed over time",
+      "how reactions to similar portrayals of robots in science fiction may vary"
+    ]
+  },
+  {
+    id: 40,
+    text: "What is Richardson doing in her comment about reality and fantasy?",
+    options: [
+      "warning people not to confuse one with the other",
+      "outlining ways in which one has impacted on the other",
+      "recommending a change of approach in how people view them",
+      "explaining why scientists have a different perspective on them from other people"
+    ]
+  },
+];
+
+const multiSelectQuestion20_21 = {
+  id: "20_21",
+  text: "Which TWO of these causes of damage to coral reefs are mentioned by the writer of the text?",
+  options: {
+    A: "a rising number of extreme storms",
+    B: "the removal of too many fish from the sea",
+    C: "the contamination of the sea from waste",
+    D: "increased disease among marine species",
+    E: "alterations in the usual flow of water in the seas",
+  },
+};
+const multiSelectQuestion22_23 = {
+  id: "22_23",
+  text: "Which TWO of the following statements are true of the researchers at London Zoo?",
+  options: {
+    A: "They are hoping to expand the numbers of different corals being bred in laboratories.",
+    B: "They want to identify corals that can cope well with the changed sea conditions.",
+    C: "They are looking at ways of creating artificial reefs that corals could grow on.",
+    D: "They are trying out methods that would speed up reproduction in some corals.",
+    E: "They are investigating materials that might protect reefs from higher temperatures.",
+  },
+};
+
 
 
   // Skeleton parts content
@@ -572,7 +719,7 @@ const questions21to26 = [
     ],
     reading: [
       <div key="reading-part1">
-                  <div className="ielts-container">
+ <div className="ielts-container">
       {/* LEFT COLUMN */}
       <div className="left-column">
         <h2>Passage 1.</h2> <br />
@@ -580,61 +727,172 @@ const questions21to26 = [
           You should spend about 20 minutes on <strong>Questions 1-13</strong>, 
           which are based on Reading Passage 1 below.
         </h3>
-         <p className='para'>
-          The kākāpō is a nocturnal, flightless parrot that is critically endangered and one of New Zealand's unique treasures. The kākāpō, also known as the owl parrot, is a large, forest-dwelling bird, with a pale owl-like face. Up to 64 cm in length, it has predominantly yellow-green feathers, forward-facing eyes, a large grey beak, large blue feet, and relatively short wings and tail. It is the world's only flightless parrot, and is also possibly one of the world's longest-living birds, with a reported lifespan of up to 100 years.
-        </p>
-        <p>
-          Kākāpō are solitary birds and tend to occupy the same home range for many years. They forage on the ground and climb high into trees. They often leap from trees and flap their wings, but at best manage a controlled descent to the ground. They are entirely vegetarian, with their diet including the leaves, roots and bark of trees as well as bulbs, and fern fronds.
-        </p>
-        <p>
-          Kākāpō breed in summer and autumn, but only in years when food is plentiful. Males play no part in incubation or chick-rearing – females alone incubate eggs and feed the chicks. The 1-4 eggs are laid in soil, which is repeatedly turned over before and during incubation. The female kākāpō has to spend long periods away from the nest searching for food, which leaves the unattended eggs and chicks particularly vulnerable to predators.
-        </p>
-        <p>
-          Before humans arrived, kākāpō were common throughout New Zealand's forests. However, this all changed with the arrival of the first Polynesian settlers about 700 years ago. For the early settlers, the flightless kākāpō was easy prey. They ate its meat and used its feathers to make soft cloaks. With them came the Polynesian dog and rat, which also preyed on kākāpō. By the time European colonisers arrived in the early 1800s, kākāpō had become confined to the central North Island and forested parts of the South Island.
-        </p>
-        <p>
-          The fall in kākāpō numbers was accelerated by European colonisation. A great deal of habitat was lost through forest clearance, and introduced species such as deer depleted the remaining forests of food. Other predators such as cats, stoats and two more species of rat were also introduced. The kākāpō were in serious trouble.
-        </p>
-        <p>
-          In 1894, the New Zealand government launched its first attempt to save the kākāpō. Conservationist Richard Henry led an effort to relocate several hundred of the birds to predator-free Resolution Island in Fiordland. Unfortunately, the island didn't remain predator free – stoats arrived within six years, eventually destroying the kākāpō population. By the mid-1900s, the kākāpō was practically a lost species. Only a few clung to life in the most isolated parts of New Zealand.
-        </p>
-        <p>
-          From 1949 to 1973, the newly formed New Zealand Wildlife Service made over 60 expeditions to find kākāpō, focusing mainly on Fiordland. Six were caught, but there were no females amongst them and all but one died within a few months of captivity. In 1974, a new initiative was launched, and by 1977, 18 more kākāpō were found in Fiordland. However, there were still no females. In 1977, a large population of males was spotted in Rakiura – a large island free from stoats, ferrets and weasels. There were about 200 individuals, and in 1980 it was confirmed females were also present. These birds have been the foundation of all subsequent work in managing the species.
-        </p>
-        <p>
-          Unfortunately, predation by feral cats on Rakiura Island led to a rapid decline in kākāpō numbers. As a result, during 1980–97, the surviving population was evacuated to three island sanctuaries: Codfish Island, Maud Island and Little Barrier Island. However, breeding success was hard to achieve. Rats were found to be a major predator of kākāpō chicks and an insufficient number of chicks survived to offset adult mortality. By 1995, although at least 12 chicks had been produced on the islands, only three had survived. The kākāpō population had dropped to 51 birds.
-        </p>
-        <p>
-          In 1996, a new Recovery Plan was launched, together with a specialist advisory group called the Kākāpō Scientific and Technical Advisory Committee and a higher amount of funding. Renewed steps were taken to control predators on the three islands. Cats were eradicated from Little Barrier Island in 1980, and possums were eradicated from Codfish Island by 1986. However, the population did not start to increase until rats were removed from all three islands, and the birds were more intensively managed.
-        </p>
-        <p>
-          After the first five years of the Recovery Plan, the population was on target. By 2000, five new females had been produced, and the total population had grown to 62 birds. For the first time, there was cautious optimism for the future of kākāpō and by June 2020, a total of 210 birds was recorded.
-        </p>
-        <p>
-          Today, kākāpō management continues to be guided by the kākāpō Recovery Plan. Its key goals are: minimise the loss of genetic diversity in the kākāpō population, restore or maintain sufficient habitat to accommodate the expected increase in the kākāpō population, and ensure stakeholders continue to be fully engaged in the preservation of the species.
-
-        </p>
 
       </div>
 
       {/* RIGHT COLUMN */}
       <div className="right-column">
-            <div className="question-block">
-  <p>Fill in the blank:</p>
-  <input
-    type="text"
-    name="q1" // this will be passed as 'name' to handleAnswerChange
-    placeholder="Type your answer..."
-    value={allAnswers.reading.part1["q1"] || ""}
-    onChange={(e) =>
-      handleAnswerChange("reading", "part1", e.target.name, e.target.value)
-    }
-  />
-</div>
+
+ <h3>Questions 1-7</h3>
+  <p>
+    Complete the notes below.<br />
+    Write <strong>ONE WORD AND/OR A NUMBER</strong> from the passage for each answer.
+  </p>
+  <p>Write your answers in boxes 1-7 on your answer sheet.</p>
+
+  <div className="notes-box">
+    <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+      The history of frozen food
+    </h2>
+    <div className="reading-passage">
+      <ul>
+        <li>
+          2,000 years ago, South America — People conserved the nutritional value of{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={1}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />{" "}
+          using a method of freezing then drying.
+        </li>
+
+        <li>
+          1851, USA —{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={2}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />{" "}
+          was kept cool by ice during transportation in specially adapted trains.
+        </li>
+
+        <li>
+          1880, Australia — Two kinds of{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={3}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />{" "}
+          were the first frozen foods shipped to England.
+        </li>
+
+        <li>
+          1917 onwards, USA — Clarence Birdseye introduced innovations including quick-freezing methods, so that{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={4}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />{" "}
+          did not spoil.
+        </li>
+
+        <li>
+          Packaging products with{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={5}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />, so the product was visible.
+        </li>
+
+        <li>
+          Early 1940s, USA — Frozen food became popular because of a shortage of{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={6}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />.
+        </li>
+
+        <li>
+          1950s, USA — A large number of homes now had a{" "}
+          <BlankInput
+            section="reading"
+            part="part1"
+            id={7}
+            allAnswers={allAnswers}
+            handleAnswerChange={handleAnswerChange}
+          />.
+        </li>
+      </ul>
+    </div>
+  </div>
+<br/>
+   <h3><strong>Questions 8-13</strong></h3><br />
+        <p>
+          Do the following statements agree with the information given in Reading Passage 1?
+          <br />
+          Write your answers in boxes 1-6 .
+        </p>
+         <div className="tf">
+          <h3>TRUE: if the statement agrees with the information</h3>
+          <h3>FALSE: if the statement contradicts the information</h3>
+          <h3>NOT GIVEN: <i>if there is no information on this</i></h3>
+        </div><br /> 
+
+      {questions8to13.map((q) => (
+  <div key={q.id} className="question-block">
+    <p>
+      {q.id}. <strong>{q.text}</strong>
+    </p>
+
+    <div className="radio-block">
+      <label>
+        <input
+          type="radio"
+          name={`q${q.id}`}
+          value="True"
+          checked={allAnswers.reading.part1[`q${q.id}`] === "True"}
+          onChange={(e) =>
+            handleAnswerChange("reading", "part1", e.target.name, e.target.value)
+          }
+        />
+        TRUE
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name={`q${q.id}`}
+          value="False"
+          checked={allAnswers.reading.part1[`q${q.id}`] === "False"}
+          onChange={(e) =>
+            handleAnswerChange("reading", "part1", e.target.name, e.target.value)
+          }
+        />
+        FALSE
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name={`q${q.id}`}
+          value="Not Given"
+          checked={allAnswers.reading.part1[`q${q.id}`] === "Not Given"}
+          onChange={(e) =>
+            handleAnswerChange("reading", "part1", e.target.name, e.target.value)
+          }
+        />
+        NOT GIVEN
+      </label>
+    </div>
+  </div>
+))}
 
     </div>
-    </div>
-  
+    </div>  
       </div>,
       <div key="reading-part2">
                        <div className="ielts-container">
@@ -645,47 +903,265 @@ const questions21to26 = [
 
       {/* RIGHT COLUMN */}
       <div className="right-column">
-            <div className="question-block">
-  <p>Fill in the blank:</p>
-  <input
-    type="text"
-    name="q1" // this will be passed as 'name' to handleAnswerChange
-    placeholder="Type your answer..."
-    value={allAnswers.reading.part1["q1"] || ""}
-    onChange={(e) =>
-      handleAnswerChange("reading", "part1", e.target.name, e.target.value)
-    }
-  />
-</div>
+        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Procrastination</h2>
+          <h2><strong>Questions 14–19</strong></h2><br />
+        <p>
+          Reading Passage 2 has six sections, A–F </p>.  
+          <p>Choose the correct heading for each section from the list of headings below. 
+          Choose the correct number,<strong>i-vii</strong> , in boxes 14-19 on your answer sheet.</p>  
+        {/* <p> <br /><strong>NB:</strong> You may use any letter more than once.<br/></p> 
+         */}
+     
+        <div className="center-containerx">
+          <div className="question-blockx">
+            <h4>List of Headings</h4>
+            <p><strong>i.</strong> Tried and tested solutions.</p>
+            <p><strong>ii.</strong> Cooperation beneath the waves.</p>
+            <p><strong>iii.</strong> Working to lessen the problems.</p>
+            <p><strong>iv.</strong> Disagreement about the accuracy of a certain phrase.</p>
+            <p><strong>v.</strong> Two clear educational goals.</p>
+            <p><strong>vi.</strong> Promoting hope.</p>
+            <p><strong>vii.</strong> A warning of further trouble ahead .</p>
+          </div>
+        </div>
 
+        <div className="dropdown-blockx">
+          <p>14. Section A  <DropDown7 section='reading' part='part2' id={14} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>15. Section B  <DropDown7 section='reading' part='part2' id={15} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>16. Section C  <DropDown7 section='reading' part='part2' id={16} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>17. Section D  <DropDown7 section='reading' part='part2' id={17} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>18. Section E  <DropDown7 section='reading' part='part2' id={18} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>19. Section F  <DropDown7 section='reading' part='part2' id={19} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          
+        </div>
+         <h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 20 and 21 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+{multiSelectQuestion20_21 && (
+  <div className="question-block">
+    <p>
+      <strong>{multiSelectQuestion20_21.id.replace("_", " - ")}</strong>.{" "}
+      {multiSelectQuestion20_21.text}
+    </p>
+
+    {Object.entries(multiSelectQuestion20_21.options).map(([letter, text]) => {
+      const selected =
+        allAnswers.reading.part2[multiSelectQuestion20_21.id] || [];
+
+      return (
+        <label key={letter}>
+          <input
+            type="checkbox"
+            name={multiSelectQuestion20_21.id}
+            value={letter}
+            checked={selected.includes(letter)}
+            onChange={(e) => {
+              const prev =
+                allAnswers.reading.part2[multiSelectQuestion20_21.id] || [];
+
+              if (e.target.checked) {
+                handleAnswerChange(
+                  "reading",
+                  "part2",
+                  multiSelectQuestion20_21.id,
+                  [...prev, e.target.value]
+                );
+              } else {
+                handleAnswerChange(
+                  "reading",
+                  "part2",
+                  multiSelectQuestion20_21.id,
+                  prev.filter((v) => v !== e.target.value)
+                );
+              }
+            }}
+          />{" "}
+          {letter}. {text}
+        </label>
+      );
+    })}
+  </div>
+)}
+   
+                <h3 style={{  marginTop: "10px", marginBottom:'10px'}}>Questions 22 and 23 </h3>
+ <h4 style={{  marginTop: "10px", marginBottom:'10px'}}>Choose TWO letters, A-E.</h4>
+{multiSelectQuestion22_23 && (
+  <div key={multiSelectQuestion22_23.id} className="question-block">
+    <p>
+      <strong>{multiSelectQuestion22_23.id.replace("_", " - ")}</strong>.{" "}
+      {multiSelectQuestion22_23.text}
+    </p>
+
+    {Object.entries(multiSelectQuestion22_23.options).map(
+      ([letter, text]) => {
+        const selected =
+          allAnswers.reading.part2[multiSelectQuestion22_23.id] || [];
+
+        return (
+          <label key={letter}>
+            <input
+              type="checkbox"
+              name={multiSelectQuestion22_23.id}
+              value={letter}
+              checked={selected.includes(letter)}
+              onChange={(e) => {
+                const prev =
+                  allAnswers.reading.part2[
+                    multiSelectQuestion22_23.id
+                  ] || [];
+
+                if (e.target.checked) {
+                  handleAnswerChange(
+                    "reading",
+                    "part2",
+                    multiSelectQuestion22_23.id,
+                    [...prev, e.target.value]
+                  );
+                } else {
+                  handleAnswerChange(
+                    "reading",
+                    "part2",
+                    multiSelectQuestion22_23.id,
+                    prev.filter((v) => v !== e.target.value)
+                  );
+                }
+              }}
+            />{" "}
+            {letter}. {text}
+          </label>
+        );
+      }
+    )}
+  </div>
+)}
+   
+
+      <h2><strong>Questions 24-26</strong></h2><br />
+        
+          <p>Complete the sentences below.
+          Choose<strong>ONE WORD ONLY</strong>  from the passage for each answer.</p>  
+          <p>Write your answers in boxes 24-26 on your answer sheet.</p>
+        {/* <p> <br /><strong>NB:</strong> You may use any letter more than once.<br/></p> 
+         */}
+            <div className="question-block">
+<p>24. Corals have a number of<BlankInput
+        section='reading'
+        part='part2'
+        id={24}
+        placeholder='24'
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/>which they use to collect their food. </p>
+<p>25. Algae gain <BlankInput
+        section='reading'
+        part='part2'
+        id={25}
+        placeholder='25'
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> from being inside the coral.</p>
+<p>26. Increases in the warmth of the sea water can remove the <BlankInput
+        section='reading'
+        part='part2'
+        id={26}
+        placeholder='26'
+        allAnswers={allAnswers}
+        handleAnswerChange={handleAnswerChange}/> from coral.</p>
+            </div>
+      
     </div>
     </div>
   
       </div>,
       <div key="reading-part3">
-    <div className="ielts-container">
+   <div className="ielts-container">
       {/* LEFT COLUMN */}
       <div className="left-column">
-             </div>
+        <h2>Passage 3.</h2> <br />
+        <h3>
+          You should spend about 20 minutes on <strong>Questions 27-40</strong>, 
+          which are based on Reading Passage 3 below.
+        </h3>
+
+      </div>
 
       {/* RIGHT COLUMN */}
       <div className="right-column">
-            <div className="question-block">
-  <p>Fill in the blank:</p>
-  <input
-    type="text"
-    name="q1" // this will be passed as 'name' to handleAnswerChange
-    placeholder="Type your answer..."
-    value={allAnswers.reading.part1["q1"] || ""}
-    onChange={(e) =>
-      handleAnswerChange("reading", "part1", e.target.name, e.target.value)
-    }
-  />
-</div>
+                
+            <h3><strong>Questions 27-33</strong></h3>
+    
+          <p>  Look at the following statements (Questions 27-33) and the list of experts below. 
+            <br/>Match each statement with the correct person, A-C. 
+           Choose the correct letter , <strong> A-C</strong>,next to <strong> Questions 27-33.</strong>
+          </p>
+          
+      <div className="center-containerx">
+                  <div className="question-blockx">
+                   <h4>List of People</h4>
+            <p><strong>A.</strong>  Martin Rees.</p>
+            <p><strong>B.</strong> Daniel Wolpert.</p>
+            <p><strong>C.</strong> Kathleen Richardson.</p>
+          
 
+                  </div>
+                </div>
+ <div className="dropdown-blockx">
+ <p>27.For our own safety, humans will need to restrict the abilities of robots..<DropDown5 section='reading' part='part3' id={27} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+              <p>28.The risk of robots harming us is less serious than humans believe it to be. <DropDown5 section='reading' part='part3' id={28} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>29. It will take many decades for robot intelligence to be as imaginative as human intelligence.<DropDown5 section='reading' part='part3' id={29} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>30.We may have to start considering whether we are treating robots fairly.<DropDown5 section='reading' part='part3' id={30} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>31.Robots are probably of more help to us on Earth than in space..<DropDown5 section='reading' part='part3' id={31} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>32.The ideas in high-quality science fiction may prove to be just as accurate as those found in the work of mediocre scientists.<DropDown5 section='reading' part='part3' id={32} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+         <p>33.There are those who look forward to robots developing greater intelligence.<DropDown5 section='reading' part='part3' id={33} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                          
+ </div>
+             <p>
+            <h3><strong>Questions 34-36</strong></h3>
+    
+             
+            <br/>Complete each sentence with the correct ending, A-D. 
+           Choose the correct letter , <strong> A-D</strong>,next to <strong> Questions 34-36.</strong>
+          </p>
+          <div className="center-containerx">
+
+                  <div className="question-blockx">
+                   <h4>List of People</h4>
+            <p><strong>A.</strong>  robots to explore outer space..</p>
+            <p><strong>B.</strong> changes made to other planets for our own benefit.</p>
+            <p><strong>C.</strong> the harm already done by artificial intelligence.</p>
+              <p><strong>D.</strong> the harm already done by artificial intelligence.</p>
+          
+
+                  </div>
+                </div>
+ <div className="dropdown-blockx">
+                      <p>34.Richardson and Rees express similar views regarding the ethical aspect of.<DropDown6  section='reading' part='part3' id={34} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+              <p>35.Rees and Wolpert share an opinion about the extent of <DropDown6 section='reading' part='part3' id={35} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+          <p>36.Wolpert disagrees with Richardson on the question of.<DropDown6 section='reading' part='part3' id={36} allAnswers={allAnswers} handleAnswerChange={handleAnswerChange}/></p>
+                           
+                </div>
+  <h3><strong>Questions 37-40</strong></h3>
+        <p>Choose the correct letter <strong>A, B, C, or D</strong>.</p>
+      <h3><strong>Bidcaster Community Archaeology Project</strong></h3>
+      {questions37to40.map((q)=>(
+        <div key={q} className="question-block">
+          <p className="mcq-question"><strong>{q.id}.</strong> {q.text}</p>
+          {q.options.map((text,index)=>(
+            <label key={index}>
+              <input type="radio"
+              name={`q${q.id}`}
+              value={text}
+              checked={allAnswers.reading.part3[`q${q.id}`]=== text}
+              onChange={(e)=>{handleAnswerChange('reading', 'part3' ,e.target.name, e.target.value)}}
+               />
+               {text}
+            </label>
+          ))}
+        </div>
+      ))}
+
+         
     </div>
     </div>
-  
+
+
       </div>,
     ],
     writing: [
@@ -808,7 +1284,7 @@ style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadi
         ))}
 
         {/* End test button */}
-        <button className="end-btn" onClick={()=>handleSubmit()}>
+        <button className="end-btn" onClick={()=>endFullTest("IELTS_AC_20_2025_TEST3")}>
           End Test
         </button>
       </div>

@@ -1001,11 +1001,11 @@ const questions8to13 = [
 </div>  
   </div>
 <br/>
-   <h3><strong>Questions 1-6</strong></h3><br />
+   <h3><strong>Questions 8-13</strong></h3><br />
         <p>
           Do the following statements agree with the information given in Reading Passage 1?
           <br />
-          Write your answers in boxes 1-6 .
+          Write your answers in boxes 8-13 .
         </p>
          <div className="tf">
           <h3>TRUE: if the statement agrees with the information</h3>
