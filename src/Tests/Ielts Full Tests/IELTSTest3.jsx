@@ -320,8 +320,8 @@ const multiSelectQuestion22_23 = {
       <div className="left-column">
         <h2>PART 1</h2>
         <audio controls>
-          <source src="/Audio/L_1.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
+          <source src="/Audio/test3_p1.mp3" type="audio/mpeg" />
+          {/* Your browser does not support the audio element. */}
         </audio>
         <p style={{ marginTop: "20px" }}>Audioscript</p>
       </div>
@@ -470,7 +470,7 @@ const multiSelectQuestion22_23 = {
       <div className="left-column">
         <h2>PART 2</h2>
         <audio controls>
-          <source src="/Audio/L_1.mp3" type="audio/mpeg" />
+          <source src="/Audio/test3_p2.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <p style={{ marginTop: "20px" }}>Audioscript</p>
@@ -527,7 +527,7 @@ const multiSelectQuestion22_23 = {
       <div className="left-column">
         <h2>PART 3</h2>
         <audio controls>
-          <source src="/Audio/L_1.mp3" type="audio/mpeg" />
+          <source src="/Audio/test3_p3.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <p style={{ marginTop: "20px" }}>Audioscript</p>
@@ -594,7 +594,7 @@ const multiSelectQuestion22_23 = {
       <div className="left-column">
         <h2>PART 4</h2>
         <audio controls>
-          <source src="/Audio/L_1.mp3" type="audio/mpeg" />
+          <source src="/Audio/test3_p4.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <p style={{ marginTop: "20px" }}>Audioscript</p>
