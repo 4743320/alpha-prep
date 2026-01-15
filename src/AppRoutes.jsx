@@ -34,6 +34,7 @@ import IeltsMockTests from './pages/IeltsMockTests'
 import SatPractice from './pages/SatPractice'
 import IELTSTest3 from './Tests/Ielts Full Tests/IELTSTest3'
 import IELTSTest4 from './Tests/Ielts Full Tests/IELTSTest4'
+import More from './pages/More'
 
 const AppRoutes = () => {
   return (
@@ -51,7 +52,8 @@ const AppRoutes = () => {
              <Route path='/new-dash' element={<NewDash/>}/>
             <Route path='/course-card' element={<CourseCard/>}/>
             <Route path='/main-dash' element={<MainDashBoard/>}/>
-             <Route path='/profile' element={<ProfilePage/>}/>         
+             <Route path='/profile' element={<ProfilePage/>}/>
+             <Route path='/more' element={<More/>}/>         
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}
     {/* SAT ROUTES */}

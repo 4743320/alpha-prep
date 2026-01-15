@@ -5,6 +5,11 @@ import BlankInput from "../../components/IeltsFullTestComponents/BlankInput";
 import DropDown3 from "../../components/IeltsFullTestComponents/DropDown3";
 import DropDown4 from "../../components/IeltsFullTestComponents/DropDown4";
 import DropDown from "../../components/IeltsFullTestComponents/DropDown";
+import { account } from "../../lib/appwrite";
+import { saveIeltsTest } from "../../lib/helpers/ieltsScoreHelper";
+import ResultModal from "../../components/IeltsFullResultModal";
+import Overlay from "../../components/Overlay";
+
 
 const IELTSTest = () => {
   const navigate = useNavigate();
@@ -12,6 +17,15 @@ const IELTSTest = () => {
   // State to track section and part
   const [section, setSection] = useState("listening"); // listening, reading, writing
   const [part, setPart] = useState(1);
+const[showModal, setShowModal]= useState(false)
+  const [resultData, setResultData]= useState({
+    listeningScore:0,
+    readingScore:0,
+    listeningBand:0,
+    readingBand:0,
+    overallBand:0
+  })
+  const [loading, setLoading] = useState(false); // NEW
 
   // Answers object
   const [allAnswers, setAllAnswers] = useState({
@@ -125,55 +139,215 @@ const IELTSTest = () => {
 //     alert("Failed to submit full test. Check console for details.");
 //   }
 // };
-const endFullTest = async (testId) => {
-  try {
-    const payload = { answers: [] };
 
-    // Convert allAnswers to payload
-    for (let section in allAnswers) {
-      for (let part in allAnswers[section]) {
-        const partAnswers = allAnswers[section][part];
-        for (let qid in partAnswers) {
+// # this is fastapiend test
+// const endFullTest = async (testId) => {
+//   try {
+//     const payload = { answers: [] };
+
+//     // Convert allAnswers to payload
+//     for (let section in allAnswers) {
+//       for (let part in allAnswers[section]) {
+//         const partAnswers = allAnswers[section][part];
+//         for (let qid in partAnswers) {
+//           payload.answers.push({
+//             question_id: qid.replace("q", ""),
+//             answer: String(partAnswers[qid]).trim().toLowerCase()
+//           });
+//         }
+//       }
+//     }
+
+//     console.log("PAYLOAD SENT:", JSON.stringify(payload, null, 2));
+
+//     const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+//     const response = await fetch(url, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(payload)
+//     });
+
+//     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+//     const data = await response.json();
+//     console.log("RESPONSE:", data);
+
+//     // Display result
+//     let message = `Full Test Submitted!\n`;
+//     message += `Total Score: ${data.total_score}/${data.total_questions}\n\n`;
+
+//     for (let section in data.scores_by_section) {
+//       const score = data.scores_by_section[section];
+//       const total = section.toLowerCase() === "listening" ? 40 : section.toLowerCase() === "reading" ? 40 : 0;
+//       message += `${section.charAt(0).toUpperCase() + section.slice(1)}: ${score}/${total}\n`;
+//     }
+
+//     alert(message);
+
+//   } catch (error) {
+//     console.error("Error sending request", error);
+//     alert("Failed to submit full test. Check console for details.");
+//   }
+// };
+const getBandFromScore = (score, total) => {
+  const percentage = (score / total) * 100;
+
+  if (percentage >= 90) return 9;
+  if (percentage >= 80) return 8;
+  if (percentage >= 70) return 7;
+  if (percentage >= 60) return 6;
+  if (percentage >= 50) return 5;
+  if (percentage >= 40) return 4;
+  if (percentage >= 30) return 3;
+  if (percentage >= 20) return 2;
+  return 1;
+};
+// # This is the fast Api one
+// const endFullTest= async(testId)=>{
+//   try {
+//     const payload={ answers:[]}
+//     for (let section in allAnswers){
+//       for (let part in allAnswers[section]){
+//         for(let qid in allAnswers[section][part]){
+//           payload.answers.push({
+//             question_id: qid.replace('q',''),
+//             answer:String(allAnswers[section][part][qid]).trim().toLowerCase()
+//           })
+//         }
+//       }
+//     }
+//     console.log("📤 PAYLOAD SENT:", payload);
+
+//     const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+//     const response = await fetch(url,{
+//       method:'POST',
+//       headers: {'Content-Type':'application/json'},
+//       body: JSON.stringify(payload)
+
+//     })
+//      if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data= await response.json()
+//      console.log("📥 RAW BACKEND RESPONSE:", data);
+
+//      const listeningScore = data.scores_by_section?.listening || 0;
+//      const readingScore = data.scores_by_section?.reading || 0;
+
+//      const listeningBand = getBandFromScore(listeningScore,40)
+//      const readingBand = getBandFromScore(readingScore, 40)
+
+//      const overallBand = Number(((listeningBand+readingBand)/2).toFixed(1))
+
+
+//      console.log("🎧 Listening:", listeningScore, "/40 | Band", listeningBand);
+// console.log("📖 Reading:", readingScore, "/40 | Band", readingBand);
+// console.log("🏅 Overall Band:", overallBand);
+
+//      const currectUser= await account.get()
+
+//      const writingTask1 = allAnswers.writing.part1?.response || "";
+// const writingTask2 = allAnswers.writing.part2?.response || "";
+//      await saveIeltsTest({
+//       userId: currectUser.$id,
+//       testName: `IELTS FULL Test ${testId}`,
+//       listeningScore,
+//       readingScore,
+//       writingTask1,
+//       writingTask2,
+//       band:overallBand
+//      })
+//       console.log("✅ Full IELTS test saved with bands!");
+//   } 
+  
+  
+//   catch (error) {
+//     console.error("Error sending request", error);
+//     alert("Failed to submit full test, check console");
+//   }
+// }
+
+const endFullTest= async(testId)=>{
+  try {
+    
+    setLoading(true); // show overlay
+    const payload={ answers:[]}
+    for (let section in allAnswers){
+      for (let part in allAnswers[section]){
+        for(let qid in allAnswers[section][part]){
           payload.answers.push({
-            question_id: qid.replace("q", ""),
-            answer: String(partAnswers[qid]).trim().toLowerCase()
-          });
+            question_id: qid.replace('q',''),
+            answer:String(allAnswers[section][part][qid]).trim().toLowerCase()
+          })
         }
       }
     }
-
-    console.log("PAYLOAD SENT:", JSON.stringify(payload, null, 2));
+    console.log("📤 PAYLOAD SENT:", payload);
 
     const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const response = await fetch(url,{
+      method:'POST',
+      headers: {'Content-Type':'application/json'},
       body: JSON.stringify(payload)
-    });
 
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-    const data = await response.json();
-    console.log("RESPONSE:", data);
-
-    // Display result
-    let message = `Full Test Submitted!\n`;
-    message += `Total Score: ${data.total_score}/${data.total_questions}\n\n`;
-
-    for (let section in data.scores_by_section) {
-      const score = data.scores_by_section[section];
-      const total = section.toLowerCase() === "listening" ? 40 : section.toLowerCase() === "reading" ? 40 : 0;
-      message += `${section.charAt(0).toUpperCase() + section.slice(1)}: ${score}/${total}\n`;
+    })
+     if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const data= await response.json()
+     console.log("📥 RAW BACKEND RESPONSE:", data);
 
-    alert(message);
+     const listeningScore = data.scores_by_section?.listening || 0;
+     const readingScore = data.scores_by_section?.reading || 0;
 
-  } catch (error) {
+     const listeningBand = getBandFromScore(listeningScore,40)
+     const readingBand = getBandFromScore(readingScore, 40)
+
+     const overallBand = Number(((listeningBand+readingBand)/2).toFixed(1))
+
+
+     console.log("🎧 Listening:", listeningScore, "/40 | Band", listeningBand);
+console.log("📖 Reading:", readingScore, "/40 | Band", readingBand);
+console.log("🏅 Overall Band:", overallBand);
+
+     const currectUser= await account.get()
+
+     const writingTask1 = allAnswers.writing.part1?.response || "";
+const writingTask2 = allAnswers.writing.part2?.response || "";
+     await saveIeltsTest({
+      userId: currectUser.$id,
+      testName: `IELTS FULL Test ${testId}`,
+      listeningScore,
+      readingScore,
+      writingTask1,
+      writingTask2,
+      band:overallBand
+     })
+      console.log("✅ Full IELTS test saved with bands!");
+      setResultData({
+      listeningScore,
+      readingScore,
+      listeningBand,
+      readingBand,
+      overallBand
+    });
+    setLoading(false); // hide overlay 
+      setShowModal(true);
+  } 
+  
+  
+  catch (error) {
     console.error("Error sending request", error);
-    alert("Failed to submit full test. Check console for details.");
+    alert("Failed to submit full test, check console");
   }
-};
+  finally {
+    // setLoading(false); // hide overlay
+  }
+}
+
 
   // Test structure for bottom bar
   const testStructure = {
@@ -1445,6 +1619,22 @@ style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadi
           End Test
         </button>
       </div>
+             <ResultModal
+              isOpen={showModal}
+              onClose={() => setShowModal(false)}
+              result={resultData}
+            />
+            <Overlay show={loading}>
+        <h2>Please wait, calculating your score...</h2>
+      </Overlay>
+      
+      {showModal && (
+            <ResultModal 
+              resultData={resultData} 
+              onClose={() => setShowModal(false)} 
+            />
+          )}
+      
     </div>
   );
 };
