@@ -46,6 +46,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
             <button className="primary-btn" onClick={()=>{navigate("/main-dash")}}>Get Started</button>
             {/* <button className="primary-btn" ><a href="#about" style={{color:"white", fontWeight:"600"}}>Learn More</a></button> */}
              <button className="primary-btn"onClick={()=>{navigate("/more")}} >Learn More</button>
+              <button className="primary-btn"onClick={()=>{navigate("/more2")}} >Learn More</button>
           </div>
       </div>
       <div className="hero-image">

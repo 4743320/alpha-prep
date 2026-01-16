@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/IeltsFullresultModal.css"; // CSS for the modal
+import "../styles/IeltsFullResultModal.css"; // CSS for the modal
 
 // rafce → React Arrow Function Component Export
 const ResultModal = ({ isOpen, onClose, result }) => {
