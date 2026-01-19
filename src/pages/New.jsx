@@ -46,11 +46,11 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
         {/* <a href="#" class="cta-button">Join for free</a> */}
           <div className="hero-buttons">
             <button className="primary-btn" onClick={()=>{navigate("/main-dash")}}>Get Started</button>
-            {/* <button className="primary-btn" ><a href="#about" style={{color:"white", fontWeight:"600"}}>Learn More</a></button> */}
-             <button className="primary-btn"onClick={()=>{navigate("/mcq")}} >MOQ</button>
+            <button className="primary-btn" ><a href="#about" style={{color:"white", fontWeight:"600"}}>Learn More</a></button>
+             {/* <button className="primary-btn"onClick={()=>{navigate("/mcq")}} >MOQ</button>
              <button className="primary-btn"onClick={()=>{navigate("/main")}} >Learn More</button>
              <button className="primary-btn"onClick={()=>{navigate("/hi")}} >Highlight Incorrect</button>
-             <button className="primary-btn"onClick={()=>{navigate("/fb")}} >FIB</button>
+             <button className="primary-btn"onClick={()=>{navigate("/fb")}} >FIB</button> */}
               
           </div>
       </div>
