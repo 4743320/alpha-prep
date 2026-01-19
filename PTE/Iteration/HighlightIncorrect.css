@@ -1,0 +1,140 @@
+/* =============================== */
+/* PTEHighlightIncorrectWords.css  */
+/* =============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.pte-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 16px;
+}
+
+.pte-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pte-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.pte-back {
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+.pte-title {
+  font-size: 30px;
+  color: #1e1b4b;
+  margin-bottom: 10px;
+}
+
+.pte-subtitle {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.pte-audio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fbbf24;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 24px;
+}
+
+.pte-play {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.pte-audio-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.pte-volume {
+  font-size: 18px;
+}
+
+.pte-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pte-transcript {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.pte-word {
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+
+.pte-word:hover {
+  background: #e0e7ff;
+}
+
+.pte-word.active {
+  background: #fde68a;
+}
+
+.pte-footer {
+  margin-top: 24px;
+}
+
+.pte-next {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 640px) {
+  .pte-title {
+    font-size: 22px;
+  }
+
+  .pte-transcript {
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  .pte-footer {
+    position: sticky;
+    bottom: 0;
+    background: #f8fafc;
+    padding-top: 12px;
+  }
+
+  .pte-next {
+    width: 100%;
+  }
+}

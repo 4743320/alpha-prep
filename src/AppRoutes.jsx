@@ -35,6 +35,12 @@ import SatPractice from './pages/SatPractice'
 import IELTSTest3 from './Tests/Ielts Full Tests/IELTSTest3'
 import IELTSTest4 from './Tests/Ielts Full Tests/IELTSTest4'
 import More from './pages/More'
+import Main from './pages/CourseSpace/Main'
+import ReadingTest from '../PTE/ReadingTest'
+import MCQ from '../PTE/Iteration/MCQ'
+import HighlightIncorrect from '../PTE/Iteration/HighlightIncorrect'
+import FillInBlanks from '../PTE/Iteration/FillInTheBlanks'
+import PTEDashboard from './pages/PteDashBoard'
 
 
 const AppRoutes = () => {
@@ -49,12 +55,20 @@ const AppRoutes = () => {
             <Route path='/sat-dash' element={<SatDashboard/>}/>
             <Route path="/sat-practice" element={<SatPractice/>}/>
             <Route path='/ielts-dash' element={<IeltsDashBoard/>}/>
+            <Route path='/pte-dash' element={<PTEDashboard/>}/>
             <Route path='/k-start-screen' element={<StartScreen/>}/>
              <Route path='/new-dash' element={<NewDash/>}/>
             <Route path='/course-card' element={<CourseCard/>}/>
             <Route path='/main-dash' element={<MainDashBoard/>}/>
              <Route path='/profile' element={<ProfilePage/>}/>
-             <Route path='/more' element={<More/>}/> 
+             {/* <Route path='/more' element={<More/>}/> 
+             <Route path='/main' element={<Main/>}/>  */}
+             <Route path='/reading-pte' element={<ReadingTest/>}/> 
+             <Route path='/mcq' element={<MCQ/>}/> 
+             <Route path='/hi' element={<HighlightIncorrect/>}/> 
+             <Route path='/fb' element={<FillInBlanks/>}/> 
+
+
                   
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}

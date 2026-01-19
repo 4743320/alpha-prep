@@ -10,6 +10,7 @@ import SATLogo from "../assets/sat.png";
 import HeroImg from '../assets/HeroLogo.png'
 import HeroImg1 from '../assets/Pics/herobg.png'
 import TOEFLIImg from '../assets/Pics/toefl.gif'
+import PTEImg from '../assets/pte.png'
 import { useNavigate } from "react-router-dom";
 import FeatureCard from "../components/FeatureCard";
 import TrackProgress from "../assets/Pics/TrackProgress.jpg"
@@ -17,6 +18,7 @@ import SmartPractice from"../assets/Pics/SamrtPractice.jpg"
 import FreeResources from "../assets/Pics/FreeResources.jpg"
 import AlphaPrepLogo from '../assets/Pics/ALPHAPREPNEW.png'
 import "../styles/navbar.css"
+
 
 const New = () => {
       const [showModal, setShowModal] = useState(false)
@@ -45,8 +47,11 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
           <div className="hero-buttons">
             <button className="primary-btn" onClick={()=>{navigate("/main-dash")}}>Get Started</button>
             {/* <button className="primary-btn" ><a href="#about" style={{color:"white", fontWeight:"600"}}>Learn More</a></button> */}
-             <button className="primary-btn"onClick={()=>{navigate("/more")}} >Learn More</button>
-              <button className="primary-btn"onClick={()=>{navigate("/more2")}} >Learn More</button>
+             <button className="primary-btn"onClick={()=>{navigate("/mcq")}} >MOQ</button>
+             <button className="primary-btn"onClick={()=>{navigate("/main")}} >Learn More</button>
+             <button className="primary-btn"onClick={()=>{navigate("/hi")}} >Highlight Incorrect</button>
+             <button className="primary-btn"onClick={()=>{navigate("/fb")}} >FIB</button>
+              
           </div>
       </div>
       <div className="hero-image">
@@ -64,9 +69,9 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/ielts-dash"}/>
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={"/sat-dash"}/>
-         {/* <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
+         <CourseCard imageUrl={PTEImg} title={"PTE - Academic"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"}/>
-    */}
+   
 
 </div>
 

@@ -7,6 +7,7 @@ import IELTSLogo from "../assets/ieltslogo2.png";
 import SATLogo from "../assets/sat.png";
 import HeroImg from '../assets/Pics/hero.png'
 import TOEFLIImg from '../assets/Pics/toefl.gif'
+import PTEImg from '../assets/pte.png'
 import Tabs from "../components/Tabs";
 import CourseCard from "../components/CourseCard";
 import AlphaPrepLogo from '../assets/Pics/ALPHAPREPNEW.png'
@@ -18,7 +19,7 @@ const MainDashBoard = () => {
   const [activeTab, setActiveTab] = useState("IELTS Practice");
   const navigate = useNavigate()
 
-const tabsList = ["DIGITAL-SAT", "IELTS ACADEMIC & GENERAL", "TOEFL"];
+const tabsList = ["DIGITAL-SAT", "IELTS ACADEMIC & GENERAL", "PTE- ACADEMIC"];
   return (
     <div className="dashboard">
       <div className="dashboard-container">
@@ -41,9 +42,9 @@ const tabsList = ["DIGITAL-SAT", "IELTS ACADEMIC & GENERAL", "TOEFL"];
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={'/ielts-dash'}/>
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={'/sat-dash'}/>
-         <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
-   level="START LEARNING" level2={"PROFICIENCY TEST"} onStartLearning={()=>navigate("/'/ielts-dash'")}/>
-<CourseCard
+         <CourseCard imageUrl={PTEImg} title={"PTE - ACADEMIC"} category={"PTE TEST FOR ENGLISH PROFICIENCY"}
+   level="START LEARNING" level2={"PROFICIENCY TEST"} onStartLearning={()=>navigate('/pte-dash')}/>
+{/* <CourseCard
   imageUrl={IELTSLogo}
   title="IELTS ACADEMIC / GENERAL"
   category="IELTS TESTS FOR ENGLISH LANGUAGE PROFICIENCY"
@@ -52,7 +53,7 @@ const tabsList = ["DIGITAL-SAT", "IELTS ACADEMIC & GENERAL", "TOEFL"];
   // duration="10h 30m"
   // // learners="2.5k"
   path="/ielts-dash"   // must be a string, not a function
-/>
+/> */}
  {/* <CourseCard imageUrl={TOEFLIImg} title={"TOEFL - IBT"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"}/> */}
 
