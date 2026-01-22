@@ -308,90 +308,249 @@
   )}
 </div> */}
 
+// import React, { useEffect, useState } from "react";
+// import { account } from "../lib/appwrite";
+// import { getIeltsScore, getIeltsWriting } from "../lib/helpers/ieltsScoreHelper";
+// import { getSatScore } from "../lib/helpers/saveSatScore";
+// import { getIeltsTest } from "../lib/helpers/ieltsScoreHelper";
+// import "../styles/profilepage.css"
+
+// const ProfilePage = () => {
+//   const [user, setUser] = useState(null);
+//   const [scores, setScores] = useState({  });
+//   const [selectedTest, setSelectedTest]= useState("")
+//   const[writing, setWriting]= useState([])
+//   const [ieltsTest, setIeltsTest]= useState([])
+
+// // SAT: [], IELTS: []
+//   useEffect(() => {
+//     const fetchUserAndScores = async () => {
+//       try {
+//         // Logged-in user
+//         const currentUser = await account.get();
+//         setUser(currentUser);
+
+//         // Fetch BOTH IELTS + SAT results from DB
+//         const ielts = await getIeltsScore(currentUser.$id);
+//         const sat = await getSatScore(currentUser.$id);
+//         const ieltsFullTest = await getIeltsTest(currentUser.$id)
+
+//         // Save in state
+//         setScores({
+//           SAT: sat || [],
+//           IELTS: ielts || []
+//         });
+        
+
+//         console.log("🔥 Loaded Scores:", {
+//           SAT: sat,
+//           IELTS: ielts,
+//         });
+
+//       } catch (error) {
+//         console.error("❌ Error loading profile:", error);
+//       }
+//     };
+
+//     fetchUserAndScores();
+//   }, []);
+
+//   useEffect(() => {
+//   if (!user) {
+//     return
+//   }
+//   const fetchWriting = async () => {
+//     try {
+//       const writingDocs = await getIeltsWriting(user.$id)
+//       setWriting(writingDocs)
+//       console.log("done")
+//     } catch (error) {
+//       console.error("Error fetching writing submissions:", error);
+//     }
+//   }
+//   fetchWriting()
+// }, [user])
+
+//   if (!user) return <p>Loading profile... OR PLEASE LOGIN TO VIEW YOUR PROFILE</p>;
+
+//   return (
+//     <div className="profile-wrapper">
+
+//       <div className="profile-card">
+//      {/* <select
+//   value={selectedTest}
+//   onChange={(e) => setSelectedTest(e.target.value)}
+// >
+//   <option value="">Show all</option>
+
+//   {Object.entries(scores).map(([testType, testArray]) =>
+//     testArray.map((item) => (
+//       <option key={item.$id} value={item.testType}>
+//         {item.testType}
+//       </option>
+//     ))
+//   )}
+// </select> */}
+//         <div className="profile-header">
+//           <img
+//             src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
+//               user?.name || "User"
+//             )}`}
+//             alt="Profile"
+//             className="profile-avatar"
+//           />
+//           <div>
+//             <h1 className="profile-name">{user.name || "USER"}</h1>
+//             <p className="profile-email">{user.email}</p>
+//           </div>
+//           <div className="profile-select-wrapper"><select
+//   value={selectedTest}
+//   onChange={(e) => setSelectedTest(e.target.value)}
+// >
+//   <option value="">SELECT TO SHOW SCORE</option>
+//   <option value="SAT">SAT</option>
+//   <option value="IELTS">IELTS</option>
+// </select>
+// </div>
+
+//         </div>
+
+//         {/* RESULTS */}
+//        {Object.entries(scores)
+//   .filter(([testType]) =>
+//     selectedTest === "" ? true : testType === selectedTest
+//   )
+//   .map(([testType, testArray]) => (
+//     <div key={testType}>
+//       <h2>
+//         {testType === "SAT" ? "🎯 SAT Results" : "🎧 IELTS Results"}
+//       </h2>
+
+//       {testArray.length === 0 ? (
+//         <p className="no-result">No {testType} results yet.</p>
+//       ) : (
+//         <div className="results-grid">
+//           {testArray.map((item) => (
+//             <div key={item.$id} className="result-card">
+//               <h3 className="test-name">{item.testType}</h3>
+
+//               {testType === "SAT" && (
+//                 <>
+//                   <p><strong>Total Score:</strong> {item.totalScore}</p>
+//                   <p><strong>Reading:</strong> {item.readingScaled} ({item.readingPercent}%)</p>
+//                   <p><strong>Math:</strong> {item.mathScaled} ({item.mathPercent}%)</p>
+//                 </>
+//               )}
+
+//               {testType === "IELTS" && (
+//                 <>
+//                   <p><strong>Total :</strong> {item.totalScore}</p>
+//                   <p><strong>Total Correct:</strong> {item.score}</p>
+//                               {testType === "IELTS" && writing.length > 0 && (
+//   <div className="writing-results" style={{marginTop:"10px"}}>
+//     <h3>📝 IELTS Writing </h3>
+//     {writing
+//       .filter(item => selectedTest === "IELTS" || selectedTest === "" ) // optional filter
+//       .map(item => (
+//         <div key={item.$id} className="result-card" style={{marginTop:"10px"}}>
+//           <h4>{item.testName}</h4>
+//           <p><strong>Task 1:</strong> {item.task1}</p>
+//           <p><strong>Task 2:</strong> {item.task2}</p>
+//           {/* <p><em>Submitted: {new Date(item.$createdAt).toLocaleString()}</em></p> */}
+//         </div>
+//       ))
+//     }
+//   </div>
+// )}
+//                 </>
+//               )}
+
+  
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//     </div>
+// ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProfilePage;
 import React, { useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
-import { getIeltsScore, getIeltsWriting } from "../lib/helpers/ieltsScoreHelper";
+import { getIeltsScore, getIeltsWriting, getIeltsTest } from "../lib/helpers/ieltsScoreHelper";
 import { getSatScore } from "../lib/helpers/saveSatScore";
-import "../styles/profilepage.css"
+import "../styles/profilepage.css";
 
 const ProfilePage = () => {
-  const [user, setUser] = useState(null);
-  const [scores, setScores] = useState({  });
-  const [selectedTest, setSelectedTest]= useState("")
-  const[writing, setWriting]= useState([])
+  // -----------------------------
+  // 1️⃣ STATES
+  // -----------------------------
+  const [user, setUser] = useState(null);          // logged-in user
+  const [scores, setScores] = useState({});        // IELTS MCQ + SAT
+  const [writing, setWriting] = useState([]);      // IELTS writing submissions
+  const [ieltsTests, setIeltsTests] = useState([]); // IELTS full test
+  const [selectedTest, setSelectedTest] = useState(""); // dropdown selection
 
-// SAT: [], IELTS: []
+  // -----------------------------
+  // 2️⃣ FETCH USER & SCORES ON MOUNT
+  // -----------------------------
+  
   useEffect(() => {
     const fetchUserAndScores = async () => {
       try {
-        // Logged-in user
         const currentUser = await account.get();
         setUser(currentUser);
 
-        // Fetch BOTH IELTS + SAT results from DB
+        // Fetch IELTS MCQ, IELTS Full Test, and SAT
         const ielts = await getIeltsScore(currentUser.$id);
         const sat = await getSatScore(currentUser.$id);
+        const ieltsFullTests = await getIeltsTest(currentUser.$id);
+        const ieltsWriting = await getIeltsWriting(currentUser.$id);
 
-        // Save in state
+        // Save all in state
         setScores({
           SAT: sat || [],
           IELTS: ielts || []
         });
 
-        console.log("🔥 Loaded Scores:", {
-          SAT: sat,
-          IELTS: ielts,
-        });
+        setWriting(ieltsWriting || []);
+        setIeltsTests(ieltsFullTests || []);
 
+        console.log("🔥 Loaded Scores:", { SAT: sat, IELTS: ielts, IELTS_Writing: ieltsWriting, IELTS_FullTest: ieltsFullTests });
       } catch (error) {
         console.error("❌ Error loading profile:", error);
+        
       }
     };
 
     fetchUserAndScores();
   }, []);
-
   useEffect(() => {
-  if (!user) {
-    return
+  if (ieltsTests.length > 0) {
+    console.log("🧪 RAW IELTS FULL TEST OBJECT:", ieltsTests[0]);
+    console.log("🧪 RAW task1Score:", ieltsTests[0]?.task1Score);
+    console.log("🧪 TYPE of task1Score:", typeof ieltsTests[0]?.task1Score);
   }
-  const fetchWriting = async () => {
-    try {
-      const writingDocs = await getIeltsWriting(user.$id)
-      setWriting(writingDocs)
-      console.log("done")
-    } catch (error) {
-      console.error("Error fetching writing submissions:", error);
-    }
-  }
-  fetchWriting()
-}, [user])
+}, [ieltsTests]);
 
+  // -----------------------------
+  // 3️⃣ LOADING STATE
+  // -----------------------------
   if (!user) return <p>Loading profile... OR PLEASE LOGIN TO VIEW YOUR PROFILE</p>;
 
+  // -----------------------------
+  // 4️⃣ RENDER
+  // -----------------------------
   return (
     <div className="profile-wrapper">
-
       <div className="profile-card">
-     {/* <select
-  value={selectedTest}
-  onChange={(e) => setSelectedTest(e.target.value)}
->
-  <option value="">Show all</option>
-
-  {Object.entries(scores).map(([testType, testArray]) =>
-    testArray.map((item) => (
-      <option key={item.$id} value={item.testType}>
-        {item.testType}
-      </option>
-    ))
-  )}
-</select> */}
+        {/* HEADER */}
         <div className="profile-header">
           <img
-            src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(
-              user?.name || "User"
-            )}`}
+            src={`https://cloud.appwrite.io/v1/avatars/initials?name=${encodeURIComponent(user?.name || "User")}`}
             alt="Profile"
             className="profile-avatar"
           />
@@ -399,75 +558,179 @@ const ProfilePage = () => {
             <h1 className="profile-name">{user.name || "USER"}</h1>
             <p className="profile-email">{user.email}</p>
           </div>
-          <div className="profile-select-wrapper"><select
-  value={selectedTest}
-  onChange={(e) => setSelectedTest(e.target.value)}
->
-  <option value="">SELECT TO SHOW SCORE</option>
-  <option value="SAT">SAT</option>
-  <option value="IELTS">IELTS</option>
-</select>
-</div>
-
+          <div className="profile-select-wrapper">
+            <select value={selectedTest} onChange={(e) => setSelectedTest(e.target.value)}>
+              <option value="">SELECT TO SHOW SCORE</option>
+              <option value="SAT">SAT</option>
+              <option value="IELTS">IELTS</option>
+            </select>
+          </div>
         </div>
 
-        {/* RESULTS */}
-       {Object.entries(scores)
-  .filter(([testType]) =>
-    selectedTest === "" ? true : testType === selectedTest
-  )
-  .map(([testType, testArray]) => (
-    <div key={testType}>
-      <h2>
-        {testType === "SAT" ? "🎯 SAT Results" : "🎧 IELTS Results"}
-      </h2>
+        {/* ---------------------- */}
+        {/* 5️⃣ SAT RESULTS */}
+        {/* ---------------------- */}
+        {selectedTest === "SAT" && (
+          <>
+            <h2>🎯 SAT Results</h2>
+            {scores.SAT.length === 0 ? (
+              <p className="no-result">No SAT results yet.</p>
+            ) : (
+              <div className="results-grid">
+                {scores.SAT.map(item => (
+                  <div key={item.$id} className="result-card">
+                    <h3>{item.testType}</h3>
+                    <p><strong>Total Score:</strong> {item.totalScore}</p>
+                    <p><strong>Reading:</strong> {item.readingScaled} ({item.readingPercent}%)</p>
+                    <p><strong>Math:</strong> {item.mathScaled} ({item.mathPercent}%)</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        )}
 
-      {testArray.length === 0 ? (
-        <p className="no-result">No {testType} results yet.</p>
+        {/* ---------------------- */}
+        {/* 6️⃣ IELTS RESULTS (ALL UNDER ONE OPTION) */}
+        {/* ---------------------- */}
+        {selectedTest === "IELTS" && (
+          <>
+            {/* MCQ SCORES */}
+            <h2>🎧 IELTS Results (MCQ)</h2>
+            {scores.IELTS.length === 0 ? (
+              <p className="no-result">No IELTS MCQ results yet.</p>
+            ) : (
+              <div className="results-grid">
+                {scores.IELTS.map(item => (
+                  <div key={item.$id} className="result-card">
+                    <p><strong>Total Correct:</strong> {item.score}</p>
+                    <p><strong>Total Score:</strong> {item.totalScore}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* WRITING SUBMISSIONS */}
+            {writing.length > 0 && (
+              <>
+                <h2>📝 IELTS Writing</h2>
+                <div className="results-grid">
+                  {writing.map(item => (
+                    <div key={item.$id} className="result-card">
+                      <h4>{item.testName}</h4>
+                      <p><strong>Task 1:</strong> {item.task1}</p>
+                      <p><strong>Task 2:</strong> {item.task2}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+            {ieltsTests.map(test => {
+  let task1 = null;
+
+  try {
+    task1 = test.task1Score
+      ? JSON.parse(test.task1Score)
+      : null;
+  } catch (e) {
+    console.error("❌ Task1 parse failed", e);
+  }
+  let task2 = null;
+  try {
+    task2 = test.task2Score
+      ? (typeof test.task2Score === "string"
+          ? JSON.parse(test.task2Score)
+          : test.task2Score)
+      : null;
+  } catch (e) {
+    console.error("❌ Task2 parse failed", e);
+  }
+
+  return (
+    <div key={test.$id} className="result-card">
+      <h4>{test.testName}</h4>
+
+      <p><strong>Listening:</strong> {test.listeningScore}</p>
+      <p><strong>Reading:</strong> {test.readingScore}</p>
+      <p><strong>Total:</strong> {test.totalscore}</p>
+      <p><strong>Band:</strong> {test.band}</p>
+      <p><strong>Writing Task 1:</strong> {test.writingTask1}</p>
+      <p><strong>Writing Task 2:</strong> {test.writingTask2}</p>
+
+
+
+      {/* ✅ TASK 1 SCORE BREAKDOWN */}
+      <h5>✍️ Writing Task 1 Score</h5>
+
+      {task1 ? (
+        <>
+          <p><strong>Task Achievement:</strong> {task1["Task Achievement"]}</p>
+          <p><strong>Coherence & Cohesion:</strong> {task1["Coherence & Cohesion"]}</p>
+          <p><strong>Vocabulary:</strong> {task1["Vocabulary"]}</p>
+          <p><strong>Grammar:</strong> {task1["Grammar"]}</p>
+          <p><strong>Overall:</strong> {task1["Overall"]}</p>
+
+          <p><strong>Feedback:</strong></p>
+          <pre style={{ whiteSpace: "pre-wrap" }}>
+            {task1["Feedback"]}
+          </pre>
+        </>
       ) : (
-        <div className="results-grid">
-          {testArray.map((item) => (
-            <div key={item.$id} className="result-card">
-              <h3 className="test-name">{item.testType}</h3>
+        <p>Not scored yet</p>
+      )}
+        {/* ✅ TASK 2 */}
+      <h5>✍️ Writing Task 2 Score</h5>
+      {task2 ? (
+        <>
+          <p><strong>Task Achievement:</strong> {task2["Task Achievement"]}</p>
+          <p><strong>Coherence & Cohesion:</strong> {task2["Coherence & Cohesion"]}</p>
+          <p><strong>Vocabulary:</strong> {task2["Vocabulary"]}</p>
+          <p><strong>Grammar:</strong> {task2["Grammar"]}</p>
+          <p><strong>Overall:</strong> {task2["Overall"]}</p>
 
-              {testType === "SAT" && (
-                <>
-                  <p><strong>Total Score:</strong> {item.totalScore}</p>
-                  <p><strong>Reading:</strong> {item.readingScaled} ({item.readingPercent}%)</p>
-                  <p><strong>Math:</strong> {item.mathScaled} ({item.mathPercent}%)</p>
-                </>
-              )}
-
-              {testType === "IELTS" && (
-                <>
-                  <p><strong>Total :</strong> {item.totalScore}</p>
-                  <p><strong>Total Correct:</strong> {item.score}</p>
-                              {testType === "IELTS" && writing.length > 0 && (
-  <div className="writing-results" style={{marginTop:"10px"}}>
-    <h3>📝 IELTS Writing </h3>
-    {writing
-      .filter(item => selectedTest === "IELTS" || selectedTest === "" ) // optional filter
-      .map(item => (
-        <div key={item.$id} className="result-card" style={{marginTop:"10px"}}>
-          <h4>{item.testName}</h4>
-          <p><strong>Task 1:</strong> {item.task1}</p>
-          <p><strong>Task 2:</strong> {item.task2}</p>
-          {/* <p><em>Submitted: {new Date(item.$createdAt).toLocaleString()}</em></p> */}
-        </div>
-      ))
-    }
-  </div>
-)}
-                </>
-              )}
-
-  
-            </div>
-          ))}
-        </div>
+          <p><strong>Feedback:</strong></p>
+          <pre style={{ whiteSpace: "pre-wrap" }}>
+            {task2["Feedback"]}
+          </pre>
+        </>
+      ) : (
+        <p>Not scored yet</p>
       )}
     </div>
-))}
+    
+  );
+})}
+
+
+            {/* FULL TEST */}
+            {/* {ieltsTests.length > 0 && (
+              <>
+                <h2>📊 IELTS Full Tests</h2>
+                <div className="results-grid">
+                  {ieltsTests.map(test => (
+                    
+                    
+                    
+                    <div key={test.$id} className="result-card">
+                      <h4>{test.testName}</h4>
+                      <p><strong>Listening:</strong> {test.listeningScore}</p>
+                      <p><strong>Reading:</strong> {test.readingScore}</p>
+                      <p><strong>Total:</strong> {test.totalscore}</p>
+                      <p><strong>Band:</strong> {test.band}</p>
+                      <p><strong>Writing Task 1:</strong> {test.writingTask1}</p>
+                      <p><strong>Writing Task 2:</strong> {test.writingTask2}</p>
+                      <p><strong>Writing Task 1:</strong> {test.task1Score}</p> */}
+                      {/* <p><strong>Writing Task 2:</strong> {test.task2Score}</p> */}
+                     
+                      
+{/* 
+                    </div>
+                  ))}
+                </div>
+              </>
+            )} */}
+          </>
+        )}
       </div>
     </div>
   );

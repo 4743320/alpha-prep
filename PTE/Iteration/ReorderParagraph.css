@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+.reorder-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Header */
+.top-bar {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 3px solid #28a745; /* Green line */
+  margin-bottom: 20px; /* Space between header and title */
+}
+
+.go-back {
+  color: #5b2dff;
+  cursor: pointer;
+}
+
+.progress {
+  color: #111;
+  font-weight: 500;
+}
+
+/* Title */
+.title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 28px;
+}
+
+/* Paragraph cards */
+.para-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.para-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+  position: relative;
+}
+
+.para-accent {
+  width: 4px;
+  height: 100%;
+  background: #f4a300;
+  border-radius: 4px;
+  margin-right: 14px;
+}
+
+.para-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.drag-handle {
+  font-size: 18px;
+  cursor: grab;
+  color: #bbb;
+  user-select: none;
+}
+
+/* Button */
+.next-btn {
+  margin-top: 32px;
+  background: #14005c;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Mobile optimisation */
+@media (max-width: 600px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .para-card {
+    padding: 14px;
+  }
+
+  .para-text {
+    font-size: 15px;
+  }
+
+  .next-btn {
+    width: 100%;
+  }
+}

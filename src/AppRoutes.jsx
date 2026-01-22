@@ -41,6 +41,8 @@ import MCQ from '../PTE/Iteration/MCQ'
 import HighlightIncorrect from '../PTE/Iteration/HighlightIncorrect'
 import FillInBlanks from '../PTE/Iteration/FillInTheBlanks'
 import PTEDashboard from './pages/PteDashBoard'
+import Interface from '../PTE/Iteration/Interface'
+import ReorderParagraph from '../PTE/Iteration/Reorderparagraph'
 
 
 const AppRoutes = () => {
@@ -66,7 +68,9 @@ const AppRoutes = () => {
              <Route path='/reading-pte' element={<ReadingTest/>}/> 
              <Route path='/mcq' element={<MCQ/>}/> 
              <Route path='/hi' element={<HighlightIncorrect/>}/> 
-             <Route path='/fb' element={<FillInBlanks/>}/> 
+             <Route path='/fb' element={<FillInBlanks/>}/>
+             <Route path='/rp' element={<ReorderParagraph/>}/>
+             <Route path='/q-interface' element={<Interface/>}/> 
 
 
                   

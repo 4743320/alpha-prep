@@ -90,7 +90,9 @@ export const saveIeltsTest = async ({
   readingScore,
   writingTask1,
   writingTask2,
-  band
+  band,
+  task1Score, // optional HF JSON for Task 1
+  task2Score  // optional HF JSON for Task 2
 }) => {
   try {
     const totalscore = listeningScore + readingScore;
@@ -103,8 +105,13 @@ export const saveIeltsTest = async ({
       writingTask1,
       writingTask2,
       band,
-      totalscore // ✅ matches Appwrite column name
+      totalscore, // ✅ matches Appwrite column name
+      
     };
+     // ✅ Optional: add HF scores as string
+    if (task1Score) payload.task1Score = JSON.stringify(task1Score);
+    if (task2Score) payload.task2Score = JSON.stringify(task2Score);
+    
 
     const result = await databases.createDocument(
       DATABASE_ID,

@@ -45,7 +45,7 @@ export default function PTEDashboard() {
       "Summarize Spoken Text": "/speaking-writing",
       "Multiple Choice": "/mcq",
       "Fill in the Blanks": "/fb",
-      "Reorder Paragraphs": "/reading",
+      "Reorder Paragraphs": "/rp",
       "Highlight Incorrect Words": "/hi",
       "Highlight Incorrect Words (Listening)": "/listening",
       "Fill in the Blanks (Listening)": "/listening",
