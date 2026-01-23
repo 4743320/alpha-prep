@@ -488,53 +488,50 @@ const ProfilePage = () => {
   // -----------------------------
   // 1️⃣ STATES
   // -----------------------------
-  const [user, setUser] = useState(null);          // logged-in user
-  const [scores, setScores] = useState({});        // IELTS MCQ + SAT
-  const [writing, setWriting] = useState([]);      // IELTS writing submissions
-  const [ieltsTests, setIeltsTests] = useState([]); // IELTS full test
-  const [selectedTest, setSelectedTest] = useState(""); // dropdown selection
+  const [user, setUser] = useState(null);          
+  const [scores, setScores] = useState({});        
+  const [writing, setWriting] = useState([]);      
+  const [ieltsTests, setIeltsTests] = useState([]); 
+  const [selectedTest, setSelectedTest] = useState(""); 
 
   // -----------------------------
   // 2️⃣ FETCH USER & SCORES ON MOUNT
   // -----------------------------
-  
   useEffect(() => {
     const fetchUserAndScores = async () => {
       try {
         const currentUser = await account.get();
         setUser(currentUser);
 
-        // Fetch IELTS MCQ, IELTS Full Test, and SAT
         const ielts = await getIeltsScore(currentUser.$id);
         const sat = await getSatScore(currentUser.$id);
         const ieltsFullTests = await getIeltsTest(currentUser.$id);
         const ieltsWriting = await getIeltsWriting(currentUser.$id);
 
-        // Save all in state
         setScores({
-          SAT: sat || [],
-          IELTS: ielts || []
+          SAT: Array.isArray(sat) ? sat : [],
+          IELTS: Array.isArray(ielts) ? ielts : []
         });
 
-        setWriting(ieltsWriting || []);
-        setIeltsTests(ieltsFullTests || []);
+        setWriting(Array.isArray(ieltsWriting) ? ieltsWriting : []);
+        setIeltsTests(Array.isArray(ieltsFullTests) ? ieltsFullTests : []);
 
         console.log("🔥 Loaded Scores:", { SAT: sat, IELTS: ielts, IELTS_Writing: ieltsWriting, IELTS_FullTest: ieltsFullTests });
       } catch (error) {
         console.error("❌ Error loading profile:", error);
-        
       }
     };
 
     fetchUserAndScores();
   }, []);
+
   useEffect(() => {
-  if (ieltsTests.length > 0) {
-    console.log("🧪 RAW IELTS FULL TEST OBJECT:", ieltsTests[0]);
-    console.log("🧪 RAW task1Score:", ieltsTests[0]?.task1Score);
-    console.log("🧪 TYPE of task1Score:", typeof ieltsTests[0]?.task1Score);
-  }
-}, [ieltsTests]);
+    if (Array.isArray(ieltsTests) && ieltsTests.length > 0) {
+      console.log("🧪 RAW IELTS FULL TEST OBJECT:", ieltsTests[0]);
+      console.log("🧪 RAW task1Score:", ieltsTests[0]?.task1Score);
+      console.log("🧪 TYPE of task1Score:", typeof ieltsTests[0]?.task1Score);
+    }
+  }, [ieltsTests]);
 
   // -----------------------------
   // 3️⃣ LOADING STATE
@@ -573,7 +570,7 @@ const ProfilePage = () => {
         {selectedTest === "SAT" && (
           <>
             <h2>🎯 SAT Results</h2>
-            {scores.SAT.length === 0 ? (
+            {!Array.isArray(scores.SAT) || scores.SAT.length === 0 ? (
               <p className="no-result">No SAT results yet.</p>
             ) : (
               <div className="results-grid">
@@ -591,13 +588,13 @@ const ProfilePage = () => {
         )}
 
         {/* ---------------------- */}
-        {/* 6️⃣ IELTS RESULTS (ALL UNDER ONE OPTION) */}
+        {/* 6️⃣ IELTS RESULTS */}
         {/* ---------------------- */}
         {selectedTest === "IELTS" && (
           <>
             {/* MCQ SCORES */}
             <h2>🎧 IELTS Results (MCQ)</h2>
-            {scores.IELTS.length === 0 ? (
+            {!Array.isArray(scores.IELTS) || scores.IELTS.length === 0 ? (
               <p className="no-result">No IELTS MCQ results yet.</p>
             ) : (
               <div className="results-grid">
@@ -611,7 +608,7 @@ const ProfilePage = () => {
             )}
 
             {/* WRITING SUBMISSIONS */}
-            {writing.length > 0 && (
+            {Array.isArray(writing) && writing.length > 0 && (
               <>
                 <h2>📝 IELTS Writing</h2>
                 <div className="results-grid">
@@ -625,110 +622,78 @@ const ProfilePage = () => {
                 </div>
               </>
             )}
-            {ieltsTests.map(test => {
-  let task1 = null;
 
-  try {
-    task1 = test.task1Score
-      ? JSON.parse(test.task1Score)
-      : null;
-  } catch (e) {
-    console.error("❌ Task1 parse failed", e);
-  }
-  let task2 = null;
-  try {
-    task2 = test.task2Score
-      ? (typeof test.task2Score === "string"
-          ? JSON.parse(test.task2Score)
-          : test.task2Score)
-      : null;
-  } catch (e) {
-    console.error("❌ Task2 parse failed", e);
-  }
-
-  return (
-    <div key={test.$id} className="result-card">
-      <h4>{test.testName}</h4>
-
-      <p><strong>Listening:</strong> {test.listeningScore}</p>
-      <p><strong>Reading:</strong> {test.readingScore}</p>
-      <p><strong>Total:</strong> {test.totalscore}</p>
-      <p><strong>Band:</strong> {test.band}</p>
-      <p><strong>Writing Task 1:</strong> {test.writingTask1}</p>
-      <p><strong>Writing Task 2:</strong> {test.writingTask2}</p>
-
-
-
-      {/* ✅ TASK 1 SCORE BREAKDOWN */}
-      <h5>✍️ Writing Task 1 Score</h5>
-
-      {task1 ? (
-        <>
-          <p><strong>Task Achievement:</strong> {task1["Task Achievement"]}</p>
-          <p><strong>Coherence & Cohesion:</strong> {task1["Coherence & Cohesion"]}</p>
-          <p><strong>Vocabulary:</strong> {task1["Vocabulary"]}</p>
-          <p><strong>Grammar:</strong> {task1["Grammar"]}</p>
-          <p><strong>Overall:</strong> {task1["Overall"]}</p>
-
-          <p><strong>Feedback:</strong></p>
-          <pre style={{ whiteSpace: "pre-wrap" }}>
-            {task1["Feedback"]}
-          </pre>
-        </>
-      ) : (
-        <p>Not scored yet</p>
-      )}
-        {/* ✅ TASK 2 */}
-      <h5>✍️ Writing Task 2 Score</h5>
-      {task2 ? (
-        <>
-          <p><strong>Task Achievement:</strong> {task2["Task Achievement"]}</p>
-          <p><strong>Coherence & Cohesion:</strong> {task2["Coherence & Cohesion"]}</p>
-          <p><strong>Vocabulary:</strong> {task2["Vocabulary"]}</p>
-          <p><strong>Grammar:</strong> {task2["Grammar"]}</p>
-          <p><strong>Overall:</strong> {task2["Overall"]}</p>
-
-          <p><strong>Feedback:</strong></p>
-          <pre style={{ whiteSpace: "pre-wrap" }}>
-            {task2["Feedback"]}
-          </pre>
-        </>
-      ) : (
-        <p>Not scored yet</p>
-      )}
-    </div>
-    
-  );
-})}
-
-
-            {/* FULL TEST */}
-            {/* {ieltsTests.length > 0 && (
+            {/* FULL TESTS */}
+            {Array.isArray(ieltsTests) && ieltsTests.length > 0 && (
               <>
                 <h2>📊 IELTS Full Tests</h2>
                 <div className="results-grid">
-                  {ieltsTests.map(test => (
-                    
-                    
-                    
-                    <div key={test.$id} className="result-card">
-                      <h4>{test.testName}</h4>
-                      <p><strong>Listening:</strong> {test.listeningScore}</p>
-                      <p><strong>Reading:</strong> {test.readingScore}</p>
-                      <p><strong>Total:</strong> {test.totalscore}</p>
-                      <p><strong>Band:</strong> {test.band}</p>
-                      <p><strong>Writing Task 1:</strong> {test.writingTask1}</p>
-                      <p><strong>Writing Task 2:</strong> {test.writingTask2}</p>
-                      <p><strong>Writing Task 1:</strong> {test.task1Score}</p> */}
-                      {/* <p><strong>Writing Task 2:</strong> {test.task2Score}</p> */}
-                     
-                      
-{/* 
-                    </div>
-                  ))}
+                  {ieltsTests.map(test => {
+                    let task1 = null;
+                    let task2 = null;
+
+                    try {
+                      if (test.task1Score) {
+                        const parsed = typeof test.task1Score === "string" ? JSON.parse(test.task1Score) : test.task1Score;
+                        task1 = parsed;
+                      }
+                    } catch (e) {
+                      console.error("❌ Task1 parse failed", e);
+                    }
+
+                    try {
+                      if (test.task2Score) {
+                        const parsed = typeof test.task2Score === "string" ? JSON.parse(test.task2Score) : test.task2Score;
+                        task2 = parsed;
+                      }
+                    } catch (e) {
+                      console.error("❌ Task2 parse failed", e);
+                    }
+
+                    return (
+                      <div key={test.$id} className="result-card">
+                        <h4>{test.testName}</h4>
+                        <p><strong>Listening:</strong> {test.listeningScore}</p>
+                        <p><strong>Reading:</strong> {test.readingScore}</p>
+                        <p><strong>Total:</strong> {test.totalscore}</p>
+                        <p><strong>Band:</strong> {test.band}</p>
+                        <p><strong>Writing Task 1:</strong> {test.writingTask1}</p>
+                        <p><strong>Writing Task 2:</strong> {test.writingTask2}</p>
+                        
+
+                        {/* TASK 1 */}
+                        <h5>✍️ Writing Task 1 Score</h5>
+                        {task1 ? (
+                          <>
+                            <p><strong>Task Achievement:</strong> {task1["Task Achievement"]}</p>
+                            <p><strong>Coherence & Cohesion:</strong> {task1["Coherence & Cohesion"]}</p>
+                            <p><strong>Vocabulary:</strong> {task1["Vocabulary"]}</p>
+                            <p><strong>Grammar:</strong> {task1["Grammar"]}</p>
+                            <p><strong>Overall:</strong> {task1["Overall"]}</p>
+                            <p><strong>Feedback:</strong></p>
+                            <pre style={{ whiteSpace: "pre-wrap" }}>{task1["Feedback"]}</pre>
+                          </>
+                        ) : <p>Not scored yet</p>}
+
+                        {/* TASK 2 */}
+                        <h5>✍️ Writing Task 2 Score</h5>
+                        {task2 ? (
+                          <>
+                            <p><strong>Task Achievement:</strong> {task2["Task Achievement"]}</p>
+                            <p><strong>Coherence & Cohesion:</strong> {task2["Coherence & Cohesion"]}</p>
+                            <p><strong>Vocabulary:</strong> {task2["Vocabulary"]}</p>
+                            <p><strong>Grammar:</strong> {task2["Grammar"]}</p>
+                            <p><strong>Overall:</strong> {task2["Overall"]}</p>
+                            <p><strong>Feedback:</strong></p>
+                            <pre style={{ whiteSpace: "pre-wrap" }}>{task2["Feedback"]}</pre>
+                          </>
+                        ) : <p>Not scored yet</p>}
+                      </div>
+                    );
+                  })}
                 </div>
               </>
-            )} */}
+            )}
           </>
         )}
       </div>

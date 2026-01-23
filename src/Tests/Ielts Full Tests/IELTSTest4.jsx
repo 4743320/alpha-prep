@@ -269,6 +269,58 @@ const getBandFromScore = (score, total) => {
 //   }
 // }
 
+const scoreWritingTask = async (essayText) => {
+  if (!essayText.trim()) {
+    console.log("⚠️ Essay is empty, skipping scoring.");
+    return null;
+  }
+
+  try {
+    const response = await fetch("https://alpha-prep-fast-api-hfs-paces.vercel.app/score-essay", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ essay: essayText }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("📝 HF Spaces Response:", data);
+    return data; // whatever FastAPI returns (score, feedback, etc.)
+  } catch (error) {
+    console.error("❌ Error scoring essay:", error);
+    return null;
+  }
+};
+
+const scoreWritingTask1 = async (essayText) => {
+  if (!essayText.trim()) {
+    console.log("⚠️ Essay is empty, skipping scoring.");
+    return null;
+  }
+
+  try {
+    const response = await fetch("https://alpha-prep-fast-api-hfs-paces.vercel.app/score_task1", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ essay: essayText }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("📝 HF Spaces Response1:", data);
+    return data; // whatever FastAPI returns (score, feedback, etc.)
+  } catch (error) {
+    console.error("❌ Error scoring essay:", error);
+    return null;
+  }
+};
+
 const endFullTest= async(testId)=>{
   try {
     
@@ -317,14 +369,36 @@ console.log("🏅 Overall Band:", overallBand);
 
      const writingTask1 = allAnswers.writing.part1?.response || "";
 const writingTask2 = allAnswers.writing.part2?.response || "";
-     await saveIeltsTest({
+    
+let writingTask2Score = null;
+if(writingTask2.trim()){
+  try {
+    writingTask2Score = await scoreWritingTask(writingTask2)
+     console.log("✏️ Writing Task 2 HF Score:", writingTask2Score);
+  } catch (err) {
+    console.error("❌ Error scoring essay:", err);
+  }
+}
+let writingTask1Score = null;
+if(writingTask1.trim()){
+  try {
+    writingTask1Score = await scoreWritingTask1(writingTask1)
+    console.log("✏️ Writing Task 1 HF Score:", writingTask1Score);
+  } catch (err) {
+    console.error("❌ Error scoring essay:", err);
+  }
+}
+
+await saveIeltsTest({
       userId: currectUser.$id,
       testName: `IELTS FULL Test ${testId}`,
       listeningScore,
       readingScore,
       writingTask1,
       writingTask2,
-      band:overallBand
+      band:overallBand,
+      task2Score: writingTask2Score.score,
+      task1Score: writingTask1Score.score
      })
       console.log("✅ Full IELTS test saved with bands!");
       setResultData({
