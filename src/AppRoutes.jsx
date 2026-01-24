@@ -43,6 +43,7 @@ import FillInBlanks from '../PTE/Iteration/FillInTheBlanks'
 import PTEDashboard from './pages/PteDashBoard'
 import Interface from '../PTE/Iteration/Interface'
 import ReorderParagraph from '../PTE/Iteration/Reorderparagraph'
+import PTEDashboard2 from '../PTE/Iteration2/PTEDashboard'
 
 
 const AppRoutes = () => {
@@ -72,7 +73,8 @@ const AppRoutes = () => {
              <Route path='/rp' element={<ReorderParagraph/>}/>
              <Route path='/q-interface' element={<Interface/>}/> 
 
-
+{/* PTE 2nd Iteration Routes */}
+            <Route path='/pte-dash2' element={<PTEDashboard2/>}/>
                   
 
     {/* <Route path="/scoretest" element={<ScoreTest />} /> */}

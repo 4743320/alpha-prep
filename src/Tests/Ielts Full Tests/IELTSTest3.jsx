@@ -15,7 +15,9 @@ import { account } from "../../lib/appwrite";
 import { saveIeltsTest } from "../../lib/helpers/ieltsScoreHelper";
 import ResultModal from "../../components/IeltsFullResultModal";
 import Overlay from "../../components/Overlay";
-
+import TASK1 from '../../assets/Pics/task1_test3.png'
+import TASK2 from '../../assets/Pics/task2_test3.png'
+// import myImage from '../../../assets/Pics/propmt1.png'
 // ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩
 const IELTSTest3 = () => {
   const navigate = useNavigate();
@@ -1355,11 +1357,11 @@ const multiSelectQuestion22_23 = {
               <h3>
                 You should spend about 20 minutes on <strong>Task-1</strong>
               </h3>
-              {/* <img
-                src={myImage}
+              <img
+                src={TASK1}
                 alt="Writing Task 1"
                 style={{ width: "100%", height: "auto", borderRadius: "8px" }}
-              /> */}
+              />
                     </div>
    <div className="right-column">
             <textarea
@@ -1382,11 +1384,11 @@ style={{width: "100%",height: "100%",padding: "10px",fontSize: "16px",borderRadi
               <h3>
                 You should spend about 40 minutes on <strong>Task-2</strong>
               </h3>
-              {/* <img
-                src={myImage}
-                alt="Writing Task 1"
+              <img
+                src={TASK2}
+                alt="Writing Task 2"
                 style={{ width: "100%", height: "auto", borderRadius: "8px" }}
-              /> */}
+              />
                     </div>
    <div className="right-column">
             <textarea
