@@ -44,7 +44,9 @@ import PTEDashboard from './pages/PteDashBoard'
 import Interface from '../PTE/Iteration/Interface'
 import ReorderParagraph from '../PTE/Iteration/Reorderparagraph'
 import PTEDashboard2 from '../PTE/Iteration2/PTEDashboard'
-
+import Practice from './pages/ptactice'
+// import PTEReadingFillInTheBlanks from '../PTE/Iteration2/PTEReadingFillInTheBlanks'
+import FillInTheBlanksDrag_Drop from '../PTE/Iteration/FillinTheBlanksDrag_Drop'
 
 const AppRoutes = () => {
   return (
@@ -58,7 +60,7 @@ const AppRoutes = () => {
             <Route path='/sat-dash' element={<SatDashboard/>}/>
             <Route path="/sat-practice" element={<SatPractice/>}/>
             <Route path='/ielts-dash' element={<IeltsDashBoard/>}/>
-            <Route path='/pte-dash' element={<PTEDashboard/>}/>
+            {/* <Route path='/pte-dash' element={<PTEDashboard/>}/> */}
             <Route path='/k-start-screen' element={<StartScreen/>}/>
              <Route path='/new-dash' element={<NewDash/>}/>
             <Route path='/course-card' element={<CourseCard/>}/>
@@ -71,7 +73,11 @@ const AppRoutes = () => {
              <Route path='/hi' element={<HighlightIncorrect/>}/> 
              <Route path='/fb' element={<FillInBlanks/>}/>
              <Route path='/rp' element={<ReorderParagraph/>}/>
-             <Route path='/q-interface' element={<Interface/>}/> 
+             <Route path='/q-interface' element={<Interface/>}/>
+             <Route path='/pte-dash2' element={<PTEDashboard2/>}/> 
+             <Route path='/practice' element={<Practice/>}/> 
+             <Route path='/fibd' element={<FillInTheBlanksDrag_Drop/>}/> 
+             
 
 {/* PTE 2nd Iteration Routes */}
             <Route path='/pte-dash2' element={<PTEDashboard2/>}/>

@@ -1,0 +1,56 @@
+/* Drag-and-drop blanks */
+.pte-blank-drag {
+  display: inline-block;
+  min-width: 100px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #0f172a;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.pte-blank-drag:hover {
+  background: #e2e8f0;
+  border-color: #4f46e5;
+}
+
+/* Word bank at the bottom */
+.pte-word-bank {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pte-word {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: white;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.1s;
+}
+
+.pte-word:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+/* Optional: responsive for mobile */
+@media (max-width: 640px) {
+  .pte-blank-drag {
+    min-width: 80px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .pte-word {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}

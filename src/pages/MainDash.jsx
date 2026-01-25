@@ -43,7 +43,7 @@ const tabsList = ["DIGITAL-SAT", "IELTS ACADEMIC & GENERAL", "PTE- ACADEMIC"];
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={'/sat-dash'}/>
          <CourseCard imageUrl={PTEImg} title={"PTE - ACADEMIC"} category={"PTE TEST FOR ENGLISH PROFICIENCY"}
-   level="START LEARNING" level2={"PROFICIENCY TEST"} path={'/pte-dash'}/>
+   level="START LEARNING" level2={"PROFICIENCY TEST"} path={'/pte-dash2'}/>
 {/* <CourseCard
   imageUrl={IELTSLogo}
   title="IELTS ACADEMIC / GENERAL"

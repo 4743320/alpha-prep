@@ -70,7 +70,7 @@ Study at your own pace with trusted material, helpful guidance, and a learning p
       <CourseCard imageUrl={SATLogo} title={"DIGITAL SAT"} category={"DIGITAL SAT FOR UNIVERSITY ADMISSION/ ENTRY TEST"}
    level="START LEARNING" level2={"APTITUTE TEST"} path={"/sat-dash"}/>
          <CourseCard imageUrl={PTEImg} title={"PTE - Academic"} category={"TOEFL TEST FOR ENF+GLISH PROFICIENCY"}
-   level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/pte-dash"}/>
+   level="START LEARNING" level2={"PROFICIENCY TEST"} path={"/pte-dash2"}/>
    
 
 </div>

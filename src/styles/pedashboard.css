@@ -121,7 +121,7 @@
 
 .pte-section-title {
   font-size: 20px;
-  color: #1e1b4b;
+  color: #fbbf24;
   margin-bottom: 16px;
   position: relative;
   display: inline-block;
@@ -141,7 +141,7 @@
 }
 
 .pte-section-title:hover {
-  color: #2563eb;
+  color: #fbbf24;
   transform: translateY(-2px);
   text-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
