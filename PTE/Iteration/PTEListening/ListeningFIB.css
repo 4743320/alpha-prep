@@ -1,0 +1,154 @@
+/* =============================== */
+/* PTE Listening Fill In The Blanks */
+/* =============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* PAGE */
+.pte-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 16px;
+}
+
+.pte-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.pte-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.pte-back {
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+/* TITLES */
+.pte-title {
+  font-size: 30px;
+  color: #1e1b4b;
+  margin-bottom: 10px;
+}
+
+.pte-subtitle {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.pte-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  line-height: 1.8;
+}
+
+/* AUDIO BAR */
+.pte-audio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fbbf24;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.pte-play {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.pte-audio-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.pte-volume {
+  font-size: 18px;
+}
+
+/* TRANSCRIPT */
+.pte-transcript {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* INPUT BLANKS */
+.pte-blank-input {
+  width: 120px;
+  margin: 0 6px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+}
+
+.pte-blank-input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* FOOTER */
+.pte-footer {
+  margin-top: 24px;
+}
+
+.pte-next {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .pte-title {
+    font-size: 22px;
+  }
+
+  .pte-card {
+    padding: 16px;
+  }
+
+  .pte-blank-input {
+    width: 90px;
+    font-size: 13px;
+  }
+
+  .pte-footer {
+    position: sticky;
+    bottom: 0;
+    background: #f8fafc;
+    padding-top: 12px;
+  }
+
+  .pte-next {
+    width: 100%;
+  }
+}

@@ -1,0 +1,197 @@
+/* =============================== */
+/* Drag-and-drop Fill in the Blanks */
+/* =============================== */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* PAGE */
+.pte-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 16px;
+}
+
+.pte-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.pte-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.pte-back {
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+/* TITLE & SUBTITLE */
+.pte-title {
+  font-size: 28px;
+  color: #1e1b4b;
+  margin-bottom: 8px;
+}
+
+.pte-subtitle {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.pte-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  line-height: 1.8;
+}
+
+/* TEXT PARTS */
+.pte-text-part {
+  font-size: 16px;
+}
+
+/* BLANKS */
+/* .pte-blank-drag {
+  display: inline-block;
+  min-width: 90px;
+  margin: 0 6px;
+  padding: 6px 10px;
+  border-bottom: 2px solid #0f172a;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0f172a;
+  background: #e0e7ff;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+} */
+
+.pte-blank-drag {
+  display: inline-block; /* already there */
+  min-width: 100px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-bottom: 2px solid #0f172a;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0f172a;
+  background: #e0e7ff;
+  border-radius: 6px;
+
+  /* NEW */
+  height: 36px;          /* give it some height */
+  vertical-align: middle; 
+}
+
+
+.pte-blank-drag:hover {
+  background: #dbeafe;
+  border-color: #4f46e5;
+}
+
+.pte-blank-drag.filled {
+  color: #0f172a;
+  background: #fde68a; /* highlight filled blank */
+  border-radius: 6px;
+}
+
+/* WORD BANK */
+.pte-word-bank {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* WORDS */
+.pte-word {
+  padding: 8px 14px;
+  background: #4f46e5; /* dark purple */
+  color: white;
+  border-radius: 999px;
+  cursor: grab;
+  font-size: 14px;
+  user-select: none;
+  transition: transform 0.1s;
+}
+
+.pte-word:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+.pte-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pte-next {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pte-next:disabled {
+  background: #c7d2fe;
+  cursor: not-allowed;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 640px) {
+  .pte-title {
+    font-size: 22px;
+  }
+
+  .pte-card {
+    padding: 16px;
+  }
+
+  .pte-blank-drag {
+    min-width: 80px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .pte-word {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .pte-footer {
+    position: sticky;
+    bottom: 0;
+    background: #f8fafc;
+    padding-top: 12px;
+    justify-content: center;
+  }
+
+  .pte-next {
+    width: 100%;
+  }
+}

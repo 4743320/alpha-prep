@@ -46,7 +46,15 @@ import ReorderParagraph from '../PTE/Iteration/Reorderparagraph'
 import PTEDashboard2 from '../PTE/Iteration2/PTEDashboard'
 import Practice from './pages/ptactice'
 // import PTEReadingFillInTheBlanks from '../PTE/Iteration2/PTEReadingFillInTheBlanks'
-import FillInTheBlanksDrag_Drop from '../PTE/Iteration/FillinTheBlanksDrag_Drop'
+// import FillInTheBlanksDrag_Drop from '../PTE/Iteration/FillinTheBlanksDrag_Drop'
+import ListeningMCQ from '../PTE/Iteration/PTEListening/ListeningMCQ'
+import ListeningMultipleMCQ from '../PTE/Iteration/PTEListening/ListeningMultipleMCQ'
+import ListeningFillInTheBlanks from '../PTE/Iteration/PTEListening/ListeningFillInTheBlanks'
+import ListeningSelectMissingWord from '../PTE/Iteration/PTEListening/ListeningMissingWord'
+import ListeningHighlightCorrectSummary from '../PTE/Iteration/PTEListening/ListeningHighlightCorrectSummary'
+import ListeningWriteFromDictation from '../PTE/Iteration/PTEListening/ListeningWriteFromDictation'
+import ListeningSummarizeSpokenText from '../PTE/Iteration/PTEListening/ListeningSummarizeSpokenText'
+import FIBD from '../PTE/Iteration/Trial/FIBD'
 
 const AppRoutes = () => {
   return (
@@ -76,7 +84,17 @@ const AppRoutes = () => {
              <Route path='/q-interface' element={<Interface/>}/>
              <Route path='/pte-dash2' element={<PTEDashboard2/>}/> 
              <Route path='/practice' element={<Practice/>}/> 
-             <Route path='/fibd' element={<FillInTheBlanksDrag_Drop/>}/> 
+             {/* <Route path='/fibd' element={<FillInTheBlanksDrag_Drop/>}/> */}
+             <Route path='/lmcq' element={<ListeningMCQ/>}/> 
+             <Route path='/lmmcq' element={<ListeningMultipleMCQ/>}/> 
+             <Route path='/lfib' element={<ListeningFillInTheBlanks/>}/>
+            <Route path='/lsmw' element={<ListeningSelectMissingWord/>}/> 
+            <Route path='/lhcs' element={<ListeningHighlightCorrectSummary/>}/>
+            <Route path='/lwfd' element={<ListeningWriteFromDictation/>}/> 
+            <Route path='/lsst' element={<ListeningSummarizeSpokenText/>}/>
+            <Route path='/fff' element={<FIBD/>}/> 
+
+             
              
 
 {/* PTE 2nd Iteration Routes */}

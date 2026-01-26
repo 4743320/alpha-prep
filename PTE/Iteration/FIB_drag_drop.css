@@ -54,3 +54,44 @@
     font-size: 14px;
   }
 }
+/* ----------------------------------NEW CSS------------------------ */
+.pte-blank-drag {
+  display: inline-block;
+  min-width: 90px;
+  margin: 0 6px;
+  padding: 4px 10px;
+  border-bottom: 2px solid #0f172a;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pte-blank-drag.filled {
+  color: #0f172a;
+  background: #e0e7ff;
+  border-radius: 6px;
+}
+
+.pte-word-bank {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pte-word {
+  padding: 8px 14px;
+  background: white;
+  border-radius: 999px;
+  border: 1px solid #c7d2fe;
+  cursor: grab;
+  font-size: 14px;
+  user-select: none;
+}
+
+.pte-word:active {
+  cursor: grabbing;
+}
