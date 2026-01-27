@@ -398,8 +398,8 @@ await saveIeltsTest({
       writingTask1,
       writingTask2,
       band:overallBand,
-      task2Score: writingTask2Score.score,
-      task1Score: writingTask1Score.score
+      task2Score: writingTask2Score?.score ?? null,
+  task1Score: writingTask1Score?.score ?? null,
      })
       console.log("✅ Full IELTS test saved with bands!");
       setResultData({

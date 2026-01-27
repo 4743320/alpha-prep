@@ -178,6 +178,108 @@ const scoreWritingTask1 = async (essayText) => {
   }
 };
 
+// const endFullTest= async(testId)=>{
+//   try {
+    
+//     setLoading(true); // show overlay
+//     const payload={ answers:[]}
+//     for (let section in allAnswers){
+//       for (let part in allAnswers[section]){
+//         for(let qid in allAnswers[section][part]){
+//           payload.answers.push({
+//             question_id: qid.replace('q',''),
+//             answer:String(allAnswers[section][part][qid]).trim().toLowerCase()
+//           })
+//         }
+//       }
+//     }
+//     console.log("📤 PAYLOAD SENT:", payload);
+
+//     const url = `https://alpha-prep-fast-api.vercel.app/submit_fulltest/${testId}`;
+
+//     const response = await fetch(url,{
+//       method:'POST',
+//       headers: {'Content-Type':'application/json'},
+//       body: JSON.stringify(payload)
+
+//     })
+//      if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data= await response.json()
+//      console.log("📥 RAW BACKEND RESPONSE:", data);
+
+//      const listeningScore = data.scores_by_section?.listening || 0;
+//      const readingScore = data.scores_by_section?.reading || 0;
+
+//      const listeningBand = getBandFromScore(listeningScore,40)
+//      const readingBand = getBandFromScore(readingScore, 40)
+
+//      const overallBand = Number(((listeningBand+readingBand)/2).toFixed(1))
+
+
+//      console.log("🎧 Listening:", listeningScore, "/40 | Band", listeningBand);
+// console.log("📖 Reading:", readingScore, "/40 | Band", readingBand);
+// console.log("🏅 Overall Band:", overallBand);
+
+//      const currectUser= await account.get()
+
+//      const writingTask1 = allAnswers.writing.part1?.response || "";
+// const writingTask2 = allAnswers.writing.part2?.response || "";
+
+// // await scoreWritingTask(writingTask2)
+// let writingTask2Score = null;
+// if (writingTask2.trim()) {
+//   try {
+//     writingTask2Score = await scoreWritingTask(writingTask2);
+//     console.log("✏️ Writing Task 2 HF Score:", writingTask2Score);
+//   } catch (err) {
+//     console.error("❌ Error scoring essay:", err);
+//   }
+// }
+// let writingTask1Score = null;
+// if(writingTask1.trim()){
+//   try {
+//     writingTask1Score = await scoreWritingTask1(writingTask1)
+//     console.log("✏️ Writing Task 1 HF Score:", writingTask1Score);
+//   } catch (err) {
+//     console.error("❌ Error scoring essay:", err);
+//   }
+// }
+// await saveIeltsTest({
+//       userId: currectUser.$id,
+//       testName: `IELTS FULL Test ${testId}`,
+//       listeningScore,
+//       readingScore,
+//       writingTask1,
+//       writingTask2,
+//       band:overallBand,
+//       task2Score: writingTask2Score.score, // optional: just the "score" object
+//       task1Score: writingTask1Score.score // optional: just the "score" object
+
+//      })
+//       console.log("✅ Full IELTS test saved with bands!");
+//       setResultData({
+//       listeningScore,
+//       readingScore,
+//       listeningBand,
+//       readingBand,
+//       overallBand
+//     });
+//     setLoading(false); // hide overlay 
+//       setShowModal(true);
+//   } 
+  
+  
+//   catch (error) {
+//     console.error("Error sending request", error);
+//     alert("Failed to submit full test, check console");
+//   }
+//   finally {
+//     // setLoading(false); // hide overlay
+//   }
+// }
+
 const endFullTest= async(testId)=>{
   try {
     
@@ -254,8 +356,8 @@ await saveIeltsTest({
       writingTask1,
       writingTask2,
       band:overallBand,
-      task2Score: writingTask2Score.score, // optional: just the "score" object
-      task1Score: writingTask1Score.score // optional: just the "score" object
+       task2Score: writingTask2Score?.score ?? null,
+  task1Score: writingTask1Score?.score ?? null,
 
      })
       console.log("✅ Full IELTS test saved with bands!");
@@ -279,7 +381,6 @@ await saveIeltsTest({
     // setLoading(false); // hide overlay
   }
 }
-
 // const essay = allAnswers.writing.part2.response
   // Test structure for bottom bar
   const testStructure = {
