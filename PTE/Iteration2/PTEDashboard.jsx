@@ -7,6 +7,9 @@ import PTEQuestionList from "./Interface2";
 import PTEReadingMCQ from "./PTEReadingMCQ";
 import PTEReadingMCQMultiple from "./PTEReadingMCQMultiple";
 import PTEReadingFillInTheBlanks from './PTEReadingFillInTheBlanks';
+import PTEListeningMCQ from "../Iteration2/PTEListening/PTEListeningMCQ";
+import PTEListeningMMCQ from '../Iteration2/PTEListening/PTEListeningMCQMultiple'
+import PTEListeningFillInTheBlanks from '../Iteration2/PTEListening/PTEListeningFillInTheBlanks'
 
 // import PTEReadingFillInTheBlanksDrag from '../Iteration/FillinTheBlanksDrag_Drop'
 import PTEReadingFillInTheBlanksDrag from './PTEReadingFillInTheBlanksD_D'
@@ -220,8 +223,157 @@ const sections = [
   {
     name: "Listening",
     topics: [
-      { title: "Multiple Choice", desc: "Answer questions based on the audio.", questions: [] },
-      { title: "Fill in the Blanks", desc: "Listen carefully and fill in missing words.", questions: [] },
+      { title: "Multiple Choice Single Answer",
+        type: "listening-mcq-single",
+        desc: "Answer questions based on the audio.", questions: [{
+  id: 17000219,
+  title: "Literary Genres",
+  level: "Medium",
+  appeared: 4,
+  audio:  "public/Audio/test3_p1.mp3",
+  question: "Which literary genre is being referred to?",
+  passage: "",
+  options: {
+    A: "mainstream",
+    B: "gothic",
+    C: "fantasy",
+    D: "romance"
+  },
+  answer: ""
+},
+{
+  id: 17000218,
+  title: "Narcissism",
+  level: "Medium",
+  appeared: 3,
+  audio:   "public/Audio/test3_p1.mp3",
+  question: "How does he respond to the idea?",
+  passage: "",
+  options: {
+    A: "He is angered by it.",
+    B: "He is skeptical of it.",
+    C: "He is amused by it.",
+    D: "He doesn't believe any of it is true."
+  },
+  answer: ""
+},
+{
+  id: 17000217,
+  title: "MCS-L",
+  level: "Medium",
+  appeared: 3,
+  audio:   "public/Audio/test3_p1.mp3",
+  question: "Which statement about self-defence is correct?",
+  passage: "",
+  options: {
+    A: "The concept of reasonable force is very clearly defined.",
+    B: "Your use of force may be judged on how strong you are compared to the other person.",
+    C: "If you hit someone first, you cannot then claim self-defence.",
+    D: "Courts do not expect ordinary people to react rationally."
+  },
+  answer: ""
+}
+] },
+      { title: "Multiple Choice Multiple Answers",type: "listening-mcq-multiple", desc: "Listen carefully and select the suitable Answers.", questions: [
+         {
+    id: 14000228,
+    title: "Language Skills",
+    level: "Medium",
+    appeared: 2,
+    audio: "public/Audio/test3_p1.mp3",
+    question: "Which statements about music and language learning are correct?",
+    passage: "",
+    options: {
+      A: "Scientists still do not know why music probably helps language learning.",
+      B: "Piano lessons can heighten the brain's response to changes in pitch.",
+      C: "Children who have attended kindergarten are more interested in music.",
+      D: "Mandarin is a tonal language, which is different from English.",
+      E: "Music lessons only benefit language learners who learn tonal languages."
+    },
+    answer: [] // For multiple answers, keep it as an empty array initially
+  },
+  {
+    id: 14000225,
+    title: "English Landscape Garden",
+    level: "Medium",
+    appeared: 9,
+    audio: "public/Audio/test3_p1.mp3",
+    question: "Which of the following are related to the development of English landscape gardens?",
+    passage: "",
+    options: {
+      A: "Italian classical painting",
+      B: "Gardens from classical Greece and Rome",
+      C: "The Romantic Movement",
+      D: "A person's political affiliations",
+      E: "The poet Alexander Pope"
+    },
+    answer: []
+  },
+  {
+    id: 14000223,
+    title: "Rousseau's Beliefs",
+    level: "Difficult",
+    appeared: 4,
+    audio: "public/Audio/test3_p1.mp3",
+    question: "Which statements reflect Rousseau's beliefs?",
+    passage: "",
+    options: {
+      A: "Children's emotions should be educated before their intellect.",
+      B: "People were far happier in a 'state of nature' before civilization.",
+      C: "By forming societies, law and morality come into force.",
+      D: "Men form societies to better cope with the dangers in life.",
+      E: "Society has a corrupting influence on people."
+    },
+    answer: []
+  }
+      ] },
+      {
+      title: "Fill in the Blanks",
+      desc: "Listen carefully and fill in missing words.",
+      type: "listening-fill-in-the-blanks", // must match your if-check in dashboard
+      questions: [
+        {
+          id: 15000430,
+          title: "Building Responsibility",
+          level: "Medium",
+          appeared: 2,
+          audio: "public/Audio/test3_p1.mp3",
+          passage: `At school, the students _____ that responsibilities can help build communities. 
+The teacher reminded them that integrity means keeping _____ even in small matters. 
+One day, they made a discovery of ancient words in a library book, which _____ the whole class. 
+They realized that honest actions together with shared _____ can shape a brighter future.`,
+          blanksCount: 4
+        },
+        {
+          id: 15000429,
+          title: "Javelin Competition",
+          level: "Medium",
+          appeared: 4,
+          audio: "public/Audio/test3_p1.mp3",
+          passage: `The _____ at the sports festival was the javelin competition. 
+Athletes from all over the country came to participate. 
+Many were excited to show their skills in the javelin _____ as far as possible. 
+They were organized into different _____ to compete against each other. 
+The biggest team, which had the most experienced members, took the lead. 
+They _____ the competition with an impressive throw.`,
+          blanksCount: 5
+        },
+        {
+          id: 15000428,
+          title: "Local Farmers",
+          level: "Medium",
+          appeared: 4,
+          audio: "public/Audio/test3_p1.mp3",
+          passage: `Local farmers experiment with new methods to grow their crops more efficiently. 
+They want to improve their harvests each season. 
+Different _____ of farming, such as organic or vertical farming, are becoming popular. 
+Many now offer subscription services to deliver their produce directly to customers. 
+They pack vegetables into a _____ for families to enjoy weekly. 
+This ensures people have access to healthy food.`,
+          blanksCount: 2
+        }
+      ]
+    },  
       { title: "Highlight Incorrect Words", desc: "Select words that differ from the audio.", questions: [] },
       { title: "Summarize Spoken Text", desc: "Summarize what you hear in short paragraphs.", questions: [] },
     ],
@@ -306,7 +458,30 @@ if (selectedQuestion) {
       />
     );
   }
-
+if (selectedTopic.type === "listening-mcq-single") {
+  return (
+    <PTEListeningMCQ
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+if (selectedTopic.type === "listening-mcq-multiple") {
+  return (
+    <PTEListeningMMCQ
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+if (selectedTopic.type === "listening-fill-in-the-blanks") {
+  return (
+    <PTEListeningFillInTheBlanks
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
 
 }
 

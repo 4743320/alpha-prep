@@ -1,0 +1,6 @@
+.pte-option input[type="checkbox"] {
+  accent-color: #4f46e5; /* example */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
