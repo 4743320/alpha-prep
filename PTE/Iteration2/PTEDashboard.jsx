@@ -10,6 +10,8 @@ import PTEReadingFillInTheBlanks from './PTEReadingFillInTheBlanks';
 import PTEListeningMCQ from "../Iteration2/PTEListening/PTEListeningMCQ";
 import PTEListeningMMCQ from '../Iteration2/PTEListening/PTEListeningMCQMultiple'
 import PTEListeningFillInTheBlanks from '../Iteration2/PTEListening/PTEListeningFillInTheBlanks'
+import PTEListeningHighlightCorrectSummary from "./PTEListening/PTEListeningHighlightCorrectSummary";
+import PTEListeningSelectMissingWord from "./PTEListening/PTEListeningSelectMissingWord";
 
 // import PTEReadingFillInTheBlanksDrag from '../Iteration/FillinTheBlanksDrag_Drop'
 import PTEReadingFillInTheBlanksDrag from './PTEReadingFillInTheBlanksD_D'
@@ -373,7 +375,111 @@ This ensures people have access to healthy food.`,
           blanksCount: 2
         }
       ]
-    },  
+    },
+    { title: "Select Missing Word",
+        type: "listening-select-missing-word",
+        desc: "select missing word  based on the audio.", questions: [
+           {
+      id: 18000214,
+      title: "Faint Sound",
+      level: "Medium",
+      appeared: 1,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Select the word that best completes the sentence.",
+      passage: "",
+      options: {
+        A: "calming",
+        B: "illusory",
+        C: "disturbing",
+        D: "inaudible"
+      },
+      answer: ""
+    },
+    {
+      id: 18000213,
+      title: "Surfing",
+      level: "Medium",
+      appeared: 8,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Select the word that best completes the sentence.",
+      passage: "",
+      options: {
+        A: "took place",
+        B: "were at stake",
+        C: "were discovered",
+        D: "could fail"
+      },
+      answer: ""
+    },
+    {
+      id: 18000212,
+      title: "Presentation",
+      level: "Medium",
+      appeared: 6,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Select the word that best completes the sentence.",
+      passage: "",
+      options: {
+        A: "they did not speak as clearly as they should have done",
+        B: "they made an inappropriate choice of topic",
+        C: "they used illustrations and evidence well",
+        D: "they showed they had grasped the content of the course"
+      },
+      answer: ""
+    }
+] },
+ { title: "Highlight CorrectSummary",
+        type: "listening-highlight-correct-summary",
+        desc: "Highlight correct summary  based on the audio.", questions: [
+           {
+      id: 19000160,
+      title: "Mountains",
+      level: "Medium",
+      appeared: 0,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Which statement correctly summarizes the discussion about mountains?",
+      passage: "",
+      options: {
+        A: "Geologists are trying to build up a mountain that stretches between New York and Chicago, which will soar over 45km. This has been warned by experts that the support of such mountain may be damaged by winds and glaciers.",
+        B: "For any conical mountain on the Earth, its height is limited by various factors. The factors include the Earth's mantle, collision of tectonic plates and erosion, so the tallest mountains are not likely to grow much higher.",
+        C: "Mount Everest may grow in the future, because it won't sink lower into the Earth's hot interior like other mountains do. Another reason is that it hasn't reached the height limit of 15km yet.",
+        D: "The Earth's crust is made up of continental plates that float in the rock of its mantle. This can result in earthquakes, which may force the highest mountains to collapse, according to a research."
+      },
+      answer: ""
+    },
+    {
+      id: 19000159,
+      title: "DNA Model",
+      level: "Difficult",
+      appeared: 0,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Which statement correctly summarizes the DNA model described?",
+      passage: "",
+      options: {
+        A: "The proposed model uses Mobius weight functions to unify topological and sequence-dependent torsional characteristics in DNA.",
+        B: "The model treats DNA as a flat, untwisted ribbon and uses the Mobius function solely for visual strand orientation mapping.",
+        C: "The Mobius weight energy function models DNA purely as a bending rod and does not account for torsional topology or sequence variability.",
+        D: "The Mobius weight function focuses exclusively on electronic base-pair interactions, ignoring large-scale mechanical properties."
+      },
+      answer: ""
+    },
+    {
+      id: 19000158,
+      title: "Genealogy",
+      level: "Medium",
+      appeared: 6,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Which statement correctly summarizes the study of genealogy?",
+      passage: "",
+      options: {
+        A: "The study of family history began hundreds of years ago in North Africa in order to establish such things as ownership of property. It rapidly became a common practice in many cultures because inheritance played such an important role in society and government.",
+        B: "Research into family history by ordinary people only started to become far more widespread in the early nineteenth century. Prior to that time, it was chiefly rich, important and powerful families who had an interest and involvement in this type of activity.",
+        C: "All social classes of the general population have always been interested in recording their family history, but genealogy became really popular in the early nineteenth century due to the publication of a book concerning the methodology of determining family history.",
+        D: "Originally, tracing family history was only used in order to establish the origins of prosperous and powerful families. However, by the middle of the twentieth century, ordinary people were also starting to show an interest in researching their family background too."
+      },
+      answer: ""
+    }
+] },  
       { title: "Highlight Incorrect Words", desc: "Select words that differ from the audio.", questions: [] },
       { title: "Summarize Spoken Text", desc: "Summarize what you hear in short paragraphs.", questions: [] },
     ],
@@ -477,6 +583,24 @@ if (selectedTopic.type === "listening-mcq-multiple") {
 if (selectedTopic.type === "listening-fill-in-the-blanks") {
   return (
     <PTEListeningFillInTheBlanks
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+
+if (selectedTopic.type === "listening-highlight-correct-summary") {
+  return (
+    <PTEListeningHighlightCorrectSummary
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+
+if (selectedTopic.type === "listening-select-missing-word") {
+  return (
+    <PTEListeningSelectMissingWord
       questionData={selectedQuestion}
       onBack={() => setSelectedQuestion(null)}
     />
