@@ -12,7 +12,10 @@ import PTEListeningMMCQ from '../Iteration2/PTEListening/PTEListeningMCQMultiple
 import PTEListeningFillInTheBlanks from '../Iteration2/PTEListening/PTEListeningFillInTheBlanks'
 import PTEListeningHighlightCorrectSummary from "./PTEListening/PTEListeningHighlightCorrectSummary";
 import PTEListeningSelectMissingWord from "./PTEListening/PTEListeningSelectMissingWord";
-
+import PTEFillInTheBlanksD_D from './PTEReadingFillInTheBlanksD_D'
+import PTEListeningSummarizeSpokenText from "./PTEListening/PTEListeningSummarizeSpokenText";
+import PTEListeningWriteFromDictation from "./PTEListening/PTEListeningWriteFromDictation";
+import PTEHighlightIncorrectWords from "./PTEListening/PTEListeningHighlightIncorrectWord";
 // import PTEReadingFillInTheBlanksDrag from '../Iteration/FillinTheBlanksDrag_Drop'
 import PTEReadingFillInTheBlanksDrag from './PTEReadingFillInTheBlanksD_D'
 // ------------------------
@@ -184,7 +187,7 @@ const sections = [
             answers: ["B"]
           }] },
       { title: "Reorder Paragraphs", desc: "Arrange paragraphs in the correct order.", questions: [] },
-      { title: "Fill In The Blanks Drag and Drop", type:"fill-in-the-blanks-drag-nd-drop", desc: "Identify words that differ from the passage.", questions: 
+      { title: "Fill In The Blanks Drag and Drop",  desc: "Identify words that differ from the passage.",type:"fill-in-the-blanks-drag-nd-drop", questions: 
         [
         {
     id: "11001114",
@@ -213,15 +216,7 @@ const sections = [
       ] },
     ],
   },
-  {
-    name: "Speaking / Writing",
-    topics: [
-      { title: "Essay Writing", desc: "Practice essay structure and vocabulary.", questions: [] },
-      { title: "Describe Image", desc: "Describe charts, maps, and images clearly.", questions: [] },
-      { title: "Re-tell Lecture", desc: "Summarize spoken lectures in your own words.", questions: [] },
-      { title: "Summarize Spoken Text", desc: "Write concise summaries of audio content.", questions: [] },
-    ],
-  },
+  
   {
     name: "Listening",
     topics: [
@@ -428,7 +423,7 @@ This ensures people have access to healthy food.`,
       answer: ""
     }
 ] },
- { title: "Highlight CorrectSummary",
+ { title: "Highlight Correct Summary",
         type: "listening-highlight-correct-summary",
         desc: "Highlight correct summary  based on the audio.", questions: [
            {
@@ -480,8 +475,112 @@ This ensures people have access to healthy food.`,
       answer: ""
     }
 ] },  
-      { title: "Highlight Incorrect Words", desc: "Select words that differ from the audio.", questions: [] },
-      { title: "Summarize Spoken Text", desc: "Summarize what you hear in short paragraphs.", questions: [] },
+      
+            { title: "Write From Dictation",  type: "listening-write-from-dictation", desc: "Summarize what you hear in short paragraphs.", questions: [
+        {
+      id: 20003731,
+      title: "WFD3731",
+      level: "Medium",
+      appeared: 1,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Dictation",
+      passage: "",
+      answer: ""
+    },
+    {
+      id: 20003729,
+      title: "WFD3729",
+      level: "Medium",
+      appeared: 0,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Dictation",
+      passage: "",
+      answer: ""
+    },
+    {
+      id: 20003730,
+      title: "WFD3730",
+      level: "Medium",
+      appeared: 0,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Dictation",
+      passage: "",
+      answer: ""
+    }
+      ] },
+      
+            { title: "Summarize Spoken Text",  type: "listening-summarize-spoken-text", desc: "Summarize what you hear in short paragraphs.", questions: [
+        {
+      id: 13000699,
+      title: "Waste Food",
+      level: "Medium",
+      appeared: 1,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Summarize the spoken text.",
+      passage: "",
+      answer: ""
+    },
+    {
+      id: 13000698,
+      title: "Nuts",
+      level: "Medium",
+      appeared: 0,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Summarize the spoken text.",
+      passage: "",
+      answer: ""
+    },
+    {
+      id: 13000697,
+      title: "Andrew Carnegie",
+      level: "Medium",
+      appeared: 0,
+      audio: "public/Audio/test3_p1.mp3",
+      question: "Summarize the spoken text.",
+      passage: "",
+      answer: ""
+    }
+      ] },
+      { title: " Highlight Incorrect Word",type:"listening-highlight-incorrect-words", desc: "Select words that differ from the audio.", questions: [
+        
+  {
+      id: 16000526,
+      title: "Quantum Mechanics",
+      level: "Medium",
+      appeared: 0,
+      audio: "public/Audio/hiw_16000526.mp3",
+      passage: "You know that the incredibe thing about quantum mechanics were many incredible things, but one of them , at least to me , is that it realy works.",
+      answer: ""
+    },
+    {
+      id: 16000525,
+      title: "Sacred Calling",
+      level: "Medium",
+      appeared: 2,
+      audio: "public/Audio/hiw_16000525.mp3",
+      passage: "Now, a professor is also a member of a profession, presumably one that regards its iscretion as a vocation in the full sense of the word - from vocare, 'to call.'",
+      answer: ""
+    },
+    {
+      id: 16000524,
+      title: "Understanding Color",
+      level: "Medium",
+      appeared: 1,
+      audio: "public/Audio/hiw_16000524.mp3",
+      passage: "Now, a professor is also a member of a profession, presumably one that regards its iscretion as a vocation in the full sense of the word - from vocare, 'to call.'",
+      answer: ""
+    }
+        
+      ] },
+    ],
+  },
+  {
+    name: "Speaking / Writing",
+    topics: [
+      { title: "Essay Writing", desc: "Practice essay structure and vocabulary.", questions: [] },
+      { title: "Describe Image", desc: "Describe charts, maps, and images clearly.", questions: [] },
+      { title: "Re-tell Lecture", desc: "Summarize spoken lectures in your own words.", questions: [] },
+      { title: "Summarize Spoken Text", desc: "Write concise summaries of audio content.", questions: [] },
     ],
   },
 ];
@@ -532,6 +631,7 @@ if (selectedQuestion) {
         onBack={() => setSelectedQuestion(null)}
       />
     );
+    
   }
 // if (selectedTopic.type === "fill-in-the-blanks-drag-nd-drop") {
 //   const textParts = selectedQuestion.question.split(/_____/g);
@@ -553,17 +653,18 @@ if (selectedQuestion) {
     //   return <PTEReadingFillInTheBlanksDrag textParts={textParts} blanksCount={blanksCount} options={options} onBack={() => setSelectedQuestion(null)} />;
     // }
  // Drag-and-drop Fill in the blanks
-  if (selectedTopic.type === "fill-in-the-blanks-drag-nd-drop") {
-    const { textParts, blanksCount, options } = selectedQuestion;
-    return (
-      <PTEReadingFillInTheBlanksDrag
-        textParts={textParts}
-        blanksCount={blanksCount}
-        options={options}
-        onBack={() => setSelectedQuestion(null)}
-      />
-    );
-  }
+ // Fill in the blanks drag-and-drop
+if (selectedTopic.type === "fill-in-the-blanks-drag-nd-drop") {
+  const { textParts, blanksCount, options } = selectedQuestion;
+  return (
+    <PTEFillInTheBlanksD_D
+      textParts={textParts}
+      blanksCount={blanksCount}
+      options={options}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
 if (selectedTopic.type === "listening-mcq-single") {
   return (
     <PTEListeningMCQ
@@ -606,7 +707,38 @@ if (selectedTopic.type === "listening-select-missing-word") {
     />
   );
 }
-
+if (selectedTopic.type === "listening-summarize-spoken-text") {
+  return (
+    <PTEListeningSummarizeSpokenText
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+if (selectedTopic.type === "listening-summarize-spoken-text") {
+  return (
+    <PTEListeningSummarizeSpokenText
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+if (selectedTopic.type === "listening-write-from-dictation") {
+  return (
+    <PTEListeningWriteFromDictation
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
+if (selectedTopic.type === "listening-highlight-incorrect-words") {
+  return (
+    <PTEHighlightIncorrectWords
+      questionData={selectedQuestion}
+      onBack={() => setSelectedQuestion(null)}
+    />
+  );
+}
 }
 
   // ------------------------
