@@ -8,6 +8,7 @@ import SATLogo from "../assets/sat.png";
 import HeroImg from '../assets/Pics/hero.png'
 import TOEFLIImg from '../assets/Pics/toefl.gif'
 import PTEImg from '../assets/pte.png'
+import LAT from '../assets/lats.webp'
 import Tabs from "../components/Tabs";
 import CourseCard from "../components/CourseCard";
 import AlphaPrepLogo from '../assets/Pics/ALPHAPREPNEW.png'
@@ -44,6 +45,8 @@ const tabsList = ["DIGITAL-SAT", "IELTS ACADEMIC & GENERAL", "PTE- ACADEMIC"];
    level="START LEARNING" level2={"APTITUTE TEST"} path={'/sat-dash'}/>
          <CourseCard imageUrl={PTEImg} title={"PTE - ACADEMIC"} category={"PTE TEST FOR ENGLISH PROFICIENCY"}
    level="START LEARNING" level2={"PROFICIENCY TEST"} path={'/pte-dash2'}/>
+    <CourseCard imageUrl={LAT} title={"LAW ADMISSION TEST "} category={"LAT FOR ADMISSION IN LAW PROGRAMMES"}
+   level="START LEARNING" level2={"APTITUTE TEST"} path={'/lat-dash'}/>
 {/* <CourseCard
   imageUrl={IELTSLogo}
   title="IELTS ACADEMIC / GENERAL"

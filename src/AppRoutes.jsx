@@ -55,6 +55,8 @@ import ListeningHighlightCorrectSummary from '../PTE/Iteration/PTEListening/List
 import ListeningWriteFromDictation from '../PTE/Iteration/PTEListening/ListeningWriteFromDictation'
 import ListeningSummarizeSpokenText from '../PTE/Iteration/PTEListening/ListeningSummarizeSpokenText'
 import FIBD from '../PTE/Iteration/Trial/FIBD'
+import LatDashboard from "../src/LAT/LatDashboard"
+import LATDashboard from '../src/LAT/LatDashboard'
 
 const AppRoutes = () => {
   return (
@@ -127,6 +129,8 @@ const AppRoutes = () => {
     <Route path='/ielts-full' element={<IELTSTest3/>}/>
     <Route path='ielts-full2' element={<IELTSTest4/>}/>
 
+    {/* LAT SECTION */}
+<Route path='/lat-dash' element={<LATDashboard/>}/>
         </Routes>
     </Router>
 
